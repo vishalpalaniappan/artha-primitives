@@ -1,9 +1,7 @@
 INFO 
 INFO Processing Primitive Type: meta-primitive
 INFO Processing Primitive Name: yield.json
-ERROR  Validation Failed for 'primitives/meta-primitive/yield.json':
-ERROR    Reason: 'meta_primitive' is not one of ['meta-primitive', 'functional-primitive', 'computable-primitive', 'legacy-primitive']
-ERROR    Path to error: type
+INFO  Success: 'primitives/meta-primitive/yield.json' is valid according to 'schemas/meta-primitive.schema.json'.
 INFO Processing Primitive Name: role.json
 ERROR  Validation Failed for 'primitives/meta-primitive/role.json':
 ERROR    Reason: 'version' is a required property
