@@ -1,0 +1,26 @@
+{
+    "name": "artha-primitives",
+    "version": "0.0.0",
+    "description": "Schema documentation for Artha primitives.",
+    "main": "./src/index.js",
+    "scripts": {
+        "generate-schemas": "node ./generate-docs.js",
+        "build:all": "npm run generate-schemas && docusaurus build",
+        "docusaurus": "docusaurus",
+        "start": "docusaurus start",
+        "build": "docusaurus build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vishalpalaniappan/artha-primitives.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/vishalpalaniappan/artha-primitives/issues"
+    },
+    "homepage": "https://github.com/vishalpalaniappan/artha-primitives#readme",
+    "dependencies": {
+        "json-schema-static-docs": "^0.28.1"
+    }
+}
