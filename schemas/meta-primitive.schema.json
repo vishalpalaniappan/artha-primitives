@@ -5,6 +5,10 @@
     "description": "A schema definition for meta-primitive files.",
     "type": "object",
     "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "URI reference to the JSON schema."
+        },
         "name": {
             "type": "string",
             "description": "The unique identifier name of the meta-primitive."
