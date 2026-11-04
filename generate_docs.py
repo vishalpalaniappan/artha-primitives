@@ -6,12 +6,12 @@ def documentPrimitiveSchema(parser, primitive):
     '''
         Generates markdown file for the specified schema.
     '''
-    with open(f"schemas/{primitive}.schema.json", "r") as schema_file:
+    with open(f"schemas/{primitive}.schema.json", "r", encoding="utf-8") as schema_file:
         schema_content = json.load(schema_file)
 
     md_lines = parser.parse_schema(schema_content)
 
-    with open(f"docs/schemas/{primitive}-docs.md", "w") as md_file:
+    with open(f"docs/schemas/{primitive}-docs.md", "w", encoding="utf-8") as md_file:
         md_file.writelines(md_lines)
 
     print(f"Documentation generated successfully as '{primitive}-docs.md'!")
