@@ -11,7 +11,7 @@ INFO Processing Primitive Name: structural_type.json
 INFO  Success: 'primitives/meta-primitive/structural_type.json' is valid.
 INFO Processing Primitive Name: import.json
 INFO  Success: 'primitives/meta-primitive/import.json' is valid.
+INFO Processing Primitive Name: list_contains.json
+INFO  Success: 'primitives/meta-primitive/list_contains.json' is valid.
 INFO Processing Primitive Name: introduce.json
 INFO  Success: 'primitives/meta-primitive/introduce.json' is valid.
-INFO Processing Primitive Name: contains.json
-INFO  Success: 'primitives/meta-primitive/contains.json' is valid.
