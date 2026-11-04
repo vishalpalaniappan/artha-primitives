@@ -30,7 +30,7 @@ def validate_primitive(schema_path, primitive_path):
             instance = json.load(json_file)
 
         validate(instance=instance, schema=schema)
-        logging.info(f" Success: '{primitive_path}' is valid according to '{schema_path}'.")
+        logging.info(f" Success: '{primitive_path}' is valid.")
         return True
 
     except ValidationError as e:
@@ -62,11 +62,14 @@ def main(argv):
 
     for primitiveType in primitiveTypes:
 
-        logging.info("")
-        logging.info(f"Processing Primitive Type: {primitiveType}")
-
         schemaPath = f"schemas/{primitiveType}.schema.json"
         primitiveFolderPath = Path(f"./primitives/{primitiveType}")
+
+        logging.info("")
+        logging.info("===========================================")
+        logging.info(f"Processing Primitive Type: {primitiveType}")
+        logging.info(f"Schema: {schemaPath}")
+        logging.info("===========================================")
 
         for primitive in list(primitiveFolderPath.glob("*.json")):
             logging.info(f"Processing Primitive Name: {primitive.name}")

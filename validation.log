@@ -1,18 +1,17 @@
 INFO 
+INFO ===========================================
 INFO Processing Primitive Type: meta-primitive
+INFO Schema: schemas/meta-primitive.schema.json
+INFO ===========================================
 INFO Processing Primitive Name: yield.json
-INFO  Success: 'primitives/meta-primitive/yield.json' is valid according to 'schemas/meta-primitive.schema.json'.
+INFO  Success: 'primitives/meta-primitive/yield.json' is valid.
 INFO Processing Primitive Name: role.json
-ERROR  Validation Failed for 'primitives/meta-primitive/role.json':
-ERROR    Reason: 'version' is a required property
-ERROR    Path to error: 
+INFO  Success: 'primitives/meta-primitive/role.json' is valid.
 INFO Processing Primitive Name: structural_type.json
-ERROR  Validation Failed for 'primitives/meta-primitive/structural_type.json':
-ERROR    Reason: 'version' is a required property
-ERROR    Path to error: 
+INFO  Success: 'primitives/meta-primitive/structural_type.json' is valid.
 INFO Processing Primitive Name: import.json
-INFO  Success: 'primitives/meta-primitive/import.json' is valid according to 'schemas/meta-primitive.schema.json'.
+INFO  Success: 'primitives/meta-primitive/import.json' is valid.
 INFO Processing Primitive Name: introduce.json
-INFO  Success: 'primitives/meta-primitive/introduce.json' is valid according to 'schemas/meta-primitive.schema.json'.
+INFO  Success: 'primitives/meta-primitive/introduce.json' is valid.
 INFO Processing Primitive Name: contains.json
-INFO  Success: 'primitives/meta-primitive/contains.json' is valid according to 'schemas/meta-primitive.schema.json'.
+INFO  Success: 'primitives/meta-primitive/contains.json' is valid.
