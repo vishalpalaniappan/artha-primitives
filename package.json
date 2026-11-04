@@ -4,6 +4,7 @@
     "description": "Schema documentation for Artha primitives.",
     "main": "./src/index.js",
     "scripts": {
+        "install:all": "npm install && cd docs && npm install",
         "generate-schemas": "node ./generate-docs.js",
         "build:all": "npm run generate-schemas && docusaurus build",
         "docusaurus": "docusaurus",
