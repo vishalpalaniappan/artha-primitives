@@ -3,7 +3,7 @@ const JsonSchemaStaticDocs = require("json-schema-static-docs");
 (async () => {
     let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
         inputPath: "./schemas",
-        outputPath: "./docs/docs",
+        outputPath: "./docs/docs/schemas",
         jsonSchemaVersion: "https://json-schema.org/draft/2020-12/schema",
         ajvOptions: {
             allowUnionTypes: true,

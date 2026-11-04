@@ -1,7 +1,6 @@
 # Index
 
-## Docs
 
-### Docs
-- [docs/docs/introx](docs/docs/intro.mdx)
-- [docs/docs/meta-primitive.schema](docs/docs/meta-primitive.schema.md)
+### Links
+- [docs/docs/intro](docs/docs/intro.mdx)
+- [docs/docs/schemas](docs/docs/schemas)
