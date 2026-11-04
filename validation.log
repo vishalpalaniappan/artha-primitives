@@ -2,8 +2,8 @@ INFO
 INFO Processing Primitive Type: meta-primitive
 INFO Processing Primitive Name: yield.json
 ERROR  Validation Failed for 'primitives/meta-primitive/yield.json':
-ERROR    Reason: 'version' is a required property
-ERROR    Path to error: 
+ERROR    Reason: 'meta_primitive' is not one of ['meta-primitive', 'functional-primitive', 'computable-primitive', 'legacy-primitive']
+ERROR    Path to error: type
 INFO Processing Primitive Name: role.json
 ERROR  Validation Failed for 'primitives/meta-primitive/role.json':
 ERROR    Reason: 'version' is a required property
@@ -13,7 +13,9 @@ ERROR  Validation Failed for 'primitives/meta-primitive/structural_type.json':
 ERROR    Reason: 'version' is a required property
 ERROR    Path to error: 
 INFO Processing Primitive Name: import.json
-INFO  Success: 'primitives/meta-primitive/import.json' is valid according to 'schemas/meta-primitive.schema.json'!
+ERROR  Validation Failed for 'primitives/meta-primitive/import.json':
+ERROR    Reason: 'structuralType' is a required property
+ERROR    Path to error: attributes -> 1
 INFO Processing Primitive Name: introduce.json
 ERROR  Validation Failed for 'primitives/meta-primitive/introduce.json':
 ERROR    Reason: 'version' is a required property

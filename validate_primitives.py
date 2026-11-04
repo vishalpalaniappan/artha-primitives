@@ -30,11 +30,11 @@ def validate_primitive(schema_path, primitive_path):
             instance = json.load(json_file)
 
         validate(instance=instance, schema=schema)
-        logging.info(f" Success: '{json_path}' is valid according to '{schema_path}'.")
+        logging.info(f" Success: '{primitive_path}' is valid according to '{schema_path}'.")
         return True
 
     except ValidationError as e:
-        logging.error(f" Validation Failed for '{json_path}':")
+        logging.error(f" Validation Failed for '{primitive_path}':")
         logging.error(f"   Reason: {e.message}")
         logging.error(f"   Path to error: {' -> '.join(str(p) for p in e.path)}")
         return False
@@ -70,7 +70,7 @@ def main(argv):
 
         for primitive in list(primitiveFolderPath.glob("*.json")):
             logging.info(f"Processing Primitive Name: {primitive.name}")
-            validate_json_file(schemaPath, primitive)
+            validate_primitive(schemaPath, primitive)
 
 
 if __name__ == "__main__":
