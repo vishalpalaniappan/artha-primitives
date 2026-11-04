@@ -7,11 +7,14 @@
     "attributes": [
         {
             "name": "file",
+            "attributeStructuralType": "string",
             "required": true
         },
         {
             "name": "alias",
-            "required": false
+            "attributeStructuralType": "string",
+            "aliasStructuralType": "inherit",
+            "required": true
         }
     ]
 }

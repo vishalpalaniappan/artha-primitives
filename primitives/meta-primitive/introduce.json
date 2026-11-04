@@ -1,19 +1,24 @@
 {
     "name": "introduce",
-    "type": "meta_primitive",
+    "version": "0.0.0",
+    "type": "meta-primitive",
     "description":"Introduces a participant into the world",
     "syntax": "introduce",
     "attributes": [
         {
             "name": "alias",
+            "attributeStructuralType": "string",
+            "aliasStructuralType": "inherit",
             "required": true
         },
         {
             "name": "role",
+            "attributeStructuralType": "string",
             "required": true
         },
         {
             "name": "participant",
+            "attributeStructuralType": "string",
             "required": true
         }
     ]

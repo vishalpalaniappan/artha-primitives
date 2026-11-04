@@ -11,14 +11,8 @@ ERROR  Validation Failed for 'primitives/meta-primitive/structural_type.json':
 ERROR    Reason: 'version' is a required property
 ERROR    Path to error: 
 INFO Processing Primitive Name: import.json
-ERROR  Validation Failed for 'primitives/meta-primitive/import.json':
-ERROR    Reason: 'structuralType' is a required property
-ERROR    Path to error: attributes -> 1
+INFO  Success: 'primitives/meta-primitive/import.json' is valid according to 'schemas/meta-primitive.schema.json'.
 INFO Processing Primitive Name: introduce.json
-ERROR  Validation Failed for 'primitives/meta-primitive/introduce.json':
-ERROR    Reason: 'version' is a required property
-ERROR    Path to error: 
+INFO  Success: 'primitives/meta-primitive/introduce.json' is valid according to 'schemas/meta-primitive.schema.json'.
 INFO Processing Primitive Name: contains.json
-ERROR  Validation Failed for 'primitives/meta-primitive/contains.json':
-ERROR    Reason: 'version' is a required property
-ERROR    Path to error: 
+INFO  Success: 'primitives/meta-primitive/contains.json' is valid according to 'schemas/meta-primitive.schema.json'.
