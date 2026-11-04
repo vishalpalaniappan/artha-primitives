@@ -1,0 +1,65 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/meta-primitive.schema.json",
+    "title": "MetaPrimitive",
+    "description": "A schema definition for meta-primitive files.",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The unique identifier name of the meta-primitive."
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "meta-primitive",
+                "functional-primitive",
+                "computable-primitive",
+                "legacy-primitive"
+            ],
+            "description": "The primitive type."
+        },
+        "version": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+$",
+            "description": "Semantic version string (e.g., 1.0.0)."
+        },
+        "syntax": {
+            "type": "string",
+            "description": "The syntax of the primitive."
+        },
+        "description": {
+            "type": "string",
+            "description": "The description of the primitie."
+        },
+        "attributes": {
+            "type": "array",
+            "description": "The attributes for this primitive",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the parameter."
+                    },
+                    "required": {
+                        "type": "boolean",
+                        "description": "Indicates if this attribute is required for the primitive",
+                        "default": false
+                    }
+                }
+            },
+            "required": ["name", "required"],
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "name",
+        "type",
+        "version",
+        "syntax",
+        "description",
+        "attributes"
+    ],
+    "additionalProperties": false
+}
