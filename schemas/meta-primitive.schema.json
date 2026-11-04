@@ -32,6 +32,17 @@
             "type": "string",
             "description": "The description of the primitie."
         },
+        "alias": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name of the parameter."
+                }
+            },
+            "required": ["name"],
+            "additionalProperties": false
+        },
         "attributes": {
             "type": "array",
             "description": "The attributes for this primitive",
@@ -44,7 +55,7 @@
                     },
                     "required": {
                         "type": "boolean",
-                        "description": "Indicates if this attribute is required for the primitive",
+                        "description": "Indicates if this attribute is required for the primitive.",
                         "default": false
                     }
                 }
