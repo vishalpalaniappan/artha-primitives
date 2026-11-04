@@ -53,11 +53,26 @@
                         "type": "string",
                         "description": "The name of the parameter."
                     },
+                    "structuralType": {
+                        "type" : "string",
+                        "description": "Structural type of the alias"
+                    },
                     "required": {
                         "type": "boolean",
                         "description": "Indicates if this attribute is required for the primitive.",
                         "default": false
                     }
+                },
+                "if": {
+                    "properties": {
+                        "name": {
+                            "const": "alias"
+                        }
+                    },
+                    "required": ["name"]
+                },
+                "then": {
+                    "required": ["structuralType"]
                 }
             },
             "required": ["name", "required"],
