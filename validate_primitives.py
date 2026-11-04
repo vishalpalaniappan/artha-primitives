@@ -11,19 +11,26 @@ logging.basicConfig(
     format='%(levelname)s %(message)s'
 )
 
-def validate_json_file(schema_path, json_path):
+def validate_primitive(schema_path, primitive_path):
     '''
-        Validates the JSON file with the schema.
+        Validates the primitive with the schema.
+
+        Args:
+            schema_path(string): Path to the schema JSON file.
+            json_path(string): Path to the primitive JSON file.
+
+        Returns:
+            None
     '''
     try:
         with open(schema_path, "r", encoding="utf-8") as schema_file:
             schema = json.load(schema_file)
 
-        with open(json_path, "r", encoding="utf-8") as json_file:
+        with open(primitive_path, "r", encoding="utf-8") as json_file:
             instance = json.load(json_file)
 
         validate(instance=instance, schema=schema)
-        logging.info(f" Success: '{json_path}' is valid according to '{schema_path}'!")
+        logging.info(f" Success: '{json_path}' is valid according to '{schema_path}'.")
         return True
 
     except ValidationError as e:
@@ -33,15 +40,24 @@ def validate_json_file(schema_path, json_path):
         return False
         
     except SchemaError as e:
-        logging.error(f" Error: Your JSON Schema itself is invalid!")
+        logging.error(f" Error: JSON Schema is invalid.")
         logging.error(f"   Reason: {e.message}")
         return False
 
     except FileNotFoundError as e:
-        prilogging.error(f" File not found error: {e}")
+        logging.error(f" File not found error: {e}")
         return False
 
 def main(argv):
+    '''
+        Main method to validate primitives.
+
+        Args:
+            argv(dict): Command line arguments.
+
+        Returns:
+            None
+    '''
     primitiveTypes = ["meta-primitive"]
 
     for primitiveType in primitiveTypes:

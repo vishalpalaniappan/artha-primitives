@@ -1,5 +1,5 @@
 INFO 
-Processing Primitive Type: meta-primitive
+INFO Processing Primitive Type: meta-primitive
 INFO Processing Primitive Name: yield.json
 ERROR  Validation Failed for 'primitives/meta-primitive/yield.json':
 ERROR    Reason: 'version' is a required property
