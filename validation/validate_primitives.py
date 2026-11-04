@@ -62,8 +62,8 @@ def main(argv):
 
     for primitiveType in primitiveTypes:
 
-        schemaPath = f"schemas/{primitiveType}.schema.json"
-        primitiveFolderPath = Path(f"./primitives/{primitiveType}")
+        schemaPath = f"../schemas/{primitiveType}.schema.json"
+        primitiveFolderPath = Path(f"../primitives/{primitiveType}")
 
         logging.info("")
         logging.info("===========================================")
