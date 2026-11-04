@@ -1,7 +1,12 @@
+from pathlib import Path
 import json
 from jsonschema import validate, ValidationError, SchemaError
+import sys
 
 def validate_json_file(schema_path, json_path):
+    '''
+        Validates the JSON file with the schema.
+    '''
     try:
         with open(schema_path, "r", encoding="utf-8") as schema_file:
             schema = json.load(schema_file)
@@ -28,8 +33,16 @@ def validate_json_file(schema_path, json_path):
         print(f" File not found error: {e}")
         return False
 
+def main(argv):
+    primitiveTypes = ["meta-primitive"]
+
+    for primitiveType in primitiveTypes:
+        schemaPath = f"schemas/{primitiveType}.schema.json"
+        primitiveFolderPath = Path(f"./primitives/{primitiveType}")
+
+        for primitive in list(primitiveFolderPath.glob("*.json")):
+            validate_json_file(schemaPath, primitive)
+
+
 if __name__ == "__main__":
-    validate_json_file(
-        "schemas/meta-primitive.schema.json", 
-        "primitives/meta_primitives/import.json"
-    )
+    sys.exit(main(sys.argv))
