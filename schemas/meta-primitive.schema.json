@@ -30,7 +30,7 @@
         },
         "description": {
             "type": "string",
-            "description": "The description of the primitie."
+            "description": "The description of the primitive."
         },
         "alias": {
             "type": "object",
@@ -81,6 +81,10 @@
             },
             "required": ["attributeStructuralType", "name", "required"],
             "additionalProperties": false
+        },
+        "_note": {
+            "type": "string",
+            "description": "Add optional note for primitive."
         }
     },
     "required": [
