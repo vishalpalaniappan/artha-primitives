@@ -2,46 +2,21 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Artha Primitives
 
-Let's discover **Docusaurus in less than 5 minutes**.
+I've provided a list of primitive types below and the schema for each type is provided in the documentation. I will also extend this so that the primitives are validated and the result of the validation is presented in the documentation.
 
-## Getting Started
+## Computable Semantic Primitives
+The computable primitives are the computational building blocks of the meaning of the world. They unambiguously specify a transformation, its invariants and the realization of the transformation. Since the computable primitives unambiguously identify their invariants, the correctness of any narrative that uses them can be established. Moreover, since the realization of these primitives is provided, during synthesis, it can be referenced directly.
 
-Get started by **creating a new site**.
+## Meta Primitives
+Meta primitives establish meaning that the engine uses to reason about the world. For example, for a participant block, this can establish the structural type, the role. Other examples include the types of items a list can contain or the kinds of operations that a participant is allowed to participate in. The amount of meaning used to describe the world is only limited by what the developer needs and since the engine knows the meaning, it can reason about it.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## Functional Primitives
+The functional primitives connect the computable and legacy primitives together and create a narrative. For example, this can include the conditionally selecting meaning. Composite functional primitives like while and for are simply conditional blocks at a higher level of abstraction, making it easier to establish meaning more concisely. 
 
-### What you'll need
+## Legacy Primitives
+The legacy primitives are primitives that are opaque except at the level at which their meaning is declared. This means that they can be broken down into atomic meaningful primitives but its meaning is not known. This includes meaning like get input from terminal or write to terminal. One day, the meaning of these primitives will be established using an Artha script but until that happens, it will remain opaque except at the level at which it is defined. The legacy primitives also provide the realization that will be used by the synthesizer.
 
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
 
-## Generate a new site
 
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
