@@ -1,7 +1,15 @@
-from pathlib import Path
 import json
 from jsonschema import validate, ValidationError, SchemaError
+from pathlib import Path
+import logging
 import sys
+
+logging.basicConfig(
+    filename='validation.log', 
+    filemode='w',               
+    level=logging.DEBUG, 
+    format='%(levelname)s %(message)s'
+)
 
 def validate_json_file(schema_path, json_path):
     '''
@@ -15,32 +23,37 @@ def validate_json_file(schema_path, json_path):
             instance = json.load(json_file)
 
         validate(instance=instance, schema=schema)
-        print(f" Success: '{json_path}' is valid according to '{schema_path}'!")
+        logging.info(f" Success: '{json_path}' is valid according to '{schema_path}'!")
         return True
 
     except ValidationError as e:
-        print(f" Validation Failed for '{json_path}':")
-        print(f"   Reason: {e.message}")
-        print(f"   Path to error: {' -> '.join(str(p) for p in e.path)}")
+        logging.error(f" Validation Failed for '{json_path}':")
+        logging.error(f"   Reason: {e.message}")
+        logging.error(f"   Path to error: {' -> '.join(str(p) for p in e.path)}")
         return False
         
     except SchemaError as e:
-        print(f" Error: Your JSON Schema itself is invalid!")
-        print(f"   Reason: {e.message}")
+        logging.error(f" Error: Your JSON Schema itself is invalid!")
+        logging.error(f"   Reason: {e.message}")
         return False
 
     except FileNotFoundError as e:
-        print(f" File not found error: {e}")
+        prilogging.error(f" File not found error: {e}")
         return False
 
 def main(argv):
     primitiveTypes = ["meta-primitive"]
 
     for primitiveType in primitiveTypes:
+
+        logging.info("")
+        logging.info(f"Processing Primitive Type: {primitiveType}")
+
         schemaPath = f"schemas/{primitiveType}.schema.json"
         primitiveFolderPath = Path(f"./primitives/{primitiveType}")
 
         for primitive in list(primitiveFolderPath.glob("*.json")):
+            logging.info(f"Processing Primitive Name: {primitive.name}")
             validate_json_file(schemaPath, primitive)
 
 
