@@ -53,9 +53,13 @@
                         "type": "string",
                         "description": "The name of the parameter."
                     },
-                    "structuralType": {
+                    "aliasStructuralType": {
                         "type" : "string",
-                        "description": "Structural type of the alias"
+                        "description": "Structural type of the alias."
+                    },
+                    "attributeStructuralType": {
+                        "type" : "string",
+                        "description": "Structural type of the attribute."
                     },
                     "required": {
                         "type": "boolean",
@@ -72,10 +76,10 @@
                     "required": ["name"]
                 },
                 "then": {
-                    "required": ["structuralType"]
+                    "required": ["aliasStructuralType"]
                 }
             },
-            "required": ["name", "required"],
+            "required": ["attributeStructuralType", "name", "required"],
             "additionalProperties": false
         }
     },
