@@ -39,3 +39,10 @@ This command regenerates the documentation and then builds the docusaurus server
 npm run serve
 ```
 This command serves the built documentation contained in the dist folder inside the docs folder. Eventually, I will deploy this to github pages.
+
+# Providing feedback
+
+You can use GitHub issues to [report a bug][bug-report] or [request a feature][feature-req].
+
+[bug-report]: https://github.com/vishalpalaniappan/artha-primitives/issues
+[feature-req]: https://github.com/vishalpalaniappan/artha-primitives/issues
