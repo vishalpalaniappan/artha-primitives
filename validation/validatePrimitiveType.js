@@ -39,7 +39,7 @@ const validatePrimitiveType = (validator, primitiveType) => {
             );
 
             if (isValid) {
-                markdownContent += `| \`${file}\` | ✅ Passed | None |\n`;
+                validationReportContent += `| \`${file}\` | ✅ Passed | None |\n`;
             } else {
                 const errorSummary = validate.errors
                     .map((err) => `\`${err.instancePath || "root"}\`: ${err.message}`)
