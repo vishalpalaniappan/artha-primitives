@@ -16,10 +16,7 @@
         "type": {
             "type": "string",
             "enum": [
-                "meta-primitive",
-                "functional-primitive",
-                "computable-primitive",
-                "legacy-primitive"
+                "meta-primitive"
             ],
             "description": "The primitive type."
         },
