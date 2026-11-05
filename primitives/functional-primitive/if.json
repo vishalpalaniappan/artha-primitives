@@ -1,6 +1,8 @@
 {
+    "$schema": "../../schemas/functional-primitive.schema.json",
+    "version": "0.0.0",
     "name": "if",
-    "type": "functional",
+    "type": "functional-primitive",
     "description":"Establishes conditional meaning",
     "syntax": "if",
     "participants": [
@@ -9,10 +11,11 @@
             "required": true
         }
     ],
-    "invariants": {
-        "id_1": {
+    "invariants": [
+        {
+            "id": "inv_1",
             "participants": ["condition"],
-            "property": ["structuralType"],
+            "property": "structuralType",
             "condition": ["boolean"],
             "description": "the condition must be a boolean value",
             "invalidValues": [
@@ -22,5 +25,5 @@
                 }
             ]
         }
-    }
+    ]
 }

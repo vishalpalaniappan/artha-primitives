@@ -87,7 +87,49 @@
             "type": "array",
             "description": "The invariants for this primitive",
             "items": {
+                "type": "object",
+                "properties": {
+                    "participants": {
+                        "type": "array",
+                        "description": "The participants in this invariant.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "property": {
+                        "type": "string",
+                        "description": "The properties involved in this invariant."
+                    },
+                    "condition": {
+                        "type": "array",
+                        "description": "The participants in this invariant.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the invariant."
+                    },
+                    "invalidValues": {
+                        "type": "array",
+                        "description": "Invalid values used to test this invariant.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": ["value", "description"]
+                        }
 
+                    }
+                },
+                "required": ["participants", "property", "condition", "description","invalidValues"]
             }
         },
         "_note": {
