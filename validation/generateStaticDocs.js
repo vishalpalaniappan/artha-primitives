@@ -52,6 +52,14 @@ const generatePrimitivesDocs = async () => {
     })
 }
 
+/**
+ * Generate static docs for the schema. This outputs MD files that are rendered
+ * by the docusaurus site.
+ * 
+ * TODO: The generated MD file doesn't cleanly show conditional properties. I have
+ * experimented with a schema viewer that does include this information. I will replace
+ * the static text based docs with the JSON schema viewer in a later PR.
+ */
 const generateSchemaStaticDocs = async () => {
     const SCHEMAS_PATH = path.join(process.cwd(), "schemas");
     const SCHEMAS_OUTPUT_PATH = path.join(process.cwd(), "docs", "docs", "schemas");
