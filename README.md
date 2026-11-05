@@ -26,9 +26,6 @@ npm run start
 ```
 This command first generates the documentation and then starts the docusaurus server. The site can be found at url http://localhost:3000.
 
-> [!NOTE]
-> Currently, when the documentation is regenerated, after the first time, the server doesn't recompile with the new documentation until I restart the server. There are several reasons why this could be happening and I will investigate and remove this note once the issue has been addressed.
-
 ### Build Documentation
 ```
 npm run build
