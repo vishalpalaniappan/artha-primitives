@@ -22,7 +22,7 @@ const createDir = async(dir) => {
  * a report with validation results. The generated data is written to
  * the docusaurus docs folder and is presented through the site.
  */
-const validateAndGenerateDocs = async () => {
+const validateAndGenerateReport = async () => {
     const VALIDATION_REPORT_DIR = path.join(process.cwd(), "docs", "docs", "validation");
     const MANIFEST_PATH = path.join(process.cwd(), "manifest.json");
 
@@ -39,5 +39,5 @@ const validateAndGenerateDocs = async () => {
     })
 }
 
-module.exports = validateAndGenerateDocs;
+module.exports = validateAndGenerateReport;
 
