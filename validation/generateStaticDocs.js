@@ -14,15 +14,15 @@ const createDir = require("./helper")
 const generatePrimitivesDocs = async () => {
     const MANIFEST_PATH = path.join(process.cwd(), "manifest.json");
     const PRIMITIVES_PATH = path.join(process.cwd(), "primitives");
-    const PRIMITIVE_DOCS_PATH = path.join(process.cwd(), "docs", "docs", "primitives");
+    const PRIMITIVES_DOCS_PATH = path.join(process.cwd(), "docs", "docs", "primitives");
     
-    await createDir(PRIMITIVE_DOCS_PATH);
+    await createDir(PRIMITIVES_DOCS_PATH);
 
     const primitiveTypes = JSON.parse(fs.readFileSync(MANIFEST_PATH, "utf8")).primitiveTypes;
 
     primitiveTypes.forEach(async (primitiveType) => {
         const PRIMITIVE_FOLDER_PATH = path.join(PRIMITIVES_PATH, primitiveType);
-        const PRIMITIVE_DOCS_PATH = path.join(PRIMITIVE_DOCS_PATH, primitiveType);
+        const PRIMITIVE_DOCS_PATH = path.join(PRIMITIVES_DOCS_PATH, primitiveType);
         await createDir(PRIMITIVE_DOCS_PATH);
 
         const files = fs
