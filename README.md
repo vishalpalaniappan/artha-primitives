@@ -26,7 +26,7 @@ This command generates documentation for the primitives and places them in the d
 ```
 npm run start
 ```
-This command first generates the documentation and then starts the docusaurus server. The site can be found at url http://localhost:3000.
+This command first generates the documentation and then starts the docusaurus server. The site can be found at url http://localhost:3000/artha-primitives.
 
 ### Build Documentation
 ```
