@@ -1,8 +1,4 @@
 {
   "label": "Schemas",
-  "position": 1,
-  "link": {
-    "type": "doc",
-    "id": "schemas/index"
-  }
+  "position": 1
 }

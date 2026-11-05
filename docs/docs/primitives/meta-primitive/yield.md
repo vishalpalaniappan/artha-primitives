@@ -1,0 +1,11 @@
+---
+id: yield.json
+title: yield.json
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import myData from './yield.json';
+
+<CodeBlock language="json">
+  {JSON.stringify(myData, null, 2)}
+</CodeBlock>

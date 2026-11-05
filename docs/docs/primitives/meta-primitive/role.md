@@ -1,0 +1,11 @@
+---
+id: role.json
+title: role.json
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import myData from './role.json';
+
+<CodeBlock language="json">
+  {JSON.stringify(myData, null, 2)}
+</CodeBlock>

@@ -29,19 +29,20 @@ const generatePrimitivesDocs = async () => {
             const PRIMITIVE_TARGET_PATH = path.join(PRIMITIVE_TARGET_DOCS_PATH, file);
             await fsPromises.copyFile(PRIMITIVE_SRC_PATH, PRIMITIVE_TARGET_PATH);
 
-            let src = `---`;
-            src += `id: ${file}`;
-            src += `title: ${file}`
-            src += `---`;
-            src += `import CodeBlock from '@theme/CodeBlock';`;
-            src += `import myData from './${file}';`;
-            src += `<CodeBlock language="json">`;
-            src += `  {JSON.stringify(myData, null, 2)}`;
+            let src = `---\n`;
+            src += `id: ${file}\n`;
+            src += `title: ${file}\n`
+            src += `---\n`;
+            src += `\n`;
+            src += `import CodeBlock from '@theme/CodeBlock';\n`;
+            src += `import myData from './${file}';\n`;
+            src += `\n`;
+            src += `<CodeBlock language="json">\n`;
+            src += `  {JSON.stringify(myData, null, 2)}\n`;
             src += `</CodeBlock>`;
 
-            const PRIMITIVE_VIEWER_TARGET_PATH = path.join(PRIMITIVE_TARGET_DOCS_PATH, path.basename(file, ".json") + ".mdx");
+            const PRIMITIVE_VIEWER_TARGET_PATH = path.join(PRIMITIVE_TARGET_DOCS_PATH, path.basename(file, ".json") + ".md");
             fs.writeFileSync(PRIMITIVE_VIEWER_TARGET_PATH, src, "utf8");
-
         });
     })
 }
