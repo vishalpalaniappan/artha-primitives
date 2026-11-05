@@ -5,8 +5,6 @@ const Ajv = require("ajv/dist/2020");
 const validatePrimitiveType = require("./validatePrimitiveType");
 const createDir = require("./helper")
 
-
-
 /**
  * Generates the documentation, validates the primitives and produces
  * a report with validation results. The generated data is written to

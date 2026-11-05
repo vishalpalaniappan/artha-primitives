@@ -1,19 +1,23 @@
+/**
+ * Class used to construct validation report.
+ */
 class ValidationReport {
     constructor(type, numFiles) {
         this.type = type;
         this.numFiles = numFiles;
-        this.reportContent = this.createHeader()
+        this.reportContent = "";
     }
 
+    /**
+     * Create a header for the report with the provided metadata.
+     */
     createHeader() {
-        let validationReportContent = `# ${this.type} Validation Report\n\n`;
-        validationReportContent += `* **Generated At:** ${new Date().toLocaleString()}\n`;
-        validationReportContent += `* **Total Files Checked:** ${this.numFiles}\n\n`;
+        this.reportContent += `# ${this.type} Validation Report\n\n`;
+        this.reportContent += `* **Generated At:** ${new Date().toLocaleString()}\n`;
+        this.reportContent += `* **Total Files Checked:** ${this.numFiles}\n\n`;
     
-        validationReportContent += `| File Name | Status | Error Summary |\n`;
-        validationReportContent += `| :--- | :---: | :--- |\n`;
-
-        return validationReportContent;
+        this.reportContent += `| File Name | Status | Error Summary |\n`;
+        this.reportContent += `| :--- | :---: | :--- |\n`;
     }
 
     addSuccess(file) {
