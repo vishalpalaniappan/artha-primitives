@@ -18,7 +18,7 @@ description: A schema definition for meta-primitive files.
 
 ## Properties
 
-<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#$schema">$schema</a></td><td>String</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#type">type</a></td><td>String</td></tr><tr><td colspan="2"><a href="#version">version</a></td><td>String</td></tr><tr><td colspan="2"><a href="#syntax">syntax</a></td><td>String</td></tr><tr><td colspan="2"><a href="#description">description</a></td><td>String</td></tr><tr><td colspan="2"><a href="#alias">alias</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#attributes">attributes</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#_note">_note</a></td><td>String</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#$schema">$schema</a></td><td>String</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#type">type</a></td><td>String</td></tr><tr><td colspan="2"><a href="#version">version</a></td><td>String</td></tr><tr><td colspan="2"><a href="#syntax">syntax</a></td><td>String</td></tr><tr><td colspan="2"><a href="#description">description</a></td><td>String</td></tr><tr><td colspan="2"><a href="#attributes">attributes</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#_note">_note</a></td><td>String</td></tr></tbody></table>
 
 
 
@@ -153,46 +153,6 @@ description: A schema definition for meta-primitive files.
     
   </tbody>
 </table>
-
-
-
-
-## alias
-
-
-<table class="jssd-property-table">
-  <tbody>
-    <tr><th>Type</th><td colspan="2">Object</td></tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">No</td>
-    </tr>
-    
-  </tbody>
-</table>
-
-### Properties
-  <table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#aliasname">name</a></td><td>String</td></tr></tbody></table>
-
-
-### alias.name
-
-
-<table class="jssd-property-table">
-  <tbody>
-    <tr>
-      <th>Description</th>
-      <td colspan="2">The name of the parameter.</td>
-    </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">Yes</td>
-    </tr>
-    
-  </tbody>
-</table>
-
 
 
 
@@ -350,19 +310,6 @@ description: A schema definition for meta-primitive files.
         "description": {
             "type": "string",
             "description": "The description of the primitive."
-        },
-        "alias": {
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "description": "The name of the parameter."
-                }
-            },
-            "required": [
-                "name"
-            ],
-            "additionalProperties": false
         },
         "attributes": {
             "type": "array",
