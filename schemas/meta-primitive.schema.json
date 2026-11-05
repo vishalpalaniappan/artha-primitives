@@ -4,6 +4,7 @@
     "title": "MetaPrimitive",
     "description": "A schema definition for meta-primitive files.",
     "type": "object",
+    "additionalProperties": false,
     "properties": {
         "$schema": {
             "type": "string",
@@ -67,10 +68,10 @@
                 },
                 "then": {
                     "required": ["aliasStructuralType"]
-                }
-            },
-            "required": ["attributeStructuralType", "name", "required"],
-            "additionalProperties": false
+                },
+                "required": ["attributeStructuralType", "name", "required"],
+                "additionalProperties": false
+            }
         },
         "_note": {
             "type": "string",
@@ -84,6 +85,5 @@
         "syntax",
         "description",
         "attributes"
-    ],
-    "additionalProperties": false
+    ]
 }

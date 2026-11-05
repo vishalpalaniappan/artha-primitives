@@ -78,10 +78,10 @@
                 },
                 "then": {
                     "required": ["aliasStructuralType"]
-                }
-            },
-            "required": ["attributeStructuralType", "name", "required"],
-            "additionalProperties": false
+                },
+                "required": ["attributeStructuralType", "name", "required"],
+                "additionalProperties": false
+            }
         },
         "invariants": {
             "type": "array",
