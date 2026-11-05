@@ -4,6 +4,13 @@ const fs = require("fs");
 const fsPromises = require("fs/promises");
 const createDir = require("./helper")
 
+/**
+ * Generate the documentation for the primitives. Currently, this involves copying
+ * the JSON file to the docs folder and creating a MD file which loads the JSON file.
+ * 
+ * TODO: Current page is very basic, I will look into alternatives for a more effective
+ * way to present the JSON structure.
+ */
 const generatePrimitivesDocs = async () => {
     const MANIFEST_PATH = path.join(process.cwd(), "manifest.json");
     const PRIMITIVES_PATH = path.join(process.cwd(), "primitives");
@@ -11,14 +18,12 @@ const generatePrimitivesDocs = async () => {
     
     await createDir(PRIMITIVE_DOCS_PATH);
 
-    const primitiveTypes = JSON.parse(
-        fs.readFileSync(MANIFEST_PATH, "utf8")
-    ).primitiveTypes;
+    const primitiveTypes = JSON.parse(fs.readFileSync(MANIFEST_PATH, "utf8")).primitiveTypes;
 
     primitiveTypes.forEach(async (primitiveType) => {
         const PRIMITIVE_FOLDER_PATH = path.join(PRIMITIVES_PATH, primitiveType);
-        const PRIMITIVE_TARGET_DOCS_PATH = path.join(PRIMITIVE_DOCS_PATH, primitiveType);
-        await createDir(PRIMITIVE_TARGET_DOCS_PATH);
+        const PRIMITIVE_DOCS_PATH = path.join(PRIMITIVE_DOCS_PATH, primitiveType);
+        await createDir(PRIMITIVE_DOCS_PATH);
 
         const files = fs
             .readdirSync(PRIMITIVE_FOLDER_PATH)
@@ -26,7 +31,7 @@ const generatePrimitivesDocs = async () => {
 
         files.forEach(async (file) => {
             const PRIMITIVE_SRC_PATH = path.join(PRIMITIVE_FOLDER_PATH, file);
-            const PRIMITIVE_TARGET_PATH = path.join(PRIMITIVE_TARGET_DOCS_PATH, file);
+            const PRIMITIVE_TARGET_PATH = path.join(PRIMITIVE_DOCS_PATH, file);
             await fsPromises.copyFile(PRIMITIVE_SRC_PATH, PRIMITIVE_TARGET_PATH);
 
             let src = `---\n`;
@@ -41,8 +46,8 @@ const generatePrimitivesDocs = async () => {
             src += `  {JSON.stringify(myData, null, 2)}\n`;
             src += `</CodeBlock>`;
 
-            const PRIMITIVE_VIEWER_TARGET_PATH = path.join(PRIMITIVE_TARGET_DOCS_PATH, path.basename(file, ".json") + ".md");
-            fs.writeFileSync(PRIMITIVE_VIEWER_TARGET_PATH, src, "utf8");
+            const PRIMITIVE_MD_TARGET_PATH = path.join(PRIMITIVE_DOCS_PATH, path.basename(file, ".json") + ".md");
+            fs.writeFileSync(PRIMITIVE_MD_TARGET_PATH, src, "utf8");
         });
     })
 }
