@@ -39,6 +39,7 @@
             "description": "The participants in this primitive",
             "items": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "name": {
                         "type": "string",
@@ -54,6 +55,10 @@
                         "default": false
                     }
                 },
+                "required": [
+                    "name",
+                    "required"
+                ],
                 "if": {
                     "properties": {
                         "name": {
@@ -65,15 +70,15 @@
                     ]
                 },
                 "then": {
+                    "properties": { 
+                        "aliasStructuralType": { 
+                            "type": "string" 
+                        } 
+                    },
                     "required": [
                         "aliasStructuralType"
                     ]
-                },
-                "additionalProperties": false,
-                "required": [
-                    "name",
-                    "required"
-                ]
+                }
             }
         },
         "_note": {

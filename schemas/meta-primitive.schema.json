@@ -67,6 +67,11 @@
                     "required": ["name"]
                 },
                 "then": {
+                    "properties": { 
+                        "aliasStructuralType": { 
+                            "type": "string" 
+                        } 
+                    },
                     "required": ["aliasStructuralType"]
                 },
                 "required": ["attributeStructuralType", "name", "required"],
