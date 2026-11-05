@@ -6,10 +6,10 @@
     "scripts": {
         "install:all": "npm install && cd docs && npm install",
         "generate-documentation": "node ./generate-docs.js",
-        "build:all": "npm run generate-schemas && docusaurus build",
-        "docusaurus": "docusaurus",
-        "start": "docusaurus start",
-        "build": "docusaurus build"
+        "build:all": "npm run generate-documentation && cd docs && npx docusaurus build",
+        "docusaurus": "npm run generate-documentation && cd docs && npx docusaurus",
+        "start": "npm run generate-documentation && cd docs && npx docusaurus start",
+        "build": "npm run generate-documentation && cd docs && npx docusaurus build"
     },
     "repository": {
         "type": "git",
