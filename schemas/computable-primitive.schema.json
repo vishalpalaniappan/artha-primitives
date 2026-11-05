@@ -1,0 +1,155 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/meta-primitive.schema.json",
+    "title": "ComputablePrimitive",
+    "description": "A schema definition for computable-primitive files.",
+    "type": "object",
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "URI reference to the JSON schema."
+        },
+        "name": {
+            "type": "string",
+            "description": "The unique identifier name of the meta-primitive."
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "computable-primitive"
+            ],
+            "description": "The primitive type."
+        },
+        "version": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+$",
+            "description": "Semantic version string (e.g., 1.0.0)."
+        },
+        "syntax": {
+            "type": "string",
+            "description": "The syntax of the primitive."
+        },
+        "description": {
+            "type": "string",
+            "description": "The description of the primitive."
+        },
+        "participants": {
+            "type": "array",
+            "description": "The participants in this primitive",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the parameter."
+                    },
+                    "aliasStructuralType": {
+                        "type": "string",
+                        "description": "Structural type of the alias."
+                    },
+                    "attributeStructuralType": {
+                        "type": "string",
+                        "description": "Structural type of the attribute."
+                    },
+                    "required": {
+                        "type": "boolean",
+                        "description": "Indicates if this attribute is required for the primitive.",
+                        "default": false
+                    }
+                },
+                "if": {
+                    "properties": {
+                        "name": {
+                            "const": "alias"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ]
+                },
+                "then": {
+                    "required": [
+                        "aliasStructuralType"
+                    ]
+                }
+            },
+            "required": [
+                "attributeStructuralType",
+                "name",
+                "required"
+            ],
+            "additionalProperties": false
+        },
+        "_note": {
+            "type": "string",
+            "description": "Add optional note for primitive."
+        },
+        "invariants": {
+            "type": "array",
+            "description": "The invariants for this primitive",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "participants": {
+                        "type": "array",
+                        "description": "The participants in this invariant.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "property": {
+                        "type": "string",
+                        "description": "The properties involved in this invariant."
+                    },
+                    "condition": {
+                        "type": "array",
+                        "description": "The participants in this invariant.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the invariant."
+                    },
+                    "invalidValues": {
+                        "type": "array",
+                        "description": "Invalid values used to test this invariant.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "value",
+                                "description"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "participants",
+                    "property",
+                    "condition",
+                    "description",
+                    "invalidValues"
+                ]
+            }
+        }
+    },
+    "required": [
+        "name",
+        "type",
+        "version",
+        "syntax",
+        "description",
+        "participants",
+        "invariants"
+    ],
+    "additionalProperties": false
+}
