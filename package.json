@@ -22,6 +22,7 @@
     },
     "homepage": "https://github.com/vishalpalaniappan/artha-primitives#readme",
     "dependencies": {
+        "ajv": "^8.20.0",
         "json-schema-static-docs": "^0.28.1"
     }
 }
