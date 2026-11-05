@@ -1,7 +1,7 @@
 {
     "$schema": "../../schemas/computable-primitive.schema.json",
-    "version": "0.0.0",
     "name": "equals",
+    "version": "0.0.0",
     "type": "computable-primitive",
     "description":"Checks if two values are equal.",
     "syntax": "equals",
