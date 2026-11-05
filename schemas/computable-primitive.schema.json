@@ -47,10 +47,6 @@
                         "type": "string",
                         "description": "Structural type of the alias."
                     },
-                    "attributeStructuralType": {
-                        "type": "string",
-                        "description": "Structural type of the attribute."
-                    },
                     "required": {
                         "type": "boolean",
                         "description": "Indicates if this attribute is required for the primitive.",
@@ -74,7 +70,6 @@
                 }
             },
             "required": [
-                "attributeStructuralType",
                 "name",
                 "required"
             ],
