@@ -91,6 +91,10 @@
             "items": {
                 "type": "object",
                 "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Unique id for the invariant"
+                    },
                     "participants": {
                         "type": "array",
                         "description": "The participants in this invariant.",
@@ -134,6 +138,7 @@
                     }
                 },
                 "required": [
+                    "id",
                     "participants",
                     "property",
                     "condition",
