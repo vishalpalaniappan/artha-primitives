@@ -1,21 +1,11 @@
 
 const fs = require("fs");
-const fsPromises = require("fs/promises");
 const path = require("path");
 const Ajv = require("ajv/dist/2020");
-const validatePrimitiveType = require("./validatePrimitiveType")
+const validatePrimitiveType = require("./validatePrimitiveType");
+const createDir = require("./helper")
 
-/**
- * Creates the directory if it doesn't exist.
- * @param {String} dir 
- */
-const createDir = async(dir) => {
-    try {
-        await fsPromises.mkdir(dir, { recursive: true });
-    } catch (err) {
-        console.error("Error creating directory:", err);
-    }
-}
+
 
 /**
  * Generates the documentation, validates the primitives and produces

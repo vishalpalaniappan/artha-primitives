@@ -5,7 +5,7 @@
     "main": "./src/index.js",
     "scripts": {
         "install:all": "npm install && cd docs && npm install",
-        "generate-schemas": "node ./generate-docs.js",
+        "generate-documentation": "node ./generate-docs.js",
         "build:all": "npm run generate-schemas && docusaurus build",
         "docusaurus": "docusaurus",
         "start": "docusaurus start",
