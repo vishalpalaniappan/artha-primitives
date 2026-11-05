@@ -1,6 +1,7 @@
 {
     "name": "insert_at_end_of_list",
-    "type": "computable_primitive",
+    "version": "0.0.0",
+    "type": "computable-primitive",
     "description":"Inserts item to end of list.",
     "syntax": "insert_at_end_of_list",
     "participants": [
@@ -13,8 +14,8 @@
             "required": true
         }
     ],
-    "invariants": {
-        "id_1": {
+    "invariants": [
+        {
             "participants": ["list"],
             "property": ["structuralType"],
             "condition": ["list"],
@@ -26,5 +27,5 @@
                 }
             ]
         }
-    }
+    ]
 }

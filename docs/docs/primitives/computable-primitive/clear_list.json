@@ -1,6 +1,7 @@
 {
     "name": "clear_list",
-    "type": "computable_primitive",
+    "version": "0.0.0",
+    "type": "computable-primitive",
     "description":"Removes all items from a list.",
     "syntax": "clear_list",
     "participants": [
@@ -9,10 +10,10 @@
             "required": true
         }
     ],
-    "invariants": {
-        "id_1": {
+    "invariants": [
+        {
             "participants": ["list"],
-            "property": ["structuralType"],
+            "property": "structuralType",
             "condition": ["list"],
             "description": "list must have structuralType List.",
             "invalidValues": [
@@ -22,5 +23,5 @@
                 }
             ]
         }
-    }
+    ]
 }
