@@ -108,6 +108,8 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+    
+    plugins: ['docusaurus-json-schema-plugin'],
 };
 
 export default config;
