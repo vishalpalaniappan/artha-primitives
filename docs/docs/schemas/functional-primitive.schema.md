@@ -306,6 +306,23 @@ description: A schema definition for functional-primitive files.
 
 
 
+### invariants.id
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Unique id for the invariant</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    
+  </tbody>
+</table>
+
+
+
+
 ### invariants.participants
 
 
@@ -554,6 +571,10 @@ description: A schema definition for functional-primitive files.
             "items": {
                 "type": "object",
                 "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Unique id for the invariant"
+                    },
                     "participants": {
                         "type": "array",
                         "description": "The participants in this invariant.",
@@ -597,6 +618,7 @@ description: A schema definition for functional-primitive files.
                     }
                 },
                 "required": [
+                    "id",
                     "participants",
                     "property",
                     "condition",

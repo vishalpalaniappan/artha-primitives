@@ -1,4 +1,5 @@
 {
+    "$schema": "../../schemas/computable-primitive.schema.json",
     "name": "insert_at_end_of_list",
     "version": "0.0.0",
     "type": "computable-primitive",
@@ -16,8 +17,9 @@
     ],
     "invariants": [
         {
+            "id": "1",
             "participants": ["list"],
-            "property": ["structuralType"],
+            "property": "structuralType",
             "condition": ["list"],
             "description": "list must have structuralType List.",
             "invalidValues": [
