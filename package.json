@@ -9,7 +9,8 @@
         "docusaurus": "npm run generate-documentation && cd docs && npx docusaurus",
         "start": "npm run generate-documentation && cd docs && npx docusaurus start",
         "build": "npm run generate-documentation && cd docs && npx docusaurus build",
-        "serve": "cd docs && npm run serve"
+        "serve": "cd docs && npm run serve",
+        "deploy": "npm run build && gh-pages -d docs/build"
     },
     "repository": {
         "type": "git",
