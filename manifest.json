@@ -1,0 +1,8 @@
+{
+    "primitiveTypes": [
+        "computable-primitive",
+        "functional-primitive",
+        "computable-legacy-primitive",
+        "meta-primitive"
+    ]
+}
