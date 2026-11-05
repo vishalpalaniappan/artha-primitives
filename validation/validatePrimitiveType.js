@@ -1,8 +1,7 @@
-const JsonSchemaStaticDocs = require("json-schema-static-docs");
 const fs = require("fs");
-const fsPromises = require("fs/promises");
 const path = require("path");
 const Ajv = require("ajv/dist/2020");
+
 
 /**
  * Given the primitive type, this method validates all the primitives
@@ -14,12 +13,12 @@ const Ajv = require("ajv/dist/2020");
  */
 const validatePrimitiveType = (validator, primitiveType) => {
     const SCHEMA_PATH = path.join(
-        __dirname,
+        process.cwd(),
         "schemas",
         `${primitiveType}.schema.json`,
     );
     const PRIMITIVE_FOLDER_PATH = path.join(
-        __dirname,
+        process.cwd(),
         "primitives",
         `${primitiveType}`,
     );
@@ -61,9 +60,18 @@ const validatePrimitiveType = (validator, primitiveType) => {
         }
     });
 
+
+    
+    const VALIDATION_REPORT_PATH = path.join(
+        process.cwd(),
+        "docs",
+        "docs",
+        "validation",
+        `${primitiveType}-validation-report.md`,
+    );
+
     // Write report to file
-    fs.writeFileSync(
-        `./docs/docs/validation/${primitiveType}-validation-report.md`,
+    fs.writeFileSync(VALIDATION_REPORT_PATH,
         markdownContent,
         "utf8",
     );
@@ -72,36 +80,5 @@ const validatePrimitiveType = (validator, primitiveType) => {
     );
 };
 
-(async () => {
-    // Generate Static Documentation for each Schema
-    let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
-        inputPath: "./schemas",
-        outputPath: "./docs/docs/schemas",
-        jsonSchemaVersion: "https://json-schema.org/draft/2020-12/schema",
-        ajvOptions: {
-          allowUnionTypes: true,
-        },
-        addFrontMatter: true,
-        createIndex: true,
-        displaySchema: true,
-    });
 
-    await jsonSchemaStaticDocs.generate();
-    console.log("HTML documentation generated successfully.");
-
-    // Create validation directory in docs folder if it doesn't already exist.
-    try {
-        await fsPromises.mkdir("./docs/docs/validation", { recursive: true });
-    } catch (err) {
-        console.error("Error creating directory:", err);
-    }
-
-    const ajv = new Ajv({ allErrors: true, strict: true });
-
-    // Validate all the primitives for each type
-    const primitiveTypes = JSON.parse(fs.readFileSync("./manifest.json", "utf8")).primitiveTypes;
-    primitiveTypes.forEach((primitiveType) => {
-        validatePrimitiveType(ajv, primitiveType);
-    })
-    
-})();
+module.exports = validatePrimitiveType;
