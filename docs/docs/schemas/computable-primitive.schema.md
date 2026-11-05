@@ -397,6 +397,7 @@ description: A schema definition for computable-primitive files.
     "title": "ComputablePrimitive",
     "description": "A schema definition for computable-primitive files.",
     "type": "object",
+    "additionalProperties": false,
     "properties": {
         "$schema": {
             "type": "string",
@@ -431,6 +432,7 @@ description: A schema definition for computable-primitive files.
             "description": "The participants in this primitive",
             "items": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "name": {
                         "type": "string",
@@ -446,6 +448,10 @@ description: A schema definition for computable-primitive files.
                         "default": false
                     }
                 },
+                "required": [
+                    "name",
+                    "required"
+                ],
                 "if": {
                     "properties": {
                         "name": {
@@ -457,16 +463,16 @@ description: A schema definition for computable-primitive files.
                     ]
                 },
                 "then": {
+                    "properties": {
+                        "aliasStructuralType": {
+                            "type": "string"
+                        }
+                    },
                     "required": [
                         "aliasStructuralType"
                     ]
                 }
-            },
-            "required": [
-                "name",
-                "required"
-            ],
-            "additionalProperties": false
+            }
         },
         "_note": {
             "type": "string",
@@ -538,8 +544,7 @@ description: A schema definition for computable-primitive files.
         "description",
         "participants",
         "invariants"
-    ],
-    "additionalProperties": false
+    ]
 }
 ```
 

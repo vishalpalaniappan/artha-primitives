@@ -531,17 +531,22 @@ description: A schema definition for functional-primitive files.
                     ]
                 },
                 "then": {
+                    "properties": {
+                        "aliasStructuralType": {
+                            "type": "string"
+                        }
+                    },
                     "required": [
                         "aliasStructuralType"
                     ]
-                }
-            },
-            "required": [
-                "attributeStructuralType",
-                "name",
-                "required"
-            ],
-            "additionalProperties": false
+                },
+                "required": [
+                    "attributeStructuralType",
+                    "name",
+                    "required"
+                ],
+                "additionalProperties": false
+            }
         },
         "invariants": {
             "type": "array",

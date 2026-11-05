@@ -282,6 +282,7 @@ description: A schema definition for meta-primitive files.
     "title": "MetaPrimitive",
     "description": "A schema definition for meta-primitive files.",
     "type": "object",
+    "additionalProperties": false,
     "properties": {
         "$schema": {
             "type": "string",
@@ -346,17 +347,22 @@ description: A schema definition for meta-primitive files.
                     ]
                 },
                 "then": {
+                    "properties": {
+                        "aliasStructuralType": {
+                            "type": "string"
+                        }
+                    },
                     "required": [
                         "aliasStructuralType"
                     ]
-                }
-            },
-            "required": [
-                "attributeStructuralType",
-                "name",
-                "required"
-            ],
-            "additionalProperties": false
+                },
+                "required": [
+                    "attributeStructuralType",
+                    "name",
+                    "required"
+                ],
+                "additionalProperties": false
+            }
         },
         "_note": {
             "type": "string",
@@ -370,8 +376,7 @@ description: A schema definition for meta-primitive files.
         "syntax",
         "description",
         "attributes"
-    ],
-    "additionalProperties": false
+    ]
 }
 ```
 
