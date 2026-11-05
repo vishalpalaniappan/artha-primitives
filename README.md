@@ -1,6 +1,8 @@
 # Artha Primitives
 
-A collection of primitives used in the Artha language. Initially, I had added it to the Artha repo but I decided to establish it as a standalone repository so that I can create a documentation page for it and then import it into the systems that use it.
+A collection of primitives used in the Artha language. This repo currently specifies the schema for each primitive type and contains specifications built and validated using the primitive schema. It also contains a docusaurus server that aggregates all the information and also contains a report of the primitive validation using the schema.
+
+The repo will be extended to include schemas generated from the established primitive schemas to validate the use of the primitives and to also use the invariants to validate the correctness of how the primitive is used in a narrative. The entire process will draw from a single source of truth and this is laying the foundation for that process.
 
 # Usage
 
