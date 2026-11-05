@@ -1,8 +1,8 @@
-const JsonSchemaStaticDocs = require("json-schema-static-docs");
-const path = require("path");
+const createDir = require("./helper")
 const fs = require("fs");
 const fsPromises = require("fs/promises");
-const createDir = require("./helper")
+const JsonSchemaStaticDocs = require("json-schema-static-docs");
+const path = require("path");
 
 /**
  * Generate the documentation for the primitives. Currently, this involves copying
@@ -81,7 +81,7 @@ const generateSchemaStaticDocs = async () => {
 }
 
 /**
- * Generates static documentation from the schemas.
+ * Generates static documentation from the schemas and primitives.
  */
 const generateStaticDocs = async () => {
     generateSchemaStaticDocs();
