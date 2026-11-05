@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const Ajv = require("ajv/dist/2020");
+const ValidationReport = require("./ValidationReport")
 
 /**
  * Given the primitive type, this method validates all the primitives
@@ -24,44 +25,29 @@ const validatePrimitiveType = (validator, primitiveType) => {
         .filter((f) => f.endsWith(".json"));
 
     // Start report markdown content
-    let validationReportContent = `# ${primitiveType} Validation Report\n\n`;
-    validationReportContent += `* **Generated At:** ${new Date().toLocaleString()}\n`;
-    validationReportContent += `* **Total Files Checked:** ${files.length}\n\n`;
+    const report = new ValidationReport(primitiveType, files.length);
 
-    validationReportContent += `| File Name | Status | Error Summary |\n`;
-    validationReportContent += `| :--- | :---: | :--- |\n`;
-
+    // Validate each primitive
     files.forEach((file) => {
         try {
             const PRIMITIVE_FILE_PATH = path.join(PRIMITIVE_FOLDER_PATH, file);
-            const isValid = validate(
-                JSON.parse(fs.readFileSync(PRIMITIVE_FILE_PATH, "utf8")),
-            );
-
+            const isValid = validate(JSON.parse(fs.readFileSync(PRIMITIVE_FILE_PATH, "utf8")));
             if (isValid) {
-                validationReportContent += `| \`${file}\` | ✅ Passed | None |\n`;
+                report.addSuccess(file);
             } else {
-                const errorSummary = validate.errors
-                    .map((err) => `\`${err.instancePath || "root"}\`: ${err.message}`)
-                    .join('<br/>');
-                validationReportContent += `| \`${file}\` | ❌ Failed | ${errorSummary} |\n`;
+                report.addFail(file, validate);
             }
         } catch (err) {
-            validationReportContent += `| \`${file}\` | ⚠️ Parse Error | ${err.message} |\n`;
+            report.addParseError(file);
         }
     });
     
+    // Write content to file
     const DOCS_PATH = path.join( process.cwd(), "docs", "docs");
     const VALIDATION_REPORT_PATH = path.join( DOCS_PATH, "validation", `${primitiveType}-validation-report.md`);
+    fs.writeFileSync(VALIDATION_REPORT_PATH, report.getContent(), "utf8");
 
-    // Write report to file
-    fs.writeFileSync(VALIDATION_REPORT_PATH,
-        validationReportContent,
-        "utf8",
-    );
-    console.log(
-        `Validation complete! Report written to ${primitiveType}-validation-report.md`,
-    );
+    console.log(`Validation complete! Report written to ${primitiveType}-validation-report.md`);
 };
 
 
