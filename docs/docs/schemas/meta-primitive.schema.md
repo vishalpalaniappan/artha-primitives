@@ -83,7 +83,7 @@ description: A schema definition for meta-primitive files.
     </tr>
     <tr>
       <th>Enum</th>
-      <td colspan="2"><ul><li>meta-primitive</li><li>functional-primitive</li><li>computable-primitive</li><li>legacy-primitive</li></ul></td>
+      <td colspan="2"><ul><li>meta-primitive</li></ul></td>
     </tr>
   </tbody>
 </table>
@@ -334,10 +334,7 @@ description: A schema definition for meta-primitive files.
         "type": {
             "type": "string",
             "enum": [
-                "meta-primitive",
-                "functional-primitive",
-                "computable-primitive",
-                "legacy-primitive"
+                "meta-primitive"
             ],
             "description": "The primitive type."
         },
