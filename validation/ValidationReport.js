@@ -6,6 +6,7 @@ class ValidationReport {
         this.type = type;
         this.numFiles = numFiles;
         this.reportContent = "";
+        this.errors = "";
         this.createHeader();
     }
 
@@ -29,11 +30,15 @@ class ValidationReport {
         const errorSummary = validationInfo.errors
             .map((err) => `\`${err.instancePath || "root"}\`: ${err.message}`)
             .join('<br/>');
-        this.reportContent += `| \`${file}\` | ❌ Failed | ${errorSummary} |\n`;
+        this.errors += errorSummary;
     }
 
     addParseError(file, msg) {
         this.reportContent += `| \`${file}\` | ⚠️ Parse Error | ${msg} |\n`;
+    }
+
+    generateErrorMessage() {
+        this.reportContent += this.errors;
     }
 
     getContent() {

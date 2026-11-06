@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const Ajv = require("ajv/dist/2020");
-const ValidationReport = require("./ValidationReport")
+const ValidationReport = require("./ValidationReport");
 
 /**
  * Given the primitive type, this method validates all the primitives
@@ -45,6 +45,8 @@ const validatePrimitiveType = (validator, primitiveType) => {
         } else {
             report.addFail(file, validate);
         }
+
+        report.generateErrorMessage();
     });
     
     // Write content to file
