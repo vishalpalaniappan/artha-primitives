@@ -37,8 +37,12 @@ class ValidationReport {
         this.reportContent += `| \`${file}\` | ⚠️ Parse Error | ${msg} |\n`;
     }
 
-    generateErrorMessage() {
-        this.reportContent += this.errors;
+    addUniquenessError(name) {
+        this.errors += "Not unique" + "<br/>";
+    }
+
+    generateErrorMessage(file) {
+        this.reportContent += `| \`${file}\` | ❌ Failed | ${this.errors} |\n`;
     }
 
     getContent() {

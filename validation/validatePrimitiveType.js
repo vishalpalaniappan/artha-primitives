@@ -3,6 +3,8 @@ const path = require("path");
 const Ajv = require("ajv/dist/2020");
 const ValidationReport = require("./ValidationReport");
 
+const registeredNames = new Set();
+
 /**
  * Given the primitive type, this method validates all the primitives
  * in the folder using the relevant schema and produces a report in MD
@@ -40,13 +42,27 @@ const validatePrimitiveType = (validator, primitiveType) => {
             return;
         }
 
-        if (isValidJSON) {
-            report.addSuccess(file);
-        } else {
+        if (!isValidJSON) {
             report.addFail(file, validate);
         }
 
-        report.generateErrorMessage();
+        let isUnique = true;
+        if ("name" in parsedJSON && registeredNames.has(parsedJSON.name)) {
+            isUnique = false;
+        } else {
+            registeredNames.add(parsedJSON.name);
+        }
+
+        if (!isUnique) {
+            report.addUniquenessError(parsedJSON.name);
+        }
+
+        if (!isValidJSON || !isUnique) {
+            report.generateErrorMessage(file);
+        } else {
+            report.addSuccess(file);
+        }
+
     });
     
     // Write content to file
