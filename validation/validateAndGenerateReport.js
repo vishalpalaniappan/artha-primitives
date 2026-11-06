@@ -22,6 +22,8 @@ const validateAndGenerateReport = async () => {
         fs.readFileSync(MANIFEST_PATH, "utf8")
     ).primitiveTypes;
 
+    // TODO: Validate that the primitive name and syntax is unique.
+
     primitiveTypes.forEach((primitiveType) => {
         validatePrimitiveType(ajv, primitiveType);
     })
