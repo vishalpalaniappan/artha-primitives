@@ -6,6 +6,7 @@ class ValidationReport {
         this.type = type;
         this.numFiles = numFiles;
         this.reportContent = "";
+        this.createHeader();
     }
 
     /**
