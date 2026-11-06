@@ -39,7 +39,7 @@ const validatePrimitiveType = (validator, primitiveType) => {
         try {
             parsedJSON = JSON.parse(fs.readFileSync(PRIMITIVE_FILE_PATH, "utf8"));
         } catch (err) {
-            report.addParseError(file, err);
+            report.addParseError(file, err.message);
             return;
         }
 
