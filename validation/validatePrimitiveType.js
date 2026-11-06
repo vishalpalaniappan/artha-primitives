@@ -32,16 +32,16 @@ const validatePrimitiveType = (validator, primitiveType) => {
     // Validate each primitive
     files.forEach((file) => {
         const PRIMITIVE_FILE_PATH = path.join(PRIMITIVE_FOLDER_PATH, file);
-        const parsedJSON = JSON.parse(fs.readFileSync(PRIMITIVE_FILE_PATH, "utf8"));
-        let isValidJSON;
 
+        let parsedJSON;
         try {
-            isValidJSON = validate(parsedJSON);
+            parsedJSON = JSON.parse(fs.readFileSync(PRIMITIVE_FILE_PATH, "utf8"));
         } catch (err) {
             report.addParseError(file);
             return;
         }
 
+        const isValidJSON = validate(parsedJSON);
         if (!isValidJSON) {
             report.addFail(validate);
         }
