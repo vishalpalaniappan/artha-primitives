@@ -87,7 +87,7 @@ const config = {
             position: 'left',
             label: 'Primitives',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/vishalpalaniappan/artha-primitives',
             label: 'GitHub',
