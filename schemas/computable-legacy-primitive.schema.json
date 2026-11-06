@@ -12,7 +12,7 @@
         },
         "name": {
             "type": "string",
-            "description": "The unique identifier of the meta-primitive and is also the syntax used to invoke the primitive."
+            "description": "The unique identifier of the computable-legacy-primitive and is also the syntax used to invoke the primitive."
         },
         "type": {
             "type": "string",
