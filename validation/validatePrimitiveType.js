@@ -43,7 +43,7 @@ const validatePrimitiveType = (validator, primitiveType) => {
         }
 
         if (!isValidJSON) {
-            report.addFail(file, validate);
+            report.addFail(validate);
         }
 
         let isUnique = true;

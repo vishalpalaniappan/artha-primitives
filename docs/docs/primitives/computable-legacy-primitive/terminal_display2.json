@@ -3,6 +3,7 @@
     "name": "terminal_display",
     "type": "computable-legacy-primitive",
     "description":"Displays the provided text in the console.",
+    "syntax": "terminal_display",
     "participants": [
         {
             "name": "message",
