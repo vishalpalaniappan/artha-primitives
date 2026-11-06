@@ -6,6 +6,7 @@ class ValidationReport {
         this.type = type;
         this.numFiles = numFiles;
         this.reportContent = "";
+        this.errors = "";
         this.createHeader();
     }
 
@@ -21,21 +22,68 @@ class ValidationReport {
         this.reportContent += `| :--- | :---: | :--- |\n`;
     }
 
+    /**
+     * Add success message to the validation report.
+     * @param {String} file 
+     */
     addSuccess(file) {
         this.reportContent += `| \`${file}\` | ✅ Passed | None |\n`;
     }
 
-    addFail(file, validationInfo) {
+    /**
+     * Map the validation report errors to create a list of errors that
+     * can be displayed in the validation report.
+     *
+     * @param {Object} validationInfo 
+     */
+    addFail(validationInfo) {
         const errorSummary = validationInfo.errors
-            .map((err) => `\`${err.instancePath || "root"}\`: ${err.message}`)
+            .map((err) => `• \`${err.instancePath || "root"}\`: ${err.message}`)
             .join('<br/>');
-        this.reportContent += `| \`${file}\` | ❌ Failed | ${errorSummary} |\n`;
+        this.errors += errorSummary;
     }
 
+    /**
+     * Add parser error to the validation report. The process failed at the parser
+     * stage and the validation was never initiated.
+     * 
+     * @param {String} file 
+     * @param {String} msg 
+     */
     addParseError(file, msg) {
         this.reportContent += `| \`${file}\` | ⚠️ Parse Error | ${msg} |\n`;
     }
 
+    /**
+     * Indicate that the primitive name is not unique.
+     * 
+     * @param {String} name 
+     */
+    addUniquenessError(name) {
+        this.errors += "<br/>" + `• Primitive named ${name} is not unique` + "<br/>";
+    }
+
+    /**
+     * Clear the errors between each file in the primitive list.
+     */
+    clearErrors() {
+        this.errors = "";
+    }
+
+    /**
+     * Generate an error message from the collected errors.
+     * 
+     * @param {String} file 
+     */
+    generateErrorMessage(file) {
+        this.reportContent += `| \`${file}\` | ❌ Failed | ${this.errors} |\n`;
+    }
+
+    /**
+     * Get the report content for writing to file.
+     * 
+     * @returns {String}
+     */
     getContent() {
         return this.reportContent;
     }

@@ -20,7 +20,7 @@ const generatePrimitivesDocs = async () => {
 
     const primitiveTypes = JSON.parse(fs.readFileSync(MANIFEST_PATH, "utf8")).primitiveTypes;
 
-    primitiveTypes.forEach(async (primitiveType) => {
+    for (const primitiveType of primitiveTypes) {
         const PRIMITIVE_FOLDER_PATH = path.join(PRIMITIVES_PATH, primitiveType);
         const PRIMITIVE_DOCS_PATH = path.join(PRIMITIVES_DOCS_PATH, primitiveType);
         await createDir(PRIMITIVE_DOCS_PATH);
@@ -29,7 +29,7 @@ const generatePrimitivesDocs = async () => {
             .readdirSync(PRIMITIVE_FOLDER_PATH)
             .filter((f) => f.endsWith(".json"));
 
-        files.forEach(async (file) => {
+        for (const file of files) {
             const PRIMITIVE_SRC_PATH = path.join(PRIMITIVE_FOLDER_PATH, file);
             const PRIMITIVE_TARGET_PATH = path.join(PRIMITIVE_DOCS_PATH, file);
             await fsPromises.copyFile(PRIMITIVE_SRC_PATH, PRIMITIVE_TARGET_PATH);
@@ -48,8 +48,8 @@ const generatePrimitivesDocs = async () => {
 
             const PRIMITIVE_MD_TARGET_PATH = path.join(PRIMITIVE_DOCS_PATH, path.basename(file, ".json") + ".md");
             fs.writeFileSync(PRIMITIVE_MD_TARGET_PATH, src, "utf8");
-        });
-    })
+        };
+    };
 }
 
 /**
@@ -84,8 +84,8 @@ const generateSchemaStaticDocs = async () => {
  * Generates static documentation from the schemas and primitives.
  */
 const generateStaticDocs = async () => {
-    generateSchemaStaticDocs();
-    generatePrimitivesDocs();
+    await generateSchemaStaticDocs();
+    await generatePrimitivesDocs();
 };
 
 

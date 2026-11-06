@@ -18,7 +18,7 @@ description: A schema definition for functional-primitive files.
 
 ## Properties
 
-<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#$schema">$schema</a></td><td>String</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#type">type</a></td><td>String</td></tr><tr><td colspan="2"><a href="#version">version</a></td><td>String</td></tr><tr><td colspan="2"><a href="#syntax">syntax</a></td><td>String</td></tr><tr><td colspan="2"><a href="#description">description</a></td><td>String</td></tr><tr><td colspan="2"><a href="#alias">alias</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#participants">participants</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#invariants">invariants</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#_note">_note</a></td><td>String</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#$schema">$schema</a></td><td>String</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#type">type</a></td><td>String</td></tr><tr><td colspan="2"><a href="#version">version</a></td><td>String</td></tr><tr><td colspan="2"><a href="#description">description</a></td><td>String</td></tr><tr><td colspan="2"><a href="#alias">alias</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#participants">participants</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#invariants">invariants</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#_note">_note</a></td><td>String</td></tr></tbody></table>
 
 
 
@@ -53,7 +53,7 @@ description: A schema definition for functional-primitive files.
   <tbody>
     <tr>
       <th>Description</th>
-      <td colspan="2">The unique identifier name of the functional-primitive.</td>
+      <td colspan="2">The unique identifier name of the functional-primitive and is also the syntax used to invoke the primitive.</td>
     </tr>
     <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
@@ -109,27 +109,6 @@ description: A schema definition for functional-primitive files.
       <th>Pattern</th>
       <td colspan="2">^\d+\.\d+\.\d+$</td>
     </tr>
-  </tbody>
-</table>
-
-
-
-
-## syntax
-
-
-<table class="jssd-property-table">
-  <tbody>
-    <tr>
-      <th>Description</th>
-      <td colspan="2">The syntax of the primitive.</td>
-    </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">Yes</td>
-    </tr>
-    
   </tbody>
 </table>
 
@@ -478,7 +457,7 @@ description: A schema definition for functional-primitive files.
         },
         "name": {
             "type": "string",
-            "description": "The unique identifier name of the functional-primitive."
+            "description": "The unique identifier name of the functional-primitive and is also the syntax used to invoke the primitive."
         },
         "type": {
             "type": "string",
@@ -491,10 +470,6 @@ description: A schema definition for functional-primitive files.
             "type": "string",
             "pattern": "^\\d+\\.\\d+\\.\\d+$",
             "description": "Semantic version string (e.g., 1.0.0)."
-        },
-        "syntax": {
-            "type": "string",
-            "description": "The syntax of the primitive."
         },
         "description": {
             "type": "string",
@@ -636,7 +611,6 @@ description: A schema definition for functional-primitive files.
         "name",
         "type",
         "version",
-        "syntax",
         "description",
         "participants",
         "invariants"

@@ -1,7 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 const Ajv = require("ajv/dist/2020");
-const ValidationReport = require("./ValidationReport")
+const ValidationReport = require("./ValidationReport");
+
+const registeredNames = new Set();
 
 /**
  * Given the primitive type, this method validates all the primitives
@@ -29,22 +31,40 @@ const validatePrimitiveType = (validator, primitiveType) => {
 
     // Validate each primitive
     files.forEach((file) => {
-        const PRIMITIVE_FILE_PATH = path.join(PRIMITIVE_FOLDER_PATH, file);
-        const parsedJSON = JSON.parse(fs.readFileSync(PRIMITIVE_FILE_PATH, "utf8"));
-        let isValidJSON;
+        report.clearErrors();
 
+        const PRIMITIVE_FILE_PATH = path.join(PRIMITIVE_FOLDER_PATH, file);
+
+        let parsedJSON;
         try {
-            isValidJSON = validate(parsedJSON);
+            parsedJSON = JSON.parse(fs.readFileSync(PRIMITIVE_FILE_PATH, "utf8"));
         } catch (err) {
-            report.addParseError(file);
+            report.addParseError(file, err.message);
             return;
         }
 
-        if (isValidJSON) {
-            report.addSuccess(file);
-        } else {
-            report.addFail(file, validate);
+        // Validate the JSON file
+        const isValidJSON = validate(parsedJSON);
+        if (!isValidJSON) {
+            report.addFail(validate);
         }
+
+        // Check if the name is unique
+        let isUnique = true;
+        if ("name" in parsedJSON && registeredNames.has(parsedJSON.name)) {
+            isUnique = false;
+            report.addUniquenessError(parsedJSON.name);
+        } else if ("name" in parsedJSON) {
+            registeredNames.add(parsedJSON.name);
+        }
+
+        // Write error or success message
+        if (!isValidJSON || !isUnique) {
+            report.generateErrorMessage(file);
+        } else {
+            report.addSuccess(file);
+        }
+
     });
     
     // Write content to file

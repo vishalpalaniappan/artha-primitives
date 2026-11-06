@@ -4,7 +4,6 @@
     "name": "if",
     "type": "functional-primitive",
     "description":"Establishes conditional meaning",
-    "syntax": "if",
     "participants": [
         {
             "name": "condition",
