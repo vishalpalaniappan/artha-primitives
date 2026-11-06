@@ -8,7 +8,7 @@ const fs = require("fs");
 const createDir = async (dir) => {
     try {
         if (fs.existsSync(dir)) {
-            await fsPromises.rm(dir, { recursive: true }, { recursive: true, force: true });
+            await fsPromises.rm(dir, { recursive: true, force: true });
         }
         await fsPromises.mkdir(dir, { recursive: true });
     } catch (err) {
