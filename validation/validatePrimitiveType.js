@@ -41,22 +41,22 @@ const validatePrimitiveType = (validator, primitiveType) => {
             return;
         }
 
+        // Validate the JSON file
         const isValidJSON = validate(parsedJSON);
         if (!isValidJSON) {
             report.addFail(validate);
         }
 
+        // Check if the name is unique
         let isUnique = true;
         if ("name" in parsedJSON && registeredNames.has(parsedJSON.name)) {
             isUnique = false;
-        } else {
+            report.addUniquenessError(parsedJSON.name);
+        } else if ("name" in parsedJSON) {
             registeredNames.add(parsedJSON.name);
         }
 
-        if (!isUnique) {
-            report.addUniquenessError(parsedJSON.name);
-        }
-
+        // Write error or success message
         if (!isValidJSON || !isUnique) {
             report.generateErrorMessage(file);
         } else {
