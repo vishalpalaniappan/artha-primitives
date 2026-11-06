@@ -6,14 +6,10 @@ const fs = require("fs");
  * @param {String} dir 
  */
 const createDir = async (dir) => {
-    try {
-        if (fs.existsSync(dir)) {
-            await fsPromises.rm(dir, { recursive: true, force: true });
-        }
-        await fsPromises.mkdir(dir, { recursive: true });
-    } catch (err) {
-        console.error("Error creating directory:", err);
+    if (fs.existsSync(dir)) {
+        await fsPromises.rm(dir, { recursive: true, force: true });
     }
+    await fsPromises.mkdir(dir, { recursive: true });
 }
 
 module.exports = createDir;
