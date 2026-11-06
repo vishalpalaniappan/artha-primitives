@@ -6,7 +6,7 @@ The repo will be extended to include schemas generated from the established prim
 
 # Usage
 
-The steps below demonstrate how to install the libraries, generate the documentatio, start the docusaurus server and build the docusaurus server.
+The steps below demonstrate how to install the libraries, generate the documentation, start the docusaurus server and build the docusaurus server.
 
 ### Install Libraries
 
@@ -20,7 +20,7 @@ This command installs both the docusaurus packages and the artha-primitive packa
 ```
 npm run generate-documentation
 ```
-This command generates documentation for the primitives and places them in the docs folder in the docusaurus directory (called docs, so the path is ./docs/docs). It also vaidates the primitives using the schema and produces a report establishing the validity of the primitives.
+This command generates documentation for the primitives and places them in the docs folder in the docusaurus directory (called docs, so the path is ./docs/docs). It also validates the primitives using the schema and produces a report establishing the validity of the primitives.
 
 ### Start Documentation Server
 ```
