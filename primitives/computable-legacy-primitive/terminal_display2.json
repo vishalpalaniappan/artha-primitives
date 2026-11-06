@@ -1,10 +1,8 @@
 {
     "$schema": "../../schemas/computable-legacy-primitive.schema.json",
     "name": "terminal_display",
-    "version": "0.0.0",
     "type": "computable-legacy-primitive",
     "description":"Displays the provided text in the console.",
-    "syntax": "terminal_display",
     "participants": [
         {
             "name": "message",

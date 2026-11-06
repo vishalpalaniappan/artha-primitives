@@ -28,7 +28,7 @@ class ValidationReport {
 
     addFail(file, validationInfo) {
         const errorSummary = validationInfo.errors
-            .map((err) => `\`${err.instancePath || "root"}\`: ${err.message}`)
+            .map((err) => `• \`${err.instancePath || "root"}\`: ${err.message}`)
             .join('<br/>');
         this.errors += errorSummary;
     }
@@ -38,7 +38,7 @@ class ValidationReport {
     }
 
     addUniquenessError(name) {
-        this.errors += "Not unique" + "<br/>";
+        this.errors += "<br/>" + `• Primitive named ${name} is not unique` + "<br/>";
     }
 
     generateErrorMessage(file) {
