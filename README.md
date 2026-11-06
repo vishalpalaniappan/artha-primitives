@@ -38,7 +38,7 @@ This command regenerates the documentation and then builds the docusaurus server
 ```
 npm run serve
 ```
-This command serves the built documentation contained in the dist folder inside the docs folder. Eventually, I will deploy this to github pages.
+This command serves the built documentation contained in the build folder inside the docs folder. Eventually, I will deploy this to github pages.
 
 # Providing feedback
 
