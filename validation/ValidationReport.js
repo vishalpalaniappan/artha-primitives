@@ -64,6 +64,13 @@ class ValidationReport {
     }
 
     /**
+     * Clear the errors between each file in the primitive list.
+     */
+    clearErrors() {
+        this.errors = "";
+    }
+
+    /**
      * Generate an error message from the collected errors.
      * 
      * @param {String} file 

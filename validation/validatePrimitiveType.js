@@ -31,6 +31,8 @@ const validatePrimitiveType = (validator, primitiveType) => {
 
     // Validate each primitive
     files.forEach((file) => {
+        report.clearErrors();
+        
         const PRIMITIVE_FILE_PATH = path.join(PRIMITIVE_FOLDER_PATH, file);
 
         let parsedJSON;
