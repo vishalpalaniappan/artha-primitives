@@ -11,7 +11,7 @@
         },
         "name": {
             "type": "string",
-            "description": "The unique identifier name of the functional-primitive."
+            "description": "The unique identifier name of the functional-primitive and is also the syntax used to invoke the primitive."
         },
         "type": {
             "type": "string",
@@ -24,10 +24,6 @@
             "type": "string",
             "pattern": "^\\d+\\.\\d+\\.\\d+$",
             "description": "Semantic version string (e.g., 1.0.0)."
-        },
-        "syntax": {
-            "type": "string",
-            "description": "The syntax of the primitive."
         },
         "description": {
             "type": "string",
@@ -150,7 +146,6 @@
         "name",
         "type",
         "version",
-        "syntax",
         "description",
         "participants",
         "invariants"

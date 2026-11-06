@@ -4,7 +4,6 @@
     "version": "0.0.0",
     "type": "meta-primitive",
     "description":"Introduces a participant into the world",
-    "syntax": "introduce",
     "attributes": [
         {
             "name": "alias",

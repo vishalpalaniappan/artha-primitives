@@ -4,7 +4,6 @@
     "version": "0.0.0",
     "type": "computable-primitive",
     "description":"Removes all items from a list.",
-    "syntax": "clear_list",
     "participants": [
         {
             "name": "list",
