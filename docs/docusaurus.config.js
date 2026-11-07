@@ -76,10 +76,10 @@ const config = {
       },
       navbar: {
         title: 'Artha Primitives'  ,
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
-        },
+        // logo: {
+        //   alt: 'My Site Logo',
+        //   src: 'img/logo.svg',
+        // },
         items: [
           {
             type: 'docSidebar',
