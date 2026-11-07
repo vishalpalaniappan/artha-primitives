@@ -1,0 +1,17 @@
+{
+    "$schema": "../../schemas/computable-legacy-primitive.schema.json",
+    "name": "terminal_input",
+    "version": "0.0.0",
+    "type": "computable-legacy-primitive",
+    "description":"Accepts and stores the input from terminal. This is a legacy primitive because the meaning stops at this layer (even though it is built from more primitives) but I am establishing it as a primitive because I haven't yet constructed this meaning from computable semantic primitives.",
+    "participants": [
+        {
+            "name": "alias",
+            "aliasStructuralType": "string",
+            "required": true
+        }
+    ],
+    "invariants": [
+    ],
+    "_note": "This primitive throws an EOFError and Keyboard Interrupt error. EOFError can be triggered by using CTRL+D in unix environments and Ctrl+Z followed by Enter in windows. Keyboard interrupts happen when Ctrl + C is used to terminate program in console. The meaning of these errors are built into the primitive and as part of the narrative that uses them the relevant behavior that should be exhibited can be specified. So in the synthesized implementation, I will throw the errors and then the specified meaning is used."
+    }
