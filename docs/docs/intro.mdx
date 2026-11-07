@@ -5,16 +5,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Artha Primitives
 
-This section of the documentation contains the schemas for the primitives, the primitive definitions and a validation report that uses the schemas to validate the primitives. In the workflow diagram shown below, this section establishes the components named schema and primitives.
+This section of the documentation contains the schemas for the primitives, the primitive definitions and a validation report that uses the schemas to validate the primitives. 
 
 ## Background
 
 
-The objective of establishing the schema for the primitives is to create a single source of truth that is used to build the meaning of the world. The schemas establish the shape of the primitives and the primitives establish the meaning of the building blocks. 
+The objective of establishing the schema for the primitives is to create a single source of truth that is used to build the meaning of the world. The schemas establish the shape of the primitives and the primitives establish the meaning of the building blocks. In the workflow diagram shown below, this section of the documentation establishes the components named schema and primitives.
 
 <div style={{ textAlign: 'center' }}>
     <img src={useBaseUrl('/img/workflow.svg')} alt="Workflow Diagram" />
 </div>
+
 
 In the next steps, the primitives are then used to build narratives which can then be validated using the meaning established in the building blocks. The meaning of the primitives themselves will be used to generate more schemas that can be used to validate the syntax of how the meaning is invoked. Likewise, using the invariants specified in the primitive definition, the correctness of how a transformation is used in a narrative can be generated. In this way, the engine simply enforces the correctness that the source of truth establishes. The synthesis is then a process of implementing the meaning that has been fully reasoned about. The synthesis itself is a deterministic process that simply realizes the meaning as an implementation.
 
