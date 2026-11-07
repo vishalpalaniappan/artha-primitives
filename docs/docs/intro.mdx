@@ -9,30 +9,28 @@ This section of the documentation contains the schemas for the primitives, the p
 
 ## Background
 
-
 The objective of establishing the schema for the primitives is to create a single source of truth that is used to build the meaning of the world. The schemas establish the shape of the primitives and the primitives establish the meaning of the building blocks. In the workflow diagram shown below, this section of the documentation establishes the components named schema and primitives.
 
 <div style={{ textAlign: 'center' }}>
     <img src={useBaseUrl('/img/workflow.svg')} alt="Workflow Diagram" />
 </div>
 
-
-In the next steps, the primitives are then used to build narratives which can then be validated using the meaning established in the building blocks. The meaning of the primitives themselves will be used to generate more schemas that can be used to validate the syntax of how the meaning is invoked. Likewise, using the invariants specified in the primitive definition, the correctness of how a transformation is used in a narrative can be generated. In this way, the engine simply enforces the correctness that the source of truth establishes. The synthesis is then a process of implementing the meaning that has been fully reasoned about. The synthesis itself is a deterministic process that simply realizes the meaning as an implementation.
+In the next steps, the primitives will be used to build narratives which can then be validated using the meaning established in the building blocks. The meaning of the primitives themselves will be used to generate more schemas that can be used to validate the syntax of how the meaning is invoked. Likewise, using the invariants specified in the primitive definition, the correctness of how a transformation is used in a narrative can be established. In this way, the engine simply enforces the correctness that the source of truth establishes. The synthesis is then a process of implementing the meaning that has been fully reasoned about. The synthesis itself is a deterministic process that simply realizes the meaning as an implementation.
 
 ## Primitives
 
 The types of primitives and their use can be found below.
 
-## Computable Semantic Primitives
+### Computable Semantic Primitives
 The computable primitives are the computational building blocks of the meaning of the world. They unambiguously specify a transformation, its invariants and the realization of the transformation. Since the computable primitives unambiguously identify their invariants, the correctness of any narrative that uses them can be established. Moreover, since the realization of these primitives is provided, during synthesis, it can be referenced directly.
 
-## Meta Primitives
+### Meta Primitives
 Meta primitives establish meaning that the engine uses to reason about the world. For example, for a participant block, this can establish the structural type, the role. Other examples include the types of items a list can contain or the kinds of operations that a participant is allowed to participate in. The amount of meaning used to describe the world is only limited by what the developer needs and since the engine knows the meaning, it can reason about it.
 
-## Functional Primitives
+### Functional Primitives
 The functional primitives connect the computable and legacy primitives together and create a narrative. For example, this can include the conditionally selecting narratives by reasoning about the worlds meaning. Composite functional primitives like while and for are simply conditional blocks at a higher level of abstraction, making it easier to establish meaning more concisely. 
 
-## Legacy Primitives
+### Legacy Primitives
 The legacy primitives are primitives that are opaque except at the level at which their meaning is declared. This means that they can be broken down into atomic meaningful primitives but its meaning is not known. This includes meaning like get input from terminal or write to terminal. One day, the meaning of these primitives will be established using an Artha script but until that happens, it will remain opaque except at the level at which it is defined. The legacy primitives also provide the realization that will be used by the synthesizer.
 
 
