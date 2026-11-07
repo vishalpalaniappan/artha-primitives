@@ -4,7 +4,19 @@ sidebar_position: 1
 
 # Artha Primitives
 
-I've provided a list of primitive types below and the schema for each type is provided in the documentation. I will also extend this so that the primitives are validated and the result of the validation is presented in the documentation.
+This section of the documentation contains the schema's for the primitives, the primitive definition themselves and a validation report that uses the schemas to validate the primitives.
+
+## Background
+
+The objective of establishing the schema for the primitives is to create a single source of truth that is used to build the meaning of the world. The schema establishing the shape of the primitives and the primitives establish the meaning of the building blocks. The primitives are then used to build narratives which can then be validated using the meaning established in the building blocks. Once the narratives are validated, 
+
+The meaning of the primitives themselves will be used to generate more schemas that can be used to validate the syntax of how the meaning is invoked. Likewise, using the invariants specified in the schema, the correctness of how a transformation is used in a narrative can generated. In this way, the engine simply enforces the correctness that the source of truth establishes. 
+
+The synthesis is then a process of implementing the meaning that has been fully reasoned about. The synthesis itself is a deterministic process that simply realizes the meaning as an implementation.
+
+## Primitives
+
+The types of primitives and their use can be found below.
 
 ## Computable Semantic Primitives
 The computable primitives are the computational building blocks of the meaning of the world. They unambiguously specify a transformation, its invariants and the realization of the transformation. Since the computable primitives unambiguously identify their invariants, the correctness of any narrative that uses them can be established. Moreover, since the realization of these primitives is provided, during synthesis, it can be referenced directly.
