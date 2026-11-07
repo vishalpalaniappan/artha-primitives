@@ -72,7 +72,7 @@ const generateSchemaStaticDocs = async () => {
           allowUnionTypes: true,
         },
         addFrontMatter: true,
-        createIndex: true,
+        createIndex: false,
         displaySchema: true,
     });
 
