@@ -14,7 +14,7 @@ const path = require("path");
 const generatePrimitivesDocs = async () => {
     const MANIFEST_PATH = path.join(process.cwd(), "manifest.json");
     const PRIMITIVES_PATH = path.join(process.cwd(), "primitives");
-    const PRIMITIVES_DOCS_PATH = path.join(process.cwd(), "docs", "docs", "primitives");
+    const PRIMITIVES_DOCS_PATH = path.join(process.cwd(), "docs", "docs", "Primitives");
     
     await createDir(PRIMITIVES_DOCS_PATH);
 
@@ -62,7 +62,7 @@ const generatePrimitivesDocs = async () => {
  */
 const generateSchemaStaticDocs = async () => {
     const SCHEMAS_PATH = path.join(process.cwd(), "schemas");
-    const SCHEMAS_OUTPUT_PATH = path.join(process.cwd(), "docs", "docs", "schemas");
+    const SCHEMAS_OUTPUT_PATH = path.join(process.cwd(), "docs", "docs", "Schemas");
 
     let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
         inputPath: SCHEMAS_PATH,

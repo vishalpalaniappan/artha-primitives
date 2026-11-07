@@ -11,7 +11,7 @@ const createDir = require("./helper")
  * the docusaurus docs folder and is presented through the site.
  */
 const validateAndGenerateReport = async () => {
-    const VALIDATION_REPORT_DIR = path.join(process.cwd(), "docs", "docs", "validation");
+    const VALIDATION_REPORT_DIR = path.join(process.cwd(), "docs", "docs", "Validation");
     const MANIFEST_PATH = path.join(process.cwd(), "manifest.json");
 
     await createDir(VALIDATION_REPORT_DIR);

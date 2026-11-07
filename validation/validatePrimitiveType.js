@@ -69,7 +69,7 @@ const validatePrimitiveType = (validator, primitiveType) => {
     
     // Write content to file
     const DOCS_PATH = path.join( process.cwd(), "docs", "docs");
-    const VALIDATION_REPORT_PATH = path.join( DOCS_PATH, "validation", `${primitiveType}-validation-report.md`);
+    const VALIDATION_REPORT_PATH = path.join( DOCS_PATH, "Validation", `${primitiveType}-validation-report.md`);
     fs.writeFileSync(VALIDATION_REPORT_PATH, report.getContent(), "utf8");
 
     console.log(`Validation complete! Report written to ${primitiveType}-validation-report.md`);

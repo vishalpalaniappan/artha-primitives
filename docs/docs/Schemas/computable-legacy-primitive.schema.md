@@ -53,7 +53,7 @@ description: A schema definition for computable-legacy-primitive files.
   <tbody>
     <tr>
       <th>Description</th>
-      <td colspan="2">The unique identifier of the meta-primitive and is also the syntax used to invoke the primitive.</td>
+      <td colspan="2">The unique identifier of the computable-legacy-primitive and is also the syntax used to invoke the primitive.</td>
     </tr>
     <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
@@ -401,7 +401,7 @@ description: A schema definition for computable-legacy-primitive files.
         },
         "name": {
             "type": "string",
-            "description": "The unique identifier of the meta-primitive and is also the syntax used to invoke the primitive."
+            "description": "The unique identifier of the computable-legacy-primitive and is also the syntax used to invoke the primitive."
         },
         "type": {
             "type": "string",
