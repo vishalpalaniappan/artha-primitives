@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const Ajv = require("ajv/dist/2020");
 const ValidationReport = require("./ValidationReport");
-const generateSchema = require("./generateSchemas")
+const generateSchema = require("./schema_generator/generateSchemas")
 
 const registeredNames = new Set();
 
