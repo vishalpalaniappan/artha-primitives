@@ -56,13 +56,15 @@ const generatePrimitivesDocs = async () => {
  * Generate static docs for the schema. This outputs MD files that are rendered
  * by the docusaurus site.
  * 
+ * @param {String} SCHEMAS_PATH Path to the schemas folder
+ * 
  * TODO: The generated MD file doesn't cleanly show conditional properties. I have
  * experimented with a schema viewer that does include this information. I will replace
  * the static text based docs with the JSON schema viewer in a later PR.
  */
-const generateSchemaStaticDocs = async () => {
-    const SCHEMAS_PATH = path.join(process.cwd(), "schemas");
-    const SCHEMAS_OUTPUT_PATH = path.join(process.cwd(), "docs", "docs", "Schemas");
+const generateSchemaStaticDocs = async (SCHEMA_TYPE) => {    
+    const SCHEMAS_PATH = path.join(process.cwd(), "schemas", `${SCHEMA_TYPE}-schema`)
+    const SCHEMAS_OUTPUT_PATH = path.join(process.cwd(), "docs", "docs", "Schema", SCHEMA_TYPE);
 
     let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
         inputPath: SCHEMAS_PATH,
@@ -84,8 +86,11 @@ const generateSchemaStaticDocs = async () => {
  * Generates static documentation from the schemas and primitives.
  */
 const generateStaticDocs = async () => {
-    await generateSchemaStaticDocs();
-    await generatePrimitivesDocs();
+    await createDir(path.join(process.cwd(), "docs", "docs", "Schema", "primitive"));
+    await generateSchemaStaticDocs("primitive");
+    
+    await createDir(path.join(process.cwd(), "docs", "docs", "Schema", "structural"));
+    await generateSchemaStaticDocs("structural");
 };
 
 

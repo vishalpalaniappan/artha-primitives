@@ -15,7 +15,7 @@ const registeredNames = new Set();
  * @param {String} primitiveType 
  */
 const validatePrimitiveType = (validator, primitiveType) => {
-    const SCHEMA_PATH = path.join(process.cwd(), "schemas", `${primitiveType}.schema.json`);
+    const SCHEMA_PATH = path.join(process.cwd(), "schemas", "primitive-schema", `${primitiveType}.schema.json`);
     const PRIMITIVE_FOLDER_PATH = path.join(process.cwd(), "primitives", `${primitiveType}`);
 
     // Compile schema
