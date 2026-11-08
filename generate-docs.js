@@ -1,5 +1,5 @@
-const validateAndGenerateReport = require("./validation/validateAndGenerateReport");
-const generateStaticDocs = require("./validation/generateStaticDocs");
+const validateAndGenerateReport = require("./src/validateAndGenerateReport");
+const generateStaticDocs = require("./src/generateStaticDocs");
 
 (async () => {
     await generateStaticDocs();
