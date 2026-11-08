@@ -1,11 +1,11 @@
 ---
-title: narrative-base
+title: NarrativeBase
 description: A schema for the base of the narrative built using the primitives.
 
 ---
 
 
-# narrative-base
+# NarrativeBase
 
 <p>A schema for the base of the narrative built using the primitives.</p>
 
@@ -32,7 +32,7 @@ description: A schema for the base of the narrative built using the primitives.
     </tr>
     <tr>
       <th>Title</th>
-      <td colspan="2">narrative-base</td>
+      <td colspan="2">NarrativeBase</td>
     </tr>
     <tr>
       <th>Description</th>
@@ -78,7 +78,7 @@ description: A schema for the base of the narrative built using the primitives.
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://example.com/narrative-base.schema.json",
-    "title": "narrative-base",
+    "title": "NarrativeBase",
     "description": "A schema for the base of the narrative built using the primitives.",
     "type": "array",
     "items": {
