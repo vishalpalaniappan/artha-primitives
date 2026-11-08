@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const Ajv = require("ajv/dist/2020");
 const validatePrimitiveType = require("./validatePrimitiveType");
-const createDir = require("./helper")
+const createDir = require("../helper")
 
 /**
  * Generates the documentation, validates the primitives and produces

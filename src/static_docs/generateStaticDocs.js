@@ -1,4 +1,4 @@
-const createDir = require("./helper")
+const createDir = require("../helper")
 const fs = require("fs");
 const fsPromises = require("fs/promises");
 const JsonSchemaStaticDocs = require("json-schema-static-docs");
