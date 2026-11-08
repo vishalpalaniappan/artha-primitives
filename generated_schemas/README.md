@@ -1,0 +1,3 @@
+This folder will contain schemas that were generated from the primitive definitions. This includes the schemas generated for how the meaning should be invoked in the narrative structurally and then in later stages, it will also be used by the reasoning tool to establish the correctness of the narratives.
+
+In this current iteration, I will generate a schema for each primitive called structural_schema. This will establish that the necessary attributes are provided for the primitive that is being used.
