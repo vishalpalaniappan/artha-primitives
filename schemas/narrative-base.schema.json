@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://example.com/narrative-base.schema.json",
-    "title": "narrative-base",
+    "title": "NarrativeBase",
     "description": "A schema for the base of the narrative built using the primitives.",
     "type": "array",
     "items": {
