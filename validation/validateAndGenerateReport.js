@@ -1,0 +1,33 @@
+
+const fs = require("fs");
+const path = require("path");
+const Ajv = require("ajv/dist/2020");
+const validatePrimitiveType = require("./validatePrimitiveType");
+const createDir = require("./helper")
+
+/**
+ * Generates the documentation, validates the primitives and produces
+ * a report with validation results. The generated data is written to
+ * the docusaurus docs folder and is presented through the site.
+ */
+const validateAndGenerateReport = async () => {
+    const VALIDATION_REPORT_DIR = path.join(process.cwd(), "docs", "docs", "Validation");
+    const MANIFEST_PATH = path.join(process.cwd(), "manifest.json");
+
+    await createDir(VALIDATION_REPORT_DIR);
+    
+    const ajv = new Ajv({ allErrors: true, strict: true });
+
+    const primitiveTypes = JSON.parse(
+        fs.readFileSync(MANIFEST_PATH, "utf8")
+    ).primitiveTypes;
+
+    // TODO: Validate that the primitive name and syntax is unique.
+
+    primitiveTypes.forEach((primitiveType) => {
+        validatePrimitiveType(ajv, primitiveType);
+    })
+}
+
+module.exports = validateAndGenerateReport;
+

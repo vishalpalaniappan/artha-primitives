@@ -1,0 +1,11 @@
+---
+id: import.json
+title: import.json
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import myData from './import.json';
+
+<CodeBlock language="json">
+  {JSON.stringify(myData, null, 2)}
+</CodeBlock>

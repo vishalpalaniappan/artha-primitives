@@ -1,0 +1,14 @@
+{
+    "$schema": "../../schemas/meta-primitive.schema.json",
+    "name": "role",
+    "version": "0.0.0",
+    "type": "meta-primitive",
+    "description":"Establishes that role of a participant.",
+    "attributes": [
+        {
+            "name": "role",
+            "attributeStructuralType": "string",
+            "required": true
+        }
+    ]
+}
