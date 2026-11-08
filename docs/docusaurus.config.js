@@ -95,13 +95,29 @@ const config = {
           },
         ],
       },
+      zoom: {
+        selector: '.markdown :not(a) > img',
+        background: {
+          light: 'rgb(255, 255, 255)',
+          dark: 'rgb(50, 50, 50)'
+        },
+        config: {
+          // options you can pass to medium-zoom
+          // https://github.com/francoischalifour/medium-zoom#options
+          margin: 24,
+          scrollOffset: 0,
+        }
+      },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
     }),
     
-    plugins: ['docusaurus-json-schema-plugin'],
+    plugins: [
+      'docusaurus-json-schema-plugin',
+      'docusaurus-plugin-image-zoom'
+    ],
 };
 
 export default config;
