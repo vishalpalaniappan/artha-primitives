@@ -6,7 +6,6 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://vishalpalaniappan.github.io/artha-primitives/blog"/>
     <subtitle>Artha Primitives Blog</subtitle>
-    <icon>https://vishalpalaniappan.github.io/artha-primitives/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>https://vishalpalaniappan.github.io/artha-primitives/blog/welcome</id>
