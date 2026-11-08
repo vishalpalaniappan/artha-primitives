@@ -12,18 +12,17 @@ const createDir = require("./helper")
  */
 const validateAndGenerateReport = async () => {
     const VALIDATION_REPORT_DIR = path.join(process.cwd(), "docs", "docs", "Validation");
-    const MANIFEST_PATH = path.join(process.cwd(), "manifest.json");
-
     await createDir(VALIDATION_REPORT_DIR);
     
-    const ajv = new Ajv({ allErrors: true, strict: true });
+    const GENERATED_SCHEMAS_DIR = path.join(process.cwd(), "generated_schemas");
+    await createDir(GENERATED_SCHEMAS_DIR);
 
+    const MANIFEST_PATH = path.join(process.cwd(), "manifest.json");    
     const primitiveTypes = JSON.parse(
         fs.readFileSync(MANIFEST_PATH, "utf8")
     ).primitiveTypes;
 
-    // TODO: Validate that the primitive name and syntax is unique.
-
+    const ajv = new Ajv({ allErrors: true, strict: true });
     primitiveTypes.forEach((primitiveType) => {
         validatePrimitiveType(ajv, primitiveType);
     })
