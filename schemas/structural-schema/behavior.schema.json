@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/behavior.schema.json",
+    "title": "Behavior",
+    "description": "A schema for a behavior in a narrative.",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": [
+            "name",
+            "args"
+        ],
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "The name of the behavior. It must be unique in the narrative"
+            },
+            "args": {
+                "type": "array",
+                "description": "Array of arguments. TODO: Describe the args (needs name, and value)"
+            },
+            "body": {
+                "type": "array",
+                "description": "Array of primitives contained in the body. TODO: Establish the types of primitives that are allowed."
+            }
+        },
+        "additionalProperties": true
+    }
+}
