@@ -1,7 +1,9 @@
-const path = require("path");
-const fs = require("fs");
+import path from 'node:path';
+import fs from 'node:fs';
+import $RefParser from '@apidevtools/json-schema-ref-parser';
+import { createDir } from '../helper.js';
 
-const generateSchema = (primitive) => {
+const generatePrimitiveSchema = (primitive) => {
     const argsKey =
         primitive.type === "meta-primitive" ? "attributes" : "participants";
     const args = primitive[argsKey].filter((item) => item.required);
@@ -43,4 +45,42 @@ const generateSchema = (primitive) => {
     fs.writeFileSync(GENERATED_PATH, JSON.stringify(schema, null, 4), "utf8");
 };
 
-module.exports = generateSchema;
+/**
+ * Builds the schema from the narrative schema.
+ * 
+ * I will be adding all the generated schemas to the generated_schema folder and then building
+ * the schema with the fully generated schema. Right now, I am just testing the bundling.
+ */
+const buildSchema = async () => {
+    try {
+        const fullSchema = await $RefParser.dereference(
+            "./schemas/narrative.schema.json",
+        );
+
+        const DIST_PATH = path.join(
+            process.cwd(),
+            "dist"
+        );
+
+        await createDir(DIST_PATH);
+
+        const GENERATED_PATH = path.join(
+            process.cwd(),
+            "dist",
+            "artha.schema.json",
+        );
+
+        await fs.writeFileSync(GENERATED_PATH, JSON.stringify(fullSchema, null, 2));
+        console.log("Successfully created single schema!");
+    } catch (err) {
+        console.error("Error parsing schemas:", err);
+    }
+};
+
+const generateSchema = async () => {
+    await buildSchema();
+};
+
+generateSchema();
+
+export default generateSchema;
