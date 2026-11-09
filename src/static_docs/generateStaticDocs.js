@@ -86,10 +86,10 @@ const generateSchemaStaticDocs = async (SCHEMA_TYPE) => {
  * Generates static documentation from the schemas and primitives.
  */
 const generateStaticDocs = async () => {
-    await createDir(path.join(process.cwd(), "docs", "docs", "Schema", "primitive"));
+    await createDir(path.join(process.cwd(), "docs", "docs", "Schema", "Primitive"));
     await generateSchemaStaticDocs("primitive");
     
-    await createDir(path.join(process.cwd(), "docs", "docs", "Schema", "structural"));
+    await createDir(path.join(process.cwd(), "docs", "docs", "Schema", "Structural"));
     await generateSchemaStaticDocs("structural");
 
     await generatePrimitivesDocs();
