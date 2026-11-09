@@ -1,11 +1,11 @@
 ---
-title: ComputablePrimitive
+title: ComputablePrimitiveSchema
 description: A schema definition for computable-primitive files.
 
 ---
 
 
-# ComputablePrimitive
+# ComputablePrimitiveSchema
 
 <p>A schema definition for computable-primitive files.</p>
 
@@ -390,7 +390,7 @@ description: A schema definition for computable-primitive files.
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://example.com/computable-primitive.schema.json",
-    "title": "ComputablePrimitive",
+    "title": "ComputablePrimitiveSchema",
     "description": "A schema definition for computable-primitive files.",
     "type": "object",
     "additionalProperties": false,

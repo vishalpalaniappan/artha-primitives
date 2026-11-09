@@ -1,17 +1,17 @@
 ---
-title: StructuralPrimitive
-description: A schema definition for structural-primitve files. These files are used to establish the structure of the meaning by importing files, defining participants, behaviors etc.
+title: MetaPrimitiveSchema
+description: A schema definition for meta-primitive files.
 
 ---
 
 
-# StructuralPrimitive
+# MetaPrimitiveSchema
 
-<p>A schema definition for structural-primitve files. These files are used to establish the structure of the meaning by importing files, defining participants, behaviors etc.</p>
+<p>A schema definition for meta-primitive files.</p>
 
 <table>
 <tbody>
-<tr><th>$id</th><td>https://example.com/structural-primitive.schema.json</td></tr>
+<tr><th>$id</th><td>https://example.com/meta-primitive.schema.json</td></tr>
 <tr><th>$schema</th><td>https://json-schema.org/draft/2020-12/schema</td></tr>
 </tbody>
 </table>
@@ -53,7 +53,7 @@ description: A schema definition for structural-primitve files. These files are 
   <tbody>
     <tr>
       <th>Description</th>
-      <td colspan="2">The unique identifier name of the structural-primitive and is also the syntax used to invoke the primitive.</td>
+      <td colspan="2">The unique identifier name of the meta-primitive and is also the syntax used to invoke the primitive.</td>
     </tr>
     <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
@@ -83,7 +83,7 @@ description: A schema definition for structural-primitve files. These files are 
     </tr>
     <tr>
       <th>Enum</th>
-      <td colspan="2"><ul><li>structural-primitive</li></ul></td>
+      <td colspan="2"><ul><li>meta-primitive</li></ul></td>
     </tr>
   </tbody>
 </table>
@@ -257,9 +257,9 @@ description: A schema definition for structural-primitve files. These files are 
 ```
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://example.com/structural-primitive.schema.json",
-    "title": "StructuralPrimitive",
-    "description": "A schema definition for structural-primitve files. These files are used to establish the structure of the meaning by importing files, defining participants, behaviors etc.",
+    "$id": "https://example.com/meta-primitive.schema.json",
+    "title": "MetaPrimitiveSchema",
+    "description": "A schema definition for meta-primitive files.",
     "type": "object",
     "additionalProperties": false,
     "properties": {
@@ -269,12 +269,12 @@ description: A schema definition for structural-primitve files. These files are 
         },
         "name": {
             "type": "string",
-            "description": "The unique identifier name of the structural-primitive and is also the syntax used to invoke the primitive."
+            "description": "The unique identifier name of the meta-primitive and is also the syntax used to invoke the primitive."
         },
         "type": {
             "type": "string",
             "enum": [
-                "structural-primitive"
+                "meta-primitive"
             ],
             "description": "The primitive type."
         },

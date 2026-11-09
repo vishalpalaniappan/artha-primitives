@@ -1,24 +1,24 @@
 ---
-title: ComputableLegacyPrimitive
-description: A schema definition for computable-legacy-primitive files.
+title: FunctionalPrimitiveSchema
+description: A schema definition for functional-primitive files.
 
 ---
 
 
-# ComputableLegacyPrimitive
+# FunctionalPrimitiveSchema
 
-<p>A schema definition for computable-legacy-primitive files.</p>
+<p>A schema definition for functional-primitive files.</p>
 
 <table>
 <tbody>
-<tr><th>$id</th><td>https://example.com/computable-legacy-primitive.schema.json</td></tr>
+<tr><th>$id</th><td>https://example.com/functional-primitive.schema.json</td></tr>
 <tr><th>$schema</th><td>https://json-schema.org/draft/2020-12/schema</td></tr>
 </tbody>
 </table>
 
 ## Properties
 
-<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#$schema">$schema</a></td><td>String</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#type">type</a></td><td>String</td></tr><tr><td colspan="2"><a href="#version">version</a></td><td>String</td></tr><tr><td colspan="2"><a href="#description">description</a></td><td>String</td></tr><tr><td colspan="2"><a href="#participants">participants</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#_note">_note</a></td><td>String</td></tr><tr><td colspan="2"><a href="#invariants">invariants</a></td><td>Array</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#$schema">$schema</a></td><td>String</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#type">type</a></td><td>String</td></tr><tr><td colspan="2"><a href="#version">version</a></td><td>String</td></tr><tr><td colspan="2"><a href="#description">description</a></td><td>String</td></tr><tr><td colspan="2"><a href="#alias">alias</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#participants">participants</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#invariants">invariants</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#_note">_note</a></td><td>String</td></tr></tbody></table>
 
 
 
@@ -53,7 +53,7 @@ description: A schema definition for computable-legacy-primitive files.
   <tbody>
     <tr>
       <th>Description</th>
-      <td colspan="2">The unique identifier of the computable-legacy-primitive and is also the syntax used to invoke the primitive.</td>
+      <td colspan="2">The unique identifier name of the functional-primitive and is also the syntax used to invoke the primitive.</td>
     </tr>
     <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
@@ -83,7 +83,7 @@ description: A schema definition for computable-legacy-primitive files.
     </tr>
     <tr>
       <th>Enum</th>
-      <td colspan="2"><ul><li>computable-legacy-primitive</li></ul></td>
+      <td colspan="2"><ul><li>functional-primitive</li></ul></td>
     </tr>
   </tbody>
 </table>
@@ -136,6 +136,46 @@ description: A schema definition for computable-legacy-primitive files.
 
 
 
+## alias
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr><th>Type</th><td colspan="2">Object</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+### Properties
+  <table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#aliasname">name</a></td><td>String</td></tr></tbody></table>
+
+
+### alias.name
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">The name of the parameter.</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+
 ## participants
 
 
@@ -143,7 +183,7 @@ description: A schema definition for computable-legacy-primitive files.
   <tbody>
     <tr>
       <th>Description</th>
-      <td colspan="2">The participants in this primitive</td>
+      <td colspan="2">The participants for this primitive</td>
     </tr>
     <tr><th>Type</th><td colspan="2">Array</td></tr>
     <tr>
@@ -190,6 +230,23 @@ description: A schema definition for computable-legacy-primitive files.
 
 
 
+### participants.attributeStructuralType
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Structural type of the attribute.</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    
+  </tbody>
+</table>
+
+
+
+
 ### participants.required
 
 
@@ -204,27 +261,6 @@ description: A schema definition for computable-legacy-primitive files.
   </tbody>
 </table>
 
-
-
-
-
-## _note
-
-
-<table class="jssd-property-table">
-  <tbody>
-    <tr>
-      <th>Description</th>
-      <td colspan="2">Add optional note for primitive.</td>
-    </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">No</td>
-    </tr>
-    
-  </tbody>
-</table>
 
 
 
@@ -378,6 +414,27 @@ description: A schema definition for computable-legacy-primitive files.
 
 
 
+## _note
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Add optional note for primitive.</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+
 
 
 
@@ -389,11 +446,10 @@ description: A schema definition for computable-legacy-primitive files.
 ```
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://example.com/computable-legacy-primitive.schema.json",
-    "title": "ComputableLegacyPrimitive",
-    "description": "A schema definition for computable-legacy-primitive files.",
+    "$id": "https://example.com/functional-primitive.schema.json",
+    "title": "FunctionalPrimitiveSchema",
+    "description": "A schema definition for functional-primitive files.",
     "type": "object",
-    "additionalProperties": false,
     "properties": {
         "$schema": {
             "type": "string",
@@ -401,12 +457,12 @@ description: A schema definition for computable-legacy-primitive files.
         },
         "name": {
             "type": "string",
-            "description": "The unique identifier of the computable-legacy-primitive and is also the syntax used to invoke the primitive."
+            "description": "The unique identifier name of the functional-primitive and is also the syntax used to invoke the primitive."
         },
         "type": {
             "type": "string",
             "enum": [
-                "computable-legacy-primitive"
+                "functional-primitive"
             ],
             "description": "The primitive type."
         },
@@ -419,12 +475,24 @@ description: A schema definition for computable-legacy-primitive files.
             "type": "string",
             "description": "The description of the primitive."
         },
+        "alias": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name of the parameter."
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "additionalProperties": false
+        },
         "participants": {
             "type": "array",
-            "description": "The participants in this primitive",
+            "description": "The participants for this primitive",
             "items": {
                 "type": "object",
-                "additionalProperties": false,
                 "properties": {
                     "name": {
                         "type": "string",
@@ -434,16 +502,16 @@ description: A schema definition for computable-legacy-primitive files.
                         "type": "string",
                         "description": "Structural type of the alias."
                     },
+                    "attributeStructuralType": {
+                        "type": "string",
+                        "description": "Structural type of the attribute."
+                    },
                     "required": {
                         "type": "boolean",
                         "description": "Indicates if this attribute is required for the primitive.",
                         "default": false
                     }
                 },
-                "required": [
-                    "name",
-                    "required"
-                ],
                 "if": {
                     "properties": {
                         "name": {
@@ -463,12 +531,14 @@ description: A schema definition for computable-legacy-primitive files.
                     "required": [
                         "aliasStructuralType"
                     ]
-                }
+                },
+                "required": [
+                    "attributeStructuralType",
+                    "name",
+                    "required"
+                ],
+                "additionalProperties": false
             }
-        },
-        "_note": {
-            "type": "string",
-            "description": "Add optional note for primitive."
         },
         "invariants": {
             "type": "array",
@@ -531,6 +601,10 @@ description: A schema definition for computable-legacy-primitive files.
                     "invalidValues"
                 ]
             }
+        },
+        "_note": {
+            "type": "string",
+            "description": "Add optional note for primitive."
         }
     },
     "required": [
@@ -540,7 +614,8 @@ description: A schema definition for computable-legacy-primitive files.
         "description",
         "participants",
         "invariants"
-    ]
+    ],
+    "additionalProperties": false
 }
 ```
 
