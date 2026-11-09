@@ -77,7 +77,10 @@ const buildSchema = async () => {
     }
 };
 
-const generateSchema = async () => {
+const generateSchema = async () => {        
+    const GENERATED_SCHEMAS_DIR = path.join(process.cwd(), "generated_schemas");
+    await createDir(GENERATED_SCHEMAS_DIR);
+    
     await buildSchema();
 };
 

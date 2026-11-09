@@ -11,9 +11,6 @@ import {createDir} from '../helper.js';
 const validateAndGenerateReport = async () => {
     const VALIDATION_REPORT_DIR = path.join(process.cwd(), "docs", "docs", "Validation");
     await createDir(VALIDATION_REPORT_DIR);
-    
-    const GENERATED_SCHEMAS_DIR = path.join(process.cwd(), "generated_schemas");
-    await createDir(GENERATED_SCHEMAS_DIR);
 
     const MANIFEST_PATH = path.join(process.cwd(), "manifest.json");    
     const primitiveTypes = JSON.parse(
