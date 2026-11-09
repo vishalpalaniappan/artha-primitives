@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/structural-primitive.schema.json",
+    "title": "import",
+    "description": "A schema definition for import meaning.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "type": {
+            "type": "string",
+            "const": "import"
+        },
+        "name": {
+            "type": "string"
+        },
+        "file": {
+            "type": "string"
+        },
+        "alias": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "attributes",
+        "body",
+        "name",
+        "alias"
+    ]
+}
