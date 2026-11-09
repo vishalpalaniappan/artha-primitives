@@ -2,7 +2,6 @@ const fs = require("fs");
 const path = require("path");
 const Ajv = require("ajv/dist/2020");
 const ValidationReport = require("./ValidationReport");
-const generateSchema = require("./schema_generator/generateSchemas")
 
 const registeredNames = new Set();
 
@@ -64,7 +63,6 @@ const validatePrimitiveType = (validator, primitiveType) => {
             report.generateErrorMessage(file);
         } else {
             report.addSuccess(file);
-            generateSchema(parsedJSON);
         }
 
     });
