@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./narrative.schema.json",
+  "title": "narrative-schema",
+  "description": "A schema for the narratives.",
+  "type": "object",
+  "required": [
+    "metadata",
+    "narrative"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "string"
+    },
+    "narrative": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "import"
+              },
+              "name": {
+                "type": "string"
+              },
+              "file": {
+                "type": "string"
+              },
+              "alias": {
+                "type": "string"
+              }
+            },
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "https://example.com/structural-primitive.schema.json",
+            "title": "ImportSchema",
+            "description": "A schema definition for import meaning.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "name",
+              "file",
+              "alias"
+            ]
+          },
+          {
+            "properties": {
+              "body": {
+                "type": "array"
+              },
+              "name": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "participant"
+              }
+            },
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "https://example.com/participant.schema.json",
+            "title": "ParticipantSchema",
+            "description": "A schema for a participant in a narrative.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "body",
+              "name",
+              "type"
+            ]
+          },
+          {
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "behavior"
+              },
+              "name": {
+                "type": "string"
+              },
+              "body": {
+                "type": "array"
+              },
+              "attributes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "value"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "https://example.com/behavior.schema.json",
+            "title": "BehaviorSchema",
+            "description": "A schema for a behavior in a narrative.",
+            "type": "object",
+            "required": [
+              "attributes",
+              "body",
+              "name",
+              "type"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "import": {
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "import"
+        },
+        "name": {
+          "type": "string"
+        },
+        "file": {
+          "type": "string"
+        },
+        "alias": {
+          "type": "string"
+        }
+      },
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://example.com/structural-primitive.schema.json",
+      "title": "ImportSchema",
+      "description": "A schema definition for import meaning.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "name",
+        "file",
+        "alias"
+      ]
+    },
+    "participant": {
+      "properties": {
+        "body": {
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "const": "participant"
+        }
+      },
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://example.com/participant.schema.json",
+      "title": "ParticipantSchema",
+      "description": "A schema for a participant in a narrative.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "body",
+        "name",
+        "type"
+      ]
+    },
+    "behavior": {
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "behavior"
+        },
+        "name": {
+          "type": "string"
+        },
+        "body": {
+          "type": "array"
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "value"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://example.com/behavior.schema.json",
+      "title": "BehaviorSchema",
+      "description": "A schema for a behavior in a narrative.",
+      "type": "object",
+      "required": [
+        "attributes",
+        "body",
+        "name",
+        "type"
+      ]
+    }
+  }
+}

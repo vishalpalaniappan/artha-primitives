@@ -1,0 +1,24 @@
+{
+    "$schema": "./artha.schema.json",
+    "metadata": "test",
+    "narrative": [
+        {
+            "type": "import",
+            "alias": "test",
+            "file": "./sample",
+            "name": "import"
+        },
+        {
+            "type": "behavior",
+            "name": "test",
+            "body": [
+            ],
+            "attributes": [
+                {
+                    "name": "testArg",
+                    "value": "argValue"
+                }
+            ]
+        }
+    ]
+}
