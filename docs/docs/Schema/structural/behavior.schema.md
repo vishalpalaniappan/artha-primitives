@@ -1,11 +1,11 @@
 ---
-title: Behavior
+title: behavior-schema
 description: A schema for a behavior in a narrative.
 
 ---
 
 
-# Behavior
+# behavior-schema
 
 <p>A schema for a behavior in a narrative.</p>
 
@@ -16,32 +16,32 @@ description: A schema for a behavior in a narrative.
 </tbody>
 </table>
 
+## Properties
+
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#type">type</a></td><td>String=behavior</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#body">body</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#attributes">attributes</a></td><td>Array</td></tr></tbody></table>
 
 
 
 <hr />
 
 
+## type
 
 
 <table class="jssd-property-table">
   <tbody>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
-      <th>$id</th>
-      <td colspan="2">https://example.com/behavior.schema.json</td>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
     </tr>
     <tr>
-      <th>Title</th>
-      <td colspan="2">Behavior</td>
+      <th>Const</th>
+      <td colspan="2">behavior</td>
     </tr>
-    <tr>
-      <th>Description</th>
-      <td colspan="2">A schema for a behavior in a narrative.</td>
-    </tr>
-    <tr><th>Type</th><td colspan="2">Array</td></tr>
-    
   </tbody>
 </table>
+
 
 
 
@@ -50,28 +50,11 @@ description: A schema for a behavior in a narrative.
 
 <table class="jssd-property-table">
   <tbody>
-    <tr>
-      <th>Description</th>
-      <td colspan="2">The name of the behavior. It must be unique in the narrative</td>
-    </tr>
     <tr><th>Type</th><td colspan="2">String</td></tr>
-    
-  </tbody>
-</table>
-
-
-
-
-## args
-
-
-<table class="jssd-property-table">
-  <tbody>
     <tr>
-      <th>Description</th>
-      <td colspan="2">Array of arguments. TODO: Describe the args (needs name, and value)</td>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
     </tr>
-    <tr><th>Type</th><td colspan="2">Array</td></tr>
     
   </tbody>
 </table>
@@ -84,11 +67,53 @@ description: A schema for a behavior in a narrative.
 
 <table class="jssd-property-table">
   <tbody>
-    <tr>
-      <th>Description</th>
-      <td colspan="2">Array of primitives contained in the body. TODO: Establish the types of primitives that are allowed.</td>
-    </tr>
     <tr><th>Type</th><td colspan="2">Array</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+## attributes
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr><th>Type</th><td colspan="2">Array</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+### attributes.name
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    
+  </tbody>
+</table>
+
+
+
+
+### attributes.value
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     
   </tbody>
 </table>
@@ -109,31 +134,46 @@ description: A schema for a behavior in a narrative.
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://example.com/behavior.schema.json",
-    "title": "Behavior",
+    "title": "behavior-schema",
     "description": "A schema for a behavior in a narrative.",
-    "type": "array",
-    "items": {
-        "type": "object",
-        "required": [
-            "name",
-            "args"
-        ],
-        "properties": {
-            "name": {
-                "type": "string",
-                "description": "The name of the behavior. It must be unique in the narrative"
-            },
-            "args": {
-                "type": "array",
-                "description": "Array of arguments. TODO: Describe the args (needs name, and value)"
-            },
-            "body": {
-                "type": "array",
-                "description": "Array of primitives contained in the body. TODO: Establish the types of primitives that are allowed."
-            }
+    "type": "object",
+    "properties": {
+        "type": {
+            "type": "string",
+            "const": "behavior"
         },
-        "additionalProperties": true
-    }
+        "name": {
+            "type": "string"
+        },
+        "body": {
+            "type": "array"
+        },
+        "attributes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "value"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": [
+        "attributes",
+        "body",
+        "name",
+        "type"
+    ]
 }
 ```
 
