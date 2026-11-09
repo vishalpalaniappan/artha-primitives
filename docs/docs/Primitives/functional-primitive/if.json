@@ -1,5 +1,5 @@
 {
-    "$schema": "../../schemas/functional-primitive.schema.json",
+    "$schema": "../../schemas/primitive-schema/functional-primitive.schema.json",
     "version": "0.0.0",
     "name": "if",
     "type": "functional-primitive",

@@ -1,11 +1,11 @@
 ---
-title: participant-schema
+title: ParticipantSchema
 description: A schema for a participant in a narrative.
 
 ---
 
 
-# participant-schema
+# ParticipantSchema
 
 <p>A schema for a participant in a narrative.</p>
 
@@ -91,7 +91,7 @@ description: A schema for a participant in a narrative.
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://example.com/participant.schema.json",
-    "title": "participant-schema",
+    "title": "ParticipantSchema",
     "description": "A schema for a participant in a narrative.",
     "type": "object",
     "additionalProperties": false,

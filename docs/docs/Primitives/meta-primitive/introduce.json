@@ -1,5 +1,5 @@
 {
-    "$schema": "../../schemas/meta-primitive.schema.json",
+    "$schema": "../../schemas/primitive-schema/meta-primitive.schema.json",
     "name": "introduce",
     "version": "0.0.0",
     "type": "meta-primitive",

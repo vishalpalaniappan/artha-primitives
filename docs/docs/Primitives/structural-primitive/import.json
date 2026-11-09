@@ -1,8 +1,8 @@
 {
-    "$schema": "../../schemas/meta-primitive.schema.json",
+    "$schema": "../../schemas/primitive-schema/structural-primitive.schema.json",
     "name": "import",
     "version": "0.0.0",
-    "type": "meta-primitive",
+    "type": "structural-primitive",
     "description":"Imports file into meaning (artha, txt, json etc) and provides optional alias. The alias will be useful for cases where a JSON file is imported and used in the files meaning.",
     "attributes": [
         {

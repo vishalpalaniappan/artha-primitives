@@ -1,11 +1,11 @@
 ---
-title: behavior-schema
+title: BehaviorSchema
 description: A schema for a behavior in a narrative.
 
 ---
 
 
-# behavior-schema
+# BehaviorSchema
 
 <p>A schema for a behavior in a narrative.</p>
 
@@ -134,7 +134,7 @@ description: A schema for a behavior in a narrative.
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://example.com/behavior.schema.json",
-    "title": "behavior-schema",
+    "title": "BehaviorSchema",
     "description": "A schema for a behavior in a narrative.",
     "type": "object",
     "properties": {
