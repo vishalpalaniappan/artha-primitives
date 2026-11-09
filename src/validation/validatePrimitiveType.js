@@ -1,7 +1,7 @@
-const fs = require("fs");
-const path = require("path");
-const Ajv = require("ajv/dist/2020");
-const ValidationReport = require("./ValidationReport");
+import fs from 'node:fs';
+import path from 'node:path';
+import Ajv from 'ajv/dist/2020.js';
+import ValidationReport from './ValidationReport.js';
 
 const registeredNames = new Set();
 
@@ -75,5 +75,4 @@ const validatePrimitiveType = (validator, primitiveType) => {
     console.log(`Validation complete! Report written to ${primitiveType}-validation-report.md`);
 };
 
-
-module.exports = validatePrimitiveType;
+export default validatePrimitiveType;

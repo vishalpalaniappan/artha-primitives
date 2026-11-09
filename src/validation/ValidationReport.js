@@ -87,7 +87,6 @@ class ValidationReport {
     getContent() {
         return this.reportContent;
     }
-
 }
 
-module.exports = ValidationReport;
+export default ValidationReport;

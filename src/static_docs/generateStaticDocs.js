@@ -1,8 +1,8 @@
-const createDir = require("../helper")
-const fs = require("fs");
-const fsPromises = require("fs/promises");
-const JsonSchemaStaticDocs = require("json-schema-static-docs");
-const path = require("path");
+import fs from 'node:fs';
+import fsPromises from 'node:fs/promises';
+import path from 'node:path';
+import JsonSchemaStaticDocs from 'json-schema-static-docs';
+import {createDir} from '../helper.js';
 
 /**
  * Generate the documentation for the primitives. Currently, this involves copying
@@ -98,5 +98,4 @@ const generateStaticDocs = async () => {
     await generatePrimitivesDocs();
 };
 
-
-module.exports = generateStaticDocs;
+export default generateStaticDocs;

@@ -1,10 +1,8 @@
-
-const fs = require("fs");
-const path = require("path");
-const Ajv = require("ajv/dist/2020");
-const validatePrimitiveType = require("./validatePrimitiveType");
-const createDir = require("../helper")
-
+import fs from 'node:fs';
+import path from 'node:path';
+import Ajv from 'ajv/dist/2020.js';
+import validatePrimitiveType from './validatePrimitiveType.js';
+import {createDir} from '../helper.js';
 /**
  * Generates the documentation, validates the primitives and produces
  * a report with validation results. The generated data is written to
@@ -28,5 +26,4 @@ const validateAndGenerateReport = async () => {
     })
 }
 
-module.exports = validateAndGenerateReport;
-
+export default validateAndGenerateReport;
