@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/behavior.schema.json",
+    "title": "participant-schema",
+    "description": "A schema for a participant in a narrative.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "body": {
+            "type": "array"
+        },
+        "name": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string",
+            "const": "participant"
+        }
+    },
+    "required": [
+        "body",
+        "name",
+        "type"
+    ]   
+}
