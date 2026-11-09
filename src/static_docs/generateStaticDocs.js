@@ -20,9 +20,13 @@ const generatePrimitivesDocs = async () => {
 
     const primitiveTypes = JSON.parse(fs.readFileSync(MANIFEST_PATH, "utf8")).primitiveTypes;
 
-    for (const primitiveType of primitiveTypes) {
-        const PRIMITIVE_FOLDER_PATH = path.join(PRIMITIVES_PATH, primitiveType);
-        const PRIMITIVE_DOCS_PATH = path.join(PRIMITIVES_DOCS_PATH, primitiveType);
+    for (const primitiveTypeKebabCase of primitiveTypes) {
+        const primitiveTypeCamelCase = primitiveTypeKebabCase.split("-")
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+            .join("");
+
+        const PRIMITIVE_FOLDER_PATH = path.join(PRIMITIVES_PATH, primitiveTypeKebabCase);
+        const PRIMITIVE_DOCS_PATH = path.join(PRIMITIVES_DOCS_PATH, primitiveTypeCamelCase);
         await createDir(PRIMITIVE_DOCS_PATH);
 
         const files = fs
