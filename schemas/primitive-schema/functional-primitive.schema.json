@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://example.com/functional-primitive.schema.json",
-    "title": "FunctionalPrimitive",
+    "title": "FunctionalPrimitiveSchema",
     "description": "A schema definition for functional-primitive files.",
     "type": "object",
     "properties": {

@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://example.com/meta-primitive.schema.json",
-    "title": "MetaPrimitive",
+    "title": "MetaPrimitiveSchema",
     "description": "A schema definition for meta-primitive files.",
     "type": "object",
     "additionalProperties": false,

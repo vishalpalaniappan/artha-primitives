@@ -64,7 +64,10 @@ const generatePrimitivesDocs = async () => {
  */
 const generateSchemaStaticDocs = async (SCHEMA_TYPE) => {    
     const SCHEMAS_PATH = path.join(process.cwd(), "schemas", `${SCHEMA_TYPE}-schema`)
-    const SCHEMAS_OUTPUT_PATH = path.join(process.cwd(), "docs", "docs", "Schema", SCHEMA_TYPE);
+
+    const folderName = SCHEMA_TYPE.charAt(0).toUpperCase() + SCHEMA_TYPE.slice(1);
+    await createDir(path.join(process.cwd(), "docs", "docs", "Schema", folderName));
+    const SCHEMAS_OUTPUT_PATH = path.join(process.cwd(), "docs", "docs", "Schema", folderName);
 
     let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
         inputPath: SCHEMAS_PATH,
@@ -86,12 +89,8 @@ const generateSchemaStaticDocs = async (SCHEMA_TYPE) => {
  * Generates static documentation from the schemas and primitives.
  */
 const generateStaticDocs = async () => {
-    await createDir(path.join(process.cwd(), "docs", "docs", "Schema", "Primitive"));
     await generateSchemaStaticDocs("primitive");
-    
-    await createDir(path.join(process.cwd(), "docs", "docs", "Schema", "Structural"));
     await generateSchemaStaticDocs("structural");
-
     await generatePrimitivesDocs();
 };
 
