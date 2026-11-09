@@ -1,6 +1,5 @@
 {
     "primitiveTypes": [
-        "structural-primitive",
         "computable-primitive",
         "functional-primitive",
         "computable-legacy-primitive",
