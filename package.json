@@ -23,6 +23,7 @@
     },
     "homepage": "https://github.com/vishalpalaniappan/artha-primitives#readme",
     "dependencies": {
+        "@apidevtools/json-schema-ref-parser": "^15.5.2",
         "ajv": "^8.20.0",
         "docusaurus-plugin-image-zoom": "^3.0.1",
         "json-schema-static-docs": "^0.28.1"
