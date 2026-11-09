@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://example.com/behavior.schema.json",
+    "$id": "https://example.com/participant.schema.json",
     "title": "participant-schema",
     "description": "A schema for a participant in a narrative.",
     "type": "object",
