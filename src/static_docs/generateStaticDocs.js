@@ -91,6 +91,8 @@ const generateStaticDocs = async () => {
     
     await createDir(path.join(process.cwd(), "docs", "docs", "Schema", "structural"));
     await generateSchemaStaticDocs("structural");
+
+    await generatePrimitivesDocs();
 };
 
 
