@@ -7,21 +7,17 @@ import { createDir, getAllJsonFilesInFolder } from "../helper.js";
  * Builds the schema from the narrative schema.
  */
 export const dereferenceGeneratedSchema = async () => {
-    try {
-        const schemaPath = path.join(process.cwd(), "generated_schemas", "narrative.schema.json");
-        const fullSchema = await $RefParser.dereference(schemaPath);
+    const schemaPath = path.join(process.cwd(), "generated_schemas", "narrative.schema.json");
+    const fullSchema = await $RefParser.dereference(schemaPath);
 
-        await createDir(path.join(process.cwd(), "dist"));
+    await createDir(path.join(process.cwd(), "dist"));
 
-        const GENERATED_PATH = path.join(
-            process.cwd(),
-            "dist",
-            "artha.schema.json",
-        );
+    const GENERATED_PATH = path.join(
+        process.cwd(),
+        "dist",
+        "artha.schema.json",
+    );
 
-        fs.writeFileSync(GENERATED_PATH, JSON.stringify(fullSchema, null, 2));
-        console.log("Successfully created single schema!");
-    } catch (err) {
-        console.error("Error parsing schemas:", err);
-    }
+    fs.writeFileSync(GENERATED_PATH, JSON.stringify(fullSchema, null, 2));
+    console.log("Successfully created single schema!");
 };
