@@ -2,13 +2,19 @@ import path from "node:path";
 import fs from "node:fs";
 import { createDir, getAllJsonFilesInFolder } from "../helper.js";
 
+/**
+ * Generates the primitive schema given the primitive definition.
+ * 
+ * @param {String} primitive 
+ */
 const generatePrimitiveSchema = (primitive) => {
     const argsKey = (primitive.type) === "meta-primitive" ? "attributes" : "participants";
     const args = primitive[argsKey].filter((item) => item.required);
 
+    // Schema base object
     const schema = {
         $schema: "https://json-schema.org/draft/2020-12/schema",
-        $id: `https://example.com/${primitive.name}-structure.schema.json`,
+        $id: `./${primitive.name}-structure.schema.json`,
         title: `${primitive.name}-primitive-structure-schema`,
         description: `Structural schema for ${primitive.name} primitive.`,
         primitiveType: `${primitive.type}`,
@@ -26,16 +32,16 @@ const generatePrimitiveSchema = (primitive) => {
             },
         },
     };
-
-    const required = ["name"];
+    
+    // Add all the required arguments to the list and also
+    // add the entry to the properties key
+    schema.required = ["name"];
     for (const arg of args) {
         if (arg.required) {
             schema.properties[arg.name] = {};
-            required.push(arg.name);
+            schema.required.push(arg.name);
         }
     }
-
-    schema.required = required;
 
     const GENERATED_PATH = path.join(
         process.cwd(),
@@ -46,16 +52,13 @@ const generatePrimitiveSchema = (primitive) => {
     fs.writeFileSync(GENERATED_PATH, JSON.stringify(schema, null, 4), "utf8");
 };
 
+/**
+ * This method reads all the primitives, generates the schemas for the primitive
+ * usage and adds it to the shared schema.
+ */
 export const generatePrimitiveSchemas = async () => {
     const PRIMITIVES_DIR = path.join(process.cwd(), "primitives");
     const files = getAllJsonFilesInFolder(PRIMITIVES_DIR);
-
-    const GENERATED_PRIMITIVE_SCHEMAS_PATH = path.join(
-        process.cwd(),
-        "generated_schemas",
-        "primitives",
-    );
-    await createDir(GENERATED_PRIMITIVE_SCHEMAS_PATH);
 
     const sharedSchema = {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -63,7 +66,7 @@ export const generatePrimitiveSchemas = async () => {
         "$defs": {}
     }
     
-    // Generate schemas for each of the primitives
+    // Generate schema for primitive and create shared schema that references it
     for (const primitiveFile of files) {
         const primitive = JSON.parse(fs.readFileSync(primitiveFile, "utf8"));
         generatePrimitiveSchema(primitive);
@@ -81,6 +84,7 @@ export const generatePrimitiveSchemas = async () => {
             ]
         }
     }
+
     const SHARED_SCHEMA_PATH = path.join(
         process.cwd(),
         "generated_schemas",
