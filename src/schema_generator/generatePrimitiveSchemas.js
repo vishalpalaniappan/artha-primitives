@@ -9,7 +9,7 @@ import { createDir, getAllJsonFilesInFolder } from "../helper.js";
  */
 const generatePrimitiveSchema = (primitive) => {
     const argsKey = (primitive.type) === "meta-primitive" ? "attributes" : "participants";
-    const args = primitive[argsKey].filter((item) => item.required);
+    const args = primitive[argsKey];
 
     // Schema base object
     const schema = {
@@ -20,6 +20,7 @@ const generatePrimitiveSchema = (primitive) => {
         primitiveType: `${primitive.type}`,
         type: "object",
         name: `${primitive.name}`,
+        additionalProperties: false,
         properties: {
             $schema: {
                 type: "string",
