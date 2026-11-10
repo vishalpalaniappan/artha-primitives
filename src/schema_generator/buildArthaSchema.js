@@ -4,6 +4,10 @@ import fsPromises from 'node:fs/promises';
 import path from 'node:path';
 import { createDir } from "../helper.js";
 
+const loadPrimitiveTypes = (primitiveType, excludes) => {
+    return [];
+}
+
 /**
  * This method builds the Artha schema by doing the following:
  * - Generates the invocation schemas for all the primitives
@@ -54,8 +58,21 @@ export const buildArthaSchema = async () => {
 
         const structure = manifest.structure[schemaName];
         if ("contains" in structure) {
+            schema.properties.body.items = {
+                anyOf: []
+            }
+
+            // Add the references to the types allowed in body of schema here
             for (const primitiveType of Object.keys(structure)) {
-                // Add the references to the types allowed in body of schema here
+                const allowedPrimitiveTypes = Object.keys(structure.contains);
+
+                for (const type of allowedPrimitiveTypes) {
+                    const allowedItems = loadPrimitiveTypes(type, structure.contains.excludes);
+                    schema.properties.body.items.anyOf = [
+                        ...schema.properties.body.items.anyOf, 
+                        ...allowedItems
+                    ];
+                }
             }
         }
 
