@@ -11,7 +11,9 @@ const generatePrimitiveSchema = (primitive) => {
         $id: `https://example.com/${primitive.name}-structure.schema.json`,
         title: `${primitive.name}-primitive-structure-schema`,
         description: `Structural schema for ${primitive.name} primitive.`,
+        primitiveType: `${primitive.type}`,
         type: "object",
+        name: `${primitive.name}`,
         additionalProperties: false,
         properties: {
             $schema: {
@@ -39,7 +41,7 @@ const generatePrimitiveSchema = (primitive) => {
         process.cwd(),
         "generated_schemas",
         "primitives",
-        `${primitive.name}-primitive-structure.schema.json`,
+        `${primitive.name}.schema.json`,
     );
     fs.writeFileSync(GENERATED_PATH, JSON.stringify(schema, null, 4), "utf8");
 };

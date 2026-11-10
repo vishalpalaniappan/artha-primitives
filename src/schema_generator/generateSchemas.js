@@ -7,7 +7,7 @@ const generateSchema = async () => {
     const GENERATED_SCHEMAS_DIR = path.join(process.cwd(), "generated_schemas");
     await createDir(GENERATED_SCHEMAS_DIR);
 
-    buildArthaSchema();
+    await buildArthaSchema();
     await dereferenceGeneratedSchema();
 };
 

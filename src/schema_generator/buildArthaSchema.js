@@ -1,11 +1,44 @@
-import {generatePrimitiveSchemas} from "./generatePrimitiveSchemas.js"
+import { generatePrimitiveSchemas } from "./generatePrimitiveSchemas.js"
 import fs from 'node:fs';
 import fsPromises from 'node:fs/promises';
 import path from 'node:path';
-import { createDir } from "../helper.js";
+import { createDir, getAllJsonFilesInFolder } from "../helper.js";
 
-const loadPrimitiveTypes = (primitiveType, excludes) => {
-    return [];
+/**
+ * 
+ * @param primitiveType {String} Type of primitive to allow.
+ * @param excludes {Array} The primitives to not allow for this type.
+ */
+const loadPrimitiveTypes = async (primitiveType, excludes) => {
+    const GENERATED_SCHEMAS_PATH = path.join(
+        process.cwd(),
+        "generated_schemas",
+        "primitives"
+    );
+
+    const files = getAllJsonFilesInFolder(GENERATED_SCHEMAS_PATH);
+
+
+    const allowedPrimitives = [];
+    for (const file of files) {
+        const parsedPrimitive = JSON.parse(fs.readFileSync(file, "utf8"));
+        if (parsedPrimitive.primitiveType !== primitiveType) continue;
+        if (excludes.includes(parsedPrimitive.name)) continue;
+
+        const nodeType = {
+            "allOf": [
+                { "$ref": `./primitives/${parsedPrimitive.name}.schema.json` },
+                {
+                    "properties": {
+                        "type": { "const": parsedPrimitive.name }
+                    }
+                }
+            ]
+        }
+        allowedPrimitives.push(nodeType);
+    }
+
+    return allowedPrimitives;
 }
 
 /**
@@ -18,8 +51,8 @@ const loadPrimitiveTypes = (primitiveType, excludes) => {
  * - Writes updated structural schema into generated_schema folder
  */
 export const buildArthaSchema = async () => {
-    generatePrimitiveSchemas();
-    
+    await generatePrimitiveSchemas();
+
     // Read the manifest
     const MANIFEST_PATH = path.join(process.cwd(), "manifest.json");
     const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, "utf8"));
@@ -27,7 +60,7 @@ export const buildArthaSchema = async () => {
     // Copy the narrative schema to generated schema folder
     const NARRATIVE_SCHEMA_PATH_SRC = path.join(process.cwd(), "schemas", "narrative.schema.json");
     const NARRATIVE_SCHEMA_PATH_DEST = path.join(process.cwd(), "generated_schemas", "narrative.schema.json");
-    
+
     // Add references to the structural schemas in generated folder so it can be dereferenced
     const narrative_schema = JSON.parse(fs.readFileSync(NARRATIVE_SCHEMA_PATH_SRC, "utf8"));
     for (const schemaName of manifest.structuralTypes) {
@@ -41,11 +74,11 @@ export const buildArthaSchema = async () => {
         }
     }
     fs.writeFileSync(
-        NARRATIVE_SCHEMA_PATH_DEST, 
-        JSON.stringify(narrative_schema, null , 4),
+        NARRATIVE_SCHEMA_PATH_DEST,
+        JSON.stringify(narrative_schema, null, 4),
         "utf8"
     );
-    
+
 
     // Populate the body of the structural schemas (if it contains a body)
     for (const schemaName of manifest.structuralTypes) {
@@ -63,28 +96,27 @@ export const buildArthaSchema = async () => {
             }
 
             // Add the references to the types allowed in body of schema here
-            for (const primitiveType of Object.keys(structure)) {
-                const allowedPrimitiveTypes = Object.keys(structure.contains);
-
-                for (const type of allowedPrimitiveTypes) {
-                    const allowedItems = loadPrimitiveTypes(type, structure.contains.excludes);
-                    schema.properties.body.items.anyOf = [
-                        ...schema.properties.body.items.anyOf, 
-                        ...allowedItems
-                    ];
-                }
+            for (const primitiveType of Object.keys(structure.contains)) {
+                const allowedPrimitiveTypes = await loadPrimitiveTypes(
+                    primitiveType,
+                    structure.contains[primitiveType].excludes
+                );
+                schema.properties.body.items.anyOf = [
+                    ...schema.properties.body.items.anyOf,
+                    ...allowedPrimitiveTypes
+                ];
             }
         }
 
         // Write generated structural schema to generated_schema folder
         const SCHEMA_PATH_DEST = path.join(
-            process.cwd(), 
-            "generated_schemas", 
+            process.cwd(),
+            "generated_schemas",
             `${schemaName}.schema.json`
         );
         fs.writeFileSync(
-            SCHEMA_PATH_DEST, 
-            JSON.stringify(schema, null , 4),
+            SCHEMA_PATH_DEST,
+            JSON.stringify(schema, null, 4),
             "utf8"
         );
     }
