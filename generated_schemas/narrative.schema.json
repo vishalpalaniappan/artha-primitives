@@ -35,28 +35,49 @@
     },
     "definitions": {
         "import": {
-            "properties": {
-                "type": {
-                    "const": "import"
+            "allOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "const": "import"
+                        }
+                    }
+                },
+                {
+                    "$ref": "./structural-schema/import.schema.json"
                 }
-            },
-            "$ref": "./structural-schema/import.schema.json"
+            ]
         },
         "participant": {
-            "properties": {
-                "type": {
-                    "const": "participant"
+            "allOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "const": "participant"
+                        }
+                    }
+                },
+                {
+                    "$ref": "./structural-schema/participant.schema.json"
                 }
-            },
-            "$ref": "./structural-schema/participant.schema.json"
+            ]
         },
         "behavior": {
-            "properties": {
-                "type": {
-                    "const": "behavior"
+            "allOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "const": "behavior"
+                        }
+                    }
+                },
+                {
+                    "$ref": "./structural-schema/behavior.schema.json"
                 }
-            },
-            "$ref": "./structural-schema/behavior.schema.json"
+            ]
         }
     }
 }

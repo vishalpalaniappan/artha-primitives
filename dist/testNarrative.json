@@ -1,0 +1,60 @@
+{
+    "$schema": "./artha.schema.json",
+    "metadata": "Testing meaningful narrative validated using schema.",
+    "narrative": [
+        {
+            "type": "import",
+            "file": "./testBehaviorMeaning.ar",
+            "alias": "testBehaviorMeaning"
+        },
+        {
+            "type": "import",
+            "file": "./sample.ar",
+            "alias": "sample"
+        },
+        {
+            "type": "behavior",
+            "name": "testBehavior",
+            "attributes": [
+                {
+                    "name": "arg1",
+                    "value": "test"
+                },
+                {
+                    "name": "arg2",
+                    "value": "test2"
+                }
+            ],
+            "body": [
+                {
+                    "name": "equals",
+                    "alias": "test",
+                    "value1": "a",
+                    "value2": "b"
+                }
+            ]
+        },
+        {
+            "type": "participant",
+            "name": "testParticipant",
+            "body": [
+                {
+                    "name": "equals",
+                    "alias": "test",
+                    "value1": "a",
+                    "value2": "b"
+                }
+            ]
+        },
+        {
+            "type": "participant",
+            "name": "testParticipant",
+            "body": [
+                {
+                    "name": "list_contains",
+                    "values" : ["a","b"]
+                }
+            ]
+        }
+    ]
+}
