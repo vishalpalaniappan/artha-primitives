@@ -1,0 +1,35 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "./participant.schema.json",
+    "title": "ParticipantSchema",
+    "description": "A schema for a participant in a narrative.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "body": {
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "../shared-primitive.schema.json#/$defs/list_contains"
+                    },
+                    {
+                        "$ref": "../shared-primitive.schema.json#/$defs/structural_type"
+                    }
+                ]
+            }
+        },
+        "name": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string",
+            "const": "participant"
+        }
+    },
+    "required": [
+        "body",
+        "name",
+        "type"
+    ]
+}

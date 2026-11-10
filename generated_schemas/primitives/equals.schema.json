@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/equals-structure.schema.json",
+    "title": "equals-primitive-structure-schema",
+    "description": "Structural schema for equals primitive.",
+    "primitiveType": "computable-primitive",
+    "type": "object",
+    "name": "equals",
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "URI reference to the JSON schema."
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the primitive."
+        },
+        "alias": {},
+        "value1": {},
+        "value2": {}
+    },
+    "required": [
+        "name",
+        "alias",
+        "value1",
+        "value2"
+    ]
+}

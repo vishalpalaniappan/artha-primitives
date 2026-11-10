@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/if-structure.schema.json",
+    "title": "if-primitive-structure-schema",
+    "description": "Structural schema for if primitive.",
+    "primitiveType": "functional-primitive",
+    "type": "object",
+    "name": "if",
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "URI reference to the JSON schema."
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the primitive."
+        },
+        "condition": {}
+    },
+    "required": [
+        "name",
+        "condition"
+    ]
+}

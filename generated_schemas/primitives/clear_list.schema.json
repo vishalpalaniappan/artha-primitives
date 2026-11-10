@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/clear_list-structure.schema.json",
+    "title": "clear_list-primitive-structure-schema",
+    "description": "Structural schema for clear_list primitive.",
+    "primitiveType": "computable-primitive",
+    "type": "object",
+    "name": "clear_list",
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "URI reference to the JSON schema."
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the primitive."
+        },
+        "list": {}
+    },
+    "required": [
+        "name",
+        "list"
+    ]
+}

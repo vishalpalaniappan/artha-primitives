@@ -1,0 +1,72 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "./behavior.schema.json",
+    "title": "BehaviorSchema",
+    "description": "A schema for a behavior in a narrative.",
+    "type": "object",
+    "properties": {
+        "type": {
+            "type": "string",
+            "const": "behavior"
+        },
+        "name": {
+            "type": "string"
+        },
+        "body": {
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "../shared-primitive.schema.json#/$defs/clear_list"
+                    },
+                    {
+                        "$ref": "../shared-primitive.schema.json#/$defs/equals"
+                    },
+                    {
+                        "$ref": "../shared-primitive.schema.json#/$defs/insert_at_end_of_list"
+                    },
+                    {
+                        "$ref": "../shared-primitive.schema.json#/$defs/terminal_display"
+                    },
+                    {
+                        "$ref": "../shared-primitive.schema.json#/$defs/terminal_input"
+                    },
+                    {
+                        "$ref": "../shared-primitive.schema.json#/$defs/if"
+                    },
+                    {
+                        "$ref": "../shared-primitive.schema.json#/$defs/introduce"
+                    },
+                    {
+                        "$ref": "../shared-primitive.schema.json#/$defs/yield"
+                    }
+                ]
+            }
+        },
+        "attributes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "value"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": [
+        "attributes",
+        "body",
+        "name",
+        "type"
+    ]
+}

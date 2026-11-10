@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/list_contains-structure.schema.json",
+    "title": "list_contains-primitive-structure-schema",
+    "description": "Structural schema for list_contains primitive.",
+    "primitiveType": "meta-primitive",
+    "type": "object",
+    "name": "list_contains",
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "URI reference to the JSON schema."
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the primitive."
+        },
+        "values": {}
+    },
+    "required": [
+        "name",
+        "values"
+    ]
+}

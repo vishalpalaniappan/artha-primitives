@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/introduce-structure.schema.json",
+    "title": "introduce-primitive-structure-schema",
+    "description": "Structural schema for introduce primitive.",
+    "primitiveType": "meta-primitive",
+    "type": "object",
+    "name": "introduce",
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "URI reference to the JSON schema."
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the primitive."
+        },
+        "alias": {},
+        "role": {},
+        "participant": {}
+    },
+    "required": [
+        "name",
+        "alias",
+        "role",
+        "participant"
+    ]
+}
