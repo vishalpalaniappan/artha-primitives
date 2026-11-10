@@ -37,12 +37,24 @@
         {
             "type": "participant",
             "name": "testParticipant",
-            "body": []
+            "body": [
+                {
+                    "name": "equals",
+                    "alias": "test",
+                    "value1": "a",
+                    "value2": "b"
+                }
+            ]
         },
         {
             "type": "participant",
             "name": "testParticipant",
-            "body": []
+            "body": [
+                {
+                    "name": "list_contains",
+                    "values" : ["a","b"]
+                }
+            ]
         }
     ]
 }
