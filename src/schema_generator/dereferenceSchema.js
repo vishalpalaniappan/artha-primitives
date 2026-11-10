@@ -12,7 +12,7 @@ import { createDir, getAllJsonFilesInFolder } from "../helper.js";
 export const dereferenceGeneratedSchema = async () => {
     try {
         const fullSchema = await $RefParser.dereference(
-            "./schemas/narrative.schema.json",
+            "./generated_schemas/narrative.schema.json",
         );
 
         const DIST_PATH = path.join(process.cwd(), "dist");

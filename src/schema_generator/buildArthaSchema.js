@@ -23,7 +23,25 @@ export const buildArthaSchema = async () => {
     // Copy the narrative schema to generated schema folder
     const NARRATIVE_SCHEMA_PATH_SRC = path.join(process.cwd(), "schemas", "narrative.schema.json");
     const NARRATIVE_SCHEMA_PATH_DEST = path.join(process.cwd(), "generated_schemas", "narrative.schema.json");
-    await fsPromises.copyFile(NARRATIVE_SCHEMA_PATH_SRC, NARRATIVE_SCHEMA_PATH_DEST);
+    
+    // Add references to the structural schemas in generated folder so it can be dereferenced
+    const narrative_schema = JSON.parse(fs.readFileSync(NARRATIVE_SCHEMA_PATH_SRC, "utf8"));
+    for (const schemaName of manifest.structuralTypes) {
+        narrative_schema.definitions[schemaName] = {
+            "properties": {
+                "type": {
+                    "const": schemaName
+                },
+                "$ref": `./${schemaName}.schema.json`
+            }
+        }
+    }
+    fs.writeFileSync(
+        NARRATIVE_SCHEMA_PATH_DEST, 
+        JSON.stringify(narrative_schema, null , 4),
+        "utf8"
+    );
+    
 
     // Populate the body of the structural schemas (if it contains a body)
     for (const schemaName of manifest.structuralTypes) {
