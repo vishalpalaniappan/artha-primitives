@@ -4,8 +4,8 @@ import {dereferenceGeneratedSchema} from "./dereferenceSchema.js"
 import {buildArthaSchema} from "./buildArthaSchema.js"
 
 const generateSchema = async () => {
-    const GENERATED_SCHEMAS_DIR = path.join(process.cwd(), "generated_schemas");
-    await createDir(GENERATED_SCHEMAS_DIR);
+    await createDir(path.join(process.cwd(), "generated_schemas"));
+    await createDir(path.join(process.cwd(), "generated_schemas", "structural-schema"));
 
     await buildArthaSchema();
     await dereferenceGeneratedSchema();

@@ -59,7 +59,7 @@ export const generatePrimitiveSchemas = async () => {
 
     const sharedSchema = {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "$id": "https://example.com/shared-primitive-schema.json",
+        "$id": "./shared-primitive-schema.json",
         "$defs": {}
     }
     

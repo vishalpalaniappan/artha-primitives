@@ -24,18 +24,7 @@ const loadPrimitiveTypes = async (primitiveType, excludes) => {
         const parsedPrimitive = JSON.parse(fs.readFileSync(file, "utf8"));
         if (parsedPrimitive.primitiveType !== primitiveType) continue;
         if (excludes.includes(parsedPrimitive.name)) continue;
-
-        const nodeType = {
-            "allOf": [
-                { "$ref": `./primitives/${parsedPrimitive.name}.schema.json` },
-                {
-                    "properties": {
-                        "type": { "const": parsedPrimitive.name }
-                    }
-                }
-            ]
-        }
-        allowedPrimitives.push(nodeType);
+        allowedPrimitives.push({ "$ref": `../shared-primitive.schema.json#/$defs/${parsedPrimitive.name}`});
     }
 
     return allowedPrimitives;
@@ -63,16 +52,6 @@ export const buildArthaSchema = async () => {
 
     // Add references to the structural schemas in generated folder so it can be dereferenced
     const narrative_schema = JSON.parse(fs.readFileSync(NARRATIVE_SCHEMA_PATH_SRC, "utf8"));
-    for (const schemaName of manifest.structuralTypes) {
-        narrative_schema.definitions[schemaName] = {
-            "properties": {
-                "type": {
-                    "const": schemaName
-                },
-                "$ref": `./${schemaName}.schema.json`
-            }
-        }
-    }
     fs.writeFileSync(
         NARRATIVE_SCHEMA_PATH_DEST,
         JSON.stringify(narrative_schema, null, 4),
@@ -112,6 +91,7 @@ export const buildArthaSchema = async () => {
         const SCHEMA_PATH_DEST = path.join(
             process.cwd(),
             "generated_schemas",
+            "structural-schema",
             `${schemaName}.schema.json`
         );
         fs.writeFileSync(
