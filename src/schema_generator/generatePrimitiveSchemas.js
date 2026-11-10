@@ -30,6 +30,10 @@ const generatePrimitiveSchema = (primitive) => {
                 type: "string",
                 description: "Name of the primitive.",
             },
+            invariant: {
+                "x-custom-rule": "validate-narrative",
+                "x-meta-data": primitive.invariants
+            },
         },
     };
     
