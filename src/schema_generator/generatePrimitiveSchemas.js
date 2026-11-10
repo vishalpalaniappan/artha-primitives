@@ -56,10 +56,35 @@ export const generatePrimitiveSchemas = async () => {
         "primitives",
     );
     await createDir(GENERATED_PRIMITIVE_SCHEMAS_PATH);
+
+    const sharedSchema = {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "https://example.com/shared-primitive-schema.json",
+        "$defs": {}
+    }
     
     // Generate schemas for each of the primitives
     for (const primitiveFile of files) {
         const primitive = JSON.parse(fs.readFileSync(primitiveFile, "utf8"));
         generatePrimitiveSchema(primitive);
+
+        sharedSchema.$defs[primitive.name] = {
+            "allOf": [
+                { "$ref": `./primitives/${primitive.name}.schema.json` },
+                {
+                    "type": "object",
+                    "properties": {
+                        "name": { "const": `${primitive.name}`}
+                    },
+                    "required": ["name"]
+                }
+            ]
+        }
     }
+    const SHARED_SCHEMA_PATH = path.join(
+        process.cwd(),
+        "generated_schemas",
+        `shared-primitive.schema.json`,
+    );
+    fs.writeFileSync(SHARED_SCHEMA_PATH, JSON.stringify(sharedSchema, null, 4), "utf8");
 };
