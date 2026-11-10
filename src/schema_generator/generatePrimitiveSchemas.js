@@ -29,13 +29,14 @@ const generatePrimitiveSchema = (primitive) => {
             name: {
                 type: "string",
                 description: "Name of the primitive.",
-            },
-            invariant: {
-                "x-custom-rule": "validate-narrative",
-                "x-meta-data": primitive.invariants
-            },
-        },
+            }
+        }
     };
+
+    if ("invariants" in primitive) {
+        schema["x-custom-rule"] = "validate-narrative";
+        schema["x-invariant-metadata"] = primitive.invariants;
+    }
     
     // Add all the required arguments to the list and also
     // add the entry to the properties key
