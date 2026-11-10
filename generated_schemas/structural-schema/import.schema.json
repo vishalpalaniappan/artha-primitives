@@ -4,14 +4,12 @@
     "title": "ImportSchema",
     "description": "A schema definition for import meaning.",
     "type": "object",
+    "name": "import",
     "additionalProperties": false,
     "properties": {
-        "type": {
+        "name": {
             "type": "string",
             "const": "import"
-        },
-        "name": {
-            "type": "string"
         },
         "file": {
             "type": "string"
@@ -21,7 +19,6 @@
         }
     },
     "required": [
-        "type",
         "name",
         "file",
         "alias"

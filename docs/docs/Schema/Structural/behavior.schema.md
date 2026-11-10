@@ -11,7 +11,7 @@ description: A schema for a behavior in a narrative.
 
 <table>
 <tbody>
-<tr><th>$id</th><td>https://example.com/behavior.schema.json</td></tr>
+<tr><th>$id</th><td>./behavior.schema.json</td></tr>
 <tr><th>$schema</th><td>https://json-schema.org/draft/2020-12/schema</td></tr>
 </tbody>
 </table>
@@ -133,7 +133,7 @@ description: A schema for a behavior in a narrative.
 ```
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://example.com/behavior.schema.json",
+    "$id": "./behavior.schema.json",
     "title": "BehaviorSchema",
     "description": "A schema for a behavior in a narrative.",
     "type": "object",

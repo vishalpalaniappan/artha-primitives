@@ -11,38 +11,18 @@ description: A schema definition for import meaning.
 
 <table>
 <tbody>
-<tr><th>$id</th><td>https://example.com/structural-primitive.schema.json</td></tr>
+<tr><th>$id</th><td>./structural-primitive.schema.json</td></tr>
 <tr><th>$schema</th><td>https://json-schema.org/draft/2020-12/schema</td></tr>
 </tbody>
 </table>
 
 ## Properties
 
-<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#type">type</a></td><td>String=import</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#file">file</a></td><td>String</td></tr><tr><td colspan="2"><a href="#alias">alias</a></td><td>String</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#name">name</a></td><td>String=import</td></tr><tr><td colspan="2"><a href="#file">file</a></td><td>String</td></tr><tr><td colspan="2"><a href="#alias">alias</a></td><td>String</td></tr></tbody></table>
 
 
 
 <hr />
-
-
-## type
-
-
-<table class="jssd-property-table">
-  <tbody>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">No</td>
-    </tr>
-    <tr>
-      <th>Const</th>
-      <td colspan="2">import</td>
-    </tr>
-  </tbody>
-</table>
-
-
 
 
 ## name
@@ -55,7 +35,10 @@ description: A schema definition for import meaning.
       <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    
+    <tr>
+      <th>Const</th>
+      <td colspan="2">import</td>
+    </tr>
   </tbody>
 </table>
 
@@ -70,7 +53,7 @@ description: A schema definition for import meaning.
     <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Required</th>
-      <td colspan="2">No</td>
+      <td colspan="2">Yes</td>
     </tr>
     
   </tbody>
@@ -107,18 +90,15 @@ description: A schema definition for import meaning.
 ```
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://example.com/structural-primitive.schema.json",
+    "$id": "./structural-primitive.schema.json",
     "title": "ImportSchema",
     "description": "A schema definition for import meaning.",
     "type": "object",
     "additionalProperties": false,
     "properties": {
-        "type": {
+        "name": {
             "type": "string",
             "const": "import"
-        },
-        "name": {
-            "type": "string"
         },
         "file": {
             "type": "string"
@@ -128,9 +108,8 @@ description: A schema definition for import meaning.
         }
     },
     "required": [
-        "attributes",
-        "body",
         "name",
+        "file",
         "alias"
     ]
 }

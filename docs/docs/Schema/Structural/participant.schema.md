@@ -11,7 +11,7 @@ description: A schema for a participant in a narrative.
 
 <table>
 <tbody>
-<tr><th>$id</th><td>https://example.com/participant.schema.json</td></tr>
+<tr><th>$id</th><td>./participant.schema.json</td></tr>
 <tr><th>$schema</th><td>https://json-schema.org/draft/2020-12/schema</td></tr>
 </tbody>
 </table>
@@ -90,7 +90,7 @@ description: A schema for a participant in a narrative.
 ```
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://example.com/participant.schema.json",
+    "$id": "./participant.schema.json",
     "title": "ParticipantSchema",
     "description": "A schema for a participant in a narrative.",
     "type": "object",
