@@ -5,6 +5,7 @@ import {buildArthaSchema} from "./buildArthaSchema.js"
 
 const generateSchema = async () => {
     await createDir(path.join(process.cwd(), "generated_schemas"));
+    await createDir(path.join(process.cwd(), "generated_schemas", "primitives"));
     await createDir(path.join(process.cwd(), "generated_schemas", "structural-schema"));
 
     await buildArthaSchema();
