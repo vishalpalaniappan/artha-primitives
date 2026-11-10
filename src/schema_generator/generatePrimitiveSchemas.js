@@ -20,7 +20,6 @@ const generatePrimitiveSchema = (primitive) => {
         primitiveType: `${primitive.type}`,
         type: "object",
         name: `${primitive.name}`,
-        additionalProperties: false,
         properties: {
             $schema: {
                 type: "string",
@@ -42,8 +41,8 @@ const generatePrimitiveSchema = (primitive) => {
     // add the entry to the properties key
     schema.required = ["name"];
     for (const arg of args) {
+        schema.properties[arg.name] = {};
         if (arg.required) {
-            schema.properties[arg.name] = {};
             schema.required.push(arg.name);
         }
     }
