@@ -1,10 +1,9 @@
 import path from "node:path";
 import fs from "node:fs";
-import { getAllJsonFilesInFolder } from "../helper.js";
+import { createDir, getAllJsonFilesInFolder } from "../helper.js";
 
 const generatePrimitiveSchema = (primitive) => {
-    const argsKey =
-        primitive.type === "meta-primitive" ? "attributes" : "participants";
+    const argsKey = (primitive.type) === "meta-primitive" ? "attributes" : "participants";
     const args = primitive[argsKey].filter((item) => item.required);
 
     const schema = {
@@ -39,18 +38,26 @@ const generatePrimitiveSchema = (primitive) => {
     const GENERATED_PATH = path.join(
         process.cwd(),
         "generated_schemas",
+        "primitives",
         `${primitive.name}-primitive-structure.schema.json`,
     );
     fs.writeFileSync(GENERATED_PATH, JSON.stringify(schema, null, 4), "utf8");
 };
 
-
-export const generatePrimitiveSchemas = () => {
-    // Generate schemas for each of the primitives
+export const generatePrimitiveSchemas = async () => {
     const PRIMITIVES_DIR = path.join(process.cwd(), "primitives");
     const files = getAllJsonFilesInFolder(PRIMITIVES_DIR);
+
+    const GENERATED_PRIMITIVE_SCHEMAS_PATH = path.join(
+        process.cwd(),
+        "generated_schemas",
+        "primitives",
+    );
+    await createDir(GENERATED_PRIMITIVE_SCHEMAS_PATH);
+    
+    // Generate schemas for each of the primitives
     for (const primitiveFile of files) {
         const primitive = JSON.parse(fs.readFileSync(primitiveFile, "utf8"));
         generatePrimitiveSchema(primitive);
     }
-}
+};
