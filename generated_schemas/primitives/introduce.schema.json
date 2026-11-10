@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://example.com/introduce-structure.schema.json",
+    "$id": "./introduce-structure.schema.json",
     "title": "introduce-primitive-structure-schema",
     "description": "Structural schema for introduce primitive.",
     "primitiveType": "meta-primitive",

@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://example.com/equals-structure.schema.json",
+    "$id": "./equals-structure.schema.json",
     "title": "equals-primitive-structure-schema",
     "description": "Structural schema for equals primitive.",
     "primitiveType": "computable-primitive",

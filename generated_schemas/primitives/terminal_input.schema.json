@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://example.com/terminal_input-structure.schema.json",
+    "$id": "./terminal_input-structure.schema.json",
     "title": "terminal_input-primitive-structure-schema",
     "description": "Structural schema for terminal_input primitive.",
     "primitiveType": "computable-legacy-primitive",
