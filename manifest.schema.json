@@ -1,0 +1,82 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/manifest.schema.json",
+    "title": "ManifestSchema",
+    "description": "A schema for repo manifest.",
+    "type": "object",
+    "properties": {
+        "primitiveTypes": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "structuralTypes": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "structureContains": {
+            "type": "object",
+            "properties": {
+                "behavior": {
+                    "type": "object",
+                    "properties": {
+                        "contains": {
+                            "type": "object",
+                            "patternProperties": {
+                                "^.+$": {
+                                    "type": "object",
+                                    "required": [
+                                        "excludes"
+                                    ],
+                                    "properties": {
+                                        "excludes": {
+                                            "type": "array"
+                                        }
+                                    },
+                                    "additionalProperties": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "participant": {
+                    "type": "object",
+                    "properties": {
+                        "contains": {
+                            "type": "object",
+                            "patternProperties": {
+                                "^.+$": {
+                                    "type": "object",
+                                    "required": [
+                                        "excludes"
+                                    ],
+                                    "properties": {
+                                        "excludes": {
+                                            "type": "array"
+                                        }
+                                    },
+                                    "additionalProperties": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "import": {}
+            },
+            "required": [
+                "behavior",
+                "participant",
+                "import"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "primitiveTypes",
+        "structuralTypes",
+        "structureContains"
+    ]
+}

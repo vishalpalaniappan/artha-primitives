@@ -1,11 +1,17 @@
 {
+    "$schema": "./manifest.schema.json",
     "primitiveTypes": [
         "computable-primitive",
         "functional-primitive",
         "computable-legacy-primitive",
         "meta-primitive"
     ],
-    "structuralTypes": {
+    "structuralTypes": [
+        "behavior",
+        "participant",
+        "import"
+    ],
+    "structureContains": {
         "behavior": {
             "contains": {
                 "computable-primitive": {
