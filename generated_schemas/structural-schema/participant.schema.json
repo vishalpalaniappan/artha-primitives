@@ -20,16 +20,12 @@
             }
         },
         "name": {
-            "type": "string"
-        },
-        "type": {
             "type": "string",
             "const": "participant"
         }
     },
     "required": [
         "body",
-        "name",
-        "type"
+        "name"
     ]
 }

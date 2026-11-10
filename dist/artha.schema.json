@@ -38,12 +38,9 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                  "type": {
+                  "name": {
                     "type": "string",
                     "const": "import"
-                  },
-                  "name": {
-                    "type": "string"
                   },
                   "file": {
                     "type": "string"
@@ -53,7 +50,6 @@
                   }
                 },
                 "required": [
-                  "type",
                   "name",
                   "file",
                   "alias"
@@ -167,17 +163,13 @@
                     }
                   },
                   "name": {
-                    "type": "string"
-                  },
-                  "type": {
                     "type": "string",
                     "const": "participant"
                   }
                 },
                 "required": [
                   "body",
-                  "name",
-                  "type"
+                  "name"
                 ]
               }
             ]
@@ -198,13 +190,11 @@
                 "title": "BehaviorSchema",
                 "description": "A schema for a behavior in a narrative.",
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
-                  "type": {
+                  "name": {
                     "type": "string",
                     "const": "behavior"
-                  },
-                  "name": {
-                    "type": "string"
                   },
                   "body": {
                     "type": "array",
@@ -624,16 +614,14 @@
                         "value": {
                           "type": "string"
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     }
                   }
                 },
                 "required": [
                   "attributes",
                   "body",
-                  "name",
-                  "type"
+                  "name"
                 ]
               }
             ]
@@ -661,12 +649,9 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "type": {
+            "name": {
               "type": "string",
               "const": "import"
-            },
-            "name": {
-              "type": "string"
             },
             "file": {
               "type": "string"
@@ -676,7 +661,6 @@
             }
           },
           "required": [
-            "type",
             "name",
             "file",
             "alias"
@@ -790,17 +774,13 @@
               }
             },
             "name": {
-              "type": "string"
-            },
-            "type": {
               "type": "string",
               "const": "participant"
             }
           },
           "required": [
             "body",
-            "name",
-            "type"
+            "name"
           ]
         }
       ]
@@ -821,13 +801,11 @@
           "title": "BehaviorSchema",
           "description": "A schema for a behavior in a narrative.",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
-            "type": {
+            "name": {
               "type": "string",
               "const": "behavior"
-            },
-            "name": {
-              "type": "string"
             },
             "body": {
               "type": "array",
@@ -1247,16 +1225,14 @@
                   "value": {
                     "type": "string"
                   }
-                },
-                "additionalProperties": false
+                }
               }
             }
           },
           "required": [
             "attributes",
             "body",
-            "name",
-            "type"
+            "name"
           ]
         }
       ]

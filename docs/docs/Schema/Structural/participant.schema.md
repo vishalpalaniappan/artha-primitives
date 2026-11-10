@@ -18,7 +18,7 @@ description: A schema for a participant in a narrative.
 
 ## Properties
 
-<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#body">body</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#type">type</a></td><td>String=participant</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#body">body</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String=participant</td></tr></tbody></table>
 
 
 
@@ -43,23 +43,6 @@ description: A schema for a participant in a narrative.
 
 
 ## name
-
-
-<table class="jssd-property-table">
-  <tbody>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">Yes</td>
-    </tr>
-    
-  </tbody>
-</table>
-
-
-
-
-## type
 
 
 <table class="jssd-property-table">
@@ -100,17 +83,13 @@ description: A schema for a participant in a narrative.
             "type": "array"
         },
         "name": {
-            "type": "string"
-        },
-        "type": {
             "type": "string",
             "const": "participant"
         }
     },
     "required": [
         "body",
-        "name",
-        "type"
+        "name"
     ]
 }
 ```

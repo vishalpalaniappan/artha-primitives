@@ -4,13 +4,11 @@
     "title": "BehaviorSchema",
     "description": "A schema for a behavior in a narrative.",
     "type": "object",
+    "additionalProperties": false,
     "properties": {
-        "type": {
+        "name": {
             "type": "string",
             "const": "behavior"
-        },
-        "name": {
-            "type": "string"
         },
         "body": {
             "type": "array",
@@ -58,15 +56,13 @@
                     "value": {
                         "type": "string"
                     }
-                },
-                "additionalProperties": false
+                }
             }
         }
     },
     "required": [
         "attributes",
         "body",
-        "name",
-        "type"
+        "name"
     ]
 }
