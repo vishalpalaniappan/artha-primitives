@@ -16,6 +16,28 @@
             "type": "string",
             "description": "Name of the primitive."
         },
+        "invariant": {
+            "x-custom-rule": "validate-narrative",
+            "x-meta-data": [
+                {
+                    "id": "1",
+                    "participants": [
+                        "list"
+                    ],
+                    "property": "structuralType",
+                    "condition": [
+                        "list"
+                    ],
+                    "description": "list must have structuralType List.",
+                    "invalidValues": [
+                        {
+                            "value": "string_value",
+                            "description": "A string is provided as list participant"
+                        }
+                    ]
+                }
+            ]
+        },
         "list": {}
     },
     "required": [

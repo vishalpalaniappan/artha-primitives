@@ -16,6 +16,28 @@
             "type": "string",
             "description": "Name of the primitive."
         },
+        "invariant": {
+            "x-custom-rule": "validate-narrative",
+            "x-meta-data": [
+                {
+                    "id": "inv_1",
+                    "participants": [
+                        "condition"
+                    ],
+                    "property": "structuralType",
+                    "condition": [
+                        "boolean"
+                    ],
+                    "description": "the condition must be a boolean value",
+                    "invalidValues": [
+                        {
+                            "value": "string_value",
+                            "description": "A string is provided as the condition"
+                        }
+                    ]
+                }
+            ]
+        },
         "condition": {}
     },
     "required": [

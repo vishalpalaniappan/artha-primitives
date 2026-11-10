@@ -16,6 +16,9 @@
             "type": "string",
             "description": "Name of the primitive."
         },
+        "invariant": {
+            "x-custom-rule": "validate-narrative"
+        },
         "values": {}
     },
     "required": [
