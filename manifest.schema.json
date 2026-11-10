@@ -17,7 +17,7 @@
                 "type": "string"
             }
         },
-        "structureContains": {
+        "structure": {
             "type": "object",
             "properties": {
                 "behavior": {
@@ -77,6 +77,6 @@
     "required": [
         "primitiveTypes",
         "structuralTypes",
-        "structureContains"
+        "structure"
     ]
 }

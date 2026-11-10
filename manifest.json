@@ -11,7 +11,7 @@
         "participant",
         "import"
     ],
-    "structureContains": {
+    "structure": {
         "behavior": {
             "contains": {
                 "computable-primitive": {
