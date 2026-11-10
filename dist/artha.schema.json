@@ -103,9 +103,6 @@
                                   "type": "string",
                                   "description": "Name of the primitive."
                                 },
-                                "invariant": {
-                                  "x-custom-rule": "validate-narrative"
-                                },
                                 "values": {}
                               },
                               "required": [
@@ -145,9 +142,6 @@
                                 "name": {
                                   "type": "string",
                                   "description": "Name of the primitive."
-                                },
-                                "invariant": {
-                                  "x-custom-rule": "validate-narrative"
                                 },
                                 "type": {}
                               },
@@ -236,30 +230,28 @@
                                   "type": "string",
                                   "description": "Name of the primitive."
                                 },
-                                "invariant": {
-                                  "x-custom-rule": "validate-narrative",
-                                  "x-meta-data": [
-                                    {
-                                      "id": "1",
-                                      "participants": [
-                                        "list"
-                                      ],
-                                      "property": "structuralType",
-                                      "condition": [
-                                        "list"
-                                      ],
-                                      "description": "list must have structuralType List.",
-                                      "invalidValues": [
-                                        {
-                                          "value": "string_value",
-                                          "description": "A string is provided as list participant"
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                },
                                 "list": {}
                               },
+                              "x-custom-rule": "validate-narrative",
+                              "x-invariant-metadata": [
+                                {
+                                  "id": "1",
+                                  "participants": [
+                                    "list"
+                                  ],
+                                  "property": "structuralType",
+                                  "condition": [
+                                    "list"
+                                  ],
+                                  "description": "list must have structuralType List.",
+                                  "invalidValues": [
+                                    {
+                                      "value": "string_value",
+                                      "description": "A string is provided as list participant"
+                                    }
+                                  ]
+                                }
+                              ],
                               "required": [
                                 "name",
                                 "list"
@@ -298,14 +290,12 @@
                                   "type": "string",
                                   "description": "Name of the primitive."
                                 },
-                                "invariant": {
-                                  "x-custom-rule": "validate-narrative",
-                                  "x-meta-data": []
-                                },
                                 "alias": {},
                                 "value1": {},
                                 "value2": {}
                               },
+                              "x-custom-rule": "validate-narrative",
+                              "x-invariant-metadata": [],
                               "required": [
                                 "name",
                                 "alias",
@@ -346,31 +336,29 @@
                                   "type": "string",
                                   "description": "Name of the primitive."
                                 },
-                                "invariant": {
-                                  "x-custom-rule": "validate-narrative",
-                                  "x-meta-data": [
-                                    {
-                                      "id": "1",
-                                      "participants": [
-                                        "list"
-                                      ],
-                                      "property": "structuralType",
-                                      "condition": [
-                                        "list"
-                                      ],
-                                      "description": "list must have structuralType List.",
-                                      "invalidValues": [
-                                        {
-                                          "value": "string_value",
-                                          "description": "A string is provided as list participant"
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                },
                                 "item": {},
                                 "list": {}
                               },
+                              "x-custom-rule": "validate-narrative",
+                              "x-invariant-metadata": [
+                                {
+                                  "id": "1",
+                                  "participants": [
+                                    "list"
+                                  ],
+                                  "property": "structuralType",
+                                  "condition": [
+                                    "list"
+                                  ],
+                                  "description": "list must have structuralType List.",
+                                  "invalidValues": [
+                                    {
+                                      "value": "string_value",
+                                      "description": "A string is provided as list participant"
+                                    }
+                                  ]
+                                }
+                              ],
                               "required": [
                                 "name",
                                 "item",
@@ -410,12 +398,10 @@
                                   "type": "string",
                                   "description": "Name of the primitive."
                                 },
-                                "invariant": {
-                                  "x-custom-rule": "validate-narrative",
-                                  "x-meta-data": []
-                                },
                                 "message": {}
                               },
+                              "x-custom-rule": "validate-narrative",
+                              "x-invariant-metadata": [],
                               "required": [
                                 "name",
                                 "message"
@@ -454,12 +440,10 @@
                                   "type": "string",
                                   "description": "Name of the primitive."
                                 },
-                                "invariant": {
-                                  "x-custom-rule": "validate-narrative",
-                                  "x-meta-data": []
-                                },
                                 "alias": {}
                               },
+                              "x-custom-rule": "validate-narrative",
+                              "x-invariant-metadata": [],
                               "required": [
                                 "name",
                                 "alias"
@@ -498,30 +482,28 @@
                                   "type": "string",
                                   "description": "Name of the primitive."
                                 },
-                                "invariant": {
-                                  "x-custom-rule": "validate-narrative",
-                                  "x-meta-data": [
-                                    {
-                                      "id": "inv_1",
-                                      "participants": [
-                                        "condition"
-                                      ],
-                                      "property": "structuralType",
-                                      "condition": [
-                                        "boolean"
-                                      ],
-                                      "description": "the condition must be a boolean value",
-                                      "invalidValues": [
-                                        {
-                                          "value": "string_value",
-                                          "description": "A string is provided as the condition"
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                },
                                 "condition": {}
                               },
+                              "x-custom-rule": "validate-narrative",
+                              "x-invariant-metadata": [
+                                {
+                                  "id": "inv_1",
+                                  "participants": [
+                                    "condition"
+                                  ],
+                                  "property": "structuralType",
+                                  "condition": [
+                                    "boolean"
+                                  ],
+                                  "description": "the condition must be a boolean value",
+                                  "invalidValues": [
+                                    {
+                                      "value": "string_value",
+                                      "description": "A string is provided as the condition"
+                                    }
+                                  ]
+                                }
+                              ],
                               "required": [
                                 "name",
                                 "condition"
@@ -559,9 +541,6 @@
                                 "name": {
                                   "type": "string",
                                   "description": "Name of the primitive."
-                                },
-                                "invariant": {
-                                  "x-custom-rule": "validate-narrative"
                                 },
                                 "alias": {},
                                 "role": {},
@@ -606,9 +585,6 @@
                                 "name": {
                                   "type": "string",
                                   "description": "Name of the primitive."
-                                },
-                                "invariant": {
-                                  "x-custom-rule": "validate-narrative"
                                 },
                                 "alias": {}
                               },
@@ -750,9 +726,6 @@
                             "type": "string",
                             "description": "Name of the primitive."
                           },
-                          "invariant": {
-                            "x-custom-rule": "validate-narrative"
-                          },
                           "values": {}
                         },
                         "required": [
@@ -792,9 +765,6 @@
                           "name": {
                             "type": "string",
                             "description": "Name of the primitive."
-                          },
-                          "invariant": {
-                            "x-custom-rule": "validate-narrative"
                           },
                           "type": {}
                         },
@@ -883,30 +853,28 @@
                             "type": "string",
                             "description": "Name of the primitive."
                           },
-                          "invariant": {
-                            "x-custom-rule": "validate-narrative",
-                            "x-meta-data": [
-                              {
-                                "id": "1",
-                                "participants": [
-                                  "list"
-                                ],
-                                "property": "structuralType",
-                                "condition": [
-                                  "list"
-                                ],
-                                "description": "list must have structuralType List.",
-                                "invalidValues": [
-                                  {
-                                    "value": "string_value",
-                                    "description": "A string is provided as list participant"
-                                  }
-                                ]
-                              }
-                            ]
-                          },
                           "list": {}
                         },
+                        "x-custom-rule": "validate-narrative",
+                        "x-invariant-metadata": [
+                          {
+                            "id": "1",
+                            "participants": [
+                              "list"
+                            ],
+                            "property": "structuralType",
+                            "condition": [
+                              "list"
+                            ],
+                            "description": "list must have structuralType List.",
+                            "invalidValues": [
+                              {
+                                "value": "string_value",
+                                "description": "A string is provided as list participant"
+                              }
+                            ]
+                          }
+                        ],
                         "required": [
                           "name",
                           "list"
@@ -945,14 +913,12 @@
                             "type": "string",
                             "description": "Name of the primitive."
                           },
-                          "invariant": {
-                            "x-custom-rule": "validate-narrative",
-                            "x-meta-data": []
-                          },
                           "alias": {},
                           "value1": {},
                           "value2": {}
                         },
+                        "x-custom-rule": "validate-narrative",
+                        "x-invariant-metadata": [],
                         "required": [
                           "name",
                           "alias",
@@ -993,31 +959,29 @@
                             "type": "string",
                             "description": "Name of the primitive."
                           },
-                          "invariant": {
-                            "x-custom-rule": "validate-narrative",
-                            "x-meta-data": [
-                              {
-                                "id": "1",
-                                "participants": [
-                                  "list"
-                                ],
-                                "property": "structuralType",
-                                "condition": [
-                                  "list"
-                                ],
-                                "description": "list must have structuralType List.",
-                                "invalidValues": [
-                                  {
-                                    "value": "string_value",
-                                    "description": "A string is provided as list participant"
-                                  }
-                                ]
-                              }
-                            ]
-                          },
                           "item": {},
                           "list": {}
                         },
+                        "x-custom-rule": "validate-narrative",
+                        "x-invariant-metadata": [
+                          {
+                            "id": "1",
+                            "participants": [
+                              "list"
+                            ],
+                            "property": "structuralType",
+                            "condition": [
+                              "list"
+                            ],
+                            "description": "list must have structuralType List.",
+                            "invalidValues": [
+                              {
+                                "value": "string_value",
+                                "description": "A string is provided as list participant"
+                              }
+                            ]
+                          }
+                        ],
                         "required": [
                           "name",
                           "item",
@@ -1057,12 +1021,10 @@
                             "type": "string",
                             "description": "Name of the primitive."
                           },
-                          "invariant": {
-                            "x-custom-rule": "validate-narrative",
-                            "x-meta-data": []
-                          },
                           "message": {}
                         },
+                        "x-custom-rule": "validate-narrative",
+                        "x-invariant-metadata": [],
                         "required": [
                           "name",
                           "message"
@@ -1101,12 +1063,10 @@
                             "type": "string",
                             "description": "Name of the primitive."
                           },
-                          "invariant": {
-                            "x-custom-rule": "validate-narrative",
-                            "x-meta-data": []
-                          },
                           "alias": {}
                         },
+                        "x-custom-rule": "validate-narrative",
+                        "x-invariant-metadata": [],
                         "required": [
                           "name",
                           "alias"
@@ -1145,30 +1105,28 @@
                             "type": "string",
                             "description": "Name of the primitive."
                           },
-                          "invariant": {
-                            "x-custom-rule": "validate-narrative",
-                            "x-meta-data": [
-                              {
-                                "id": "inv_1",
-                                "participants": [
-                                  "condition"
-                                ],
-                                "property": "structuralType",
-                                "condition": [
-                                  "boolean"
-                                ],
-                                "description": "the condition must be a boolean value",
-                                "invalidValues": [
-                                  {
-                                    "value": "string_value",
-                                    "description": "A string is provided as the condition"
-                                  }
-                                ]
-                              }
-                            ]
-                          },
                           "condition": {}
                         },
+                        "x-custom-rule": "validate-narrative",
+                        "x-invariant-metadata": [
+                          {
+                            "id": "inv_1",
+                            "participants": [
+                              "condition"
+                            ],
+                            "property": "structuralType",
+                            "condition": [
+                              "boolean"
+                            ],
+                            "description": "the condition must be a boolean value",
+                            "invalidValues": [
+                              {
+                                "value": "string_value",
+                                "description": "A string is provided as the condition"
+                              }
+                            ]
+                          }
+                        ],
                         "required": [
                           "name",
                           "condition"
@@ -1206,9 +1164,6 @@
                           "name": {
                             "type": "string",
                             "description": "Name of the primitive."
-                          },
-                          "invariant": {
-                            "x-custom-rule": "validate-narrative"
                           },
                           "alias": {},
                           "role": {},
@@ -1253,9 +1208,6 @@
                           "name": {
                             "type": "string",
                             "description": "Name of the primitive."
-                          },
-                          "invariant": {
-                            "x-custom-rule": "validate-narrative"
                           },
                           "alias": {}
                         },

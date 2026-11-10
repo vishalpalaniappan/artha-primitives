@@ -16,12 +16,10 @@
             "type": "string",
             "description": "Name of the primitive."
         },
-        "invariant": {
-            "x-custom-rule": "validate-narrative",
-            "x-meta-data": []
-        },
         "message": {}
     },
+    "x-custom-rule": "validate-narrative",
+    "x-invariant-metadata": [],
     "required": [
         "name",
         "message"
