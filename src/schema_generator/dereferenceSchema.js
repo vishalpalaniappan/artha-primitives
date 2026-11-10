@@ -9,7 +9,7 @@ import { createDir, getAllJsonFilesInFolder } from "../helper.js";
  * I will be adding all the generated schemas to the generated_schema folder and then building
  * the schema with the fully generated schema. Right now, I am just testing the bundling.
  */
-export const dereferenceAndBuildSchema = async () => {
+export const dereferenceGeneratedSchema = async () => {
     try {
         const fullSchema = await $RefParser.dereference(
             "./schemas/narrative.schema.json",
