@@ -15,11 +15,9 @@ const generatePrimitiveSchema = (primitive) => {
     const schema = {
         $schema: "https://json-schema.org/draft/2020-12/schema",
         $id: `./${primitive.name}-structure.schema.json`,
-        title: `${primitive.name}-primitive-structure-schema`,
+        title: `${primitive.name}`,
         description: `Structural schema for ${primitive.name} primitive.`,
-        primitiveType: `${primitive.type}`,
         type: "object",
-        name: `${primitive.name}`,
         additionalProperties: false,
         properties: {
             $schema: {
@@ -29,6 +27,12 @@ const generatePrimitiveSchema = (primitive) => {
             name: {
                 type: "string",
                 description: "Name of the primitive.",
+                const: `${primitive.name}`
+            }, 
+            primitiveType: {
+                type: "string",
+                description: "Type of the primitive.",
+                const: `${primitive.type}`
             }
         }
     };
