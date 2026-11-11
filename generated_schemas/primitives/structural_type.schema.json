@@ -23,10 +23,10 @@
             "description": "Type of the primitive.",
             "const": "meta-primitive"
         },
-        "type": {}
+        "value": {}
     },
     "required": [
         "name",
-        "type"
+        "value"
     ]
 }

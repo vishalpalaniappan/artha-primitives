@@ -87,7 +87,7 @@ description: A schema for a behavior in a narrative.
     <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Required</th>
-      <td colspan="2">Yes</td>
+      <td colspan="2">No</td>
     </tr>
     
   </tbody>
@@ -192,8 +192,7 @@ description: A schema for a behavior in a narrative.
         "attributes",
         "body",
         "name",
-        "behaviorName",
-        "id"
+        "behaviorName"
     ]
 }
 ```
