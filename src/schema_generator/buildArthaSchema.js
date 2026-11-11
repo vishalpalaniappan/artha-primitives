@@ -22,8 +22,8 @@ const loadPrimitiveTypes = async (primitiveType, excludes) => {
     const allowedPrimitives = [];
     for (const file of files) {
         const parsedPrimitive = JSON.parse(fs.readFileSync(file, "utf8"));
-        if (parsedPrimitive.primitiveType !== primitiveType) continue;
-        if (excludes.includes(parsedPrimitive.name)) continue;
+        if (parsedPrimitive.properties.primitiveType.const !== primitiveType) continue;
+        if (excludes.includes(parsedPrimitive.properties.name.const)) continue;
         allowedPrimitives.push({ "$ref": `../shared-primitive.schema.json#/$defs/${parsedPrimitive.properties.name.const}`});
     }
 
