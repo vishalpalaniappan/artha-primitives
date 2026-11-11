@@ -16,6 +16,9 @@
         "metadata": {
             "type": "string"
         },
+        "id": {
+            "type": "string"
+        },
         "narrative": {
             "type": "array",
             "items": {

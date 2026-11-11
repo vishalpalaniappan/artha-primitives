@@ -15,6 +15,9 @@
             "description": "Name of the primitive.",
             "const": "structural_type"
         },
+        "id": {
+            "type": "string"
+        },
         "primitiveType": {
             "type": "string",
             "description": "Type of the primitive.",

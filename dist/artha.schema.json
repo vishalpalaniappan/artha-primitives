@@ -16,6 +16,9 @@
     "metadata": {
       "type": "string"
     },
+    "id": {
+      "type": "string"
+    },
     "narrative": {
       "type": "array",
       "items": {
@@ -57,6 +60,9 @@
               "const": "import"
             },
             "file": {
+              "type": "string"
+            },
+            "id": {
               "type": "string"
             },
             "alias": {
@@ -112,6 +118,9 @@
                             "description": "Name of the primitive.",
                             "const": "list_contains"
                           },
+                          "id": {
+                            "type": "string"
+                          },
                           "primitiveType": {
                             "type": "string",
                             "description": "Type of the primitive.",
@@ -156,6 +165,9 @@
                             "description": "Name of the primitive.",
                             "const": "structural_type"
                           },
+                          "id": {
+                            "type": "string"
+                          },
                           "primitiveType": {
                             "type": "string",
                             "description": "Type of the primitive.",
@@ -187,6 +199,9 @@
             "name": {
               "type": "string",
               "const": "participant"
+            },
+            "id": {
+              "type": "string"
             },
             "participantName": {
               "type": "string"
@@ -267,6 +282,9 @@
                               }
                             ]
                           },
+                          "id": {
+                            "type": "string"
+                          },
                           "primitiveType": {
                             "type": "string",
                             "description": "Type of the primitive.",
@@ -310,6 +328,9 @@
                             "type": "string",
                             "description": "Name of the primitive.",
                             "const": "equals"
+                          },
+                          "id": {
+                            "type": "string"
                           },
                           "primitiveType": {
                             "type": "string",
@@ -378,6 +399,9 @@
                               }
                             ]
                           },
+                          "id": {
+                            "type": "string"
+                          },
                           "primitiveType": {
                             "type": "string",
                             "description": "Type of the primitive.",
@@ -424,6 +448,9 @@
                             "description": "Name of the primitive.",
                             "const": "terminal_display"
                           },
+                          "id": {
+                            "type": "string"
+                          },
                           "primitiveType": {
                             "type": "string",
                             "description": "Type of the primitive.",
@@ -467,6 +494,9 @@
                             "type": "string",
                             "description": "Name of the primitive.",
                             "const": "terminal_input"
+                          },
+                          "id": {
+                            "type": "string"
                           },
                           "primitiveType": {
                             "type": "string",
@@ -531,6 +561,9 @@
                               }
                             ]
                           },
+                          "id": {
+                            "type": "string"
+                          },
                           "primitiveType": {
                             "type": "string",
                             "description": "Type of the primitive.",
@@ -574,6 +607,9 @@
                             "type": "string",
                             "description": "Name of the primitive.",
                             "const": "introduce"
+                          },
+                          "id": {
+                            "type": "string"
                           },
                           "primitiveType": {
                             "type": "string",
@@ -623,6 +659,9 @@
                             "description": "Name of the primitive.",
                             "const": "yield"
                           },
+                          "id": {
+                            "type": "string"
+                          },
                           "primitiveType": {
                             "type": "string",
                             "description": "Type of the primitive.",
@@ -651,6 +690,9 @@
                 ]
               }
             },
+            "id": {
+              "type": "string"
+            },
             "attributes": {
               "type": "array",
               "items": {
@@ -674,7 +716,8 @@
             "attributes",
             "body",
             "name",
-            "behaviorName"
+            "behaviorName",
+            "id"
           ]
         }
       ]

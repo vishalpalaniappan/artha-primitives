@@ -15,6 +15,9 @@
             "description": "Name of the primitive.",
             "const": "introduce"
         },
+        "id": {
+            "type": "string"
+        },
         "primitiveType": {
             "type": "string",
             "description": "Type of the primitive.",

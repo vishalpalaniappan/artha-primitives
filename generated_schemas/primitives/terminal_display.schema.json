@@ -15,6 +15,9 @@
             "description": "Name of the primitive.",
             "const": "terminal_display"
         },
+        "id": {
+            "type": "string"
+        },
         "primitiveType": {
             "type": "string",
             "description": "Type of the primitive.",
