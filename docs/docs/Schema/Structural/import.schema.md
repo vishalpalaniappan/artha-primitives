@@ -18,7 +18,7 @@ description: A schema definition for import meaning.
 
 ## Properties
 
-<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#name">name</a></td><td>String=import</td></tr><tr><td colspan="2"><a href="#file">file</a></td><td>String</td></tr><tr><td colspan="2"><a href="#alias">alias</a></td><td>String</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#name">name</a></td><td>String=import</td></tr><tr><td colspan="2"><a href="#file">file</a></td><td>String</td></tr><tr><td colspan="2"><a href="#id">id</a></td><td>String</td></tr><tr><td colspan="2"><a href="#alias">alias</a></td><td>String</td></tr></tbody></table>
 
 
 
@@ -54,6 +54,23 @@ description: A schema definition for import meaning.
     <tr>
       <th>Required</th>
       <td colspan="2">Yes</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+## id
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
     </tr>
     
   </tbody>
@@ -101,6 +118,9 @@ description: A schema definition for import meaning.
             "const": "import"
         },
         "file": {
+            "type": "string"
+        },
+        "id": {
             "type": "string"
         },
         "alias": {

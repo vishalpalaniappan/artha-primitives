@@ -18,7 +18,7 @@ description: A schema for a participant in a narrative.
 
 ## Properties
 
-<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#body">body</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String=participant</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#body">body</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String=participant</td></tr><tr><td colspan="2"><a href="#id">id</a></td><td>String</td></tr><tr><td colspan="2"><a href="#participantname">participantName</a></td><td>String</td></tr></tbody></table>
 
 
 
@@ -62,6 +62,40 @@ description: A schema for a participant in a narrative.
 
 
 
+## id
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+## participantName
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+
 
 
 
@@ -85,11 +119,18 @@ description: A schema for a participant in a narrative.
         "name": {
             "type": "string",
             "const": "participant"
+        },
+        "id": {
+            "type": "string"
+        },
+        "participantName": {
+            "type": "string"
         }
     },
     "required": [
         "body",
-        "name"
+        "name",
+        "participantName"
     ]
 }
 ```
