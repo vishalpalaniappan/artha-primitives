@@ -29,6 +29,9 @@ const generatePrimitiveSchema = (primitive) => {
                 description: "Name of the primitive.",
                 const: `${primitive.name}`
             }, 
+            id: {
+                type: "string"
+            },
             primitiveType: {
                 type: "string",
                 description: "Type of the primitive.",

@@ -13,6 +13,9 @@
         "file": {
             "type": "string"
         },
+        "id": {
+            "type": "string"
+        },
         "alias": {
             "type": "string"
         }

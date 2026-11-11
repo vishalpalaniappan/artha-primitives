@@ -16,6 +16,9 @@
         "body": {
             "type": "array"
         },
+        "id": {
+            "type": "string"
+        },
         "attributes": {
             "type": "array",
             "items": {
@@ -36,6 +39,7 @@
         "attributes",
         "body",
         "name",
-        "behaviorName"
+        "behaviorName",
+        "id"
     ]
 }
