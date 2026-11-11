@@ -12,10 +12,14 @@
         "name": {
             "type": "string",
             "const": "participant"
+        },
+        "participantName": {
+            "type": "string"
         }
     },
     "required": [
         "body",
-        "name"
+        "name",
+        "participantName"
     ]   
 }

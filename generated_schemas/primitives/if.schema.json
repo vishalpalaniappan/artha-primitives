@@ -13,7 +13,26 @@
         "name": {
             "type": "string",
             "description": "Name of the primitive.",
-            "const": "if"
+            "const": "if",
+            "x-invariant-metadata": [
+                {
+                    "id": "inv_1",
+                    "participants": [
+                        "condition"
+                    ],
+                    "property": "structuralType",
+                    "condition": [
+                        "boolean"
+                    ],
+                    "description": "the condition must be a boolean value",
+                    "invalidValues": [
+                        {
+                            "value": "string_value",
+                            "description": "A string is provided as the condition"
+                        }
+                    ]
+                }
+            ]
         },
         "primitiveType": {
             "type": "string",
@@ -22,25 +41,6 @@
         },
         "condition": {}
     },
-    "x-invariant-metadata": [
-        {
-            "id": "inv_1",
-            "participants": [
-                "condition"
-            ],
-            "property": "structuralType",
-            "condition": [
-                "boolean"
-            ],
-            "description": "the condition must be a boolean value",
-            "invalidValues": [
-                {
-                    "value": "string_value",
-                    "description": "A string is provided as the condition"
-                }
-            ]
-        }
-    ],
     "required": [
         "name",
         "condition"

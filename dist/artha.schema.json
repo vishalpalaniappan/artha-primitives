@@ -187,11 +187,15 @@
             "name": {
               "type": "string",
               "const": "participant"
+            },
+            "participantName": {
+              "type": "string"
             }
           },
           "required": [
             "body",
-            "name"
+            "name",
+            "participantName"
           ]
         }
       ]
@@ -218,6 +222,9 @@
               "type": "string",
               "const": "behavior"
             },
+            "behaviorName": {
+              "type": "string"
+            },
             "body": {
               "type": "array",
               "items": {
@@ -239,7 +246,26 @@
                           "name": {
                             "type": "string",
                             "description": "Name of the primitive.",
-                            "const": "clear_list"
+                            "const": "clear_list",
+                            "x-invariant-metadata": [
+                              {
+                                "id": "1",
+                                "participants": [
+                                  "list"
+                                ],
+                                "property": "structuralType",
+                                "condition": [
+                                  "list"
+                                ],
+                                "description": "list must have structuralType List.",
+                                "invalidValues": [
+                                  {
+                                    "value": "string_value",
+                                    "description": "A string is provided as list participant"
+                                  }
+                                ]
+                              }
+                            ]
                           },
                           "primitiveType": {
                             "type": "string",
@@ -248,25 +274,6 @@
                           },
                           "list": {}
                         },
-                        "x-invariant-metadata": [
-                          {
-                            "id": "1",
-                            "participants": [
-                              "list"
-                            ],
-                            "property": "structuralType",
-                            "condition": [
-                              "list"
-                            ],
-                            "description": "list must have structuralType List.",
-                            "invalidValues": [
-                              {
-                                "value": "string_value",
-                                "description": "A string is provided as list participant"
-                              }
-                            ]
-                          }
-                        ],
                         "required": [
                           "name",
                           "list"
@@ -350,7 +357,26 @@
                           "name": {
                             "type": "string",
                             "description": "Name of the primitive.",
-                            "const": "insert_at_end_of_list"
+                            "const": "insert_at_end_of_list",
+                            "x-invariant-metadata": [
+                              {
+                                "id": "1",
+                                "participants": [
+                                  "list"
+                                ],
+                                "property": "structuralType",
+                                "condition": [
+                                  "list"
+                                ],
+                                "description": "list must have structuralType List.",
+                                "invalidValues": [
+                                  {
+                                    "value": "string_value",
+                                    "description": "A string is provided as list participant"
+                                  }
+                                ]
+                              }
+                            ]
                           },
                           "primitiveType": {
                             "type": "string",
@@ -360,25 +386,6 @@
                           "item": {},
                           "list": {}
                         },
-                        "x-invariant-metadata": [
-                          {
-                            "id": "1",
-                            "participants": [
-                              "list"
-                            ],
-                            "property": "structuralType",
-                            "condition": [
-                              "list"
-                            ],
-                            "description": "list must have structuralType List.",
-                            "invalidValues": [
-                              {
-                                "value": "string_value",
-                                "description": "A string is provided as list participant"
-                              }
-                            ]
-                          }
-                        ],
                         "required": [
                           "name",
                           "item",
@@ -503,7 +510,26 @@
                           "name": {
                             "type": "string",
                             "description": "Name of the primitive.",
-                            "const": "if"
+                            "const": "if",
+                            "x-invariant-metadata": [
+                              {
+                                "id": "inv_1",
+                                "participants": [
+                                  "condition"
+                                ],
+                                "property": "structuralType",
+                                "condition": [
+                                  "boolean"
+                                ],
+                                "description": "the condition must be a boolean value",
+                                "invalidValues": [
+                                  {
+                                    "value": "string_value",
+                                    "description": "A string is provided as the condition"
+                                  }
+                                ]
+                              }
+                            ]
                           },
                           "primitiveType": {
                             "type": "string",
@@ -512,25 +538,6 @@
                           },
                           "condition": {}
                         },
-                        "x-invariant-metadata": [
-                          {
-                            "id": "inv_1",
-                            "participants": [
-                              "condition"
-                            ],
-                            "property": "structuralType",
-                            "condition": [
-                              "boolean"
-                            ],
-                            "description": "the condition must be a boolean value",
-                            "invalidValues": [
-                              {
-                                "value": "string_value",
-                                "description": "A string is provided as the condition"
-                              }
-                            ]
-                          }
-                        ],
                         "required": [
                           "name",
                           "condition"
@@ -666,7 +673,8 @@
           "required": [
             "attributes",
             "body",
-            "name"
+            "name",
+            "behaviorName"
           ]
         }
       ]

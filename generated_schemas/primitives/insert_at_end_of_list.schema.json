@@ -13,7 +13,26 @@
         "name": {
             "type": "string",
             "description": "Name of the primitive.",
-            "const": "insert_at_end_of_list"
+            "const": "insert_at_end_of_list",
+            "x-invariant-metadata": [
+                {
+                    "id": "1",
+                    "participants": [
+                        "list"
+                    ],
+                    "property": "structuralType",
+                    "condition": [
+                        "list"
+                    ],
+                    "description": "list must have structuralType List.",
+                    "invalidValues": [
+                        {
+                            "value": "string_value",
+                            "description": "A string is provided as list participant"
+                        }
+                    ]
+                }
+            ]
         },
         "primitiveType": {
             "type": "string",
@@ -23,25 +42,6 @@
         "item": {},
         "list": {}
     },
-    "x-invariant-metadata": [
-        {
-            "id": "1",
-            "participants": [
-                "list"
-            ],
-            "property": "structuralType",
-            "condition": [
-                "list"
-            ],
-            "description": "list must have structuralType List.",
-            "invalidValues": [
-                {
-                    "value": "string_value",
-                    "description": "A string is provided as list participant"
-                }
-            ]
-        }
-    ],
     "required": [
         "name",
         "item",

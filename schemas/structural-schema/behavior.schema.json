@@ -10,6 +10,9 @@
             "type": "string",
             "const": "behavior"
         },
+        "behaviorName": {
+            "type": "string"
+        },
         "body": {
             "type": "array"
         },
@@ -32,6 +35,7 @@
     "required": [
         "attributes",
         "body",
-        "name"
+        "name",
+        "behaviorName"
     ]
 }
