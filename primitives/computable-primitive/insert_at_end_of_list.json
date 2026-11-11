@@ -20,7 +20,7 @@
             "participants": ["list"],
             "property": "structural_type",
             "condition": ["list"],
-            "description": "list must have structuralType List.",
+            "description": "list must have structural_type List.",
             "invalidValues": [
                 {
                     "value": "string_value",

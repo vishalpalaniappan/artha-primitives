@@ -6,7 +6,7 @@
     "description":"Establishes that structural type of a participant.",
     "attributes": [
         {
-            "name": "type",
+            "name": "value",
             "attributeStructuralType": "string",
             "required": true
         }
