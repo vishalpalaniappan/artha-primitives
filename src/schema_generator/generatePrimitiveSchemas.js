@@ -37,8 +37,7 @@ const generatePrimitiveSchema = (primitive) => {
         }
     };
 
-    if ("invariants" in primitive) {
-        schema["x-custom-rule"] = "validate-narrative";
+    if ("invariants" in primitive && primitive.invariants.length > 0) {
         schema["x-invariant-metadata"] = primitive.invariants;
     }
     
