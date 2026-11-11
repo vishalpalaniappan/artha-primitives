@@ -22,7 +22,6 @@
         },
         "condition": {}
     },
-    "x-custom-rule": "validate-narrative",
     "x-invariant-metadata": [
         {
             "id": "inv_1",

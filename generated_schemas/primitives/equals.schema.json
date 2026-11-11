@@ -24,8 +24,6 @@
         "value1": {},
         "value2": {}
     },
-    "x-custom-rule": "validate-narrative",
-    "x-invariant-metadata": [],
     "required": [
         "name",
         "alias",
