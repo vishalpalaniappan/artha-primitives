@@ -11,7 +11,7 @@ description: A schema definition for import meaning.
 
 <table>
 <tbody>
-<tr><th>$id</th><td>./structural-primitive.schema.json</td></tr>
+<tr><th>$id</th><td>./import.schema.json</td></tr>
 <tr><th>$schema</th><td>https://json-schema.org/draft/2020-12/schema</td></tr>
 </tbody>
 </table>
@@ -90,7 +90,7 @@ description: A schema definition for import meaning.
 ```
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "./structural-primitive.schema.json",
+    "$id": "./import.schema.json",
     "title": "ImportSchema",
     "description": "A schema definition for import meaning.",
     "type": "object",

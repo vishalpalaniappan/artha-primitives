@@ -98,11 +98,9 @@
                       {
                         "$schema": "https://json-schema.org/draft/2020-12/schema",
                         "$id": "./list_contains-structure.schema.json",
-                        "title": "list_contains-primitive-structure-schema",
+                        "title": "list_contains",
                         "description": "Structural schema for list_contains primitive.",
-                        "primitiveType": "meta-primitive",
                         "type": "object",
-                        "name": "list_contains",
                         "additionalProperties": false,
                         "properties": {
                           "$schema": {
@@ -111,7 +109,13 @@
                           },
                           "name": {
                             "type": "string",
-                            "description": "Name of the primitive."
+                            "description": "Name of the primitive.",
+                            "const": "list_contains"
+                          },
+                          "primitiveType": {
+                            "type": "string",
+                            "description": "Type of the primitive.",
+                            "const": "meta-primitive"
                           },
                           "values": {}
                         },
@@ -138,11 +142,9 @@
                       {
                         "$schema": "https://json-schema.org/draft/2020-12/schema",
                         "$id": "./structural_type-structure.schema.json",
-                        "title": "structural_type-primitive-structure-schema",
+                        "title": "structural_type",
                         "description": "Structural schema for structural_type primitive.",
-                        "primitiveType": "meta-primitive",
                         "type": "object",
-                        "name": "structural_type",
                         "additionalProperties": false,
                         "properties": {
                           "$schema": {
@@ -151,7 +153,13 @@
                           },
                           "name": {
                             "type": "string",
-                            "description": "Name of the primitive."
+                            "description": "Name of the primitive.",
+                            "const": "structural_type"
+                          },
+                          "primitiveType": {
+                            "type": "string",
+                            "description": "Type of the primitive.",
+                            "const": "meta-primitive"
                           },
                           "type": {}
                         },
@@ -219,11 +227,9 @@
                       {
                         "$schema": "https://json-schema.org/draft/2020-12/schema",
                         "$id": "./clear_list-structure.schema.json",
-                        "title": "clear_list-primitive-structure-schema",
+                        "title": "clear_list",
                         "description": "Structural schema for clear_list primitive.",
-                        "primitiveType": "computable-primitive",
                         "type": "object",
-                        "name": "clear_list",
                         "additionalProperties": false,
                         "properties": {
                           "$schema": {
@@ -232,7 +238,13 @@
                           },
                           "name": {
                             "type": "string",
-                            "description": "Name of the primitive."
+                            "description": "Name of the primitive.",
+                            "const": "clear_list"
+                          },
+                          "primitiveType": {
+                            "type": "string",
+                            "description": "Type of the primitive.",
+                            "const": "computable-primitive"
                           },
                           "list": {}
                         },
@@ -279,11 +291,9 @@
                       {
                         "$schema": "https://json-schema.org/draft/2020-12/schema",
                         "$id": "./equals-structure.schema.json",
-                        "title": "equals-primitive-structure-schema",
+                        "title": "equals",
                         "description": "Structural schema for equals primitive.",
-                        "primitiveType": "computable-primitive",
                         "type": "object",
-                        "name": "equals",
                         "additionalProperties": false,
                         "properties": {
                           "$schema": {
@@ -292,7 +302,13 @@
                           },
                           "name": {
                             "type": "string",
-                            "description": "Name of the primitive."
+                            "description": "Name of the primitive.",
+                            "const": "equals"
+                          },
+                          "primitiveType": {
+                            "type": "string",
+                            "description": "Type of the primitive.",
+                            "const": "computable-primitive"
                           },
                           "alias": {},
                           "value1": {},
@@ -325,11 +341,9 @@
                       {
                         "$schema": "https://json-schema.org/draft/2020-12/schema",
                         "$id": "./insert_at_end_of_list-structure.schema.json",
-                        "title": "insert_at_end_of_list-primitive-structure-schema",
+                        "title": "insert_at_end_of_list",
                         "description": "Structural schema for insert_at_end_of_list primitive.",
-                        "primitiveType": "computable-primitive",
                         "type": "object",
-                        "name": "insert_at_end_of_list",
                         "additionalProperties": false,
                         "properties": {
                           "$schema": {
@@ -338,7 +352,13 @@
                           },
                           "name": {
                             "type": "string",
-                            "description": "Name of the primitive."
+                            "description": "Name of the primitive.",
+                            "const": "insert_at_end_of_list"
+                          },
+                          "primitiveType": {
+                            "type": "string",
+                            "description": "Type of the primitive.",
+                            "const": "computable-primitive"
                           },
                           "item": {},
                           "list": {}
@@ -387,11 +407,9 @@
                       {
                         "$schema": "https://json-schema.org/draft/2020-12/schema",
                         "$id": "./terminal_display-structure.schema.json",
-                        "title": "terminal_display-primitive-structure-schema",
+                        "title": "terminal_display",
                         "description": "Structural schema for terminal_display primitive.",
-                        "primitiveType": "computable-legacy-primitive",
                         "type": "object",
-                        "name": "terminal_display",
                         "additionalProperties": false,
                         "properties": {
                           "$schema": {
@@ -400,7 +418,13 @@
                           },
                           "name": {
                             "type": "string",
-                            "description": "Name of the primitive."
+                            "description": "Name of the primitive.",
+                            "const": "terminal_display"
+                          },
+                          "primitiveType": {
+                            "type": "string",
+                            "description": "Type of the primitive.",
+                            "const": "computable-legacy-primitive"
                           },
                           "message": {}
                         },
@@ -429,11 +453,9 @@
                       {
                         "$schema": "https://json-schema.org/draft/2020-12/schema",
                         "$id": "./terminal_input-structure.schema.json",
-                        "title": "terminal_input-primitive-structure-schema",
+                        "title": "terminal_input",
                         "description": "Structural schema for terminal_input primitive.",
-                        "primitiveType": "computable-legacy-primitive",
                         "type": "object",
-                        "name": "terminal_input",
                         "additionalProperties": false,
                         "properties": {
                           "$schema": {
@@ -442,7 +464,13 @@
                           },
                           "name": {
                             "type": "string",
-                            "description": "Name of the primitive."
+                            "description": "Name of the primitive.",
+                            "const": "terminal_input"
+                          },
+                          "primitiveType": {
+                            "type": "string",
+                            "description": "Type of the primitive.",
+                            "const": "computable-legacy-primitive"
                           },
                           "alias": {}
                         },
@@ -471,11 +499,9 @@
                       {
                         "$schema": "https://json-schema.org/draft/2020-12/schema",
                         "$id": "./if-structure.schema.json",
-                        "title": "if-primitive-structure-schema",
+                        "title": "if",
                         "description": "Structural schema for if primitive.",
-                        "primitiveType": "functional-primitive",
                         "type": "object",
-                        "name": "if",
                         "additionalProperties": false,
                         "properties": {
                           "$schema": {
@@ -484,7 +510,13 @@
                           },
                           "name": {
                             "type": "string",
-                            "description": "Name of the primitive."
+                            "description": "Name of the primitive.",
+                            "const": "if"
+                          },
+                          "primitiveType": {
+                            "type": "string",
+                            "description": "Type of the primitive.",
+                            "const": "functional-primitive"
                           },
                           "condition": {}
                         },
@@ -531,11 +563,9 @@
                       {
                         "$schema": "https://json-schema.org/draft/2020-12/schema",
                         "$id": "./introduce-structure.schema.json",
-                        "title": "introduce-primitive-structure-schema",
+                        "title": "introduce",
                         "description": "Structural schema for introduce primitive.",
-                        "primitiveType": "meta-primitive",
                         "type": "object",
-                        "name": "introduce",
                         "additionalProperties": false,
                         "properties": {
                           "$schema": {
@@ -544,7 +574,13 @@
                           },
                           "name": {
                             "type": "string",
-                            "description": "Name of the primitive."
+                            "description": "Name of the primitive.",
+                            "const": "introduce"
+                          },
+                          "primitiveType": {
+                            "type": "string",
+                            "description": "Type of the primitive.",
+                            "const": "meta-primitive"
                           },
                           "alias": {},
                           "role": {},
@@ -575,11 +611,9 @@
                       {
                         "$schema": "https://json-schema.org/draft/2020-12/schema",
                         "$id": "./yield-structure.schema.json",
-                        "title": "yield-primitive-structure-schema",
+                        "title": "yield",
                         "description": "Structural schema for yield primitive.",
-                        "primitiveType": "meta-primitive",
                         "type": "object",
-                        "name": "yield",
                         "additionalProperties": false,
                         "properties": {
                           "$schema": {
@@ -588,7 +622,13 @@
                           },
                           "name": {
                             "type": "string",
-                            "description": "Name of the primitive."
+                            "description": "Name of the primitive.",
+                            "const": "yield"
+                          },
+                          "primitiveType": {
+                            "type": "string",
+                            "description": "Type of the primitive.",
+                            "const": "meta-primitive"
                           },
                           "alias": {}
                         },

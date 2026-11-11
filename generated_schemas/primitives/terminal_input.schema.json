@@ -1,11 +1,9 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "./terminal_input-structure.schema.json",
-    "title": "terminal_input-primitive-structure-schema",
+    "title": "terminal_input",
     "description": "Structural schema for terminal_input primitive.",
-    "primitiveType": "computable-legacy-primitive",
     "type": "object",
-    "name": "terminal_input",
     "additionalProperties": false,
     "properties": {
         "$schema": {
@@ -14,7 +12,13 @@
         },
         "name": {
             "type": "string",
-            "description": "Name of the primitive."
+            "description": "Name of the primitive.",
+            "const": "terminal_input"
+        },
+        "primitiveType": {
+            "type": "string",
+            "description": "Type of the primitive.",
+            "const": "computable-legacy-primitive"
         },
         "alias": {}
     },
