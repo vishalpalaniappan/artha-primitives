@@ -8,7 +8,7 @@ import { createDir, getAllJsonFilesInFolder } from "../helper.js";
  */
 export const dereferenceGeneratedSchema = async () => {
     const schemaPath = path.join(process.cwd(), "generated_schemas", "narrative.schema.json");
-    const fullSchema = await $RefParser.dereference(schemaPath);
+    const fullSchema = await $RefParser.bundle(schemaPath);
 
     await createDir(path.join(process.cwd(), "dist"));
 
