@@ -111,9 +111,6 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                  "body": {
-                    "type": "array"
-                  },
                   "name": {
                     "type": "string",
                     "const": "invoke"
@@ -144,7 +141,6 @@
                   }
                 },
                 "required": [
-                  "body",
                   "behaviorName",
                   "name",
                   "args"

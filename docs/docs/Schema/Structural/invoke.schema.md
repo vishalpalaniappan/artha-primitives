@@ -18,28 +18,11 @@ description: A schema for invoking custom meaning.
 
 ## Properties
 
-<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#body">body</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String=invoke</td></tr><tr><td colspan="2"><a href="#behaviorname">behaviorName</a></td><td>String</td></tr><tr><td colspan="2"><a href="#id">id</a></td><td>String</td></tr><tr><td colspan="2"><a href="#args">args</a></td><td>Array</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#name">name</a></td><td>String=invoke</td></tr><tr><td colspan="2"><a href="#behaviorname">behaviorName</a></td><td>String</td></tr><tr><td colspan="2"><a href="#id">id</a></td><td>String</td></tr><tr><td colspan="2"><a href="#args">args</a></td><td>Array</td></tr></tbody></table>
 
 
 
 <hr />
-
-
-## body
-
-
-<table class="jssd-property-table">
-  <tbody>
-    <tr><th>Type</th><td colspan="2">Array</td></tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">Yes</td>
-    </tr>
-    
-  </tbody>
-</table>
-
-
 
 
 ## name
@@ -156,9 +139,6 @@ description: A schema for invoking custom meaning.
     "type": "object",
     "additionalProperties": false,
     "properties": {
-        "body": {
-            "type": "array"
-        },
         "name": {
             "type": "string",
             "const": "invoke"
@@ -189,7 +169,6 @@ description: A schema for invoking custom meaning.
         }
     },
     "required": [
-        "body",
         "behaviorName",
         "name",
         "args"
