@@ -7,8 +7,7 @@
     "required": [
         "metadata",
         "initialBehavior",
-        "narrative",
-        "manifest"
+        "narrative"
     ],
     "additionalProperties": false,
     "properties": {
@@ -16,9 +15,6 @@
             "type": "string"
         },
         "metadata": {
-            "type": "string"
-        },
-        "manifest": {
             "type": "string"
         },
         "id": {

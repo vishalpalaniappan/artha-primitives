@@ -59,8 +59,8 @@ export const buildArthaSchema = async () => {
         ...primitiveRefs
     ];
 
-    narrative_schema["properties"]["manifest"]["const"] = manifest;
-    
+    narrative_schema["manifest"] = manifest;
+
     fs.writeFileSync(
         NARRATIVE_SCHEMA_PATH_DEST,
         JSON.stringify(narrative_schema, null, 4),
