@@ -70,9 +70,8 @@ export const buildArthaSchema = async () => {
 
         const structure = manifest.structure[schemaName];
         if ("contains" in structure) {
-            // Add {} for allowing invocation of behavior
             schema.properties.body.items = {
-                anyOf: [{}]
+                anyOf: []
             }
 
             // Add the references to the types allowed in body of schema here

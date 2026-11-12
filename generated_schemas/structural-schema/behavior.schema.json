@@ -17,7 +17,6 @@
             "type": "array",
             "items": {
                 "anyOf": [
-                    {},
                     {
                         "$ref": "../shared-primitive.schema.json#/$defs/clear_list"
                     },
