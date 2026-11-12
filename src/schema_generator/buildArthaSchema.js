@@ -58,6 +58,9 @@ export const buildArthaSchema = async () => {
         ...narrative_schema["$defs"]["recursiveObjectCheck"]["anyOf"][0]["allOf"],
         ...primitiveRefs
     ];
+
+    narrative_schema["properties"]["manifest"]["const"] = manifest;
+    
     fs.writeFileSync(
         NARRATIVE_SCHEMA_PATH_DEST,
         JSON.stringify(narrative_schema, null, 4),
