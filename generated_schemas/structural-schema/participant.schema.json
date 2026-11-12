@@ -10,6 +10,7 @@
             "type": "array",
             "items": {
                 "anyOf": [
+                    {},
                     {
                         "$ref": "../shared-primitive.schema.json#/$defs/list_contains"
                     },
