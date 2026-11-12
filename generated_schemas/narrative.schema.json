@@ -7,7 +7,8 @@
     "required": [
         "metadata",
         "initialBehavior",
-        "narrative"
+        "narrative",
+        "manifest"
     ],
     "additionalProperties": false,
     "properties": {
@@ -17,6 +18,56 @@
         "metadata": {
             "type": "string"
         },
+        "manifest": {
+            "type": "string",
+            "const": {
+                "$schema": "./manifest.schema.json",
+                "primitiveTypes": [
+                    "computable-primitive",
+                    "functional-primitive",
+                    "computable-legacy-primitive",
+                    "meta-primitive"
+                ],
+                "structuralTypes": [
+                    "behavior",
+                    "participant",
+                    "import",
+                    "invoke"
+                ],
+                "structure": {
+                    "behavior": {
+                        "contains": {
+                            "computable-primitive": {
+                                "excludes": []
+                            },
+                            "computable-legacy-primitive": {
+                                "excludes": []
+                            },
+                            "functional-primitive": {
+                                "excludes": []
+                            },
+                            "meta-primitive": {
+                                "excludes": [
+                                    "list_contains",
+                                    "structural_type"
+                                ]
+                            }
+                        }
+                    },
+                    "participant": {
+                        "contains": {
+                            "meta-primitive": {
+                                "excludes": [
+                                    "introduce",
+                                    "yield"
+                                ]
+                            }
+                        }
+                    },
+                    "import": {}
+                }
+            }
+        },
         "id": {
             "type": "string"
         },
@@ -24,65 +75,251 @@
             "type": "string"
         },
         "narrative": {
-            "type": "array",
-            "items": {
-                "anyOf": [
-                    {
-                        "$ref": "#/definitions/import"
-                    },
-                    {
-                        "$ref": "#/definitions/participant"
-                    },
-                    {
-                        "$ref": "#/definitions/behavior"
-                    }
-                ]
-            }
+            "$ref": "#/$defs/recursiveObjectCheck"
         }
     },
-    "definitions": {
-        "import": {
-            "allOf": [
+    "$defs": {
+        "recursiveObjectCheck": {
+            "anyOf": [
                 {
                     "type": "object",
-                    "properties": {
-                        "type": {
-                            "const": "import"
+                    "allOf": [
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "behavior"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./structural-schema/behavior.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "invoke"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./structural-schema/invoke.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "participant"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./structural-schema/participant.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "import"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./structural-schema/import.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "terminal_display"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./primitives/terminal_display.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "terminal_input"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./primitives/terminal_input.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "clear_list"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./primitives/clear_list.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "equals"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./primitives/equals.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "insert_at_end_of_list"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./primitives/insert_at_end_of_list.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "if"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./primitives/if.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "introduce"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./primitives/introduce.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "list_contains"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./primitives/list_contains.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "structural_type"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./primitives/structural_type.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "yield"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./primitives/yield.schema.json"
+                            }
                         }
+                    ],
+                    "properties": {
+                        "items": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/recursiveObjectCheck"
+                            }
+                        }
+                    },
+                    "additionalProperties": {
+                        "$ref": "#/$defs/recursiveObjectCheck"
                     }
                 },
                 {
-                    "$ref": "./structural-schema/import.schema.json"
-                }
-            ]
-        },
-        "participant": {
-            "allOf": [
-                {
-                    "type": "object",
-                    "properties": {
-                        "type": {
-                            "const": "participant"
-                        }
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/recursiveObjectCheck"
                     }
                 },
                 {
-                    "$ref": "./structural-schema/participant.schema.json"
-                }
-            ]
-        },
-        "behavior": {
-            "allOf": [
-                {
-                    "type": "object",
-                    "properties": {
-                        "type": {
-                            "const": "behavior"
-                        }
-                    }
-                },
-                {
-                    "$ref": "./structural-schema/behavior.schema.json"
+                    "type": [
+                        "string",
+                        "number",
+                        "boolean",
+                        "null"
+                    ]
                 }
             ]
         }

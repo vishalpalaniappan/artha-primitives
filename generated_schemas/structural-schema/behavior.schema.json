@@ -14,35 +14,7 @@
             "type": "string"
         },
         "body": {
-            "type": "array",
-            "items": {
-                "anyOf": [
-                    {
-                        "$ref": "../shared-primitive.schema.json#/$defs/clear_list"
-                    },
-                    {
-                        "$ref": "../shared-primitive.schema.json#/$defs/equals"
-                    },
-                    {
-                        "$ref": "../shared-primitive.schema.json#/$defs/insert_at_end_of_list"
-                    },
-                    {
-                        "$ref": "../shared-primitive.schema.json#/$defs/terminal_display"
-                    },
-                    {
-                        "$ref": "../shared-primitive.schema.json#/$defs/terminal_input"
-                    },
-                    {
-                        "$ref": "../shared-primitive.schema.json#/$defs/if"
-                    },
-                    {
-                        "$ref": "../shared-primitive.schema.json#/$defs/introduce"
-                    },
-                    {
-                        "$ref": "../shared-primitive.schema.json#/$defs/yield"
-                    }
-                ]
-            }
+            "type": "array"
         },
         "id": {
             "type": "string"

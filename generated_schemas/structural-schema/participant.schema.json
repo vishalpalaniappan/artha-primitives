@@ -7,17 +7,7 @@
     "additionalProperties": false,
     "properties": {
         "body": {
-            "type": "array",
-            "items": {
-                "anyOf": [
-                    {
-                        "$ref": "../shared-primitive.schema.json#/$defs/list_contains"
-                    },
-                    {
-                        "$ref": "../shared-primitive.schema.json#/$defs/structural_type"
-                    }
-                ]
-            }
+            "type": "array"
         },
         "name": {
             "type": "string",
