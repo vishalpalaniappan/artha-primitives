@@ -1,10 +1,11 @@
 # meta-primitive Validation Report
 
-* **Generated At:** 11/12/2026, 12:44:48 PM
-* **Total Files Checked:** 4
+* **Generated At:** 11/12/2026, 6:08:47 PM
+* **Total Files Checked:** 5
 
 | File Name | Status | Error Summary |
 | :--- | :---: | :--- |
+| `initial_value.json` | ✅ Passed | None |
 | `introduce.json` | ✅ Passed | None |
 | `list_contains.json` | ✅ Passed | None |
 | `structural_type.json` | ✅ Passed | None |

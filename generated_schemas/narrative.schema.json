@@ -187,6 +187,21 @@
                             "if": {
                                 "properties": {
                                     "name": {
+                                        "const": "initial_value"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./primitives/initial_value.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
                                         "const": "introduce"
                                     }
                                 },
