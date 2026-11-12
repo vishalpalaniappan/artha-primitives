@@ -54,6 +54,14 @@ const generatePrimitiveSchema = (primitive) => {
         }
     }
 
+    // Add body as a required attribute for functional primitives
+    if (primitive.type === "functional-primitive") {
+        schema.required.push("body");
+        schema.properties["body"] = {
+            type: "array"
+        }
+    }
+
     const GENERATED_PATH = path.join(
         process.cwd(),
         "generated_schemas",
