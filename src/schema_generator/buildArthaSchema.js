@@ -40,7 +40,7 @@ const loadPrimitiveTypes = async (primitiveType, excludes) => {
  * - Writes updated structural schema into generated_schema folder
  */
 export const buildArthaSchema = async () => {
-    await generatePrimitiveSchemas();
+    const primitiveRefs = await generatePrimitiveSchemas();
 
     // Read the manifest
     const MANIFEST_PATH = path.join(process.cwd(), "manifest.json");
@@ -50,8 +50,14 @@ export const buildArthaSchema = async () => {
     const NARRATIVE_SCHEMA_PATH_SRC = path.join(process.cwd(), "schemas", "narrative.schema.json");
     const NARRATIVE_SCHEMA_PATH_DEST = path.join(process.cwd(), "generated_schemas", "narrative.schema.json");
 
+    
     // Add references to the structural schemas in generated folder so it can be dereferenced
     const narrative_schema = JSON.parse(fs.readFileSync(NARRATIVE_SCHEMA_PATH_SRC, "utf8"));
+
+    narrative_schema["$defs"]["recursiveObjectCheck"]["anyOf"][0]["allOf"] = [
+        ...narrative_schema["$defs"]["recursiveObjectCheck"]["anyOf"][0]["allOf"],
+        ...primitiveRefs
+    ];
     fs.writeFileSync(
         NARRATIVE_SCHEMA_PATH_DEST,
         JSON.stringify(narrative_schema, null, 4),
@@ -67,25 +73,7 @@ export const buildArthaSchema = async () => {
         const schema = JSON.parse(
             fs.readFileSync(SCHEMA_PATH_SRC, "utf8")
         );
-
-        const structure = manifest.structure[schemaName];
-        if ("contains" in structure) {
-            schema.properties.body.items = {
-                anyOf: []
-            }
-
-            // Add the references to the types allowed in body of schema here
-            for (const primitiveType of Object.keys(structure.contains)) {
-                const allowedPrimitiveTypes = await loadPrimitiveTypes(
-                    primitiveType,
-                    structure.contains[primitiveType].excludes
-                );
-                schema.properties.body.items.anyOf = [
-                    ...schema.properties.body.items.anyOf,
-                    ...allowedPrimitiveTypes
-                ];
-            }
-        }
+        
         // Write generated structural schema to generated_schema folder
         const SCHEMA_PATH_DEST = path.join(
             process.cwd(),

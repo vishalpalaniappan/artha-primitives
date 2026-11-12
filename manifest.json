@@ -9,7 +9,8 @@
     "structuralTypes": [
         "behavior",
         "participant",
-        "import"
+        "import",
+        "invoke"
     ],
     "structure": {
         "behavior": {

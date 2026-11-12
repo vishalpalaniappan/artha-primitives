@@ -24,65 +24,101 @@
             "type": "string"
         },
         "narrative": {
-            "type": "array",
-            "items": {
-                "anyOf": [
-                    {
-                        "$ref": "#/definitions/import"
-                    },
-                    {
-                        "$ref": "#/definitions/participant"
-                    },
-                    {
-                        "$ref": "#/definitions/behavior"
-                    }
-                ]
-            }
+            "$ref": "#/$defs/recursiveObjectCheck"
         }
     },
-    "definitions": {
-        "import": {
-            "allOf": [
+    "$defs": {
+        "recursiveObjectCheck": {
+            "anyOf": [
                 {
                     "type": "object",
-                    "properties": {
-                        "type": {
-                            "const": "import"
+                    "allOf": [
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "behavior"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./structural-schema/behavior.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "invoke"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./structural-schema/invoke.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "participant"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./structural-schema/participant.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "import"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./structural-schema/import.schema.json"
+                            }
                         }
+                    ],
+                    "properties": {
+                        "items": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/recursiveObjectCheck"
+                            }
+                        }
+                    },
+                    "additionalProperties": {
+                        "$ref": "#/$defs/recursiveObjectCheck"
                     }
                 },
                 {
-                    "$ref": "./structural-schema/import.schema.json"
-                }
-            ]
-        },
-        "participant": {
-            "allOf": [
-                {
-                    "type": "object",
-                    "properties": {
-                        "type": {
-                            "const": "participant"
-                        }
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/recursiveObjectCheck"
                     }
                 },
                 {
-                    "$ref": "./structural-schema/participant.schema.json"
-                }
-            ]
-        },
-        "behavior": {
-            "allOf": [
-                {
-                    "type": "object",
-                    "properties": {
-                        "type": {
-                            "const": "behavior"
-                        }
-                    }
-                },
-                {
-                    "$ref": "./structural-schema/behavior.schema.json"
+                    "type": [
+                        "string",
+                        "number",
+                        "boolean",
+                        "null"
+                    ]
                 }
             ]
         }
