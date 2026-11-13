@@ -24,14 +24,10 @@
             "items": {
                 "type": "object",
                 "required": [
-                    "name",
-                    "value"
+                    "name"
                 ],
                 "properties": {
                     "name": {
-                        "type": "string"
-                    },
-                    "value": {
                         "type": "string"
                     }
                 }

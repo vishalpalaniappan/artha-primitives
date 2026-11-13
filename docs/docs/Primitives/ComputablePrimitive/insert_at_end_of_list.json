@@ -7,10 +7,12 @@
     "participants": [
         {
             "name": "item",
+            "index": 0,
             "required": true
         },
         {
             "name": "list",
+            "index": 1,
             "required": true
         }
     ],

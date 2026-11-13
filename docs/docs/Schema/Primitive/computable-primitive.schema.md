@@ -173,6 +173,23 @@ description: A schema definition for computable-primitive files.
 
 
 
+### participants.index
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">The index of the argument in the list.</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">Number</td></tr>
+    
+  </tbody>
+</table>
+
+
+
+
 ### participants.aliasStructuralType
 
 
@@ -429,6 +446,10 @@ description: A schema definition for computable-primitive files.
                     "name": {
                         "type": "string",
                         "description": "The name of the parameter."
+                    },
+                    "index": {
+                        "type": "number",
+                        "description": "The index of the argument in the list."
                     },
                     "aliasStructuralType": {
                         "type": "string",
