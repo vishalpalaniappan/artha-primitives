@@ -45,6 +45,10 @@
                         "type": "string",
                         "description": "Structural type of the alias."
                     },
+                    "index": {
+                        "type": "number",
+                        "description": "The index of the argument in the list."
+                    },
                     "required": {
                         "type": "boolean",
                         "description": "Indicates if this attribute is required for the primitive.",

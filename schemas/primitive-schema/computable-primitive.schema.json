@@ -41,6 +41,10 @@
                         "type": "string",
                         "description": "The name of the parameter."
                     },
+                    "index": {
+                        "type": "number",
+                        "description": "The index of the argument in the list."
+                    },
                     "aliasStructuralType": {
                         "type": "string",
                         "description": "Structural type of the alias."
