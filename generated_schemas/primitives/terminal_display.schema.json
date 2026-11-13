@@ -1,0 +1,32 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "./terminal_display-structure.schema.json",
+    "title": "terminal_display",
+    "description": "Structural schema for terminal_display primitive.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "URI reference to the JSON schema."
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the primitive.",
+            "const": "terminal_display"
+        },
+        "id": {
+            "type": "string"
+        },
+        "primitiveType": {
+            "type": "string",
+            "description": "Type of the primitive.",
+            "const": "computable-legacy-primitive"
+        },
+        "message": {}
+    },
+    "required": [
+        "name",
+        "message"
+    ]
+}

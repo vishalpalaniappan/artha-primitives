@@ -1,0 +1,28 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "./import.schema.json",
+    "title": "ImportSchema",
+    "description": "A schema definition for import meaning.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "name": {
+            "type": "string",
+            "const": "import"
+        },
+        "file": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "alias": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "name",
+        "file",
+        "alias"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "$schema": "../../schemas/primitive-schema/meta-primitive.schema.json",
+    "name": "initial_value",
+    "version": "0.0.0",
+    "type": "meta-primitive",
+    "description":"Establish the initial value of the participant.",
+    "attributes": [
+        {
+            "name": "value",
+            "attributeStructuralType": "string",
+            "aliasStructuralType": "inherit",
+            "required": true
+        }
+    ]
+}

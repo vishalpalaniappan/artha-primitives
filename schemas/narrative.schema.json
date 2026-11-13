@@ -1,0 +1,126 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "./narrative.schema.json",
+    "title": "narrative-schema",
+    "description": "A schema for the narratives.",
+    "type": "object",
+    "required": [
+        "metadata",
+        "initialBehavior",
+        "narrative"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string"
+        },
+        "metadata": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "initialBehavior": {
+            "type": "string"
+        },
+        "narrative": {
+            "$ref": "#/$defs/recursiveObjectCheck"
+        }
+    },
+    "$defs": {
+        "recursiveObjectCheck": {
+            "anyOf": [
+                {
+                    "type": "object",
+                    "allOf": [
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "behavior"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./structural-schema/behavior.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "invoke"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./structural-schema/invoke.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "participant"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./structural-schema/participant.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "import"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./structural-schema/import.schema.json"
+                            }
+                        }
+                    ],
+                    "properties": {
+                        "items": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/recursiveObjectCheck"
+                            }
+                        }
+                    },
+                    "additionalProperties": {
+                        "$ref": "#/$defs/recursiveObjectCheck"
+                    }
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/recursiveObjectCheck"
+                    }
+                },
+                {
+                    "type": [
+                        "string",
+                        "number",
+                        "boolean",
+                        "null"
+                    ]
+                }
+            ]
+        }
+    }
+}

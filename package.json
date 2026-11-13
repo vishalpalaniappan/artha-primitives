@@ -1,6 +1,7 @@
 {
     "name": "artha-primitives",
     "version": "0.0.0",
+    "type": "module",
     "description": "Schema documentation for Artha primitives.",
     "main": "./src/index.js",
     "scripts": {
@@ -10,7 +11,8 @@
         "start": "npm run generate-documentation && cd docs && npx docusaurus start",
         "build": "npm run generate-documentation && cd docs && npx docusaurus build",
         "serve": "cd docs && npm run serve",
-        "deploy": "npm run build && gh-pages -d docs/build"
+        "deploy": "npm run build && gh-pages -d docs/build",
+        "generate-schema": "node ./src/schema_generator/generateSchemas.js"
     },
     "repository": {
         "type": "git",
@@ -23,6 +25,7 @@
     },
     "homepage": "https://github.com/vishalpalaniappan/artha-primitives#readme",
     "dependencies": {
+        "@apidevtools/json-schema-ref-parser": "^15.5.2",
         "ajv": "^8.20.0",
         "docusaurus-plugin-image-zoom": "^3.0.1",
         "json-schema-static-docs": "^0.28.1"

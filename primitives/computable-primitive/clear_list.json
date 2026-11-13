@@ -1,5 +1,5 @@
 {
-    "$schema": "../../schemas/computable-primitive.schema.json",
+    "$schema": "../../schemas/primitive-schema/computable-primitive.schema.json",
     "name": "clear_list",
     "version": "0.0.0",
     "type": "computable-primitive",
@@ -7,6 +7,7 @@
     "participants": [
         {
             "name": "list",
+            "index": 0,
             "required": true
         }
     ],

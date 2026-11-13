@@ -1,0 +1,32 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "./yield-structure.schema.json",
+    "title": "yield",
+    "description": "Structural schema for yield primitive.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "URI reference to the JSON schema."
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the primitive.",
+            "const": "yield"
+        },
+        "id": {
+            "type": "string"
+        },
+        "primitiveType": {
+            "type": "string",
+            "description": "Type of the primitive.",
+            "const": "meta-primitive"
+        },
+        "alias": {}
+    },
+    "required": [
+        "name",
+        "alias"
+    ]
+}

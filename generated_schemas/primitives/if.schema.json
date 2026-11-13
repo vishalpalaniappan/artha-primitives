@@ -1,0 +1,55 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "./if-structure.schema.json",
+    "title": "if",
+    "description": "Structural schema for if primitive.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "URI reference to the JSON schema."
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the primitive.",
+            "const": "if",
+            "x-invariant-metadata": [
+                {
+                    "id": "inv_1",
+                    "participants": [
+                        "condition"
+                    ],
+                    "property": "structuralType",
+                    "condition": [
+                        "boolean"
+                    ],
+                    "description": "the condition must be a boolean value",
+                    "invalidValues": [
+                        {
+                            "value": "string_value",
+                            "description": "A string is provided as the condition"
+                        }
+                    ]
+                }
+            ]
+        },
+        "id": {
+            "type": "string"
+        },
+        "primitiveType": {
+            "type": "string",
+            "description": "Type of the primitive.",
+            "const": "functional-primitive"
+        },
+        "condition": {},
+        "body": {
+            "type": "array"
+        }
+    },
+    "required": [
+        "name",
+        "condition",
+        "body"
+    ]
+}

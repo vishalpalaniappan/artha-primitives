@@ -1,5 +1,5 @@
 {
-    "$schema": "../../schemas/computable-primitive.schema.json",
+    "$schema": "../../schemas/primitive-schema/computable-primitive.schema.json",
     "name": "equals",
     "version": "0.0.0",
     "type": "computable-primitive",
@@ -12,10 +12,12 @@
         },
         {
             "name": "value1",
+            "index": 0,
             "required": true
         },
         {
             "name": "value2",
+            "index": 1,
             "required": true
         }
     ],

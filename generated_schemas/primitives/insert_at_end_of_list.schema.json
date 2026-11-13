@@ -1,0 +1,53 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "./insert_at_end_of_list-structure.schema.json",
+    "title": "insert_at_end_of_list",
+    "description": "Structural schema for insert_at_end_of_list primitive.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "URI reference to the JSON schema."
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the primitive.",
+            "const": "insert_at_end_of_list",
+            "x-invariant-metadata": [
+                {
+                    "id": "1",
+                    "participants": [
+                        "list"
+                    ],
+                    "property": "structural_type",
+                    "condition": [
+                        "list"
+                    ],
+                    "description": "list must have structural_type List.",
+                    "invalidValues": [
+                        {
+                            "value": "string_value",
+                            "description": "A string is provided as list participant"
+                        }
+                    ]
+                }
+            ]
+        },
+        "id": {
+            "type": "string"
+        },
+        "primitiveType": {
+            "type": "string",
+            "description": "Type of the primitive.",
+            "const": "computable-primitive"
+        },
+        "item": {},
+        "list": {}
+    },
+    "required": [
+        "name",
+        "item",
+        "list"
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "./invoke.schema.json",
+    "title": "InvokeSchema",
+    "description": "A schema for invoking custom meaning.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "name": {
+            "type": "string",
+            "const": "invoke"
+        },
+        "behaviorName": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "args": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "value"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "behaviorName",
+        "name",
+        "args"
+    ]
+}

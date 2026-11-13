@@ -1,0 +1,41 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "./behavior.schema.json",
+    "title": "BehaviorSchema",
+    "description": "A schema for a behavior in a narrative.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "name": {
+            "type": "string",
+            "const": "behavior"
+        },
+        "behaviorName": {
+            "type": "string"
+        },
+        "body": {
+            "type": "array"
+        },
+        "id": {
+            "type": "string"
+        },
+        "attributes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": ["name"],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "attributes",
+        "body",
+        "name",
+        "behaviorName"
+    ]
+}

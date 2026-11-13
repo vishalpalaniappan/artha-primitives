@@ -1,5 +1,5 @@
 {
-    "$schema": "../../schemas/computable-legacy-primitive.schema.json",
+    "$schema": "../../schemas/primitive-schema/computable-legacy-primitive.schema.json",
     "name": "terminal_input",
     "version": "0.0.0",
     "type": "computable-legacy-primitive",
@@ -7,6 +7,7 @@
     "participants": [
         {
             "name": "alias",
+            "index": 0,
             "aliasStructuralType": "string",
             "required": true
         }

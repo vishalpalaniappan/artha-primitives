@@ -1,0 +1,15 @@
+{
+    "$schema": "../../schemas/primitive-schema/meta-primitive.schema.json",
+    "name": "yield",
+    "version": "0.0.0",
+    "type": "meta-primitive",
+    "description":"Indicates that a behavior yields a value.",
+    "attributes": [
+        {
+            "name": "alias",
+            "attributeStructuralType": "string",
+            "aliasStructuralType": "inherit",
+            "required": true
+        }
+    ]
+}
