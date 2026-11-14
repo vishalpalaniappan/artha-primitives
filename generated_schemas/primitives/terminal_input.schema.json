@@ -44,8 +44,7 @@
             }
         },
         "args": {
-            "type": "array",
-            "prefixItems": []
+            "type": "array"
         }
     }
 }
