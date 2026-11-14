@@ -10,7 +10,10 @@
             "body": [
                 {
                     "name": "introduce",
-                    "alias": "shopping_cart",
+                    "alias": {
+                        "name": "shopping_cart",
+                        "introduce": true
+                    },
                     "args": [
                         {
                             "argName": "role",
@@ -45,7 +48,10 @@
                 },
                 {
                     "name": "terminal_input",
-                    "alias": "user_choice",
+                    "alias": {
+                        "name": "user_choice",
+                        "introduce": true
+                    },
                     "args": []
                 },
                 {
@@ -96,7 +102,10 @@
             "body": [
                 {
                     "name": "equals",
-                    "alias": "userChoseCoffee",
+                    "alias": {
+                        "name": "userChoseCoffee",
+                        "introduce": true
+                    },
                     "args": [
                         {
                             "argName": "value1",
@@ -105,6 +114,31 @@
                         {
                             "argName": "value2",
                             "value": "c"
+                        }
+                    ]
+                },
+                {
+                    "name": "if",
+                    "args": [
+                        {
+                            "argName": "condition",
+                            "value": "user_chose_coffee"
+                        }
+                    ],
+                    "body": [
+                        {
+                            "name": "terminal_display",
+                            "args": [
+                                {
+                                    "argName": "message",
+                                    "value": "User Chose Coffee"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "invoke",
+                            "behaviorName": "visitShop",
+                            "args": []
                         }
                     ]
                 }
