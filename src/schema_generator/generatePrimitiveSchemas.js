@@ -53,6 +53,8 @@ const generatePrimitiveSchema = (primitive) => {
             },
             args: {
                 type: "array",
+                minItems: 0,
+                maxItems: 0,
                 prefixItems: []
             }
         }
@@ -64,9 +66,9 @@ const generatePrimitiveSchema = (primitive) => {
 
     // Add all the required arguments to the list and also
     // add the entry to the properties key
+    const optionalItems = [];
     for (const arg of args) {
-        if (!arg.required) continue;
-        schema.properties.args.prefixItems.push({
+        const item = {
             type: "object",
             properties: {
                 argName: { 
@@ -79,8 +81,22 @@ const generatePrimitiveSchema = (primitive) => {
             },
             required: ["argName","value"],
             additionalProperties: false
-        })
+        }
+
+        if (arg.required) {
+            schema.properties.args.prefixItems.push(item);
+            schema.properties.args.minItems++;
+        } else {
+            optionalItems.push(item);
+        }
+        schema.properties.args.maxItems++;
     }
+
+    // Add the optional items after the prefixed items
+    schema.properties.args.prefixItems = [
+        ...schema.properties.args.prefixItems,
+        ...optionalItems
+    ]
 
     // prefix items must have at least one item
     if (schema.properties.args.prefixItems.length === 0) {
