@@ -5,32 +5,6 @@ import path from 'node:path';
 import { createDir, getAllJsonFilesInFolder } from "../helper.js";
 
 /**
- * 
- * @param primitiveType {String} Type of primitive to allow.
- * @param excludes {Array} The primitives to not allow for this type.
- */
-const loadPrimitiveTypes = async (primitiveType, excludes) => {
-    const GENERATED_SCHEMAS_PATH = path.join(
-        process.cwd(),
-        "generated_schemas",
-        "primitives"
-    );
-
-    const files = getAllJsonFilesInFolder(GENERATED_SCHEMAS_PATH);
-
-
-    const allowedPrimitives = [];
-    for (const file of files) {
-        const parsedPrimitive = JSON.parse(fs.readFileSync(file, "utf8"));
-        if (parsedPrimitive.properties.primitiveType.const !== primitiveType) continue;
-        if (excludes.includes(parsedPrimitive.properties.name.const)) continue;
-        allowedPrimitives.push({ "$ref": `../shared-primitive.schema.json#/$defs/${parsedPrimitive.properties.name.const}`});
-    }
-
-    return allowedPrimitives;
-}
-
-/**
  * This method builds the Artha schema by doing the following:
  * - Generates the invocation schemas for all the primitives
  * - Copies the narrative schema into the generated_schema folder
