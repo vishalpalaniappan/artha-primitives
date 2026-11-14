@@ -12,7 +12,7 @@
         "args": [
             {
                 "name": "message",
-                "attributeStructuralType": "list",
+                "attributeStructuralType": "string",
                 "required": true
             }   
         ]
