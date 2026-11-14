@@ -6,7 +6,7 @@ import { createDir, getAllJsonFilesInFolder } from "../helper.js";
 /**
  * Builds the schema from the narrative schema.
  */
-export const dereferenceGeneratedSchema = async () => {
+export const bundleGeneratedSchema = async () => {
     const schemaPath = path.join(process.cwd(), "generated_schemas", "narrative.schema.json");
     const fullSchema = await $RefParser.bundle(schemaPath);
 

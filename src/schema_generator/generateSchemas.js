@@ -1,6 +1,6 @@
 import path from "node:path";
 import { createDir } from "../helper.js";
-import {dereferenceGeneratedSchema} from "./dereferenceSchema.js"
+import {bundleGeneratedSchema} from "./bundleGeneratedSchema.js"
 import {buildArthaSchema} from "./buildArthaSchema.js"
 
 const generateSchema = async () => {
@@ -9,7 +9,7 @@ const generateSchema = async () => {
     await createDir(path.join(process.cwd(), "generated_schemas", "structural-schema"));
 
     await buildArthaSchema();
-    await dereferenceGeneratedSchema();
+    await bundleGeneratedSchema();
 };
 
 await generateSchema();
