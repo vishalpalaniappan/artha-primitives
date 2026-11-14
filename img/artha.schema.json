@@ -121,8 +121,7 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "aliasName",
-                      "aliasStructuralType"
+                      "aliasName"
                     ],
                     "properties": {
                       "aliasName": {
