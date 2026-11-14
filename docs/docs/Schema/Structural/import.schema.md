@@ -18,7 +18,7 @@ description: A schema definition for import meaning.
 
 ## Properties
 
-<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#name">name</a></td><td>String=import</td></tr><tr><td colspan="2"><a href="#file">file</a></td><td>String</td></tr><tr><td colspan="2"><a href="#id">id</a></td><td>String</td></tr><tr><td colspan="2"><a href="#alias">alias</a></td><td>String</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#name">name</a></td><td>String=import</td></tr><tr><td colspan="2"><a href="#file">file</a></td><td>String</td></tr><tr><td colspan="2"><a href="#id">id</a></td><td>String</td></tr><tr><td colspan="2"><a href="#alias">alias</a></td><td>Object</td></tr></tbody></table>
 
 
 
@@ -84,6 +84,24 @@ description: A schema definition for import meaning.
 
 <table class="jssd-property-table">
   <tbody>
+    <tr><th>Type</th><td colspan="2">Object</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+### Properties
+  <table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#aliasname">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#aliasintroduce">introduce</a></td><td>Boolean</td></tr></tbody></table>
+
+
+### alias.name
+
+
+<table class="jssd-property-table">
+  <tbody>
     <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Required</th>
@@ -92,6 +110,24 @@ description: A schema definition for import meaning.
     
   </tbody>
 </table>
+
+
+
+
+### alias.introduce
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr><th>Type</th><td colspan="2">Boolean</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    
+  </tbody>
+</table>
+
 
 
 
@@ -124,7 +160,20 @@ description: A schema definition for import meaning.
             "type": "string"
         },
         "alias": {
-            "type": "string"
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "introduce": {
+                    "type": "boolean",
+                    "default": false
+                }
+            }
         }
     },
     "required": [
