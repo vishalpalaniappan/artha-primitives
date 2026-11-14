@@ -19,7 +19,7 @@
         "alias": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["aliasName", "aliasStructuralType"],
+            "required": ["aliasName"],
             "properties": {
                 "aliasName": {
                     "type": "string"
