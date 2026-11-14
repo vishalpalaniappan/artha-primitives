@@ -481,7 +481,7 @@
                             "const": "list"
                           },
                           "value": {
-                            "type": "list"
+                            "type": "array"
                           }
                         },
                         "required": [
