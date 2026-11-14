@@ -310,6 +310,8 @@
                   },
                   "args": {
                     "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1,
                     "prefixItems": [
                       {
                         "type": "object",
@@ -390,7 +392,9 @@
                     }
                   },
                   "args": {
-                    "type": "array"
+                    "type": "array",
+                    "minItems": 0,
+                    "maxItems": 0
                   }
                 }
               }
@@ -472,6 +476,8 @@
                   },
                   "args": {
                     "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1,
                     "prefixItems": [
                       {
                         "type": "object",
@@ -553,6 +559,8 @@
                   },
                   "args": {
                     "type": "array",
+                    "minItems": 2,
+                    "maxItems": 2,
                     "prefixItems": [
                       {
                         "type": "object",
@@ -666,6 +674,8 @@
                   },
                   "args": {
                     "type": "array",
+                    "minItems": 2,
+                    "maxItems": 2,
                     "prefixItems": [
                       {
                         "type": "object",
@@ -780,6 +790,8 @@
                   },
                   "args": {
                     "type": "array",
+                    "minItems": 2,
+                    "maxItems": 2,
                     "prefixItems": [
                       {
                         "type": "object",
@@ -879,6 +891,8 @@
                   },
                   "args": {
                     "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1,
                     "prefixItems": [
                       {
                         "type": "object",
@@ -960,6 +974,8 @@
                   },
                   "args": {
                     "type": "array",
+                    "minItems": 2,
+                    "maxItems": 2,
                     "prefixItems": [
                       {
                         "type": "object",
@@ -1058,6 +1074,8 @@
                   },
                   "args": {
                     "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1,
                     "prefixItems": [
                       {
                         "type": "object",
@@ -1139,6 +1157,8 @@
                   },
                   "args": {
                     "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1,
                     "prefixItems": [
                       {
                         "type": "object",
@@ -1220,6 +1240,8 @@
                   },
                   "args": {
                     "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1,
                     "prefixItems": [
                       {
                         "type": "object",
