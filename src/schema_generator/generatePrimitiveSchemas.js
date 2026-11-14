@@ -82,6 +82,11 @@ const generatePrimitiveSchema = (primitive) => {
         })
     }
 
+    // prefix items must have at least one item
+    if (schema.properties.args.prefixItems.length === 0) {
+        delete schema.properties.args.prefixItems;
+    }
+
     // Add body as a required attribute for functional primitives
     if (primitive.type === "functional-primitive") {
         schema.required.push("body");
