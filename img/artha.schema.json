@@ -309,7 +309,26 @@
                     }
                   },
                   "args": {
-                    "type": "array"
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "argName": {
+                            "type": "string",
+                            "const": "message"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "argName",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
                   }
                 }
               }
@@ -371,8 +390,7 @@
                     }
                   },
                   "args": {
-                    "type": "array",
-                    "prefixItems": []
+                    "type": "array"
                   }
                 }
               }
@@ -453,7 +471,26 @@
                     }
                   },
                   "args": {
-                    "type": "array"
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "argName": {
+                            "type": "string",
+                            "const": "list"
+                          },
+                          "value": {
+                            "type": "list"
+                          }
+                        },
+                        "required": [
+                          "argName",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
                   }
                 }
               }
@@ -515,7 +552,39 @@
                     }
                   },
                   "args": {
-                    "type": "array"
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "argName": {
+                            "type": "string",
+                            "const": "value1"
+                          },
+                          "value": {}
+                        },
+                        "required": [
+                          "argName",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "argName": {
+                            "type": "string",
+                            "const": "value2"
+                          },
+                          "value": {}
+                        },
+                        "required": [
+                          "argName",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
                   }
                 }
               }
@@ -596,7 +665,39 @@
                     }
                   },
                   "args": {
-                    "type": "array"
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "argName": {
+                            "type": "string",
+                            "const": "item"
+                          },
+                          "value": {}
+                        },
+                        "required": [
+                          "argName",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "argName": {
+                            "type": "string",
+                            "const": "list"
+                          },
+                          "value": {}
+                        },
+                        "required": [
+                          "argName",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
                   }
                 }
               }
@@ -678,7 +779,41 @@
                     }
                   },
                   "args": {
-                    "type": "array"
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "argName": {
+                            "type": "string",
+                            "const": "condition"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "argName",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "argName": {
+                            "type": "string",
+                            "const": "list"
+                          },
+                          "value": {}
+                        },
+                        "required": [
+                          "argName",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
                   },
                   "body": {
                     "type": "array"
@@ -743,7 +878,26 @@
                     }
                   },
                   "args": {
-                    "type": "array"
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "argName": {
+                            "type": "string",
+                            "const": "value"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "argName",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
                   }
                 }
               }
@@ -805,7 +959,43 @@
                     }
                   },
                   "args": {
-                    "type": "array"
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "argName": {
+                            "type": "string",
+                            "const": "role"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "argName",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "argName": {
+                            "type": "string",
+                            "const": "participant"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "argName",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
                   }
                 }
               }
@@ -867,7 +1057,26 @@
                     }
                   },
                   "args": {
-                    "type": "array"
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "argName": {
+                            "type": "string",
+                            "const": "value"
+                          },
+                          "value": {
+                            "type": "array"
+                          }
+                        },
+                        "required": [
+                          "argName",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
                   }
                 }
               }
@@ -929,7 +1138,26 @@
                     }
                   },
                   "args": {
-                    "type": "array"
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "argName": {
+                            "type": "string",
+                            "const": "value"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "argName",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
                   }
                 }
               }
@@ -991,7 +1219,26 @@
                     }
                   },
                   "args": {
-                    "type": "array"
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "argName": {
+                            "type": "string",
+                            "const": "alias"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "argName",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
                   }
                 }
               }
