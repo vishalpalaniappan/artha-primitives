@@ -40,9 +40,9 @@ const generatePrimitiveSchema = (primitive) => {
             alias: {
                 type: "object",
                 additionalProperties: false,
-                required: ["name"],
+                required: ["aliasName"],
                 properties: {
-                    name: {
+                    aliasName: {
                         type: "string"
                     },
                     introduce: {

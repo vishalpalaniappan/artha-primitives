@@ -38,16 +38,21 @@
                     "type": "object",
                     "description": "The optional alias for the primitive.",
                     "properties": {
-                        "name": {
+                        "aliasName": {
                             "type": "string",
                             "description": "Nae of the alias"
                         },
                         "aliasStructuralType": {
                             "type": "string",
                             "description": "Structural type of the alias."
+                        },
+                        "introduce": {
+                            "type": "boolean",
+                            "default": false
                         }
                     },
                     "required": [
+                        "aliasName",
                         "aliasStructuralType"
                     ]                    
                 },
