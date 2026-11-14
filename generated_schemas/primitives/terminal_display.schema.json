@@ -28,7 +28,20 @@
             "const": "computable-legacy-primitive"
         },
         "alias": {
-            "type": "string"
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "introduce": {
+                    "type": "boolean",
+                    "default": false
+                }
+            }
         },
         "args": {
             "type": "array",

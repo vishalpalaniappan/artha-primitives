@@ -119,12 +119,17 @@
                   },
                   "alias": {
                     "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "name"
+                    ],
                     "properties": {
                       "name": {
                         "type": "string"
                       },
                       "introduce": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "default": false
                       }
                     }
                   },
@@ -275,7 +280,20 @@
                     "const": "computable-legacy-primitive"
                   },
                   "alias": {
-                    "type": "string"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "name"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      }
+                    }
                   },
                   "args": {
                     "type": "array",
@@ -343,7 +361,20 @@
                     "const": "computable-legacy-primitive"
                   },
                   "alias": {
-                    "type": "string"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "name"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      }
+                    }
                   },
                   "args": {
                     "type": "array",
@@ -412,7 +443,20 @@
                     "const": "computable-primitive"
                   },
                   "alias": {
-                    "type": "string"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "name"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      }
+                    }
                   },
                   "args": {
                     "type": "array",
@@ -480,7 +524,20 @@
                     "const": "computable-primitive"
                   },
                   "alias": {
-                    "type": "string"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "name"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      }
+                    }
                   },
                   "args": {
                     "type": "array",
@@ -580,7 +637,20 @@
                     "const": "computable-primitive"
                   },
                   "alias": {
-                    "type": "string"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "name"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      }
+                    }
                   },
                   "args": {
                     "type": "array",
@@ -681,7 +751,20 @@
                     "const": "functional-primitive"
                   },
                   "alias": {
-                    "type": "string"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "name"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      }
+                    }
                   },
                   "args": {
                     "type": "array",
@@ -767,7 +850,20 @@
                     "const": "meta-primitive"
                   },
                   "alias": {
-                    "type": "string"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "name"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      }
+                    }
                   },
                   "args": {
                     "type": "array",
@@ -835,7 +931,20 @@
                     "const": "meta-primitive"
                   },
                   "alias": {
-                    "type": "string"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "name"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      }
+                    }
                   },
                   "args": {
                     "type": "array",
@@ -920,7 +1029,20 @@
                     "const": "meta-primitive"
                   },
                   "alias": {
-                    "type": "string"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "name"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      }
+                    }
                   },
                   "args": {
                     "type": "array",
@@ -988,7 +1110,20 @@
                     "const": "meta-primitive"
                   },
                   "alias": {
-                    "type": "string"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "name"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      }
+                    }
                   },
                   "args": {
                     "type": "array",
@@ -1056,7 +1191,20 @@
                     "const": "meta-primitive"
                   },
                   "alias": {
-                    "type": "string"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "name"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      }
+                    }
                   },
                   "args": {
                     "type": "array",

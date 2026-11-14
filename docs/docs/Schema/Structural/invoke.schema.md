@@ -105,7 +105,7 @@ description: A schema for invoking custom meaning.
     <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Required</th>
-      <td colspan="2">No</td>
+      <td colspan="2">Yes</td>
     </tr>
     
   </tbody>
@@ -204,12 +204,17 @@ description: A schema for invoking custom meaning.
         },
         "alias": {
             "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "name"
+            ],
             "properties": {
                 "name": {
                     "type": "string"
                 },
                 "introduce": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": false
                 }
             }
         },

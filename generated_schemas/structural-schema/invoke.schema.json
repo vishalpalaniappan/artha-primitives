@@ -18,12 +18,17 @@
         },
         "alias": {
             "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "name"
+            ],
             "properties": {
                 "name": {
                     "type": "string"
                 },
                 "introduce": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": false
                 }
             }
         },
