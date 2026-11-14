@@ -17,7 +17,17 @@ export const dereferenceGeneratedSchema = async () => {
         "dist",
         "artha.schema.json",
     );
-
     fs.writeFileSync(GENERATED_PATH, JSON.stringify(fullSchema, null, 2));
+    
+    const DOC_SCHEMA_FOLDER = path.join(
+        process.cwd(),
+        "docs",
+        "static",
+        "img"
+    );
+
+    const DOC_SCHEMA_PATH = path.join(DOC_SCHEMA_FOLDER,"artha.schema.json");
+    fs.writeFileSync(DOC_SCHEMA_PATH, JSON.stringify(fullSchema, null, 2));
+
     console.log("Successfully created single schema!");
 };
