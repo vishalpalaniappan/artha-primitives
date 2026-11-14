@@ -31,9 +31,9 @@
             "type": "array",
             "items": {
                 "type": "object",
-                "required": ["name", "value"],
+                "required": ["argName", "value"],
                 "properties": {
-                    "name": {
+                    "argName": {
                         "type": "string"
                     },
                     "value": {
