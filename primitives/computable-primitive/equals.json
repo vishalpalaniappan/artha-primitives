@@ -4,23 +4,22 @@
     "version": "0.0.0",
     "type": "computable-primitive",
     "description":"Checks if two values are equal.",
-    "participants": [
-        {
-            "name": "alias",
+    "attributes": {
+        "alias": {
             "aliasStructuralType": "boolean",
             "required": true
-        },
-        {
-            "name": "value1",
-            "index": 0,
-            "required": true
-        },
-        {
-            "name": "value2",
-            "index": 1,
-            "required": true
-        }
-    ],
+        }, 
+        "args": [
+            {
+                "name": "value1",
+                "required": true
+            },
+            {
+                "name": "value2",
+                "required": true
+            }
+        ]    
+    },
     "invariants": [
 
     ],

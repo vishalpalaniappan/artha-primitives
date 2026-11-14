@@ -40,49 +40,37 @@
             "required": ["name"],
             "additionalProperties": false
         },
-        "participants": {
-            "type": "array",
-            "description": "The participants for this primitive",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "description": "The name of the parameter."
-                    },
-                    "aliasStructuralType": {
-                        "type" : "string",
-                        "description": "Structural type of the alias."
-                    },
-                    "attributeStructuralType": {
-                        "type" : "string",
-                        "description": "Structural type of the attribute."
-                    },
-                    "required": {
-                        "type": "boolean",
-                        "description": "Indicates if this attribute is required for the primitive.",
-                        "default": false
-                    }
-                },
-                "if": {
-                    "properties": {
-                        "name": {
-                            "const": "alias"
+        "attributes": {
+            "type": "object",
+            "description": "The attributes in this primitive",
+            "properties": {
+                "args": {
+                    "type": "array",
+                    "description": "The attributes in this primitive",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "The name of the parameter."
+                            },
+                            "attributeStructuralType": {
+                                "type" : "string",
+                                "description": "Structural type of the attribute."
+                            },
+                            "required": {
+                                "type": "boolean",
+                                "description": "Indicates if this attribute is required for the primitive.",
+                                "default": false
+                            }
                         }
-                    },
-                    "required": ["name"]
-                },
-                "then": {
-                    "properties": { 
-                        "aliasStructuralType": { 
-                            "type": "string" 
-                        } 
-                    },
-                    "required": ["aliasStructuralType"]
-                },
-                "required": ["attributeStructuralType", "name", "required"],
-                "additionalProperties": false
-            }
+                    }
+                }
+            },
+            "required": [
+                "args"
+            ]
         },
         "invariants": {
             "type": "array",
@@ -147,7 +135,7 @@
         "type",
         "version",
         "description",
-        "participants",
+        "attributes",
         "invariants"
     ],
     "additionalProperties": false

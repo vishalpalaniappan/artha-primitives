@@ -8,8 +8,7 @@ import { createDir, getAllJsonFilesInFolder } from "../helper.js";
  * @param {String} primitive 
  */
 const generatePrimitiveSchema = (primitive) => {
-    const argsKey = (primitive.type) === "meta-primitive" ? "attributes" : "participants";
-    const args = primitive[argsKey];
+    const args = primitive["attributes"].args;
 
     // Schema base object
     const schema = {
@@ -19,6 +18,7 @@ const generatePrimitiveSchema = (primitive) => {
         description: `Structural schema for ${primitive.name} primitive.`,
         type: "object",
         additionalProperties: false,
+        required: ["name", "primitiveType", "args"],
         properties: {
             $schema: {
                 type: "string",
@@ -36,6 +36,17 @@ const generatePrimitiveSchema = (primitive) => {
                 type: "string",
                 description: "Type of the primitive.",
                 const: `${primitive.type}`
+            },
+            alias: {
+                type: "string"
+            },
+            args: {
+                type:"object",
+                additionalProperties: false,
+                required: [],
+                properties: {
+
+                }
             }
         }
     };
@@ -46,11 +57,10 @@ const generatePrimitiveSchema = (primitive) => {
 
     // Add all the required arguments to the list and also
     // add the entry to the properties key
-    schema.required = ["name"];
     for (const arg of args) {
-        schema.properties[arg.name] = {};
+        schema.properties.args.properties[arg.name] = {};
         if (arg.required) {
-            schema.required.push(arg.name);
+            schema.properties.args.required.push(arg.name);
         }
     }
 

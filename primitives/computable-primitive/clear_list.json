@@ -4,13 +4,14 @@
     "version": "0.0.0",
     "type": "computable-primitive",
     "description":"Removes all items from a list.",
-    "participants": [
-        {
+    "attributes": {
+        "args": [
+            {
             "name": "list",
-            "index": 0,
             "required": true
-        }
-    ],
+            }
+        ]    
+    },
     "invariants": [
         {
             "id": "1",

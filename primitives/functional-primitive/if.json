@@ -4,13 +4,19 @@
     "name": "if",
     "type": "functional-primitive",
     "description":"Establishes conditional meaning",
-    "participants": [
-        {
-            "name": "condition",
-            "attributeStructuralType": "string",
-            "required": true
-        }
-    ],
+    "attributes": {
+        "args": [
+            {
+                "name": "condition",
+                "attributeStructuralType": "string",
+                "required": true
+            },
+            {
+                "name": "list",
+                "required": true
+            }
+        ]    
+    },
     "invariants": [
         {
             "id": "inv_1",

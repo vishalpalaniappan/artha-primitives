@@ -4,12 +4,13 @@
     "version": "0.0.0",
     "type": "meta-primitive",
     "description":"Establish the initial value of the participant.",
-    "attributes": [
-        {
-            "name": "value",
-            "attributeStructuralType": "string",
-            "aliasStructuralType": "inherit",
-            "required": true
-        }
-    ]
+    "attributes": {
+        "args": [
+            {
+                "name": "value",
+                "attributeStructuralType": "string",
+                "required": true
+            }
+        ]    
+    }
 }

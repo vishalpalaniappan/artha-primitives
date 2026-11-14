@@ -4,22 +4,23 @@
     "version": "0.0.0",
     "type": "meta-primitive",
     "description":"Introduces a participant into the world",
-    "attributes": [
-        {
-            "name": "alias",
-            "attributeStructuralType": "string",
-            "aliasStructuralType": "inherit",
-            "required": true
-        },
-        {
-            "name": "role",
+    "attributes": {
+        "alias": {
+            "aliasStructuralType": "boolean",
             "attributeStructuralType": "string",
             "required": true
-        },
-        {
-            "name": "participant",
-            "attributeStructuralType": "string",
-            "required": true
-        }
-    ]
+        }, 
+        "args": [
+            {
+                "name": "role",
+                "attributeStructuralType": "string",
+                "required": true
+            },
+            {
+                "name": "participant",
+                "attributeStructuralType": "string",
+                "required": true
+            }
+        ]    
+    }
 }
