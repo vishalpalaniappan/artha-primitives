@@ -7,12 +7,13 @@
     "scripts": {
         "install:all": "npm install && cd docs && npm install",
         "generate-documentation": "node ./generate-docs.js",
+        "generate-schema": "node ./src/schema_generator/generateSchemas.js",
         "docusaurus": "npm run generate-documentation && cd docs && npx docusaurus",
         "start": "npm run generate-documentation && cd docs && npx docusaurus start",
         "build": "npm run generate-documentation && cd docs && npx docusaurus build",
         "serve": "cd docs && npm run serve",
-        "deploy": "npm run build && gh-pages -d docs/build",
-        "generate-schema": "node ./src/schema_generator/generateSchemas.js"
+        "generate": "npm run generate-schema && npm run generate-documentation",
+        "deploy": "npm run generate && run build && gh-pages -d docs/build"
     },
     "repository": {
         "type": "git",
