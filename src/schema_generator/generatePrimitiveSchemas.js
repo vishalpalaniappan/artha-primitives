@@ -58,7 +58,7 @@ const generatePrimitiveSchema = (primitive) => {
         schema.properties.args.prefixItems.push({
             type: "object",
             properties: {
-                name: { 
+                argName: { 
                     type: "string",
                     const: arg.name
                 },
@@ -66,7 +66,7 @@ const generatePrimitiveSchema = (primitive) => {
                     type: arg.attributeStructuralType
                 }
             },
-            required: ["name","value"],
+            required: ["argName","value"],
             additionalProperties: false
         })
     }
