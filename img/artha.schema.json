@@ -790,8 +790,8 @@
                   },
                   "args": {
                     "type": "array",
-                    "minItems": 2,
-                    "maxItems": 2,
+                    "minItems": 1,
+                    "maxItems": 1,
                     "prefixItems": [
                       {
                         "type": "object",
@@ -803,21 +803,6 @@
                           "value": {
                             "type": "string"
                           }
-                        },
-                        "required": [
-                          "argName",
-                          "value"
-                        ],
-                        "additionalProperties": false
-                      },
-                      {
-                        "type": "object",
-                        "properties": {
-                          "argName": {
-                            "type": "string",
-                            "const": "list"
-                          },
-                          "value": {}
                         },
                         "required": [
                           "argName",
