@@ -6,10 +6,9 @@ import path from 'node:path';
  * This method builds the Artha schema by doing the following:
  * - Generates the invocation schemas for all the primitives
  * - Copies the narrative schema into the generated_schema folder
- * - Reads the manifest
- * - Reads each of the structural-schema
- *      - Adds the relevant primitive into body of structural-schema using manifest
- * - Writes updated structural schema into generated_schema folder
+ * - Adds the schema to the narrative schema.
+ * - Adds the primitive schemas to the $defs of narrative schema so the recursive object check loads the correct schema.
+ * - Writes updated narrative schema to the narrative schema folder.
  */
 export const buildArthaSchema = async () => {
     const primitiveRefs = await generatePrimitiveSchemas();
@@ -21,7 +20,6 @@ export const buildArthaSchema = async () => {
     // Copy the narrative schema to generated schema folder
     const NARRATIVE_SCHEMA_PATH_SRC = path.join(process.cwd(), "schemas", "narrative.schema.json");
     const NARRATIVE_SCHEMA_PATH_DEST = path.join(process.cwd(), "generated_schemas", "narrative.schema.json");
-
     
     // Add references to the structural schemas in generated folder so it can be dereferenced
     const narrative_schema = JSON.parse(fs.readFileSync(NARRATIVE_SCHEMA_PATH_SRC, "utf8"));
@@ -38,7 +36,6 @@ export const buildArthaSchema = async () => {
         JSON.stringify(narrative_schema, null, 4),
         "utf8"
     );
-
 
     // Populate the body of the structural schemas (if it contains a body)
     for (const schemaName of manifest.structuralTypes) {
