@@ -18,7 +18,7 @@ description: A schema definition for functional-primitive files.
 
 ## Properties
 
-<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#$schema">$schema</a></td><td>String</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#type">type</a></td><td>String</td></tr><tr><td colspan="2"><a href="#version">version</a></td><td>String</td></tr><tr><td colspan="2"><a href="#description">description</a></td><td>String</td></tr><tr><td colspan="2"><a href="#alias">alias</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#participants">participants</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#invariants">invariants</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#_note">_note</a></td><td>String</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#$schema">$schema</a></td><td>String</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#type">type</a></td><td>String</td></tr><tr><td colspan="2"><a href="#version">version</a></td><td>String</td></tr><tr><td colspan="2"><a href="#description">description</a></td><td>String</td></tr><tr><td colspan="2"><a href="#alias">alias</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#attributes">attributes</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#invariants">invariants</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#_note">_note</a></td><td>String</td></tr></tbody></table>
 
 
 
@@ -176,14 +176,36 @@ description: A schema definition for functional-primitive files.
 
 
 
-## participants
+## attributes
 
 
 <table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Description</th>
-      <td colspan="2">The participants for this primitive</td>
+      <td colspan="2">The attributes in this primitive</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">Object</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+### Properties
+  <table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#attributesargs">args</a></td><td>Array</td></tr></tbody></table>
+
+
+### attributes.args
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">The attributes in this primitive</td>
     </tr>
     <tr><th>Type</th><td colspan="2">Array</td></tr>
     <tr>
@@ -196,7 +218,7 @@ description: A schema definition for functional-primitive files.
 
 
 
-### participants.name
+### attributes.args.name
 
 
 <table class="jssd-property-table">
@@ -213,24 +235,7 @@ description: A schema definition for functional-primitive files.
 
 
 
-### participants.aliasStructuralType
-
-
-<table class="jssd-property-table">
-  <tbody>
-    <tr>
-      <th>Description</th>
-      <td colspan="2">Structural type of the alias.</td>
-    </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
-    
-  </tbody>
-</table>
-
-
-
-
-### participants.attributeStructuralType
+### attributes.args.attributeStructuralType
 
 
 <table class="jssd-property-table">
@@ -247,7 +252,7 @@ description: A schema definition for functional-primitive files.
 
 
 
-### participants.required
+### attributes.args.required
 
 
 <table class="jssd-property-table">
@@ -260,6 +265,7 @@ description: A schema definition for functional-primitive files.
     
   </tbody>
 </table>
+
 
 
 
@@ -488,57 +494,37 @@ description: A schema definition for functional-primitive files.
             ],
             "additionalProperties": false
         },
-        "participants": {
-            "type": "array",
-            "description": "The participants for this primitive",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "description": "The name of the parameter."
-                    },
-                    "aliasStructuralType": {
-                        "type": "string",
-                        "description": "Structural type of the alias."
-                    },
-                    "attributeStructuralType": {
-                        "type": "string",
-                        "description": "Structural type of the attribute."
-                    },
-                    "required": {
-                        "type": "boolean",
-                        "description": "Indicates if this attribute is required for the primitive.",
-                        "default": false
+        "attributes": {
+            "type": "object",
+            "description": "The attributes in this primitive",
+            "properties": {
+                "args": {
+                    "type": "array",
+                    "description": "The attributes in this primitive",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "The name of the parameter."
+                            },
+                            "attributeStructuralType": {
+                                "type": "string",
+                                "description": "Structural type of the attribute."
+                            },
+                            "required": {
+                                "type": "boolean",
+                                "description": "Indicates if this attribute is required for the primitive.",
+                                "default": false
+                            }
+                        }
                     }
-                },
-                "if": {
-                    "properties": {
-                        "name": {
-                            "const": "alias"
-                        }
-                    },
-                    "required": [
-                        "name"
-                    ]
-                },
-                "then": {
-                    "properties": {
-                        "aliasStructuralType": {
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "aliasStructuralType"
-                    ]
-                },
-                "required": [
-                    "attributeStructuralType",
-                    "name",
-                    "required"
-                ],
-                "additionalProperties": false
-            }
+                }
+            },
+            "required": [
+                "args"
+            ]
         },
         "invariants": {
             "type": "array",
@@ -612,7 +598,7 @@ description: A schema definition for functional-primitive files.
         "type",
         "version",
         "description",
-        "participants",
+        "attributes",
         "invariants"
     ],
     "additionalProperties": false

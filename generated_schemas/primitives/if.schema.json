@@ -5,6 +5,11 @@
     "description": "Structural schema for if primitive.",
     "type": "object",
     "additionalProperties": false,
+    "required": [
+        "name",
+        "args",
+        "body"
+    ],
     "properties": {
         "$schema": {
             "type": "string",
@@ -42,14 +47,48 @@
             "description": "Type of the primitive.",
             "const": "functional-primitive"
         },
-        "condition": {},
+        "alias": {
+            "type": "string"
+        },
+        "args": {
+            "type": "array",
+            "prefixItems": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "condition"
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "argName",
+                        "value"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "list"
+                        },
+                        "value": {}
+                    },
+                    "required": [
+                        "argName",
+                        "value"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        },
         "body": {
             "type": "array"
         }
-    },
-    "required": [
-        "name",
-        "condition",
-        "body"
-    ]
+    }
 }

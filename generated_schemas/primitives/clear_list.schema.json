@@ -5,6 +5,10 @@
     "description": "Structural schema for clear_list primitive.",
     "type": "object",
     "additionalProperties": false,
+    "required": [
+        "name",
+        "args"
+    ],
     "properties": {
         "$schema": {
             "type": "string",
@@ -42,10 +46,30 @@
             "description": "Type of the primitive.",
             "const": "computable-primitive"
         },
-        "list": {}
-    },
-    "required": [
-        "name",
-        "list"
-    ]
+        "alias": {
+            "type": "string"
+        },
+        "args": {
+            "type": "array",
+            "prefixItems": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "list"
+                        },
+                        "value": {
+                            "type": "list"
+                        }
+                    },
+                    "required": [
+                        "argName",
+                        "value"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        }
+    }
 }

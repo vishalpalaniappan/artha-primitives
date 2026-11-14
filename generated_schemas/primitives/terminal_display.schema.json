@@ -5,6 +5,10 @@
     "description": "Structural schema for terminal_display primitive.",
     "type": "object",
     "additionalProperties": false,
+    "required": [
+        "name",
+        "args"
+    ],
     "properties": {
         "$schema": {
             "type": "string",
@@ -23,10 +27,30 @@
             "description": "Type of the primitive.",
             "const": "computable-legacy-primitive"
         },
-        "message": {}
-    },
-    "required": [
-        "name",
-        "message"
-    ]
+        "alias": {
+            "type": "string"
+        },
+        "args": {
+            "type": "array",
+            "prefixItems": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "message"
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "argName",
+                        "value"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        }
+    }
 }

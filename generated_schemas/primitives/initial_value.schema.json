@@ -5,6 +5,10 @@
     "description": "Structural schema for initial_value primitive.",
     "type": "object",
     "additionalProperties": false,
+    "required": [
+        "name",
+        "args"
+    ],
     "properties": {
         "$schema": {
             "type": "string",
@@ -23,10 +27,30 @@
             "description": "Type of the primitive.",
             "const": "meta-primitive"
         },
-        "value": {}
-    },
-    "required": [
-        "name",
-        "value"
-    ]
+        "alias": {
+            "type": "string"
+        },
+        "args": {
+            "type": "array",
+            "prefixItems": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "value"
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "argName",
+                        "value"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        }
+    }
 }

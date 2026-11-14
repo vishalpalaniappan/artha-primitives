@@ -5,6 +5,10 @@
     "description": "Structural schema for yield primitive.",
     "type": "object",
     "additionalProperties": false,
+    "required": [
+        "name",
+        "args"
+    ],
     "properties": {
         "$schema": {
             "type": "string",
@@ -23,10 +27,30 @@
             "description": "Type of the primitive.",
             "const": "meta-primitive"
         },
-        "alias": {}
-    },
-    "required": [
-        "name",
-        "alias"
-    ]
+        "alias": {
+            "type": "string"
+        },
+        "args": {
+            "type": "array",
+            "prefixItems": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "alias"
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "argName",
+                        "value"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        }
+    }
 }

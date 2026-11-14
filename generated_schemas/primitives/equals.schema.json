@@ -5,6 +5,10 @@
     "description": "Structural schema for equals primitive.",
     "type": "object",
     "additionalProperties": false,
+    "required": [
+        "name",
+        "args"
+    ],
     "properties": {
         "$schema": {
             "type": "string",
@@ -23,14 +27,43 @@
             "description": "Type of the primitive.",
             "const": "computable-primitive"
         },
-        "alias": {},
-        "value1": {},
-        "value2": {}
-    },
-    "required": [
-        "name",
-        "alias",
-        "value1",
-        "value2"
-    ]
+        "alias": {
+            "type": "string"
+        },
+        "args": {
+            "type": "array",
+            "prefixItems": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "value1"
+                        },
+                        "value": {}
+                    },
+                    "required": [
+                        "argName",
+                        "value"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "value2"
+                        },
+                        "value": {}
+                    },
+                    "required": [
+                        "argName",
+                        "value"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        }
+    }
 }

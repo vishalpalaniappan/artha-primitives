@@ -16,16 +16,27 @@
         "id": {
             "type": "string"
         },
+        "alias": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "introduce": {
+                    "type": "boolean"
+                }
+            }
+        },
         "args": {
             "type": "array",
             "items": {
                 "type": "object",
                 "required": [
-                    "name",
+                    "argName",
                     "value"
                 ],
                 "properties": {
-                    "name": {
+                    "argName": {
                         "type": "string"
                     },
                     "value": {

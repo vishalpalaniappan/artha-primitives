@@ -5,6 +5,10 @@
     "description": "Structural schema for insert_at_end_of_list primitive.",
     "type": "object",
     "additionalProperties": false,
+    "required": [
+        "name",
+        "args"
+    ],
     "properties": {
         "$schema": {
             "type": "string",
@@ -42,12 +46,43 @@
             "description": "Type of the primitive.",
             "const": "computable-primitive"
         },
-        "item": {},
-        "list": {}
-    },
-    "required": [
-        "name",
-        "item",
-        "list"
-    ]
+        "alias": {
+            "type": "string"
+        },
+        "args": {
+            "type": "array",
+            "prefixItems": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "item"
+                        },
+                        "value": {}
+                    },
+                    "required": [
+                        "argName",
+                        "value"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "list"
+                        },
+                        "value": {}
+                    },
+                    "required": [
+                        "argName",
+                        "value"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        }
+    }
 }

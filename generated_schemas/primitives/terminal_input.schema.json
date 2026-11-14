@@ -5,6 +5,10 @@
     "description": "Structural schema for terminal_input primitive.",
     "type": "object",
     "additionalProperties": false,
+    "required": [
+        "name",
+        "args"
+    ],
     "properties": {
         "$schema": {
             "type": "string",
@@ -23,10 +27,12 @@
             "description": "Type of the primitive.",
             "const": "computable-legacy-primitive"
         },
-        "alias": {}
-    },
-    "required": [
-        "name",
-        "alias"
-    ]
+        "alias": {
+            "type": "string"
+        },
+        "args": {
+            "type": "array",
+            "prefixItems": []
+        }
+    }
 }

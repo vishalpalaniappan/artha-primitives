@@ -18,7 +18,7 @@ description: A schema definition for meta-primitive files.
 
 ## Properties
 
-<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#$schema">$schema</a></td><td>String</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#type">type</a></td><td>String</td></tr><tr><td colspan="2"><a href="#version">version</a></td><td>String</td></tr><tr><td colspan="2"><a href="#description">description</a></td><td>String</td></tr><tr><td colspan="2"><a href="#attributes">attributes</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#_note">_note</a></td><td>String</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#$schema">$schema</a></td><td>String</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#type">type</a></td><td>String</td></tr><tr><td colspan="2"><a href="#version">version</a></td><td>String</td></tr><tr><td colspan="2"><a href="#description">description</a></td><td>String</td></tr><tr><td colspan="2"><a href="#attributes">attributes</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#_note">_note</a></td><td>String</td></tr></tbody></table>
 
 
 
@@ -143,7 +143,92 @@ description: A schema definition for meta-primitive files.
   <tbody>
     <tr>
       <th>Description</th>
-      <td colspan="2">The attributes for this primitive</td>
+      <td colspan="2">The attributes in this primitive</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">Object</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+### Properties
+  <table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#attributesalias">alias</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#attributesargs">args</a></td><td>Array</td></tr></tbody></table>
+
+
+### attributes.alias
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">The optional alias for the primitive.</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">Object</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+### attributes.alias.name
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Nae of the alias</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+### attributes.alias.aliasStructuralType
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Structural type of the alias.</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+
+### attributes.args
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">The attributes in this primitive</td>
     </tr>
     <tr><th>Type</th><td colspan="2">Array</td></tr>
     <tr>
@@ -156,7 +241,7 @@ description: A schema definition for meta-primitive files.
 
 
 
-### attributes.name
+### attributes.args.name
 
 
 <table class="jssd-property-table">
@@ -173,24 +258,7 @@ description: A schema definition for meta-primitive files.
 
 
 
-### attributes.aliasStructuralType
-
-
-<table class="jssd-property-table">
-  <tbody>
-    <tr>
-      <th>Description</th>
-      <td colspan="2">Structural type of the alias.</td>
-    </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
-    
-  </tbody>
-</table>
-
-
-
-
-### attributes.attributeStructuralType
+### attributes.args.attributeStructuralType
 
 
 <table class="jssd-property-table">
@@ -207,7 +275,7 @@ description: A schema definition for meta-primitive files.
 
 
 
-### attributes.required
+### attributes.args.required
 
 
 <table class="jssd-property-table">
@@ -220,6 +288,7 @@ description: A schema definition for meta-primitive files.
     
   </tbody>
 </table>
+
 
 
 
@@ -288,56 +357,53 @@ description: A schema definition for meta-primitive files.
             "description": "The description of the primitive."
         },
         "attributes": {
-            "type": "array",
-            "description": "The attributes for this primitive",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "description": "The name of the parameter."
-                    },
-                    "aliasStructuralType": {
-                        "type": "string",
-                        "description": "Structural type of the alias."
-                    },
-                    "attributeStructuralType": {
-                        "type": "string",
-                        "description": "Structural type of the attribute."
-                    },
-                    "required": {
-                        "type": "boolean",
-                        "description": "Indicates if this attribute is required for the primitive.",
-                        "default": false
-                    }
-                },
-                "if": {
+            "type": "object",
+            "description": "The attributes in this primitive",
+            "properties": {
+                "alias": {
+                    "type": "object",
+                    "description": "The optional alias for the primitive.",
                     "properties": {
                         "name": {
-                            "const": "alias"
-                        }
-                    },
-                    "required": [
-                        "name"
-                    ]
-                },
-                "then": {
-                    "properties": {
+                            "type": "string",
+                            "description": "Nae of the alias"
+                        },
                         "aliasStructuralType": {
-                            "type": "string"
+                            "type": "string",
+                            "description": "Structural type of the alias."
                         }
                     },
                     "required": [
                         "aliasStructuralType"
                     ]
                 },
-                "required": [
-                    "attributeStructuralType",
-                    "name",
-                    "required"
-                ],
-                "additionalProperties": false
-            }
+                "args": {
+                    "type": "array",
+                    "description": "The attributes in this primitive",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "The name of the parameter."
+                            },
+                            "attributeStructuralType": {
+                                "type": "string",
+                                "description": "Structural type of the attribute."
+                            },
+                            "required": {
+                                "type": "boolean",
+                                "description": "Indicates if this attribute is required for the primitive.",
+                                "default": false
+                            }
+                        }
+                    }
+                }
+            },
+            "required": [
+                "args"
+            ]
         },
         "_note": {
             "type": "string",
