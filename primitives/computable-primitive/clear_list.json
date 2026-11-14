@@ -7,8 +7,9 @@
     "attributes": {
         "args": [
             {
-            "name": "list",
-            "required": true
+                "name": "list",
+                "attributeStructuralType": "list",
+                "required": true
             }
         ]    
     },

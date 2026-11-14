@@ -62,6 +62,10 @@
                                 "type": "string",
                                 "description": "The name of the parameter."
                             },
+                            "attributeStructuralType": {
+                                "type": "string",
+                                "description": "The structural type of the attribute."
+                            },
                             "required": {
                                 "type": "boolean",
                                 "description": "Indicates if this attribute is required for the primitive.",

@@ -1,6 +1,7 @@
 import path from "node:path";
 import fs from "node:fs";
 import { createDir, getAllJsonFilesInFolder } from "../helper.js";
+import { type } from "node:os";
 
 /**
  * Generates the primitive schema given the primitive definition.
@@ -18,7 +19,7 @@ const generatePrimitiveSchema = (primitive) => {
         description: `Structural schema for ${primitive.name} primitive.`,
         type: "object",
         additionalProperties: false,
-        required: ["name", "primitiveType", "args"],
+        required: ["name", "args"],
         properties: {
             $schema: {
                 type: "string",
@@ -41,12 +42,8 @@ const generatePrimitiveSchema = (primitive) => {
                 type: "string"
             },
             args: {
-                type:"object",
-                additionalProperties: false,
-                required: [],
-                properties: {
-
-                }
+                type: "array",
+                prefixItems: []
             }
         }
     };
@@ -58,10 +55,20 @@ const generatePrimitiveSchema = (primitive) => {
     // Add all the required arguments to the list and also
     // add the entry to the properties key
     for (const arg of args) {
-        schema.properties.args.properties[arg.name] = {};
-        if (arg.required) {
-            schema.properties.args.required.push(arg.name);
-        }
+        schema.properties.args.prefixItems.push({
+            type: "object",
+            properties: {
+                name: { 
+                    type: "string",
+                    const: arg.name
+                },
+                value: {
+                    type: arg.attributeStructuralType
+                }
+            },
+            required: ["name","value"],
+            additionalProperties: false
+        })
     }
 
     // Add body as a required attribute for functional primitives
