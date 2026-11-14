@@ -55,6 +55,7 @@ const generatePrimitiveSchema = (primitive) => {
     // Add all the required arguments to the list and also
     // add the entry to the properties key
     for (const arg of args) {
+        if (!arg.required) continue;
         schema.properties.args.prefixItems.push({
             type: "object",
             properties: {
