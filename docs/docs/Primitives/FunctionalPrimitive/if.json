@@ -10,10 +10,6 @@
                 "name": "condition",
                 "attributeStructuralType": "string",
                 "required": true
-            },
-            {
-                "name": "list",
-                "required": true
             }
         ]    
     },
