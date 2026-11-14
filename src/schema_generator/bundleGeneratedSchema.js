@@ -1,7 +1,7 @@
 import path from "node:path";
 import fs from "node:fs";
 import $RefParser from "@apidevtools/json-schema-ref-parser";
-import { createDir, getAllJsonFilesInFolder } from "../helper.js";
+import { createDir } from "../helper.js";
 
 /**
  * Builds the schema from the narrative schema.

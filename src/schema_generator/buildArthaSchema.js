@@ -1,8 +1,6 @@
 import { generatePrimitiveSchemas } from "./generatePrimitiveSchemas.js"
 import fs from 'node:fs';
-import fsPromises from 'node:fs/promises';
 import path from 'node:path';
-import { createDir, getAllJsonFilesInFolder } from "../helper.js";
 
 /**
  * This method builds the Artha schema by doing the following:

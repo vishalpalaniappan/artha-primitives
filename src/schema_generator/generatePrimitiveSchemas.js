@@ -1,7 +1,6 @@
 import path from "node:path";
 import fs from "node:fs";
-import { createDir, getAllJsonFilesInFolder } from "../helper.js";
-import { type } from "node:os";
+import { getAllJsonFilesInFolder } from "../helper.js";
 
 /**
  * Generates the primitive schema given the primitive definition.
