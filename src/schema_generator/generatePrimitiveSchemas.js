@@ -38,7 +38,18 @@ const generatePrimitiveSchema = (primitive) => {
                 const: `${primitive.type}`
             },
             alias: {
-                type: "string"
+                type: "object",
+                additionalProperties: false,
+                required: ["name"],
+                properties: {
+                    name: {
+                        type: "string"
+                    },
+                    introduce: {
+                        type: "boolean",
+                        default: false
+                    }
+                }
             },
             args: {
                 type: "array",
