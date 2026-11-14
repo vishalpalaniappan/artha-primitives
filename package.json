@@ -13,7 +13,7 @@
         "build": "npm run generate-documentation && cd docs && npx docusaurus build",
         "serve": "cd docs && npm run serve",
         "generate": "npm run generate-schema && npm run generate-documentation",
-        "deploy": "npm run generate && run build && gh-pages -d docs/build"
+        "deploy": "npm run generate && npm run build && gh-pages -d docs/build"
     },
     "repository": {
         "type": "git",
