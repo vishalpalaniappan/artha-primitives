@@ -94,10 +94,10 @@ description: A schema for invoking custom meaning.
 </table>
 
 ### Properties
-  <table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#aliasname">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#aliasintroduce">introduce</a></td><td>Boolean</td></tr></tbody></table>
+  <table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#aliasaliasname">aliasName</a></td><td>String</td></tr><tr><td colspan="2"><a href="#aliasintroduce">introduce</a></td><td>Boolean</td></tr></tbody></table>
 
 
-### alias.name
+### alias.aliasName
 
 
 <table class="jssd-property-table">
@@ -206,10 +206,10 @@ description: A schema for invoking custom meaning.
             "type": "object",
             "additionalProperties": false,
             "required": [
-                "name"
+                "aliasName"
             ],
             "properties": {
-                "name": {
+                "aliasName": {
                     "type": "string"
                 },
                 "introduce": {

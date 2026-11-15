@@ -178,7 +178,7 @@ description: A schema definition for computable-primitive files.
 
 
 
-### attributes.alias.name
+### attributes.alias.aliasName
 
 
 <table class="jssd-property-table">
@@ -190,7 +190,7 @@ description: A schema definition for computable-primitive files.
     <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Required</th>
-      <td colspan="2">No</td>
+      <td colspan="2">Yes</td>
     </tr>
     
   </tbody>
@@ -212,6 +212,23 @@ description: A schema definition for computable-primitive files.
     <tr>
       <th>Required</th>
       <td colspan="2">Yes</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+### attributes.alias.introduce
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr><th>Type</th><td colspan="2">Boolean</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
     </tr>
     
   </tbody>
@@ -513,16 +530,21 @@ description: A schema definition for computable-primitive files.
                     "type": "object",
                     "description": "The optional alias for the primitive.",
                     "properties": {
-                        "name": {
+                        "aliasName": {
                             "type": "string",
                             "description": "Nae of the alias"
                         },
                         "aliasStructuralType": {
                             "type": "string",
                             "description": "Structural type of the alias."
+                        },
+                        "introduce": {
+                            "type": "boolean",
+                            "default": false
                         }
                     },
                     "required": [
+                        "aliasName",
                         "aliasStructuralType"
                     ]
                 },

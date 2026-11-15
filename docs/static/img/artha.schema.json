@@ -121,10 +121,10 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "name"
+                      "aliasName"
                     ],
                     "properties": {
-                      "name": {
+                      "aliasName": {
                         "type": "string"
                       },
                       "introduce": {
@@ -296,10 +296,10 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "name"
+                      "aliasName"
                     ],
                     "properties": {
-                      "name": {
+                      "aliasName": {
                         "type": "string"
                       },
                       "introduce": {
@@ -379,10 +379,10 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "name"
+                      "aliasName"
                     ],
                     "properties": {
-                      "name": {
+                      "aliasName": {
                         "type": "string"
                       },
                       "introduce": {
@@ -462,10 +462,10 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "name"
+                      "aliasName"
                     ],
                     "properties": {
-                      "name": {
+                      "aliasName": {
                         "type": "string"
                       },
                       "introduce": {
@@ -545,10 +545,10 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "name"
+                      "aliasName"
                     ],
                     "properties": {
-                      "name": {
+                      "aliasName": {
                         "type": "string"
                       },
                       "introduce": {
@@ -660,10 +660,10 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "name"
+                      "aliasName"
                     ],
                     "properties": {
-                      "name": {
+                      "aliasName": {
                         "type": "string"
                       },
                       "introduce": {
@@ -776,10 +776,10 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "name"
+                      "aliasName"
                     ],
                     "properties": {
-                      "name": {
+                      "aliasName": {
                         "type": "string"
                       },
                       "introduce": {
@@ -862,10 +862,10 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "name"
+                      "aliasName"
                     ],
                     "properties": {
-                      "name": {
+                      "aliasName": {
                         "type": "string"
                       },
                       "introduce": {
@@ -945,10 +945,10 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "name"
+                      "aliasName"
                     ],
                     "properties": {
-                      "name": {
+                      "aliasName": {
                         "type": "string"
                       },
                       "introduce": {
@@ -1045,10 +1045,10 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "name"
+                      "aliasName"
                     ],
                     "properties": {
-                      "name": {
+                      "aliasName": {
                         "type": "string"
                       },
                       "introduce": {
@@ -1128,10 +1128,10 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "name"
+                      "aliasName"
                     ],
                     "properties": {
-                      "name": {
+                      "aliasName": {
                         "type": "string"
                       },
                       "introduce": {
@@ -1211,10 +1211,10 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "name"
+                      "aliasName"
                     ],
                     "properties": {
-                      "name": {
+                      "aliasName": {
                         "type": "string"
                       },
                       "introduce": {
