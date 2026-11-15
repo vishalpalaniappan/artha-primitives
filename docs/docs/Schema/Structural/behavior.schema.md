@@ -112,7 +112,40 @@ description: A schema for a behavior in a narrative.
 
 
 
-### attributes.name
+### attributes.argName
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    
+  </tbody>
+</table>
+
+
+
+
+### attributes.argType
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Type of arg value (name or const).</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Enum</th>
+      <td colspan="2"><ul><li>name</li><li>const</li></ul></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+### attributes.value
 
 
 <table class="jssd-property-table">
@@ -161,10 +194,23 @@ description: A schema for a behavior in a narrative.
             "items": {
                 "type": "object",
                 "required": [
-                    "name"
+                    "argName",
+                    "value",
+                    "argType"
                 ],
                 "properties": {
-                    "name": {
+                    "argName": {
+                        "type": "string"
+                    },
+                    "argType": {
+                        "type": "string",
+                        "description": "Type of arg value (name or const).",
+                        "enum": [
+                            "name",
+                            "const"
+                        ]
+                    },
+                    "value": {
                         "type": "string"
                     }
                 }

@@ -23,9 +23,17 @@
             "type": "array",
             "items": {
                 "type": "object",
-                "required": ["name"],
+                "required": ["argName", "value", "argType"],
                 "properties": {
-                    "name": {
+                    "argName": {
+                        "type": "string"
+                    },
+                    "argType": {
+                        "type": "string",
+                        "description": "Type of arg value (name or const).",
+                        "enum": ["name", "const"]
+                    },
+                    "value": {
                         "type": "string"
                     }
                 }

@@ -162,7 +162,10 @@ description: A schema for invoking custom meaning.
       <td colspan="2">Type of arg value (name or const).</td>
     </tr>
     <tr><th>Type</th><td colspan="2">String</td></tr>
-    
+    <tr>
+      <th>Enum</th>
+      <td colspan="2"><ul><li>name</li><li>const</li></ul></td>
+    </tr>
   </tbody>
 </table>
 
@@ -238,7 +241,11 @@ description: A schema for invoking custom meaning.
                     },
                     "argType": {
                         "type": "string",
-                        "description": "Type of arg value (name or const)."
+                        "description": "Type of arg value (name or const).",
+                        "enum": [
+                            "name",
+                            "const"
+                        ]
                     },
                     "value": {
                         "type": "string"

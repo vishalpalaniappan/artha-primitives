@@ -70,10 +70,23 @@
                     "items": {
                       "type": "object",
                       "required": [
-                        "name"
+                        "argName",
+                        "value",
+                        "argType"
                       ],
                       "properties": {
-                        "name": {
+                        "argName": {
+                          "type": "string"
+                        },
+                        "argType": {
+                          "type": "string",
+                          "description": "Type of arg value (name or const).",
+                          "enum": [
+                            "name",
+                            "const"
+                          ]
+                        },
+                        "value": {
                           "type": "string"
                         }
                       }
@@ -145,7 +158,11 @@
                         },
                         "argType": {
                           "type": "string",
-                          "description": "Type of arg value (name or const)."
+                          "description": "Type of arg value (name or const).",
+                          "enum": [
+                            "name",
+                            "const"
+                          ]
                         },
                         "value": {
                           "type": "string"
@@ -305,7 +322,11 @@
                           },
                           "argType": {
                             "type": "string",
-                            "description": "Type of arg value (name or const)."
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                              "name",
+                              "const"
+                            ]
                           },
                           "value": {
                             "type": "string"
@@ -484,7 +505,11 @@
                           },
                           "argType": {
                             "type": "string",
-                            "description": "Type of arg value (name or const)."
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                              "name",
+                              "const"
+                            ]
                           },
                           "value": {
                             "type": "array"
@@ -556,7 +581,11 @@
                           },
                           "argType": {
                             "type": "string",
-                            "description": "Type of arg value (name or const)."
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                              "name",
+                              "const"
+                            ]
                           },
                           "value": {}
                         },
@@ -576,7 +605,11 @@
                           },
                           "argType": {
                             "type": "string",
-                            "description": "Type of arg value (name or const)."
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                              "name",
+                              "const"
+                            ]
                           },
                           "value": {}
                         },
@@ -685,7 +718,11 @@
                           },
                           "argType": {
                             "type": "string",
-                            "description": "Type of arg value (name or const)."
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                              "name",
+                              "const"
+                            ]
                           },
                           "value": {}
                         },
@@ -705,7 +742,11 @@
                           },
                           "argType": {
                             "type": "string",
-                            "description": "Type of arg value (name or const)."
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                              "name",
+                              "const"
+                            ]
                           },
                           "value": {}
                         },
@@ -795,7 +836,11 @@
                           },
                           "argType": {
                             "type": "string",
-                            "description": "Type of arg value (name or const)."
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                              "name",
+                              "const"
+                            ]
                           },
                           "value": {
                             "type": "string"
@@ -870,7 +915,11 @@
                           },
                           "argType": {
                             "type": "string",
-                            "description": "Type of arg value (name or const)."
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                              "name",
+                              "const"
+                            ]
                           },
                           "value": {
                             "type": "string"
@@ -942,7 +991,11 @@
                           },
                           "argType": {
                             "type": "string",
-                            "description": "Type of arg value (name or const)."
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                              "name",
+                              "const"
+                            ]
                           },
                           "value": {
                             "type": "string"
@@ -964,7 +1017,11 @@
                           },
                           "argType": {
                             "type": "string",
-                            "description": "Type of arg value (name or const)."
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                              "name",
+                              "const"
+                            ]
                           },
                           "value": {
                             "type": "string"
@@ -1056,7 +1113,11 @@
                           },
                           "argType": {
                             "type": "string",
-                            "description": "Type of arg value (name or const)."
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                              "name",
+                              "const"
+                            ]
                           },
                           "value": {
                             "type": "array"
@@ -1128,7 +1189,11 @@
                           },
                           "argType": {
                             "type": "string",
-                            "description": "Type of arg value (name or const)."
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                              "name",
+                              "const"
+                            ]
                           },
                           "value": {
                             "type": "string"
@@ -1200,7 +1265,11 @@
                           },
                           "argType": {
                             "type": "string",
-                            "description": "Type of arg value (name or const)."
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                              "name",
+                              "const"
+                            ]
                           },
                           "value": {
                             "type": "string"
