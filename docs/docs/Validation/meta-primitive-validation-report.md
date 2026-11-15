@@ -1,12 +1,12 @@
 # meta-primitive Validation Report
 
-* **Generated At:** 11/14/2026, 7:33:20 PM
+* **Generated At:** 11/14/2026, 7:52:36 PM
 * **Total Files Checked:** 5
 
 | File Name | Status | Error Summary |
 | :--- | :---: | :--- |
 | `initial_value.json` | ✅ Passed | None |
-| `introduce.json` | ❌ Failed | • `/attributes/alias`: must have required property 'aliasName' |
+| `introduce.json` | ✅ Passed | None |
 | `list_contains.json` | ✅ Passed | None |
 | `structural_type.json` | ✅ Passed | None |
 | `yield.json` | ✅ Passed | None |

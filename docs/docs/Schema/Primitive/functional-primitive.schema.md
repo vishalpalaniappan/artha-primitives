@@ -141,6 +141,10 @@ description: A schema definition for functional-primitive files.
 
 <table class="jssd-property-table">
   <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">The optional alias for the primitive.</td>
+    </tr>
     <tr><th>Type</th><td colspan="2">Object</td></tr>
     <tr>
       <th>Required</th>
@@ -151,28 +155,7 @@ description: A schema definition for functional-primitive files.
 </table>
 
 ### Properties
-  <table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#aliasaliasname">aliasName</a></td><td>String</td></tr><tr><td colspan="2"><a href="#aliasaliasstructuraltype">aliasStructuralType</a></td><td>String</td></tr><tr><td colspan="2"><a href="#aliasintroduce">introduce</a></td><td>Boolean</td></tr></tbody></table>
-
-
-### alias.aliasName
-
-
-<table class="jssd-property-table">
-  <tbody>
-    <tr>
-      <th>Description</th>
-      <td colspan="2">The name of the parameter.</td>
-    </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">Yes</td>
-    </tr>
-    
-  </tbody>
-</table>
-
-
+  <table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#aliasaliasstructuraltype">aliasStructuralType</a></td><td>String</td></tr></tbody></table>
 
 
 ### alias.aliasStructuralType
@@ -188,23 +171,6 @@ description: A schema definition for functional-primitive files.
     <tr>
       <th>Required</th>
       <td colspan="2">Yes</td>
-    </tr>
-    
-  </tbody>
-</table>
-
-
-
-
-### alias.introduce
-
-
-<table class="jssd-property-table">
-  <tbody>
-    <tr><th>Type</th><td colspan="2">Boolean</td></tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">No</td>
     </tr>
     
   </tbody>
@@ -521,25 +487,16 @@ description: A schema definition for functional-primitive files.
         },
         "alias": {
             "type": "object",
+            "description": "The optional alias for the primitive.",
             "properties": {
-                "aliasName": {
-                    "type": "string",
-                    "description": "The name of the parameter."
-                },
                 "aliasStructuralType": {
                     "type": "string",
                     "description": "Structural type of the alias."
-                },
-                "introduce": {
-                    "type": "boolean",
-                    "default": false
                 }
             },
             "required": [
-                "aliasName",
                 "aliasStructuralType"
-            ],
-            "additionalProperties": false
+            ]
         },
         "attributes": {
             "type": "object",

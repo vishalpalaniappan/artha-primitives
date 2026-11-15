@@ -18,19 +18,16 @@
         },
         "alias": {
             "type": "object",
-            "additionalProperties": false,
-            "required": [
-                "aliasName"
-            ],
+            "description": "The optional alias for the primitive.",
             "properties": {
-                "aliasName": {
-                    "type": "string"
-                },
-                "introduce": {
-                    "type": "boolean",
-                    "default": false
+                "aliasStructuralType": {
+                    "type": "string",
+                    "description": "Structural type of the alias."
                 }
-            }
+            },
+            "required": [
+                "aliasStructuralType"
+            ]
         },
         "args": {
             "type": "array",

@@ -46,22 +46,6 @@
             "description": "Type of the primitive.",
             "const": "computable-primitive"
         },
-        "alias": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": [
-                "aliasName"
-            ],
-            "properties": {
-                "aliasName": {
-                    "type": "string"
-                },
-                "introduce": {
-                    "type": "boolean",
-                    "default": false
-                }
-            }
-        },
         "args": {
             "type": "array",
             "minItems": 1,

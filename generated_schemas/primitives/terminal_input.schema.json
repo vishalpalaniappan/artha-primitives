@@ -27,6 +27,11 @@
             "description": "Type of the primitive.",
             "const": "computable-legacy-primitive"
         },
+        "args": {
+            "type": "array",
+            "minItems": 0,
+            "maxItems": 0
+        },
         "alias": {
             "type": "object",
             "additionalProperties": false,
@@ -37,16 +42,15 @@
                 "aliasName": {
                     "type": "string"
                 },
+                "aliasStructuralType": {
+                    "type": "string",
+                    "const": "string"
+                },
                 "introduce": {
                     "type": "boolean",
                     "default": false
                 }
             }
-        },
-        "args": {
-            "type": "array",
-            "minItems": 0,
-            "maxItems": 0
         }
     }
 }

@@ -84,6 +84,10 @@ description: A schema for invoking custom meaning.
 
 <table class="jssd-property-table">
   <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">The optional alias for the primitive.</td>
+    </tr>
     <tr><th>Type</th><td colspan="2">Object</td></tr>
     <tr>
       <th>Required</th>
@@ -94,35 +98,22 @@ description: A schema for invoking custom meaning.
 </table>
 
 ### Properties
-  <table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#aliasaliasname">aliasName</a></td><td>String</td></tr><tr><td colspan="2"><a href="#aliasintroduce">introduce</a></td><td>Boolean</td></tr></tbody></table>
+  <table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#aliasaliasstructuraltype">aliasStructuralType</a></td><td>String</td></tr></tbody></table>
 
 
-### alias.aliasName
+### alias.aliasStructuralType
 
 
 <table class="jssd-property-table">
   <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Structural type of the alias.</td>
+    </tr>
     <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">Yes</td>
-    </tr>
-    
-  </tbody>
-</table>
-
-
-
-
-### alias.introduce
-
-
-<table class="jssd-property-table">
-  <tbody>
-    <tr><th>Type</th><td colspan="2">Boolean</td></tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">No</td>
     </tr>
     
   </tbody>
@@ -204,19 +195,16 @@ description: A schema for invoking custom meaning.
         },
         "alias": {
             "type": "object",
-            "additionalProperties": false,
-            "required": [
-                "aliasName"
-            ],
+            "description": "The optional alias for the primitive.",
             "properties": {
-                "aliasName": {
-                    "type": "string"
-                },
-                "introduce": {
-                    "type": "boolean",
-                    "default": false
+                "aliasStructuralType": {
+                    "type": "string",
+                    "description": "Structural type of the alias."
                 }
-            }
+            },
+            "required": [
+                "aliasStructuralType"
+            ]
         },
         "args": {
             "type": "array",
