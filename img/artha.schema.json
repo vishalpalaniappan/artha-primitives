@@ -320,6 +320,10 @@
                       "aliasName": {
                         "type": "string"
                       },
+                      "aliasStructuralType": {
+                        "type": "string",
+                        "const": "string"
+                      },
                       "introduce": {
                         "type": "boolean",
                         "default": false
@@ -383,6 +387,10 @@
                     "properties": {
                       "aliasName": {
                         "type": "string"
+                      },
+                      "aliasStructuralType": {
+                        "type": "string",
+                        "const": "string"
                       },
                       "introduce": {
                         "type": "boolean",
@@ -565,6 +573,10 @@
                     "properties": {
                       "aliasName": {
                         "type": "string"
+                      },
+                      "aliasStructuralType": {
+                        "type": "string",
+                        "const": "boolean"
                       },
                       "introduce": {
                         "type": "boolean",
@@ -921,6 +933,10 @@
                     "properties": {
                       "aliasName": {
                         "type": "string"
+                      },
+                      "aliasStructuralType": {
+                        "type": "string",
+                        "const": "boolean"
                       },
                       "introduce": {
                         "type": "boolean",
