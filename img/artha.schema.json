@@ -314,16 +314,11 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "aliasName",
-                      "aliasStructuralType"
+                      "aliasName"
                     ],
                     "properties": {
                       "aliasName": {
                         "type": "string"
-                      },
-                      "aliasStructuralType": {
-                        "type": "string",
-                        "const": "string"
                       },
                       "introduce": {
                         "type": "boolean",
@@ -383,16 +378,11 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "aliasName",
-                      "aliasStructuralType"
+                      "aliasName"
                     ],
                     "properties": {
                       "aliasName": {
                         "type": "string"
-                      },
-                      "aliasStructuralType": {
-                        "type": "string",
-                        "const": "string"
                       },
                       "introduce": {
                         "type": "boolean",
@@ -570,16 +560,11 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "aliasName",
-                      "aliasStructuralType"
+                      "aliasName"
                     ],
                     "properties": {
                       "aliasName": {
                         "type": "string"
-                      },
-                      "aliasStructuralType": {
-                        "type": "string",
-                        "const": "boolean"
                       },
                       "introduce": {
                         "type": "boolean",
@@ -931,16 +916,11 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                      "aliasName",
-                      "aliasStructuralType"
+                      "aliasName"
                     ],
                     "properties": {
                       "aliasName": {
                         "type": "string"
-                      },
-                      "aliasStructuralType": {
-                        "type": "string",
-                        "const": "boolean"
                       },
                       "introduce": {
                         "type": "boolean",
