@@ -82,11 +82,15 @@ const generatePrimitiveSchema = (primitive) => {
                     type: "string",
                     const: arg.name
                 },
+                argType: {
+                    type: "string",
+                    description: "Type of arg value (name or const)."
+                },
                 value: {
                     type: arg.attributeStructuralType
                 }
             },
-            required: ["argName","value"],
+            required: ["argName", "value", "argType"],
             additionalProperties: false
         }
 

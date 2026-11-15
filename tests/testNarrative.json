@@ -11,16 +11,18 @@
                 {
                     "name": "introduce",
                     "alias": {
-                        "name": "shopping_cart",
+                        "aliasName": "shopping_cart",
                         "introduce": true
                     },
                     "args": [
                         {
                             "argName": "role",
+                            "argType": "const",
                             "value": "Cart"
                         },
                         {
                             "argName": "participant",
+                            "argType": "const",
                             "value": "shopping_cart"
                         }
                     ]
@@ -42,6 +44,7 @@
                     "args": [
                         {
                             "argName": "message",
+                            "argType": "const",
                             "value": "Message to display"
                         }
                     ]
@@ -49,71 +52,27 @@
                 {
                     "name": "terminal_input",
                     "alias": {
-                        "name": "user_choice",
+                        "aliasName": "user_choice",
                         "introduce": true
                     },
                     "args": []
                 },
                 {
-                    "name": "invoke",
-                    "behaviorName": "checkIfUserChoseCoffee",
-                    "alias": {
-                        "name": "user_chose_coffee",
-                        "introduce": true
-                    },
-                    "args": [
-                        {
-                            "argName": "choice",
-                            "value": "user_choice"
-                        }
-                    ]
-                },
-                {
-                    "name": "if",
-                    "args": [],
-                    "body": [
-                        {
-                            "name": "terminal_display",
-                            "args": [
-                                {
-                                    "argName": "message",
-                                    "value": "User Chose Coffee"
-                                }   
-                            ]
-                        },
-                        {
-                            "name": "invoke",
-                            "behaviorName": "visitShop",
-                            "args": []
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "behavior",
-            "behaviorName": "checkIfUserChoseCoffee",
-            "attributes": [
-                {
-                    "name": "user_choice",
-                    "value": ""
-                }
-            ],
-            "body": [
-                {
                     "name": "equals",
                     "alias": {
-                        "name": "userChoseCoffee",
+                        "aliasName": "user_chose_coffee",
                         "introduce": true
                     },
                     "args": [
                         {
                             "argName": "value1",
+                            "argType": "name",
                             "value": "user_choice"
                         },
                         {
                             "argName": "value2",
-                            "value": "c"
+                            "argType": "name",
+                            "value": "coffee"
                         }
                     ]
                 },
@@ -122,6 +81,7 @@
                     "args": [
                         {
                             "argName": "condition",
+                            "argType": "const",
                             "value": "user_chose_coffee"
                         }
                     ],
@@ -131,8 +91,9 @@
                             "args": [
                                 {
                                     "argName": "message",
+                                    "argType": "const",
                                     "value": "User Chose Coffee"
-                                }
+                                }   
                             ]
                         },
                         {
@@ -153,6 +114,7 @@
                     "args": [
                         {
                             "argName": "value",
+                            "argType": "const",
                             "value": "string"
                         }
                     ]
@@ -162,6 +124,7 @@
                     "args": [
                         {
                             "argName": "value",
+                            "argType": "const",
                             "value": ["Coffee", "Bagel"]
                         }
                     ]
@@ -177,6 +140,7 @@
                     "args": [
                         {
                             "argName": "value",
+                            "argType": "const",
                             "value": "string"
                         }
                     ]
@@ -186,6 +150,7 @@
                     "args": [
                         {
                             "argName": "value",
+                            "argType": "const",
                             "value": "Choose from: 1.Coffee 2.Bagel, 3.View, 4.Clear."
                         }
                     ]
