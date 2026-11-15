@@ -37,20 +37,6 @@ const generatePrimitiveSchema = (primitive) => {
                 description: "Type of the primitive.",
                 const: `${primitive.type}`
             },
-            alias: {
-                type: "object",
-                additionalProperties: false,
-                required: ["aliasName"],
-                properties: {
-                    aliasName: {
-                        type: "string"
-                    },
-                    introduce: {
-                        type: "boolean",
-                        default: false
-                    }
-                }
-            },
             args: {
                 type: "array",
                 minItems: 0,
@@ -59,6 +45,27 @@ const generatePrimitiveSchema = (primitive) => {
             }
         }
     };
+
+    if ("alias" in primitive.attributes) {
+        schema.properties.alias = {
+            type: "object",
+            additionalProperties: false,
+            required: ["aliasName"],
+            properties: {
+                aliasName: {
+                    type: "string"
+                },
+                aliasStructuralType: {
+                    type: "string",
+                    const: primitive.attributes.alias.aliasStructuralType
+                },
+                introduce: {
+                    type: "boolean",
+                    default: false
+                }
+            }
+        }
+    }
 
     if ("invariants" in primitive && primitive.invariants.length > 0) {
         schema.properties.name["x-invariant-metadata"] = primitive.invariants;
