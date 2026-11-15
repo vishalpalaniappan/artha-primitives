@@ -58,13 +58,18 @@
                             "type": "string",
                             "const": "list"
                         },
+                        "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                        },
                         "value": {
                             "type": "array"
                         }
                     },
                     "required": [
                         "argName",
-                        "value"
+                        "value",
+                        "argType"
                     ],
                     "additionalProperties": false
                 }

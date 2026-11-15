@@ -35,11 +35,16 @@
                 "type": "object",
                 "required": [
                     "argName",
-                    "value"
+                    "value",
+                    "argType"
                 ],
                 "properties": {
                     "argName": {
                         "type": "string"
+                    },
+                    "argType": {
+                        "type": "string",
+                        "description": "Type of arg value (name or const)."
                     },
                     "value": {
                         "type": "string"

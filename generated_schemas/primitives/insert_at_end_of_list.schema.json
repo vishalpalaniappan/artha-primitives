@@ -58,11 +58,16 @@
                             "type": "string",
                             "const": "item"
                         },
+                        "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                        },
                         "value": {}
                     },
                     "required": [
                         "argName",
-                        "value"
+                        "value",
+                        "argType"
                     ],
                     "additionalProperties": false
                 },
@@ -73,11 +78,16 @@
                             "type": "string",
                             "const": "list"
                         },
+                        "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                        },
                         "value": {}
                     },
                     "required": [
                         "argName",
-                        "value"
+                        "value",
+                        "argType"
                     ],
                     "additionalProperties": false
                 }

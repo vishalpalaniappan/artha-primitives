@@ -152,6 +152,23 @@ description: A schema for invoking custom meaning.
 
 
 
+### args.argType
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Type of arg value (name or const).</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    
+  </tbody>
+</table>
+
+
+
+
 ### args.value
 
 
@@ -212,11 +229,16 @@ description: A schema for invoking custom meaning.
                 "type": "object",
                 "required": [
                     "argName",
-                    "value"
+                    "value",
+                    "argType"
                 ],
                 "properties": {
                     "argName": {
                         "type": "string"
+                    },
+                    "argType": {
+                        "type": "string",
+                        "description": "Type of arg value (name or const)."
                     },
                     "value": {
                         "type": "string"

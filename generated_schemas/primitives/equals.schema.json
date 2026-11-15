@@ -39,11 +39,16 @@
                             "type": "string",
                             "const": "value1"
                         },
+                        "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                        },
                         "value": {}
                     },
                     "required": [
                         "argName",
-                        "value"
+                        "value",
+                        "argType"
                     ],
                     "additionalProperties": false
                 },
@@ -54,11 +59,16 @@
                             "type": "string",
                             "const": "value2"
                         },
+                        "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                        },
                         "value": {}
                     },
                     "required": [
                         "argName",
-                        "value"
+                        "value",
+                        "argType"
                     ],
                     "additionalProperties": false
                 }
