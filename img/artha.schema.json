@@ -314,16 +314,20 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
+                      "aliasName",
                       "aliasStructuralType"
                     ],
                     "properties": {
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
+                      "aliasName": {
+                        "type": "string"
                       },
                       "aliasStructuralType": {
                         "type": "string",
                         "const": "string"
+                      },
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
                       }
                     }
                   }
@@ -379,16 +383,20 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
+                      "aliasName",
                       "aliasStructuralType"
                     ],
                     "properties": {
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
+                      "aliasName": {
+                        "type": "string"
                       },
                       "aliasStructuralType": {
                         "type": "string",
                         "const": "string"
+                      },
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
                       }
                     }
                   }
@@ -562,16 +570,20 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
+                      "aliasName",
                       "aliasStructuralType"
                     ],
                     "properties": {
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
+                      "aliasName": {
+                        "type": "string"
                       },
                       "aliasStructuralType": {
                         "type": "string",
                         "const": "boolean"
+                      },
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
                       }
                     }
                   }
@@ -919,16 +931,20 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
+                      "aliasName",
                       "aliasStructuralType"
                     ],
                     "properties": {
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
+                      "aliasName": {
+                        "type": "string"
                       },
                       "aliasStructuralType": {
                         "type": "string",
                         "const": "boolean"
+                      },
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
                       }
                     }
                   }
