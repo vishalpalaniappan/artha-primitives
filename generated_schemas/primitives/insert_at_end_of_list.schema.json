@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "./insert_at_end_of_list-structure.schema.json",
+    "$id": "./insert_at_end_of_list.schema.json",
     "title": "insert_at_end_of_list",
     "description": "Structural schema for insert_at_end_of_list primitive.",
     "type": "object",

@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "./if-structure.schema.json",
+    "$id": "./if.schema.json",
     "title": "if",
     "description": "Structural schema for if primitive.",
     "type": "object",

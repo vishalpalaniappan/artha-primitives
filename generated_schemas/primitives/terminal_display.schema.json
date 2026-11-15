@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "./terminal_display-structure.schema.json",
+    "$id": "./terminal_display.schema.json",
     "title": "terminal_display",
     "description": "Structural schema for terminal_display primitive.",
     "type": "object",

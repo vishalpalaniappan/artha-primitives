@@ -265,7 +265,7 @@
               },
               "then": {
                 "$schema": "https://json-schema.org/draft/2020-12/schema",
-                "$id": "./terminal_display-structure.schema.json",
+                "$id": "./terminal_display.schema.json",
                 "title": "terminal_display",
                 "description": "Structural schema for terminal_display primitive.",
                 "type": "object",
@@ -348,7 +348,7 @@
               },
               "then": {
                 "$schema": "https://json-schema.org/draft/2020-12/schema",
-                "$id": "./terminal_input-structure.schema.json",
+                "$id": "./terminal_input.schema.json",
                 "title": "terminal_input",
                 "description": "Structural schema for terminal_input primitive.",
                 "type": "object",
@@ -412,7 +412,7 @@
               },
               "then": {
                 "$schema": "https://json-schema.org/draft/2020-12/schema",
-                "$id": "./clear_list-structure.schema.json",
+                "$id": "./clear_list.schema.json",
                 "title": "clear_list",
                 "description": "Structural schema for clear_list primitive.",
                 "type": "object",
@@ -514,7 +514,7 @@
               },
               "then": {
                 "$schema": "https://json-schema.org/draft/2020-12/schema",
-                "$id": "./equals-structure.schema.json",
+                "$id": "./equals.schema.json",
                 "title": "equals",
                 "description": "Structural schema for equals primitive.",
                 "type": "object",
@@ -610,7 +610,7 @@
               },
               "then": {
                 "$schema": "https://json-schema.org/draft/2020-12/schema",
-                "$id": "./insert_at_end_of_list-structure.schema.json",
+                "$id": "./insert_at_end_of_list.schema.json",
                 "title": "insert_at_end_of_list",
                 "description": "Structural schema for insert_at_end_of_list primitive.",
                 "type": "object",
@@ -725,7 +725,7 @@
               },
               "then": {
                 "$schema": "https://json-schema.org/draft/2020-12/schema",
-                "$id": "./if-structure.schema.json",
+                "$id": "./if.schema.json",
                 "title": "if",
                 "description": "Structural schema for if primitive.",
                 "type": "object",
@@ -831,7 +831,7 @@
               },
               "then": {
                 "$schema": "https://json-schema.org/draft/2020-12/schema",
-                "$id": "./initial_value-structure.schema.json",
+                "$id": "./initial_value.schema.json",
                 "title": "initial_value",
                 "description": "Structural schema for initial_value primitive.",
                 "type": "object",
@@ -914,7 +914,7 @@
               },
               "then": {
                 "$schema": "https://json-schema.org/draft/2020-12/schema",
-                "$id": "./introduce-structure.schema.json",
+                "$id": "./introduce.schema.json",
                 "title": "introduce",
                 "description": "Structural schema for introduce primitive.",
                 "type": "object",
@@ -1014,7 +1014,7 @@
               },
               "then": {
                 "$schema": "https://json-schema.org/draft/2020-12/schema",
-                "$id": "./list_contains-structure.schema.json",
+                "$id": "./list_contains.schema.json",
                 "title": "list_contains",
                 "description": "Structural schema for list_contains primitive.",
                 "type": "object",
@@ -1097,7 +1097,7 @@
               },
               "then": {
                 "$schema": "https://json-schema.org/draft/2020-12/schema",
-                "$id": "./structural_type-structure.schema.json",
+                "$id": "./structural_type.schema.json",
                 "title": "structural_type",
                 "description": "Structural schema for structural_type primitive.",
                 "type": "object",
@@ -1180,7 +1180,7 @@
               },
               "then": {
                 "$schema": "https://json-schema.org/draft/2020-12/schema",
-                "$id": "./yield-structure.schema.json",
+                "$id": "./yield.schema.json",
                 "title": "yield",
                 "description": "Structural schema for yield primitive.",
                 "type": "object",

@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "./list_contains-structure.schema.json",
+    "$id": "./list_contains.schema.json",
     "title": "list_contains",
     "description": "Structural schema for list_contains primitive.",
     "type": "object",

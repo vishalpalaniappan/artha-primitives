@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "./initial_value-structure.schema.json",
+    "$id": "./initial_value.schema.json",
     "title": "initial_value",
     "description": "Structural schema for initial_value primitive.",
     "type": "object",
