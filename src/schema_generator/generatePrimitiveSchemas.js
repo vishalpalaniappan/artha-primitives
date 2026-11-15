@@ -13,7 +13,7 @@ const generatePrimitiveSchema = (primitive) => {
     // Schema base object
     const schema = {
         $schema: "https://json-schema.org/draft/2020-12/schema",
-        $id: `./${primitive.name}-structure.schema.json`,
+        $id: `./${primitive.name}.schema.json`,
         title: `${primitive.name}`,
         description: `Structural schema for ${primitive.name} primitive.`,
         type: "object",
