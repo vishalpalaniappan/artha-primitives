@@ -136,11 +136,16 @@
                       "type": "object",
                       "required": [
                         "argName",
-                        "value"
+                        "value",
+                        "argType"
                       ],
                       "properties": {
                         "argName": {
                           "type": "string"
+                        },
+                        "argType": {
+                          "type": "string",
+                          "description": "Type of arg value (name or const)."
                         },
                         "value": {
                           "type": "string"
@@ -298,13 +303,18 @@
                             "type": "string",
                             "const": "message"
                           },
+                          "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                          },
                           "value": {
                             "type": "string"
                           }
                         },
                         "required": [
                           "argName",
-                          "value"
+                          "value",
+                          "argType"
                         ],
                         "additionalProperties": false
                       }
@@ -472,13 +482,18 @@
                             "type": "string",
                             "const": "list"
                           },
+                          "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                          },
                           "value": {
                             "type": "array"
                           }
                         },
                         "required": [
                           "argName",
-                          "value"
+                          "value",
+                          "argType"
                         ],
                         "additionalProperties": false
                       }
@@ -539,11 +554,16 @@
                             "type": "string",
                             "const": "value1"
                           },
+                          "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                          },
                           "value": {}
                         },
                         "required": [
                           "argName",
-                          "value"
+                          "value",
+                          "argType"
                         ],
                         "additionalProperties": false
                       },
@@ -554,11 +574,16 @@
                             "type": "string",
                             "const": "value2"
                           },
+                          "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                          },
                           "value": {}
                         },
                         "required": [
                           "argName",
-                          "value"
+                          "value",
+                          "argType"
                         ],
                         "additionalProperties": false
                       }
@@ -658,11 +683,16 @@
                             "type": "string",
                             "const": "item"
                           },
+                          "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                          },
                           "value": {}
                         },
                         "required": [
                           "argName",
-                          "value"
+                          "value",
+                          "argType"
                         ],
                         "additionalProperties": false
                       },
@@ -673,11 +703,16 @@
                             "type": "string",
                             "const": "list"
                           },
+                          "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                          },
                           "value": {}
                         },
                         "required": [
                           "argName",
-                          "value"
+                          "value",
+                          "argType"
                         ],
                         "additionalProperties": false
                       }
@@ -758,13 +793,18 @@
                             "type": "string",
                             "const": "condition"
                           },
+                          "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                          },
                           "value": {
                             "type": "string"
                           }
                         },
                         "required": [
                           "argName",
-                          "value"
+                          "value",
+                          "argType"
                         ],
                         "additionalProperties": false
                       }
@@ -828,13 +868,18 @@
                             "type": "string",
                             "const": "value"
                           },
+                          "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                          },
                           "value": {
                             "type": "string"
                           }
                         },
                         "required": [
                           "argName",
-                          "value"
+                          "value",
+                          "argType"
                         ],
                         "additionalProperties": false
                       }
@@ -895,13 +940,18 @@
                             "type": "string",
                             "const": "role"
                           },
+                          "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                          },
                           "value": {
                             "type": "string"
                           }
                         },
                         "required": [
                           "argName",
-                          "value"
+                          "value",
+                          "argType"
                         ],
                         "additionalProperties": false
                       },
@@ -912,13 +962,18 @@
                             "type": "string",
                             "const": "participant"
                           },
+                          "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                          },
                           "value": {
                             "type": "string"
                           }
                         },
                         "required": [
                           "argName",
-                          "value"
+                          "value",
+                          "argType"
                         ],
                         "additionalProperties": false
                       }
@@ -999,13 +1054,18 @@
                             "type": "string",
                             "const": "value"
                           },
+                          "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                          },
                           "value": {
                             "type": "array"
                           }
                         },
                         "required": [
                           "argName",
-                          "value"
+                          "value",
+                          "argType"
                         ],
                         "additionalProperties": false
                       }
@@ -1066,13 +1126,18 @@
                             "type": "string",
                             "const": "value"
                           },
+                          "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                          },
                           "value": {
                             "type": "string"
                           }
                         },
                         "required": [
                           "argName",
-                          "value"
+                          "value",
+                          "argType"
                         ],
                         "additionalProperties": false
                       }
@@ -1133,13 +1198,18 @@
                             "type": "string",
                             "const": "alias"
                           },
+                          "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const)."
+                          },
                           "value": {
                             "type": "string"
                           }
                         },
                         "required": [
                           "argName",
-                          "value"
+                          "value",
+                          "argType"
                         ],
                         "additionalProperties": false
                       }
