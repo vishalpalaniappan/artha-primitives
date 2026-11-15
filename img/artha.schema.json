@@ -292,22 +292,6 @@
                     "description": "Type of the primitive.",
                     "const": "computable-legacy-primitive"
                   },
-                  "alias": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "required": [
-                      "aliasName"
-                    ],
-                    "properties": {
-                      "aliasName": {
-                        "type": "string"
-                      },
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
-                      }
-                    }
-                  },
                   "args": {
                     "type": "array",
                     "minItems": 1,
@@ -374,22 +358,6 @@
                     "type": "string",
                     "description": "Type of the primitive.",
                     "const": "computable-legacy-primitive"
-                  },
-                  "alias": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "required": [
-                      "aliasName"
-                    ],
-                    "properties": {
-                      "aliasName": {
-                        "type": "string"
-                      },
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
-                      }
-                    }
                   },
                   "args": {
                     "type": "array",
@@ -458,22 +426,6 @@
                     "description": "Type of the primitive.",
                     "const": "computable-primitive"
                   },
-                  "alias": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "required": [
-                      "aliasName"
-                    ],
-                    "properties": {
-                      "aliasName": {
-                        "type": "string"
-                      },
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
-                      }
-                    }
-                  },
                   "args": {
                     "type": "array",
                     "minItems": 1,
@@ -540,22 +492,6 @@
                     "type": "string",
                     "description": "Type of the primitive.",
                     "const": "computable-primitive"
-                  },
-                  "alias": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "required": [
-                      "aliasName"
-                    ],
-                    "properties": {
-                      "aliasName": {
-                        "type": "string"
-                      },
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
-                      }
-                    }
                   },
                   "args": {
                     "type": "array",
@@ -655,22 +591,6 @@
                     "type": "string",
                     "description": "Type of the primitive.",
                     "const": "computable-primitive"
-                  },
-                  "alias": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "required": [
-                      "aliasName"
-                    ],
-                    "properties": {
-                      "aliasName": {
-                        "type": "string"
-                      },
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
-                      }
-                    }
                   },
                   "args": {
                     "type": "array",
@@ -772,22 +692,6 @@
                     "description": "Type of the primitive.",
                     "const": "functional-primitive"
                   },
-                  "alias": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "required": [
-                      "aliasName"
-                    ],
-                    "properties": {
-                      "aliasName": {
-                        "type": "string"
-                      },
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
-                      }
-                    }
-                  },
                   "args": {
                     "type": "array",
                     "minItems": 1,
@@ -858,22 +762,6 @@
                     "description": "Type of the primitive.",
                     "const": "meta-primitive"
                   },
-                  "alias": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "required": [
-                      "aliasName"
-                    ],
-                    "properties": {
-                      "aliasName": {
-                        "type": "string"
-                      },
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
-                      }
-                    }
-                  },
                   "args": {
                     "type": "array",
                     "minItems": 1,
@@ -940,22 +828,6 @@
                     "type": "string",
                     "description": "Type of the primitive.",
                     "const": "meta-primitive"
-                  },
-                  "alias": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "required": [
-                      "aliasName"
-                    ],
-                    "properties": {
-                      "aliasName": {
-                        "type": "string"
-                      },
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
-                      }
-                    }
                   },
                   "args": {
                     "type": "array",
@@ -1041,22 +913,6 @@
                     "description": "Type of the primitive.",
                     "const": "meta-primitive"
                   },
-                  "alias": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "required": [
-                      "aliasName"
-                    ],
-                    "properties": {
-                      "aliasName": {
-                        "type": "string"
-                      },
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
-                      }
-                    }
-                  },
                   "args": {
                     "type": "array",
                     "minItems": 1,
@@ -1124,22 +980,6 @@
                     "description": "Type of the primitive.",
                     "const": "meta-primitive"
                   },
-                  "alias": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "required": [
-                      "aliasName"
-                    ],
-                    "properties": {
-                      "aliasName": {
-                        "type": "string"
-                      },
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
-                      }
-                    }
-                  },
                   "args": {
                     "type": "array",
                     "minItems": 1,
@@ -1206,22 +1046,6 @@
                     "type": "string",
                     "description": "Type of the primitive.",
                     "const": "meta-primitive"
-                  },
-                  "alias": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "required": [
-                      "aliasName"
-                    ],
-                    "properties": {
-                      "aliasName": {
-                        "type": "string"
-                      },
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
-                      }
-                    }
                   },
                   "args": {
                     "type": "array",
