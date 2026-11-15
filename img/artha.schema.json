@@ -119,19 +119,16 @@
                   },
                   "alias": {
                     "type": "object",
-                    "additionalProperties": false,
-                    "required": [
-                      "aliasName"
-                    ],
+                    "description": "The optional alias for the primitive.",
                     "properties": {
-                      "aliasName": {
-                        "type": "string"
-                      },
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
+                      "aliasStructuralType": {
+                        "type": "string",
+                        "description": "Structural type of the alias."
                       }
-                    }
+                    },
+                    "required": [
+                      "aliasStructuralType"
+                    ]
                   },
                   "args": {
                     "type": "array",
@@ -230,19 +227,16 @@
                   },
                   "alias": {
                     "type": "object",
-                    "additionalProperties": false,
-                    "required": [
-                      "name"
-                    ],
+                    "description": "The optional alias for the primitive.",
                     "properties": {
-                      "name": {
-                        "type": "string"
-                      },
-                      "introduce": {
-                        "type": "boolean",
-                        "default": false
+                      "aliasStructuralType": {
+                        "type": "string",
+                        "description": "Structural type of the alias."
                       }
-                    }
+                    },
+                    "required": [
+                      "aliasStructuralType"
+                    ]
                   }
                 },
                 "required": [
@@ -315,6 +309,23 @@
                         "additionalProperties": false
                       }
                     ]
+                  },
+                  "alias": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "aliasStructuralType"
+                    ],
+                    "properties": {
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      },
+                      "aliasStructuralType": {
+                        "type": "string",
+                        "const": "string"
+                      }
+                    }
                   }
                 }
               }
@@ -363,6 +374,23 @@
                     "type": "array",
                     "minItems": 0,
                     "maxItems": 0
+                  },
+                  "alias": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "aliasStructuralType"
+                    ],
+                    "properties": {
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      },
+                      "aliasStructuralType": {
+                        "type": "string",
+                        "const": "string"
+                      }
+                    }
                   }
                 }
               }
@@ -529,6 +557,23 @@
                         "additionalProperties": false
                       }
                     ]
+                  },
+                  "alias": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "aliasStructuralType"
+                    ],
+                    "properties": {
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      },
+                      "aliasStructuralType": {
+                        "type": "string",
+                        "const": "boolean"
+                      }
+                    }
                   }
                 }
               }
@@ -869,6 +914,23 @@
                         "additionalProperties": false
                       }
                     ]
+                  },
+                  "alias": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "aliasStructuralType"
+                    ],
+                    "properties": {
+                      "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      },
+                      "aliasStructuralType": {
+                        "type": "string",
+                        "const": "boolean"
+                      }
+                    }
                   }
                 }
               }
