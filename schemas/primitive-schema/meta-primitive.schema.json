@@ -49,7 +49,7 @@
                 },
                 "args": {
                     "type": "array",
-                    "description": "The attributes in this primitive",
+                    "description": "The args in this primitive",
                     "items": {
                         "type": "object",
                         "additionalProperties": false,
@@ -61,6 +61,9 @@
                             "attributeStructuralType": {
                                 "type" : "string",
                                 "description": "Structural type of the attribute."
+                            },
+                            "description": {
+                                "type": "string"
                             },
                             "required": {
                                 "type": "boolean",

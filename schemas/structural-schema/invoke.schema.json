@@ -43,6 +43,9 @@
                         "description": "Type of arg value (name or const).",
                         "enum": ["name", "const"]
                     },
+                    "description": {
+                        "type": "string"
+                    },
                     "value": {
                         "type": "string"
                     }
