@@ -20,9 +20,9 @@
         {
             "id": "1",
             "participants": ["list"],
-            "property": "structural_type",
+            "property": "structuralType",
             "condition": ["list"],
-            "description": "list must have structural_type List.",
+            "description": "list must have structuralType List.",
             "invalidValues": [
                 {
                     "value": "string_value",
