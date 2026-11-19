@@ -29,8 +29,8 @@
         },
         "args": {
             "type": "array",
-            "minItems": 2,
-            "maxItems": 2,
+            "minItems": 3,
+            "maxItems": 3,
             "prefixItems": [
                 {
                     "type": "object",
@@ -75,6 +75,32 @@
                         },
                         "value": {
                             "type": "string"
+                        }
+                    },
+                    "required": [
+                        "argName",
+                        "value",
+                        "argType"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "persist"
+                        },
+                        "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                                "name",
+                                "const"
+                            ]
+                        },
+                        "value": {
+                            "type": "boolean"
                         }
                     },
                     "required": [

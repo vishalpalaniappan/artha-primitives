@@ -20,6 +20,12 @@
                 "name": "participant",
                 "attributeStructuralType": "string",
                 "required": true
+            },
+            {
+                "name": "persist",
+                "description": "This indicates if the participant should persist in the world state across behaviors.",
+                "attributeStructuralType": "boolean",
+                "required": true
             }
         ]    
     }

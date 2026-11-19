@@ -254,6 +254,19 @@ description: A schema definition for computable-legacy-primitive files.
 
 
 
+### attributes.args.description
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    
+  </tbody>
+</table>
+
+
+
+
 ### attributes.args.required
 
 
@@ -515,6 +528,9 @@ description: A schema definition for computable-legacy-primitive files.
                             "attributeStructuralType": {
                                 "type": "string",
                                 "description": "The structural type of the attribute."
+                            },
+                            "description": {
+                                "type": "string"
                             },
                             "required": {
                                 "type": "boolean",

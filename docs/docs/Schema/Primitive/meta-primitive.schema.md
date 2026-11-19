@@ -207,7 +207,7 @@ description: A schema definition for meta-primitive files.
   <tbody>
     <tr>
       <th>Description</th>
-      <td colspan="2">The attributes in this primitive</td>
+      <td colspan="2">The args in this primitive</td>
     </tr>
     <tr><th>Type</th><td colspan="2">Array</td></tr>
     <tr>
@@ -246,6 +246,19 @@ description: A schema definition for meta-primitive files.
       <th>Description</th>
       <td colspan="2">Structural type of the attribute.</td>
     </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    
+  </tbody>
+</table>
+
+
+
+
+### attributes.args.description
+
+
+<table class="jssd-property-table">
+  <tbody>
     <tr><th>Type</th><td colspan="2">String</td></tr>
     
   </tbody>
@@ -354,7 +367,7 @@ description: A schema definition for meta-primitive files.
                 },
                 "args": {
                     "type": "array",
-                    "description": "The attributes in this primitive",
+                    "description": "The args in this primitive",
                     "items": {
                         "type": "object",
                         "additionalProperties": false,
@@ -366,6 +379,9 @@ description: A schema definition for meta-primitive files.
                             "attributeStructuralType": {
                                 "type": "string",
                                 "description": "Structural type of the attribute."
+                            },
+                            "description": {
+                                "type": "string"
                             },
                             "required": {
                                 "type": "boolean",

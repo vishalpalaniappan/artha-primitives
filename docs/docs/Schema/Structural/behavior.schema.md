@@ -145,6 +145,19 @@ description: A schema for a behavior in a narrative.
 
 
 
+### attributes.description
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    
+  </tbody>
+</table>
+
+
+
+
 ### attributes.value
 
 
@@ -209,6 +222,9 @@ description: A schema for a behavior in a narrative.
                             "name",
                             "const"
                         ]
+                    },
+                    "description": {
+                        "type": "string"
                     },
                     "value": {
                         "type": "string"

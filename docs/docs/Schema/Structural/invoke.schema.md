@@ -172,6 +172,19 @@ description: A schema for invoking custom meaning.
 
 
 
+### args.description
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    
+  </tbody>
+</table>
+
+
+
+
 ### args.value
 
 
@@ -246,6 +259,9 @@ description: A schema for invoking custom meaning.
                             "name",
                             "const"
                         ]
+                    },
+                    "description": {
+                        "type": "string"
                     },
                     "value": {
                         "type": "string"
