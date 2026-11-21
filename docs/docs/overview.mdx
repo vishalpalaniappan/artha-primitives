@@ -31,7 +31,7 @@ Through this process, the design is debugged with respect to all known meaning p
 
 Once all the failures with respect to known meaning have been diagnosed and the inconsistences have been eliminated through reasoning, the design can be synthesized into an implementation. The synthesis itself is a deterministic process that simply realizes the meaning as an implementation. 
 
-### Learning Feedback Loop
+### How does the design learn new meaning?
 
 As a reminder, a failure in the semantic world is missing meaning because the engine will be unable to answer a meaningful question about the world. After reasoning and synthesis described above, a failure during execution not only means that the engine cannot answer a question, it means that it was not aware of the question at all. So the learning process introduces invariants and this creates questions that must be answered through reasoning. Once the reasoning is complete, the design will not fail in the same way and any new failures reveals new missing meaning and the process repeats.
 
