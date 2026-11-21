@@ -1,8 +1,47 @@
 {
+    "$schema": "./manifest.schema.json",
     "primitiveTypes": [
         "computable-primitive",
         "functional-primitive",
         "computable-legacy-primitive",
         "meta-primitive"
-    ]
+    ],
+    "structuralTypes": [
+        "behavior",
+        "participant",
+        "import",
+        "invoke"
+    ],
+    "structure": {
+        "behavior": {
+            "contains": {
+                "computable-primitive": {
+                    "excludes": []
+                },
+                "computable-legacy-primitive": {
+                    "excludes": []
+                },
+                "functional-primitive": {
+                    "excludes": []
+                },
+                "meta-primitive": {
+                    "excludes": [
+                        "list_contains",
+                        "structural_type"
+                    ]
+                }
+            }
+        },
+        "participant": {
+            "contains": {
+                "meta-primitive": {
+                    "excludes": [
+                        "introduce",
+                        "yield"
+                    ]
+                }
+            }
+        },
+        "import": {}
+    }
 }

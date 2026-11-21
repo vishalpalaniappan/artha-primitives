@@ -1,0 +1,68 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "./invoke.schema.json",
+    "title": "InvokeSchema",
+    "description": "A schema for invoking custom meaning.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "name": {
+            "type": "string",
+            "const": "invoke"
+        },
+        "behaviorName": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "alias": {
+            "type": "object",
+            "description": "The optional alias for the primitive.",
+            "properties": {
+                "aliasStructuralType": {
+                    "type": "string",
+                    "description": "Structural type of the alias."
+                }
+            },
+            "required": [
+                "aliasStructuralType"
+            ]
+        },
+        "args": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "argName",
+                    "value",
+                    "argType"
+                ],
+                "properties": {
+                    "argName": {
+                        "type": "string"
+                    },
+                    "argType": {
+                        "type": "string",
+                        "description": "Type of arg value (name or const).",
+                        "enum": [
+                            "name",
+                            "const"
+                        ]
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "behaviorName",
+        "name",
+        "args"
+    ]
+}

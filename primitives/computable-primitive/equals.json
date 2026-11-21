@@ -1,24 +1,25 @@
 {
-    "$schema": "../../schemas/computable-primitive.schema.json",
+    "$schema": "../../schemas/primitive-schema/computable-primitive.schema.json",
     "name": "equals",
     "version": "0.0.0",
     "type": "computable-primitive",
     "description":"Checks if two values are equal.",
-    "participants": [
-        {
-            "name": "alias",
+    "attributes": {
+        "alias": {
             "aliasStructuralType": "boolean",
             "required": true
-        },
-        {
-            "name": "value1",
-            "required": true
-        },
-        {
-            "name": "value2",
-            "required": true
-        }
-    ],
+        }, 
+        "args": [
+            {
+                "name": "value1",
+                "required": true
+            },
+            {
+                "name": "value2",
+                "required": true
+            }
+        ]    
+    },
     "invariants": [
 
     ],

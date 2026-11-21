@@ -1,0 +1,64 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "./initial_value.schema.json",
+    "title": "initial_value",
+    "description": "Structural schema for initial_value primitive.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "name",
+        "args"
+    ],
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "URI reference to the JSON schema."
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the primitive.",
+            "const": "initial_value"
+        },
+        "id": {
+            "type": "string"
+        },
+        "primitiveType": {
+            "type": "string",
+            "description": "Type of the primitive.",
+            "const": "meta-primitive"
+        },
+        "args": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "prefixItems": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "value"
+                        },
+                        "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                                "name",
+                                "const"
+                            ]
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "argName",
+                        "value",
+                        "argType"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        }
+    }
+}

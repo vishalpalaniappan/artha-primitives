@@ -1,0 +1,31 @@
+{
+    "$schema": "../../schemas/primitive-schema/functional-primitive.schema.json",
+    "version": "0.0.0",
+    "name": "if",
+    "type": "functional-primitive",
+    "description":"Establishes conditional meaning",
+    "attributes": {
+        "args": [
+            {
+                "name": "condition",
+                "attributeStructuralType": "string",
+                "required": true
+            }
+        ]    
+    },
+    "invariants": [
+        {
+            "id": "inv_1",
+            "participants": ["condition"],
+            "property": "structural_type",
+            "condition": ["boolean"],
+            "description": "the condition must be a boolean value",
+            "invalidValues": [
+                {
+                    "value": "string_value",
+                    "description": "A string is provided as the condition"
+                }
+            ]
+        }
+    ]
+}

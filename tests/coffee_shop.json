@@ -1,0 +1,161 @@
+{
+    "$schema": "../dist/artha.schema.json",
+    "metadata": "Meaning of Coffee Shop.",
+    "initialBehavior": "coffee_shop",
+    "narrative": [
+        {
+            "name": "behavior",
+            "behaviorName": "coffee_shop",
+            "attributes": [],
+            "body": [
+                {
+                    "name": "introduce",
+                    "alias": {
+                        "aliasName": "shopping_cart",
+                        "introduce": true
+                    },
+                    "args": [
+                        {
+                            "argName": "role",
+                            "argType": "const",
+                            "value": "Cart"
+                        },
+                        {
+                            "argName": "participant",
+                            "argType": "const",
+                            "value": "shopping_cart"
+                        }
+                    ]
+                },
+                {
+                    "name": "invoke",
+                    "behaviorName": "visitShop",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "name": "behavior",
+            "behaviorName": "visitShop",
+            "attributes": [],
+            "body": [
+                {
+                    "name": "terminal_display",
+                    "args": [
+                        {
+                            "argName": "message",
+                            "argType": "const",
+                            "value": "Message to display"
+                        }
+                    ]
+                },
+                {
+                    "name": "terminal_input",
+                    "alias": {
+                        "aliasName": "user_choice",
+                        "introduce": true
+                    },
+                    "args": []
+                },
+                {
+                    "name": "equals",
+                    "alias": {
+                        "aliasName": "user_chose_coffee",
+                        "introduce": true
+                    },
+                    "args": [
+                        {
+                            "argName": "value1",
+                            "argType": "name",
+                            "value": "user_choice"
+                        },
+                        {
+                            "argName": "value2",
+                            "argType": "name",
+                            "value": "coffee"
+                        }
+                    ]
+                },
+                {
+                    "name": "if",
+                    "args": [
+                        {
+                            "argName": "condition",
+                            "argType": "const",
+                            "value": "user_chose_coffee"
+                        }
+                    ],
+                    "body": [
+                        {
+                            "name": "terminal_display",
+                            "args": [
+                                {
+                                    "argName": "message",
+                                    "argType": "const",
+                                    "value": "User Chose Coffee"
+                                }   
+                            ]
+                        },
+                        {
+                            "name": "invoke",
+                            "behaviorName": "visitShop",
+                            "args": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "participant",
+            "participantName": "Cart",
+            "body": [
+                {
+                    "name": "structural_type",
+                    "args": [
+                        {
+                            "argName": "value",
+                            "argType": "const",
+                            "value": "string"
+                        }
+                    ]
+                },
+                {
+                    "name": "list_contains",
+                    "args": [
+                        {
+                            "argName": "value",
+                            "argType": "const",
+                            "value": ["Coffee", "Bagel"]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "participant",
+            "participantName": "Menu",
+            "body": [
+                {
+                    "name": "structural_type",
+                    "args": [
+                        {
+                            "argName": "value",
+                            "argType": "const",
+                            "value": "string"
+                        }
+                    ]
+                },
+                {
+                    "name": "initial_value",
+                    "args": [
+                        {
+                            "argName": "value",
+                            "argType": "const",
+                            "value": "Choose from: 1.Coffee 2.Bagel, 3.View, 4.Clear."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

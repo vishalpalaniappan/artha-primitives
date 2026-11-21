@@ -1,0 +1,136 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "./introduce.schema.json",
+    "title": "introduce",
+    "description": "Structural schema for introduce primitive.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "name",
+        "args"
+    ],
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "URI reference to the JSON schema."
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the primitive.",
+            "const": "introduce"
+        },
+        "id": {
+            "type": "string"
+        },
+        "primitiveType": {
+            "type": "string",
+            "description": "Type of the primitive.",
+            "const": "meta-primitive"
+        },
+        "args": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "prefixItems": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "role"
+                        },
+                        "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                                "name",
+                                "const"
+                            ]
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "argName",
+                        "value",
+                        "argType"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "participant"
+                        },
+                        "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                                "name",
+                                "const"
+                            ]
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "argName",
+                        "value",
+                        "argType"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "persist"
+                        },
+                        "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                                "name",
+                                "const"
+                            ]
+                        },
+                        "value": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "argName",
+                        "value",
+                        "argType"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "alias": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "aliasName"
+            ],
+            "properties": {
+                "aliasName": {
+                    "type": "string"
+                },
+                "aliasStructuralType": {
+                    "type": "string",
+                    "const": "boolean"
+                },
+                "introduce": {
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        }
+    }
+}
