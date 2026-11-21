@@ -1,5 +1,5 @@
 {
-    "$schema": "./manifest.schema.json",
+    "$schema": "./schemas/manifest-schema/manifest.schema.json",
     "primitiveTypes": [
         "computable-primitive",
         "functional-primitive",
