@@ -95,6 +95,7 @@ const generateSchemaStaticDocs = async (SCHEMA_TYPE) => {
 const generateStaticDocs = async () => {
     await generateSchemaStaticDocs("primitive");
     await generateSchemaStaticDocs("structural");
+    await generateSchemaStaticDocs("manifest");
     await generatePrimitivesDocs();
 };
 
