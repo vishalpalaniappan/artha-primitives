@@ -17,7 +17,7 @@
         {
             "id": "inv_1",
             "participants": ["condition"],
-            "property": "structuralType",
+            "property": "structural_type",
             "condition": ["boolean"],
             "description": "the condition must be a boolean value",
             "invalidValues": [
