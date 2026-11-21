@@ -1,0 +1,42 @@
+---
+sidebar_position: 2
+---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+# Overview
+
+The objective of establishing the schema for the primitives is to create a single source of truth that is used to build the meaning. The schemas establish the expected shape of the primitive definitions and those definitions combined with the structural schema are used to generate a schema for the entire narrative. In the workflow diagram shown below, this section of the documentation establishes the components on the left that generate the Artha schema.
+
+<div style={{ textAlign: 'center' }}>
+    <img src={useBaseUrl('/img/workflow.svg')} alt="Workflow Diagram" />
+</div>
+
+### What is the purpose of the schema?
+
+In this framework, an engine reasons about the meaning of the world to eliminate any inconsistencies in its narratives. However, if the necessary meaning does not exist, the engine will be unable to eliminate the inconsistency through the reasoning. In the semantic world, missing meaning is the failure and the schema automatically diagnoses that failure by identifying the missing meaning. 
+
+In this workflow, the Artha schema is constructed by combining the structural, computable, and meta primitives along with the rules established in a manifest that declare how these primitives can be used in the narratives. Enforcing the schema on the narrative involves ensuring that the narratives primitives adhere to the schemas expected structure and a separate validation pass that ensures the existence of other meaning in the narrative. For example, a participant must have a structural type in order for its meaning to be complete, or the engine will be unable to reason about invariants which involve the participants structural type. On the other hand, a participant used in a transformation must exist in the narrative and this involves searching the narrative in a separate validation pass. 
+
+Through this process, all the known failures are automatically diagnosed and an engine can begin reasoning about the world to eliminate all internal inconsistencies.
+
+### How are invariants used?
+
+In the next step, the primitives will be used to build narratives which can then be reasoned about to eliminate all inconsistencies. The invariants in each primitive establish the conditions that must hold true and the narratives reveal the conditions they allow. By reasoning about whether the permitted conditions contradict the invariants definition, the engine can eliminate the inconsistency by identifying a semantically invalid narrative. 
+
+This can take different forms, in some case, the resolution is to simply change a property because its existence leaves the world in a semantically invalid state, for example, adding a item to a list while the participant establish that the structural type of the list is a string. In other cases, the narrative must reason about the world to make the decision to not engage in the semantically invalid behavior. For example, getting a book from an empty basket.
+
+Through this process, the design is debugged with respect to all known meaning prior to execution and the design itself becomes aware of the semantically invalid narratives and only engages in semantically valid behavior. 
+
+### How is the design synthesized?
+
+Once all the failures with respect to known meaning have been diagnosed and the inconsistences have been eliminated through reasoning, the design can be synthesized into an implementation. The synthesis itself is a deterministic process that simply realizes the meaning as an implementation. 
+
+### Learning Feedback Loop
+
+As a reminder, a failure in the semantic world is missing meaning because the engine will be unable to answer a meaningful question about the world. After reasoning and synthesis described above, a failure during execution not only means that the engine cannot answer a question, it means that it was not aware of the question at all. So the learning process introduces invariants and this creates questions that must be answered through reasoning. Once the reasoning is complete, the design will not fail in the same way and any new failures reveals new missing meaning and the process repeats.
+
+Mechanical failures are one possible result of semantic failure. Any of the designs assumptions that reality refutes is a failure and this can even include things like expecting timing. In order to diagnose these failures, the synthesized instrumentation must be instrumented with the information needed to replay the execution. The instrumentation can be economical and only non-deterministic information can be logged.
+
+Using the collected diagnostic data, the execution can be replayed and the failures can be diagnosed and root cause analysis will enable the design to learn new meaning. To make this process truly automatic at scale, CLP is used to optimally compress the data. CLP's compression will be maximized because the meaning of the data is unambiguously established in the narrative and that includes any repetition in its domain that can be exploited.
+
+Through this process, the designs semantics expand and it becomes progressively more intelligent as it realizes its intentions in its operational environment.
