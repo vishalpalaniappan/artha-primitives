@@ -30,6 +30,7 @@
   },
   "$defs": {
     "recursiveObjectCheck": {
+      "$async": true,
       "anyOf": [
         {
           "type": "object",
