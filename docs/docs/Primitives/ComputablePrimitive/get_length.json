@@ -1,0 +1,36 @@
+{
+    "$schema": "../../schemas/primitive-schema/computable-primitive.schema.json",
+    "name": "get_length",
+    "version": "0.0.0",
+    "type": "computable-primitive",
+    "description":"Gets the length of a list",
+    "attributes": {
+        "alias": {
+            "aliasStructuralType": "int",
+            "required": true
+        }, 
+        "args": [
+            {
+                "name": "list",
+                "attributeStructuralType": "string",
+                "required": true
+            }
+        ]    
+    },
+    "invariants": [
+        {
+            "id": "1",
+            "participants": ["list"],
+            "property": "structural_type",
+            "condition": ["list"],
+            "description": "list must have structural_type List.",
+            "invalidValues": [
+                {
+                    "value": "string_value",
+                    "description": "A string is provided as list participant"
+                }
+            ]
+        }
+    ],
+    "_note": ""
+}

@@ -159,6 +159,21 @@
                             "if": {
                                 "properties": {
                                     "name": {
+                                        "const": "get_length"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./primitives/get_length.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
                                         "const": "insert_at_end_of_list"
                                     }
                                 },
@@ -168,6 +183,21 @@
                             },
                             "then": {
                                 "$ref": "./primitives/insert_at_end_of_list.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "multiply"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./primitives/multiply.schema.json"
                             }
                         },
                         {
