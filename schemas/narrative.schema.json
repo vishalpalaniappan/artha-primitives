@@ -1,5 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$async": true,
     "$id": "./narrative.schema.json",
     "title": "narrative-schema",
     "description": "A schema for the narratives.",
