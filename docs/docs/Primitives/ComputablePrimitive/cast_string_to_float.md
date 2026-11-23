@@ -1,10 +1,10 @@
 ---
-id: cast_num_to_string.json
-title: cast_num_to_string.json
+id: cast_string_to_float.json
+title: cast_string_to_float.json
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import myData from './cast_num_to_string.json';
+import myData from './cast_string_to_float.json';
 
 <CodeBlock language="json">
   {JSON.stringify(myData, null, 2)}

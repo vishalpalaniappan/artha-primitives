@@ -129,7 +129,7 @@
                             "if": {
                                 "properties": {
                                     "name": {
-                                        "const": "cast_num_to_string"
+                                        "const": "cast_string_to_float"
                                     }
                                 },
                                 "required": [
@@ -137,7 +137,7 @@
                                 ]
                             },
                             "then": {
-                                "$ref": "./primitives/cast_num_to_string.schema.json"
+                                "$ref": "./primitives/cast_string_to_float.schema.json"
                             }
                         },
                         {
