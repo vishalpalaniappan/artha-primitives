@@ -47,9 +47,7 @@
                                 "const"
                             ]
                         },
-                        "value": {
-                            "type": "string"
-                        }
+                        "value": {}
                     },
                     "required": [
                         "argName",
