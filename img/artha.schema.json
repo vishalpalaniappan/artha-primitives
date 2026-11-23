@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$async": true,
   "$id": "./narrative.schema.json",
   "title": "narrative-schema",
   "description": "A schema for the narratives.",
@@ -1350,7 +1351,7 @@
     }
   },
   "manifest": {
-    "$schema": "./manifest.schema.json",
+    "$schema": "./schemas/manifest-schema/manifest.schema.json",
     "primitiveTypes": [
       "computable-primitive",
       "functional-primitive",
