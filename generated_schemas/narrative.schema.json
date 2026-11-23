@@ -129,6 +129,21 @@
                             "if": {
                                 "properties": {
                                     "name": {
+                                        "const": "cast_num_to_string"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./primitives/cast_num_to_string.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
                                         "const": "clear_list"
                                     }
                                 },
@@ -198,6 +213,21 @@
                             },
                             "then": {
                                 "$ref": "./primitives/multiply.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
+                                        "const": "not_equals"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./primitives/not_equals.schema.json"
                             }
                         },
                         {
