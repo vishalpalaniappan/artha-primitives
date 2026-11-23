@@ -2,6 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "./narrative.schema.json",
     "title": "narrative-schema",
+    "$async": true,
     "description": "A schema for the narratives.",
     "type": "object",
     "required": [
@@ -29,6 +30,7 @@
     },
     "$defs": {
         "recursiveObjectCheck": {
+            "$async": true,
             "anyOf": [
                 {
                     "type": "object",
