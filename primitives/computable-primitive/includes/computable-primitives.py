@@ -11,3 +11,6 @@ def equals(value1, value2):
 
 def multiply(multiplicand, multiplier):
     return multiplicand * multiplier
+
+def get_length(list)
+    return len(list)
