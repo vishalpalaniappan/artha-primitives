@@ -25,7 +25,7 @@ In the next step, the primitives will be used to build narratives which can then
 
 This can take different forms, in some case, the resolution is to simply change a property because its existence leaves the world in a semantically invalid state, for example, adding a item to a list while the participant establish that the structural type of the list is a string. In other cases, the narrative must reason about the world to make the decision to not engage in the semantically invalid behavior. For example, getting a book from an empty basket.
 
-Through this process, the design is debugged with respect to all known meaning prior to execution and the design itself becomes aware of the semantically invalid narratives and only engages in semantically valid behavior. 
+Through this process, the design is debugged with respect to all known meaning prior to execution and the design itself becomes aware of the semantically invalid narratives and only engages in semantically valid behavior. Since the invariants provide invalid values as part of its definition, prior to synthesis, the narrative can be automatically tested to verify that it selects a semantically valid path under semantically invalid conditions. This involves synthesizing the step in which the design reasons about the worlds meaning and validate that a semantically valid path is chosen given the invalid value.
 
 ### How is the design synthesized?
 
