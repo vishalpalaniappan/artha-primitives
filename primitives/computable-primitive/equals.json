@@ -12,10 +12,12 @@
         "args": [
             {
                 "name": "value1",
+                "checkExistence": true,
                 "required": true
             },
             {
                 "name": "value2",
+                "checkExistence": true,
                 "required": true
             }
         ]    
