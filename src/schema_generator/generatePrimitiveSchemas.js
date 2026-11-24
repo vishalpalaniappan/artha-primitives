@@ -95,6 +95,10 @@ const generatePrimitiveSchema = (primitive) => {
             additionalProperties: false
         }
 
+        if (arg.checkExistence) {
+           item.properties.$exists = true;
+        }
+
         if (arg.required) {
             schema.properties.args.prefixItems.push(item);
             schema.properties.args.minItems++;

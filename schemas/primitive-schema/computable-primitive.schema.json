@@ -69,6 +69,11 @@
                                 "type": "boolean",
                                 "description": "Indicates if this attribute is required for the primitive.",
                                 "default": false
+                            },
+                            "checkExistence": {
+                                "type": "boolean",
+                                "description": "Indicates if the validator should check for the existence of this alias.",
+                                "default": false
                             }
                         }
                     }
