@@ -347,8 +347,7 @@
                         ],
                         "additionalProperties": false
                       }
-                    ],
-                    "$exists": []
+                    ]
                   },
                   "alias": {
                     "type": "object",
@@ -416,8 +415,7 @@
                   "args": {
                     "type": "array",
                     "minItems": 0,
-                    "maxItems": 0,
-                    "$exists": []
+                    "maxItems": 0
                   },
                   "alias": {
                     "type": "object",
@@ -530,8 +528,7 @@
                         ],
                         "additionalProperties": false
                       }
-                    ],
-                    "$exists": []
+                    ]
                   },
                   "alias": {
                     "type": "object",
@@ -646,8 +643,7 @@
                         ],
                         "additionalProperties": false
                       }
-                    ],
-                    "$exists": []
+                    ]
                   }
                 }
               }
@@ -745,8 +741,7 @@
                         ],
                         "additionalProperties": false
                       }
-                    ],
-                    "$exists": []
+                    ]
                   },
                   "alias": {
                     "type": "object",
@@ -1001,8 +996,7 @@
                         ],
                         "additionalProperties": false
                       }
-                    ],
-                    "$exists": []
+                    ]
                   }
                 }
               }
@@ -1142,8 +1136,7 @@
                         ],
                         "additionalProperties": false
                       }
-                    ],
-                    "$exists": []
+                    ]
                   },
                   "alias": {
                     "type": "object",
@@ -1261,8 +1254,7 @@
                         ],
                         "additionalProperties": false
                       }
-                    ],
-                    "$exists": []
+                    ]
                   },
                   "alias": {
                     "type": "object",
@@ -1378,8 +1370,7 @@
                         ],
                         "additionalProperties": false
                       }
-                    ],
-                    "$exists": []
+                    ]
                   },
                   "body": {
                     "type": "array"
@@ -1456,8 +1447,7 @@
                         ],
                         "additionalProperties": false
                       }
-                    ],
-                    "$exists": []
+                    ]
                   }
                 }
               }
@@ -1585,8 +1575,7 @@
                         ],
                         "additionalProperties": false
                       }
-                    ],
-                    "$exists": []
+                    ]
                   },
                   "alias": {
                     "type": "object",
@@ -1682,8 +1671,7 @@
                         ],
                         "additionalProperties": false
                       }
-                    ],
-                    "$exists": []
+                    ]
                   }
                 }
               }
@@ -1759,8 +1747,7 @@
                         ],
                         "additionalProperties": false
                       }
-                    ],
-                    "$exists": []
+                    ]
                   }
                 }
               }
@@ -1836,8 +1823,7 @@
                         ],
                         "additionalProperties": false
                       }
-                    ],
-                    "$exists": []
+                    ]
                   }
                 }
               }
