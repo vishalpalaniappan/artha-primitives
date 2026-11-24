@@ -68,7 +68,8 @@
                         },
                         "value": {
                             "type": "string"
-                        }
+                        },
+                        "$exists": true
                     },
                     "required": [
                         "argName",
