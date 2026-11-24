@@ -753,6 +753,10 @@
                         ],
                         "additionalProperties": false
                       }
+                    ],
+                    "$exists": [
+                      "value1",
+                      "value2"
                     ]
                   },
                   "alias": {
