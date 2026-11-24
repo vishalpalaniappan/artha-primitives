@@ -366,6 +366,10 @@
                       "introduce": {
                         "type": "boolean",
                         "default": false
+                      },
+                      "persist": {
+                        "type": "boolean",
+                        "default": false
                       }
                     }
                   }
@@ -432,6 +436,10 @@
                         "const": "string"
                       },
                       "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      },
+                      "persist": {
                         "type": "boolean",
                         "default": false
                       }
@@ -545,6 +553,10 @@
                         "const": "float"
                       },
                       "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      },
+                      "persist": {
                         "type": "boolean",
                         "default": false
                       }
@@ -760,6 +772,10 @@
                       "introduce": {
                         "type": "boolean",
                         "default": false
+                      },
+                      "persist": {
+                        "type": "boolean",
+                        "default": false
                       }
                     }
                   }
@@ -876,6 +892,10 @@
                         "const": "int"
                       },
                       "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      },
+                      "persist": {
                         "type": "boolean",
                         "default": false
                       }
@@ -1155,6 +1175,10 @@
                       "introduce": {
                         "type": "boolean",
                         "default": false
+                      },
+                      "persist": {
+                        "type": "boolean",
+                        "default": false
                       }
                     }
                   }
@@ -1271,6 +1295,10 @@
                         "const": "boolean"
                       },
                       "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      },
+                      "persist": {
                         "type": "boolean",
                         "default": false
                       }
@@ -1592,6 +1620,10 @@
                         "const": "boolean"
                       },
                       "introduce": {
+                        "type": "boolean",
+                        "default": false
+                      },
+                      "persist": {
                         "type": "boolean",
                         "default": false
                       }
