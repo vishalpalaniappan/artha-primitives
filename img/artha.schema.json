@@ -847,8 +847,7 @@
                           },
                           "value": {
                             "type": "string"
-                          },
-                          "$exists": true
+                          }
                         },
                         "required": [
                           "argName",
@@ -857,7 +856,8 @@
                         ],
                         "additionalProperties": false
                       }
-                    ]
+                    ],
+                    "$exists": true
                   },
                   "alias": {
                     "type": "object",
