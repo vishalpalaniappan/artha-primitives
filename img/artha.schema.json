@@ -347,7 +347,8 @@
                         ],
                         "additionalProperties": false
                       }
-                    ]
+                    ],
+                    "$exists": []
                   },
                   "alias": {
                     "type": "object",
@@ -415,7 +416,8 @@
                   "args": {
                     "type": "array",
                     "minItems": 0,
-                    "maxItems": 0
+                    "maxItems": 0,
+                    "$exists": []
                   },
                   "alias": {
                     "type": "object",
@@ -528,7 +530,8 @@
                         ],
                         "additionalProperties": false
                       }
-                    ]
+                    ],
+                    "$exists": []
                   },
                   "alias": {
                     "type": "object",
@@ -643,7 +646,8 @@
                         ],
                         "additionalProperties": false
                       }
-                    ]
+                    ],
+                    "$exists": []
                   }
                 }
               }
@@ -741,7 +745,8 @@
                         ],
                         "additionalProperties": false
                       }
-                    ]
+                    ],
+                    "$exists": []
                   },
                   "alias": {
                     "type": "object",
@@ -857,7 +862,9 @@
                         "additionalProperties": false
                       }
                     ],
-                    "$exists": true
+                    "$exists": [
+                      "list"
+                    ]
                   },
                   "alias": {
                     "type": "object",
@@ -994,7 +1001,8 @@
                         ],
                         "additionalProperties": false
                       }
-                    ]
+                    ],
+                    "$exists": []
                   }
                 }
               }
@@ -1134,7 +1142,8 @@
                         ],
                         "additionalProperties": false
                       }
-                    ]
+                    ],
+                    "$exists": []
                   },
                   "alias": {
                     "type": "object",
@@ -1252,7 +1261,8 @@
                         ],
                         "additionalProperties": false
                       }
-                    ]
+                    ],
+                    "$exists": []
                   },
                   "alias": {
                     "type": "object",
@@ -1368,7 +1378,8 @@
                         ],
                         "additionalProperties": false
                       }
-                    ]
+                    ],
+                    "$exists": []
                   },
                   "body": {
                     "type": "array"
@@ -1445,7 +1456,8 @@
                         ],
                         "additionalProperties": false
                       }
-                    ]
+                    ],
+                    "$exists": []
                   }
                 }
               }
@@ -1573,7 +1585,8 @@
                         ],
                         "additionalProperties": false
                       }
-                    ]
+                    ],
+                    "$exists": []
                   },
                   "alias": {
                     "type": "object",
@@ -1669,7 +1682,8 @@
                         ],
                         "additionalProperties": false
                       }
-                    ]
+                    ],
+                    "$exists": []
                   }
                 }
               }
@@ -1745,7 +1759,8 @@
                         ],
                         "additionalProperties": false
                       }
-                    ]
+                    ],
+                    "$exists": []
                   }
                 }
               }
@@ -1821,7 +1836,8 @@
                         ],
                         "additionalProperties": false
                       }
-                    ]
+                    ],
+                    "$exists": []
                   }
                 }
               }
