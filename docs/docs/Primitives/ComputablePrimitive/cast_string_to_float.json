@@ -1,0 +1,35 @@
+{
+    "$schema": "../../schemas/primitive-schema/computable-primitive.schema.json",
+    "name": "cast_string_to_float",
+    "version": "0.0.0",
+    "type": "computable-primitive",
+    "description":"Casts string to a float.",
+    "attributes": {
+        "alias": {
+            "aliasStructuralType": "float",
+            "required": true
+        }, 
+        "args": [
+            {
+                "name": "str",
+                "required": true
+            }
+        ]    
+    },
+    "invariants": [
+        {
+            "id": "1",
+            "participants": ["str"],
+            "property": "structural_type",
+            "condition": ["string"],
+            "description": "str must have a structural_type string.",
+            "invalidValues": [
+                {
+                    "value": "num_value",
+                    "description": "A number is provided as string participant"
+                }
+            ]
+        }
+    ],
+    "_note":""
+}

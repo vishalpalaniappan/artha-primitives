@@ -12,6 +12,8 @@
         "args": [
             {
                 "name": "list",
+                "description": "The list whose length will be read.",
+                "checkExistence": true,
                 "attributeStructuralType": "string",
                 "required": true
             }

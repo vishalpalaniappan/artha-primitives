@@ -78,6 +78,7 @@ const generatePrimitiveSchema = (primitive) => {
     // Add all the required arguments to the list and also
     // add the entry to the properties key
     const optionalItems = [];
+    const existenceCheck = [];
     for (const arg of args) {
         const item = {
             type: "object",
@@ -99,6 +100,10 @@ const generatePrimitiveSchema = (primitive) => {
             additionalProperties: false
         }
 
+        if (arg.checkExistence) {
+           existenceCheck.push(arg.name);
+        }
+
         if (arg.required) {
             schema.properties.args.prefixItems.push(item);
             schema.properties.args.minItems++;
@@ -106,6 +111,11 @@ const generatePrimitiveSchema = (primitive) => {
             optionalItems.push(item);
         }
         schema.properties.args.maxItems++;
+    }
+
+    if (existenceCheck.length > 0) {
+        // Add the args for which existence should be checked
+        schema.properties.args.$exists = existenceCheck;
     }
 
     // Add the optional items after the prefixed items

@@ -284,6 +284,23 @@ description: A schema definition for computable-primitive files.
 
 
 
+### attributes.args.checkExistence
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Indicates if the validator should check for the existence of this alias.</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">Boolean</td></tr>
+    
+  </tbody>
+</table>
+
+
+
+
 
 
 ## _note
@@ -535,6 +552,11 @@ description: A schema definition for computable-primitive files.
                             "required": {
                                 "type": "boolean",
                                 "description": "Indicates if this attribute is required for the primitive.",
+                                "default": false
+                            },
+                            "checkExistence": {
+                                "type": "boolean",
+                                "description": "Indicates if the validator should check for the existence of this alias.",
                                 "default": false
                             }
                         }
