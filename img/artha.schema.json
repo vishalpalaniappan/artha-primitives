@@ -452,7 +452,7 @@
               "if": {
                 "properties": {
                   "name": {
-                    "const": "cast_num_to_string"
+                    "const": "cast_string_to_float"
                   }
                 },
                 "required": [
@@ -461,9 +461,9 @@
               },
               "then": {
                 "$schema": "https://json-schema.org/draft/2020-12/schema",
-                "$id": "./cast_num_to_string.schema.json",
-                "title": "cast_num_to_string",
-                "description": "Structural schema for cast_num_to_string primitive.",
+                "$id": "./cast_string_to_float.schema.json",
+                "title": "cast_string_to_float",
+                "description": "Structural schema for cast_string_to_float primitive.",
                 "type": "object",
                 "additionalProperties": false,
                 "required": [
@@ -478,23 +478,22 @@
                   "name": {
                     "type": "string",
                     "description": "Name of the primitive.",
-                    "const": "cast_num_to_string",
+                    "const": "cast_string_to_float",
                     "x-invariant-metadata": [
                       {
                         "id": "1",
                         "participants": [
-                          "num"
+                          "str"
                         ],
                         "property": "structural_type",
                         "condition": [
-                          "float",
-                          "int"
+                          "string"
                         ],
-                        "description": "num must have structural_type float or int.",
+                        "description": "str must have a structural_type string.",
                         "invalidValues": [
                           {
-                            "value": "string_value",
-                            "description": "A string is provided as list participant"
+                            "value": "num_value",
+                            "description": "A number is provided as string participant"
                           }
                         ]
                       }
@@ -518,7 +517,7 @@
                         "properties": {
                           "argName": {
                             "type": "string",
-                            "const": "num"
+                            "const": "str"
                           },
                           "argType": {
                             "type": "string",
@@ -551,7 +550,7 @@
                       },
                       "aliasStructuralType": {
                         "type": "string",
-                        "const": "string"
+                        "const": "float"
                       },
                       "introduce": {
                         "type": "boolean",
@@ -873,6 +872,9 @@
                         ],
                         "additionalProperties": false
                       }
+                    ],
+                    "$exists": [
+                      "list"
                     ]
                   },
                   "alias": {
