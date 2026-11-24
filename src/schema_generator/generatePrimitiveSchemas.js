@@ -62,6 +62,10 @@ const generatePrimitiveSchema = (primitive) => {
                 introduce: {
                     type: "boolean",
                     default: false
+                },
+                persist: {
+                    type: "boolean",
+                    default: false
                 }
             }
         }
