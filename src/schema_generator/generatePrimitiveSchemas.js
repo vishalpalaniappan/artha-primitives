@@ -72,7 +72,7 @@ const generatePrimitiveSchema = (primitive) => {
     }
 
     if ("invariants" in primitive && primitive.invariants.length > 0) {
-        schema.invariant = primitive.invariants;
+        schema.invariants = primitive.invariants;
     }
 
     if ("modifies" in primitive) {
