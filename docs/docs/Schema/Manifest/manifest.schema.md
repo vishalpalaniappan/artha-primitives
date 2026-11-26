@@ -144,6 +144,27 @@ description: A schema for repo manifest.
 
 
 
+### structure.participant.types
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Based on structural type, certain primitives are required in the participant body.</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">Object</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+
 
 ### structure.import
 
@@ -218,6 +239,7 @@ description: A schema for repo manifest.
                 },
                 "participant": {
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "contains": {
                             "type": "object",
@@ -233,6 +255,15 @@ description: A schema for repo manifest.
                                         }
                                     },
                                     "additionalProperties": true
+                                }
+                            }
+                        },
+                        "types": {
+                            "type": "object",
+                            "description": "Based on structural type, certain primitives are required in the participant body.",
+                            "patternProperties": {
+                                "^.+$": {
+                                    "type": "array"
                                 }
                             }
                         }

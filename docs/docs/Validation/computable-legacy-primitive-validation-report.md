@@ -1,6 +1,6 @@
 # computable-legacy-primitive Validation Report
 
-* **Generated At:** 11/24/2026, 2:18:02 PM
+* **Generated At:** 11/26/2026, 9:25:15 AM
 * **Total Files Checked:** 2
 
 | File Name | Status | Error Summary |

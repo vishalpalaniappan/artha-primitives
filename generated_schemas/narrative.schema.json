@@ -234,6 +234,21 @@
                             "if": {
                                 "properties": {
                                     "name": {
+                                        "const": "remove_from_end_of_list"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "then": {
+                                "$ref": "./primitives/remove_from_end_of_list.schema.json"
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "name": {
                                         "const": "if"
                                     }
                                 },
@@ -392,6 +407,12 @@
                             "yield"
                         ]
                     }
+                },
+                "types": {
+                    "list": [
+                        "structural_type",
+                        "list_contains"
+                    ]
                 }
             },
             "import": {}

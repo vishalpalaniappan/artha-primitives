@@ -1,7 +1,7 @@
 # computable-primitive Validation Report
 
-* **Generated At:** 11/24/2026, 2:18:02 PM
-* **Total Files Checked:** 7
+* **Generated At:** 11/26/2026, 9:25:15 AM
+* **Total Files Checked:** 8
 
 | File Name | Status | Error Summary |
 | :--- | :---: | :--- |
@@ -12,3 +12,4 @@
 | `insert_at_end_of_list.json` | ✅ Passed | None |
 | `multiply.json` | ✅ Passed | None |
 | `not_equals.json` | ✅ Passed | None |
+| `remove_from_end_of_list.json` | ✅ Passed | None |
