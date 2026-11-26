@@ -40,6 +40,12 @@
                         "yield"
                     ]
                 }
+            },
+            "types": {
+                "list": [
+                    "structural_type",
+                    "list_contains"
+                ]
             }
         },
         "import": {}
