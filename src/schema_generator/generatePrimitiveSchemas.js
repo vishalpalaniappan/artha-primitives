@@ -72,7 +72,11 @@ const generatePrimitiveSchema = (primitive) => {
     }
 
     if ("invariants" in primitive && primitive.invariants.length > 0) {
-        schema.properties.name["x-invariant-metadata"] = primitive.invariants;
+        schema.invariant = primitive.invariants;
+    }
+
+    if ("modifies" in primitive) {
+        schema.modifies = primitive.modifies;
     }
 
     // Add all the required arguments to the list and also
