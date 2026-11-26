@@ -111,9 +111,7 @@
                     "condition": {
                         "type": "array",
                         "description": "The participants in this invariant.",
-                        "items": {
-                            "type": "string"
-                        }
+                        "items": {}
                     },
                     "description": {
                         "type": "string",
@@ -125,9 +123,7 @@
                         "items": {
                             "type": "object",
                             "properties": {
-                                "value": {
-                                    "type": "string"
-                                },
+                                "value": {},
                                 "description": {
                                     "type": "string"
                                 }
