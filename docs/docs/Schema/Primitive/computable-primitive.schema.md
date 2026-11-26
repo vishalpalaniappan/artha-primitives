@@ -18,7 +18,7 @@ description: A schema definition for computable-primitive files.
 
 ## Properties
 
-<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#$schema">$schema</a></td><td>String</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#type">type</a></td><td>String</td></tr><tr><td colspan="2"><a href="#version">version</a></td><td>String</td></tr><tr><td colspan="2"><a href="#description">description</a></td><td>String</td></tr><tr><td colspan="2"><a href="#attributes">attributes</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#_note">_note</a></td><td>String</td></tr><tr><td colspan="2"><a href="#invariants">invariants</a></td><td>Array</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#$schema">$schema</a></td><td>String</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#type">type</a></td><td>String</td></tr><tr><td colspan="2"><a href="#version">version</a></td><td>String</td></tr><tr><td colspan="2"><a href="#description">description</a></td><td>String</td></tr><tr><td colspan="2"><a href="#attributes">attributes</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#_note">_note</a></td><td>String</td></tr><tr><td colspan="2"><a href="#invariants">invariants</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#modifies">modifies</a></td><td>Object</td></tr></tbody></table>
 
 
 
@@ -473,6 +473,23 @@ description: A schema definition for computable-primitive files.
 
 
 
+## modifies
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr><th>Type</th><td colspan="2">Object</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+
 
 
 
@@ -631,6 +648,25 @@ description: A schema definition for computable-primitive files.
                     "description",
                     "invalidValues"
                 ]
+            }
+        },
+        "modifies": {
+            "type": "object",
+            "patternProperties": {
+                "^.+$": {
+                    "type": "object",
+                    "required": [
+                        "operation",
+                        "value"
+                    ],
+                    "properties": {
+                        "operation": {
+                            "type": "string"
+                        },
+                        "value": {}
+                    },
+                    "additionalProperties": true
+                }
             }
         }
     },
