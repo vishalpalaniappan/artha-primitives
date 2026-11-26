@@ -148,6 +148,25 @@
                     "invalidValues"
                 ]
             }
+        },
+        "modifies": {
+            "type": "object",
+            "patternProperties": {
+                 "^.+$": {
+                    "type": "object",
+                    "required": [
+                        "operation",
+                        "value"
+                    ],
+                    "properties": {
+                        "operation": {
+                            "type": "string"
+                        },
+                        "value": {}
+                    },
+                    "additionalProperties": true
+                }
+            }
         }
     },
     "required": [
