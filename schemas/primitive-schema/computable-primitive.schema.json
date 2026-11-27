@@ -163,6 +163,10 @@
                     "additionalProperties": true
                 }
             }
+        },
+        "impulse": {
+            "type": "boolean",
+            "default": false
         }
     },
     "required": [
