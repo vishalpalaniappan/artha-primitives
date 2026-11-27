@@ -17,45 +17,7 @@
         "name": {
             "type": "string",
             "description": "Name of the primitive.",
-            "const": "multiply",
-            "x-invariant-metadata": [
-                {
-                    "id": "1",
-                    "participants": [
-                        "multiplicand"
-                    ],
-                    "property": "structural_type",
-                    "condition": [
-                        "float",
-                        "int"
-                    ],
-                    "description": "multiplicand must have structural_type float or int.",
-                    "invalidValues": [
-                        {
-                            "value": "string_value",
-                            "description": "A string is provided as multiplicand participant"
-                        }
-                    ]
-                },
-                {
-                    "id": "2",
-                    "participants": [
-                        "multiplier"
-                    ],
-                    "property": "structural_type",
-                    "condition": [
-                        "float",
-                        "int"
-                    ],
-                    "description": "multiplier must have structural_type float or int.",
-                    "invalidValues": [
-                        {
-                            "value": "string_value",
-                            "description": "A string is provided as multiplier participant"
-                        }
-                    ]
-                }
-            ]
+            "const": "multiply"
         },
         "id": {
             "type": "string"
@@ -148,5 +110,43 @@
                 }
             }
         }
-    }
+    },
+    "invariants": [
+        {
+            "id": "1",
+            "participants": [
+                "multiplicand"
+            ],
+            "property": "structural_type",
+            "condition": [
+                "float",
+                "int"
+            ],
+            "description": "multiplicand must have structural_type float or int.",
+            "invalidValues": [
+                {
+                    "value": "string_value",
+                    "description": "A string is provided as multiplicand participant"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "participants": [
+                "multiplier"
+            ],
+            "property": "structural_type",
+            "condition": [
+                "float",
+                "int"
+            ],
+            "description": "multiplier must have structural_type float or int.",
+            "invalidValues": [
+                {
+                    "value": "string_value",
+                    "description": "A string is provided as multiplier participant"
+                }
+            ]
+        }
+    ]
 }

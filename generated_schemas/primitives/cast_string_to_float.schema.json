@@ -17,26 +17,7 @@
         "name": {
             "type": "string",
             "description": "Name of the primitive.",
-            "const": "cast_string_to_float",
-            "x-invariant-metadata": [
-                {
-                    "id": "1",
-                    "participants": [
-                        "str"
-                    ],
-                    "property": "structural_type",
-                    "condition": [
-                        "string"
-                    ],
-                    "description": "str must have a structural_type string.",
-                    "invalidValues": [
-                        {
-                            "value": "num_value",
-                            "description": "A number is provided as string participant"
-                        }
-                    ]
-                }
-            ]
+            "const": "cast_string_to_float"
         },
         "id": {
             "type": "string"
@@ -101,5 +82,24 @@
                 }
             }
         }
-    }
+    },
+    "invariants": [
+        {
+            "id": "1",
+            "participants": [
+                "str"
+            ],
+            "property": "structural_type",
+            "condition": [
+                "string"
+            ],
+            "description": "str must have a structural_type string.",
+            "invalidValues": [
+                {
+                    "value": "num_value",
+                    "description": "A number is provided as string participant"
+                }
+            ]
+        }
+    ]
 }

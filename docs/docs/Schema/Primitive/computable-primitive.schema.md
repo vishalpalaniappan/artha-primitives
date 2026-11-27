@@ -18,7 +18,7 @@ description: A schema definition for computable-primitive files.
 
 ## Properties
 
-<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#$schema">$schema</a></td><td>String</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#type">type</a></td><td>String</td></tr><tr><td colspan="2"><a href="#version">version</a></td><td>String</td></tr><tr><td colspan="2"><a href="#description">description</a></td><td>String</td></tr><tr><td colspan="2"><a href="#attributes">attributes</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#_note">_note</a></td><td>String</td></tr><tr><td colspan="2"><a href="#invariants">invariants</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#modifies">modifies</a></td><td>Object</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#$schema">$schema</a></td><td>String</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr><tr><td colspan="2"><a href="#type">type</a></td><td>String</td></tr><tr><td colspan="2"><a href="#version">version</a></td><td>String</td></tr><tr><td colspan="2"><a href="#description">description</a></td><td>String</td></tr><tr><td colspan="2"><a href="#attributes">attributes</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#_note">_note</a></td><td>String</td></tr><tr><td colspan="2"><a href="#invariants">invariants</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#modifies">modifies</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#impulse">impulse</a></td><td>Boolean</td></tr></tbody></table>
 
 
 
@@ -450,7 +450,7 @@ description: A schema definition for computable-primitive files.
 
 <table class="jssd-property-table">
   <tbody>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
+    
     
   </tbody>
 </table>
@@ -479,6 +479,27 @@ description: A schema definition for computable-primitive files.
 <table class="jssd-property-table">
   <tbody>
     <tr><th>Type</th><td colspan="2">Object</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+## impulse
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Indicates if this primitive provides an external impulse into design.</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">Boolean</td></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">No</td>
@@ -612,9 +633,7 @@ description: A schema definition for computable-primitive files.
                     "condition": {
                         "type": "array",
                         "description": "The participants in this invariant.",
-                        "items": {
-                            "type": "string"
-                        }
+                        "items": {}
                     },
                     "description": {
                         "type": "string",
@@ -626,9 +645,7 @@ description: A schema definition for computable-primitive files.
                         "items": {
                             "type": "object",
                             "properties": {
-                                "value": {
-                                    "type": "string"
-                                },
+                                "value": {},
                                 "description": {
                                     "type": "string"
                                 }
@@ -668,6 +685,11 @@ description: A schema definition for computable-primitive files.
                     "additionalProperties": true
                 }
             }
+        },
+        "impulse": {
+            "type": "boolean",
+            "description": "Indicates if this primitive provides an external impulse into design.",
+            "default": false
         }
     },
     "required": [

@@ -17,26 +17,7 @@
         "name": {
             "type": "string",
             "description": "Name of the primitive.",
-            "const": "remove_from_end_of_list",
-            "x-invariant-metadata": [
-                {
-                    "id": "1",
-                    "participants": [
-                        "list"
-                    ],
-                    "property": "structural_type",
-                    "condition": [
-                        "list"
-                    ],
-                    "description": "list must have structural_type List.",
-                    "invalidValues": [
-                        {
-                            "value": "string_value",
-                            "description": "A string is provided as list participant"
-                        }
-                    ]
-                }
-            ]
+            "const": "remove_from_end_of_list"
         },
         "id": {
             "type": "string"
@@ -76,6 +57,51 @@
                     "additionalProperties": false
                 }
             ]
+        }
+    },
+    "invariants": [
+        {
+            "id": "1",
+            "participants": [
+                "list"
+            ],
+            "property": "structural_type",
+            "condition": [
+                "list"
+            ],
+            "description": "list must have structural_type List.",
+            "invalidValues": [
+                {
+                    "value": "string_value",
+                    "description": "A string is provided as list participant"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "participants": [
+                "list"
+            ],
+            "property": "length",
+            "condition": [
+                {
+                    "operation": "greaterThan",
+                    "value": 0
+                }
+            ],
+            "description": "list must have length greater than zero.",
+            "invalidValues": [
+                {
+                    "value": 0,
+                    "description": "A string is provided as list participant"
+                }
+            ]
+        }
+    ],
+    "modifies": {
+        "length": {
+            "operation": "subtract",
+            "value": 1
         }
     }
 }

@@ -14,5 +14,6 @@
         ]
     },
     "invariants": [],
+    "impulse": true,
     "_note": "This primitive throws an EOFError and Keyboard Interrupt error. EOFError can be triggered by using CTRL+D in unix environments and Ctrl+Z followed by Enter in windows. Keyboard interrupts happen when Ctrl + C is used to terminate program in console. The meaning of these errors are built into the primitive and as part of the narrative that uses them the relevant behavior that should be exhibited can be specified. So in the synthesized implementation, I will throw the errors and then the specified meaning is used."
     }
