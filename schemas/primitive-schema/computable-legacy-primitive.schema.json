@@ -143,6 +143,11 @@
                     "invalidValues"
                 ]
             }
+        },
+        "impulse": {
+            "type": "boolean",
+            "description": "Indicates if this primitive provides an external impulse into design.",
+            "default": false
         }
     },
     "required": [
