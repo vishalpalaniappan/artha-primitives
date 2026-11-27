@@ -1,25 +1,32 @@
 {
-    "$schema": "../../schemas/meta-primitive.schema.json",
+    "$schema": "../../schemas/primitive-schema/meta-primitive.schema.json",
     "name": "introduce",
     "version": "0.0.0",
     "type": "meta-primitive",
     "description":"Introduces a participant into the world",
-    "attributes": [
-        {
-            "name": "alias",
-            "attributeStructuralType": "string",
-            "aliasStructuralType": "inherit",
-            "required": true
-        },
-        {
-            "name": "role",
+    "attributes": {
+        "alias": {
+            "aliasStructuralType": "boolean",
             "attributeStructuralType": "string",
             "required": true
-        },
-        {
-            "name": "participant",
-            "attributeStructuralType": "string",
-            "required": true
-        }
-    ]
+        }, 
+        "args": [
+            {
+                "name": "role",
+                "attributeStructuralType": "string",
+                "required": true
+            },
+            {
+                "name": "participant",
+                "attributeStructuralType": "string",
+                "required": true
+            },
+            {
+                "name": "persist",
+                "description": "This indicates if the participant should persist in the world state across behaviors.",
+                "attributeStructuralType": "boolean",
+                "required": true
+            }
+        ]    
+    }
 }

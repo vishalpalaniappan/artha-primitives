@@ -1,0 +1,27 @@
+{
+    "$schema": "../../schemas/primitive-schema/computable-primitive.schema.json",
+    "name": "not_equals",
+    "version": "0.0.0",
+    "type": "computable-primitive",
+    "description":"Checks if two values are not equal.",
+    "attributes": {
+        "alias": {
+            "aliasStructuralType": "boolean",
+            "required": true
+        }, 
+        "args": [
+            {
+                "name": "value1",
+                "required": true
+            },
+            {
+                "name": "value2",
+                "required": true
+            }
+        ]    
+    },
+    "invariants": [
+
+    ],
+    "_note":""
+}

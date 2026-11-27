@@ -1,0 +1,54 @@
+{
+    "$schema": "../../schemas/primitive-schema/computable-primitive.schema.json",
+    "name": "multiply",
+    "version": "0.0.0",
+    "type": "computable-primitive",
+    "description":"Multiplies two values (multiplicand and multiplier).",
+    "attributes": {
+        "alias": {
+            "aliasStructuralType": "float",
+            "required": true
+        }, 
+        "args": [
+            {
+                "name": "multiplicand",
+                "attributeStructuralType": "string",
+                "required": true
+            },
+            {
+                "name": "multiplier",
+                "attributeStructuralType": "string",
+                "required": true
+            }
+        ]    
+    },
+    "invariants": [
+        {
+            "id": "1",
+            "participants": ["multiplicand"],
+            "property": "structural_type",
+            "condition": ["float", "int"],
+            "description": "multiplicand must have structural_type float or int.",
+            "invalidValues": [
+                {
+                    "value": "string_value",
+                    "description": "A string is provided as multiplicand participant"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "participants": ["multiplier"],
+            "property": "structural_type",
+            "condition": ["float", "int"],
+            "description": "multiplier must have structural_type float or int.",
+            "invalidValues": [
+                {
+                    "value": "string_value",
+                    "description": "A string is provided as multiplier participant"
+                }
+            ]
+        }
+    ],
+    "_note": "The alias produced by the add primimtive can be a float or int depending on what the multiplier and multipicand are. I am saving it as a float but I need to add support for conditional attributes (where the type of the addends changes the type of the alias)."
+}

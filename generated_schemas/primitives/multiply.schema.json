@@ -1,0 +1,152 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "./multiply.schema.json",
+    "title": "multiply",
+    "description": "Structural schema for multiply primitive.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "name",
+        "args"
+    ],
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "URI reference to the JSON schema."
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the primitive.",
+            "const": "multiply",
+            "x-invariant-metadata": [
+                {
+                    "id": "1",
+                    "participants": [
+                        "multiplicand"
+                    ],
+                    "property": "structural_type",
+                    "condition": [
+                        "float",
+                        "int"
+                    ],
+                    "description": "multiplicand must have structural_type float or int.",
+                    "invalidValues": [
+                        {
+                            "value": "string_value",
+                            "description": "A string is provided as multiplicand participant"
+                        }
+                    ]
+                },
+                {
+                    "id": "2",
+                    "participants": [
+                        "multiplier"
+                    ],
+                    "property": "structural_type",
+                    "condition": [
+                        "float",
+                        "int"
+                    ],
+                    "description": "multiplier must have structural_type float or int.",
+                    "invalidValues": [
+                        {
+                            "value": "string_value",
+                            "description": "A string is provided as multiplier participant"
+                        }
+                    ]
+                }
+            ]
+        },
+        "id": {
+            "type": "string"
+        },
+        "primitiveType": {
+            "type": "string",
+            "description": "Type of the primitive.",
+            "const": "computable-primitive"
+        },
+        "args": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "prefixItems": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "multiplicand"
+                        },
+                        "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                                "name",
+                                "const"
+                            ]
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "argName",
+                        "value",
+                        "argType"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "multiplier"
+                        },
+                        "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                                "name",
+                                "const"
+                            ]
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "argName",
+                        "value",
+                        "argType"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "alias": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "aliasName"
+            ],
+            "properties": {
+                "aliasName": {
+                    "type": "string"
+                },
+                "aliasStructuralType": {
+                    "type": "string",
+                    "const": "float"
+                },
+                "introduce": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "persist": {
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        }
+    }
+}

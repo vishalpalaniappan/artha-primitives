@@ -1,0 +1,114 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "./equals.schema.json",
+    "title": "equals",
+    "description": "Structural schema for equals primitive.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "name",
+        "args"
+    ],
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "URI reference to the JSON schema."
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the primitive.",
+            "const": "equals"
+        },
+        "id": {
+            "type": "string"
+        },
+        "primitiveType": {
+            "type": "string",
+            "description": "Type of the primitive.",
+            "const": "computable-primitive"
+        },
+        "args": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "prefixItems": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "value1"
+                        },
+                        "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                                "name",
+                                "const"
+                            ]
+                        },
+                        "value": {}
+                    },
+                    "required": [
+                        "argName",
+                        "value",
+                        "argType"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "argName": {
+                            "type": "string",
+                            "const": "value2"
+                        },
+                        "argType": {
+                            "type": "string",
+                            "description": "Type of arg value (name or const).",
+                            "enum": [
+                                "name",
+                                "const"
+                            ]
+                        },
+                        "value": {}
+                    },
+                    "required": [
+                        "argName",
+                        "value",
+                        "argType"
+                    ],
+                    "additionalProperties": false
+                }
+            ],
+            "$exists": [
+                "value1",
+                "value2"
+            ]
+        },
+        "alias": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "aliasName"
+            ],
+            "properties": {
+                "aliasName": {
+                    "type": "string"
+                },
+                "aliasStructuralType": {
+                    "type": "string",
+                    "const": "boolean"
+                },
+                "introduce": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "persist": {
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        }
+    }
+}

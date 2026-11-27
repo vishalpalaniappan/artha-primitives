@@ -1,22 +1,25 @@
 {
-    "$schema": "../../schemas/computable-primitive.schema.json",
+    "$schema": "../../schemas/primitive-schema/computable-primitive.schema.json",
     "name": "clear_list",
     "version": "0.0.0",
     "type": "computable-primitive",
     "description":"Removes all items from a list.",
-    "participants": [
-        {
-            "name": "list",
-            "required": true
-        }
-    ],
+    "attributes": {
+        "args": [
+            {
+                "name": "list",
+                "attributeStructuralType": "array",
+                "required": true
+            }
+        ]    
+    },
     "invariants": [
         {
             "id": "1",
             "participants": ["list"],
-            "property": "structuralType",
+            "property": "structural_type",
             "condition": ["list"],
-            "description": "list must have structuralType List.",
+            "description": "list must have structural_type List.",
             "invalidValues": [
                 {
                     "value": "string_value",

@@ -1,0 +1,92 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/manifest.schema.json",
+    "title": "ManifestSchema",
+    "description": "A schema for repo manifest.",
+    "type": "object",
+    "properties": {
+        "primitiveTypes": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "structuralTypes": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "structure": {
+            "type": "object",
+            "properties": {
+                "behavior": {
+                    "type": "object",
+                    "properties": {
+                        "contains": {
+                            "type": "object",
+                            "patternProperties": {
+                                "^.+$": {
+                                    "type": "object",
+                                    "required": [
+                                        "excludes"
+                                    ],
+                                    "properties": {
+                                        "excludes": {
+                                            "type": "array"
+                                        }
+                                    },
+                                    "additionalProperties": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "participant": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "contains": {
+                            "type": "object",
+                            "patternProperties": {
+                                "^.+$": {
+                                    "type": "object",
+                                    "required": [
+                                        "excludes"
+                                    ],
+                                    "properties": {
+                                        "excludes": {
+                                            "type": "array"
+                                        }
+                                    },
+                                    "additionalProperties": true
+                                }
+                            }
+                        },
+                        "types": {
+                            "type": "object",
+                            "description": "Based on structural type, certain primitives are required in the participant body.",
+                            "patternProperties": {
+                                "^.+$": {
+                                    "type": "array"
+                                }
+                            }
+                        }
+                    }
+                },
+                "import": {}
+            },
+            "required": [
+                "behavior",
+                "participant",
+                "import"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "primitiveTypes",
+        "structuralTypes",
+        "structure"
+    ]
+}

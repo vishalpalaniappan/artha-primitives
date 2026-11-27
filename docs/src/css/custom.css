@@ -28,3 +28,9 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Line wrap code block by default */
+.theme-code-block code {
+  white-space: pre-wrap !important;
+  word-break: break-all;
+}
