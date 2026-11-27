@@ -79,6 +79,11 @@ const generatePrimitiveSchema = (primitive) => {
         schema.modifies = primitive.modifies;
     }
 
+    if ("impulse" in primitive) {
+        schema.impulse = primitive.impulse;
+    }
+
+
     // Add all the required arguments to the list and also
     // add the entry to the properties key
     const optionalItems = [];
